@@ -31,6 +31,8 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
+" commenting
+Plug 'b3nj5m1n/kommentary'
 " vsnips
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
@@ -79,6 +81,7 @@ luafile $HOME/.config/nvim/plug-config/lspsaga.lua
 source $HOME/.config/nvim/plug-config/lspsaga.vim
 luafile $HOME/.config/nvim/plug-config/cmp.lua
 source $HOME/.config/nvim/plug-config/vsnips.vim
+source $HOME/.config/nvim/plug-config/kommentary.lua
 
 set relativenumber
 set nu
