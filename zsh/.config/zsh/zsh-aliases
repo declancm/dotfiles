@@ -1,4 +1,8 @@
 #!/bin/sh
+mcd() {
+    mkdir "$1"
+    cd "$1"
+}
 alias ll='ls -alF'
 alias ls='ls -a'
 alias j='z'
