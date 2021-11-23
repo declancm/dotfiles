@@ -12,7 +12,7 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-source $HOME/.config/nvim/plug-config/kommentary.lua
+lua vim.g.kommentary_create_default_mappings = false
 
 call plug#begin('~/.vim/plugged')
 " snippets
@@ -65,6 +65,7 @@ Plug 'unblevable/quick-scope'
 Plug 'honza/vim-snippets'
 call plug#end()
 
+source $HOME/.config/nvim/plug-config/kommentary.lua
 source $HOME/.config/nvim/keymaps.vim
 source $HOME/.config/nvim/autocmd.vim
 " source $HOME/.config/nvim/plug-config/coc.vim
