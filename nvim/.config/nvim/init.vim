@@ -12,6 +12,8 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+source $HOME/.config/nvim/plug-config/kommentary.lua
+
 call plug#begin('~/.vim/plugged')
 " snippets
 " Plug 'SirVer/ultisnips'
@@ -81,7 +83,6 @@ luafile $HOME/.config/nvim/plug-config/lspsaga.lua
 source $HOME/.config/nvim/plug-config/lspsaga.vim
 luafile $HOME/.config/nvim/plug-config/cmp.lua
 source $HOME/.config/nvim/plug-config/vsnips.vim
-source $HOME/.config/nvim/plug-config/kommentary.lua
 
 set relativenumber
 set nu
