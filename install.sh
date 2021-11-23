@@ -4,7 +4,7 @@ stow tmux
 
 #echo "#include \"keybindings/keybindings.json\" " >> $HOME/.config/Code/User/keybindings.json
 if [ -f $HOME/.config/Code/User/keybindings.json ] && [ ! -L $HOME/.config/Code/User/keybindings.json ]
-the
+then
     mkdir $HOME/.config/Code/User/backupKeybindings
     mv -f $HOME/.config/Code/User/keybindings.json $HOME/.config/Code/User/backupKeybindings/keybindings.json
 fi
