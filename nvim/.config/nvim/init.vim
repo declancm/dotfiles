@@ -4,6 +4,9 @@ syntax on
 " TODO go over settings for cmp and vsnips and personalize
 " TODO learn how to use vsnips
 " TODO ensure that fzy is functioning correctly
+" TODO fix ff for telescope not working in empty folders
+" TODO fix cn adding to clipboard when deleting a word (unless that is
+" required to do the replacing.)
 
 " setting up vim plug
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
@@ -54,6 +57,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'navarasu/onedark.nvim'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'morhetz/gruvbox'
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'luochen1990/rainbow'
 " the debugger plugins
 " Plug 'puremourning/vimspector'
