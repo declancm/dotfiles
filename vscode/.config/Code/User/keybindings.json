@@ -1,6 +1,6 @@
 [
     {
-       "key": "ctrl+shift+t",
+      "key": "ctrl+shift+t",
         "command": "extension.multiCommand.execute",
         "args": {
             "sequence": [

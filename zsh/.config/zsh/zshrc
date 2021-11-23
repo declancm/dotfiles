@@ -1,3 +1,5 @@
+# TODO fix home and end within command line.
+
 #!/bin/sh
 export ZDOTDIR=$HOME/.config/zsh
 HISTFILE=~/.zsh_history
