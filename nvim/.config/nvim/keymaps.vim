@@ -22,7 +22,7 @@ nnoremap Y yg_
 " staying centered
 nnoremap n nzzzv
 nnoremap N Nzzzv
-nnoremap J mzJ`z
+nnoremap <silent> J mzJ`z :delmarks z<CR>
 " adding undo break points
 inoremap , ,<c-g>u
 inoremap . .<c-g>u
