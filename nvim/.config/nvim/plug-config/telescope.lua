@@ -12,6 +12,9 @@ require('telescope').setup{
     }
   },
   pickers = {
+      find_files = {
+          find_command = { "rg", "--ignore", "-L", "--hidden", "--files" }
+      }
     -- Default configuration for builtin pickers goes here:
     -- picker_name = {
     --   picker_config_key = value,
