@@ -1,5 +1,5 @@
 # .dotfiles
-My customized configuration files for nvim, zsh etc.
+My customized configuration files for nvim, zsh etc. in Ubuntu (for both WSL2 and non-WSL2).
 
 Setup process (for debian/ubuntu):\
 git apt install stow\
