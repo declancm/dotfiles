@@ -7,6 +7,7 @@ syntax on
 " TODO fix ff for telescope not working in empty folders
 " TODO fix cn adding to clipboard when deleting a word (unless that is
 " required to do the replacing.)
+" TODO setup symbols-outline correcty
 
 " setting up vim plug
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
@@ -49,6 +50,7 @@ Plug 'hrsh7th/vim-vsnip-integ'
 " treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
+Plug 'simrat39/symbols-outline.nvim'
 " undo tree
 Plug 'mbbill/undotree'
 " git
@@ -57,6 +59,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'navarasu/onedark.nvim'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'morhetz/gruvbox'
+Plug 'hoob3rt/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'luochen1990/rainbow'
 " the debugger plugins
@@ -86,8 +89,11 @@ luafile $HOME/.config/nvim/plug-config/telescope.lua
 source $HOME/.config/nvim/plug-config/telescope.vim
 luafile $HOME/.config/nvim/plug-config/lspsaga.lua
 source $HOME/.config/nvim/plug-config/lspsaga.vim
+luafile $HOME/.config/nvim/plug-config/symbols.lua
+luafile $HOME/.config/nvim/plug-config/symbols.vim
 luafile $HOME/.config/nvim/plug-config/cmp.lua
 source $HOME/.config/nvim/plug-config/vsnips.vim
+luafile $HOME/.config/nvim/plug-config/lualine.lua
 
 set relativenumber
 set nu
