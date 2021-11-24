@@ -3,6 +3,10 @@ mcd() {
     mkdir "$1"
     cd "$1"
 }
+tvim() {
+    touch "$1"
+    nvim "$1"
+}
 alias ll='ls -alF'
 alias ls='ls -a'
 alias j='z'
