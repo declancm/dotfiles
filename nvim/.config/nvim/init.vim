@@ -73,7 +73,7 @@ Plug 'unblevable/quick-scope'
 Plug 'honza/vim-snippets'
 call plug#end()
 
-source $HOME/.config/nvim/plug-config/kommentary.lua
+luafile $HOME/.config/nvim/plug-config/kommentary.lua
 source $HOME/.config/nvim/keymaps.vim
 source $HOME/.config/nvim/autocmd.vim
 " source $HOME/.config/nvim/plug-config/coc.vim
