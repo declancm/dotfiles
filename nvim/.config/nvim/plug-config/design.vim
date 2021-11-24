@@ -21,6 +21,6 @@ if &term =~ '^xterm'
 endif
 
 " highlight the line number
-hi CursorLineNr guifg=#af00af
+hi CursorLineNr guifg=white
 set cursorline
 set cursorlineopt=number
