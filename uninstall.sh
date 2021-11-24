@@ -9,8 +9,11 @@ stow -D tmux
 if [ -L $HOME/.config/Code/User/keybindings.json ]
 then
     stow -D vscode
-    mv -f $HOME/.config/Code/User/backup/keybindings.json $HOME/.config/Code/User/keybindings.json
-    rmdir $HOME/.config/Code/User/backup
+    if [ -f $HOME/.config/Code/User/backup/keybindings.json ]
+    then
+        mv -f $HOME/.config/Code/User/backup/keybindings.json $HOME/.config/Code/User/keybindings.json
+        rmdir $HOME/.config/Code/User/backup
+    fi
 fi
 stow -D x
 stow -D zsh
