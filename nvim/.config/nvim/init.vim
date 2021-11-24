@@ -8,6 +8,7 @@ syntax on
 " TODO fix cn adding to clipboard when deleting a word (unless that is
 " required to do the replacing.)
 " TODO setup symbols-outline correcty
+" TODO change color of line number to white
 
 " setting up vim plug
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
