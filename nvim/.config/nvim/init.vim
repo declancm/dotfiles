@@ -18,6 +18,7 @@ endif
 
 " pre plugin commands
 lua vim.g.kommentary_create_default_mappings = false
+set background=dark
 
 call plug#begin('~/.vim/plugged')
 " snippets
