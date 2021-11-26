@@ -8,6 +8,8 @@ syntax on
 " required to do the replacing.)
 " TODO setup symbols-outline correcty
 " TODO let '_' between words count as a space for commands such as 'daw'
+" TODO fix colorizer
+" TODO change color of comments for tokyodark theme
 
 " setting up vim plug
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
@@ -78,9 +80,8 @@ Plug 'unblevable/quick-scope'
 Plug 'honza/vim-snippets'
 call plug#end()
 
-lua require'colorizer'.setup()
+" lua require'colorizer'.setup()
 
-luafile $HOME/.config/nvim/plug-config/kommentary.lua
 source $HOME/.config/nvim/keymaps.vim
 source $HOME/.config/nvim/autocmd.vim
 " source $HOME/.config/nvim/plug-config/coc.vim
@@ -102,6 +103,7 @@ luafile $HOME/.config/nvim/plug-config/symbols.lua
 source $HOME/.config/nvim/plug-config/symbols.vim
 luafile $HOME/.config/nvim/plug-config/cmp.lua
 source $HOME/.config/nvim/plug-config/vsnips.vim
+luafile $HOME/.config/nvim/plug-config/kommentary.lua
 
 set relativenumber
 set nu
