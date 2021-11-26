@@ -4,11 +4,16 @@
 " let g:onedark_italic_comment = v:false
 "colorscheme onedark
 
-set termguicolors
 let g:tokyonight_style = 'storm'
 let g:tokyonight_transparent = v:true
 let g:tokyonight_italic_comments = v:false
 colorscheme tokyonight
+
+let g:tokyodark_transparent_background = 1
+let g:tokyodark_enable_italic_comment = 0
+let g:tokyodark_enable_italic = 1
+let g:tokyodark_color_gamma = "0.8"
+colorscheme tokyodark
 
 "colorscheme gruvbox
 "colorscheme dracula
