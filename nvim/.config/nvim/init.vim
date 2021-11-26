@@ -7,6 +7,7 @@ syntax on
 " TODO fix cn adding to clipboard when deleting a word (unless that is
 " required to do the replacing.)
 " TODO setup symbols-outline correcty
+" TODO let '_' between words count as a space for commands such as 'daw'
 
 " setting up vim plug
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
@@ -59,7 +60,9 @@ Plug 'tpope/vim-fugitive'
 " theme and colors
 Plug 'navarasu/onedark.nvim'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'tiagovla/tokyodark.nvim'
 Plug 'morhetz/gruvbox'
+Plug 'dracula/vim'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'luochen1990/rainbow'
