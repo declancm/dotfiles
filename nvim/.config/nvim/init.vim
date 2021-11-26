@@ -63,6 +63,7 @@ Plug 'morhetz/gruvbox'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'luochen1990/rainbow'
+Plug 'norcalli/nvim-colorizer.lua'
 " the debugger plugins
 " Plug 'puremourning/vimspector'
 Plug 'szw/vim-maximizer'
@@ -95,6 +96,8 @@ source $HOME/.config/nvim/plug-config/symbols.vim
 luafile $HOME/.config/nvim/plug-config/cmp.lua
 source $HOME/.config/nvim/plug-config/vsnips.vim
 luafile $HOME/.config/nvim/plug-config/lualine.lua
+
+lua require'colorizer'.setup()
 
 set relativenumber
 set nu
