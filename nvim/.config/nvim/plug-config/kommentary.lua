@@ -10,6 +10,6 @@ require('kommentary.config').configure_language("vim", {
     single_line_comment_string = "\"",
 })
 
-vim.api.nvim_set_keymap("n", "gcc", "<Plug>kommentary_line_default", {})
-vim.api.nvim_set_keymap("n", "gc", "<Plug>kommentary_motion_default", {})
-vim.api.nvim_set_keymap("v", "gc", "<Plug>kommentary_visual_default<C-c>", {})
+vim.api.nvim_set_keymap("n", "<leader>cc", "<Plug>kommentary_line_default", {})
+vim.api.nvim_set_keymap("n", "<leader>c", "<Plug>kommentary_motion_default", {})
+vim.api.nvim_set_keymap("v", "<leader>c", "<Plug>kommentary_visual_default<C-c>", {})
