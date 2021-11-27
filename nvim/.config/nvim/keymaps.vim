@@ -42,21 +42,26 @@ inoremap <C-down> <esc>:m .+1<CR>==a
 nnoremap <C-up> :m .-2<CR>==
 nnoremap <C-down> :m .+1<CR>==
 " replace a word then press . to change the next occurrence of it.
-nnoremap cn *``cgn
-nnoremap cN *``cgN
+nnoremap cn *``"_cgn
+nnoremap cN *``"_cgN
 " paste then delete off clipboard
 xnoremap <leader>p "_dP
 " yank to global clipboard
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
 nnoremap <leader>Y gg"+yG
-" d and x are now delete without yanking
+" c, d and x are now delete without yanking
 nnoremap x "_x
 nnoremap d "_d
 nnoremap D "_D
 vnoremap d "_d
-" leader d is now cut
+nnoremap c "_c
+nnoremap C "_C
+vnoremap c "_c
+" leader c and d is now cut
 nnoremap <leader>d ""d
 nnoremap <leader>D ""D
 vnoremap <leader>d ""d
-
+nnoremap <leader>c ""c
+nnoremap <leader>C ""C
+vnoremap <leader>c ""c
