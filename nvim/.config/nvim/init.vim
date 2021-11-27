@@ -10,6 +10,7 @@ syntax on
 " TODO let '_' between words count as a space for commands such as 'daw'
 " TODO change color of TODO comments
 " TODO practice relative line jumping with vim-be-good
+" TODO add plug in for automatically adding pairs of braces?
 
 " setting up vim plug
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
@@ -69,6 +70,7 @@ Plug 'Mofiqul/dracula.nvim'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'luochen1990/rainbow'
+Plug 'folke/todo-comments.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
 " the debugger plugins
 " Plug 'puremourning/vimspector'
@@ -103,6 +105,7 @@ source $HOME/.config/nvim/plug-config/vsnips.vim
 source $HOME/.config/nvim/plug-config/design.vim
 luafile $HOME/.config/nvim/plug-config/lualine.lua
 luafile $HOME/.config/nvim/plug-config/kommentary.lua
+luafile $HOME/.config/nvim/plug-config/todo.lua
 
 lua require'colorizer'.setup()
 
