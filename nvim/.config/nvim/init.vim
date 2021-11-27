@@ -9,7 +9,8 @@ syntax on
 " TODO setup symbols-outline correcty
 " TODO let '_' between words count as a space for commands such as 'daw'
 " TODO fix colorizer
-" TODO change color of comments for tokyodark theme
+" TODO change color of TODO comments
+" TODO practice relative line jumping with vim-be-good
 
 " setting up vim plug
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
