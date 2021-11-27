@@ -1,7 +1,5 @@
 " design
 
-" highlight Comment ctermfg=DarkYellow guifg=DarkYellow
-
 " let g:onedark_style = 'dark'
 " let g:onedark_transparent_background = v:true
 " let g:onedark_italic_comment = v:false
@@ -18,20 +16,23 @@
 " let g:tokyodark_color_gamma = "0.8"
 " colorscheme tokyodark
 
-" colorscheme dracula
+let g:dracula_transparent_bg = 1
+colorscheme dracula
+highlight ColorColumn ctermbg=0 guibg=#191A21
 
-let g:nvcode_termcolors=256
-colorscheme onedark
-if (has("termguicolors"))
-    set termguicolors
-    hi LineNr ctermbg=NONE guibg=NONE
-endif
-highlight Comment ctermfg=DarkYellow guifg=Gray
+" let g:nvcode_termcolors=256
+" colorscheme onedark
+" if (has("termguicolors"))
+"     set termguicolors
+"     hi LineNr ctermbg=NONE guibg=NONE
+" endif
+" highlight Comment ctermfg=Gray guifg=Gray
 
-highlight StatusLine ctermbg=0 guibg=Purple
+" Status line color is used when lualine is not used:
+" highlight StatusLine ctermbg=0 guibg=Purple
 let g:rainbow_active = 1
 set colorcolumn=80
-" highlight ColorColumn ctermbg=0 guibg=Black
+" highlight ColorColumn ctermbg=0 guibg=NONE
 highlight Normal guibg=none
 
 " set up cursor for different modes

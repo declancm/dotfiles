@@ -8,7 +8,6 @@ syntax on
 " required to do the replacing.)
 " TODO setup symbols-outline correcty
 " TODO let '_' between words count as a space for commands such as 'daw'
-" TODO fix colorizer
 " TODO change color of TODO comments
 " TODO practice relative line jumping with vim-be-good
 
@@ -62,11 +61,11 @@ Plug 'mbbill/undotree'
 " git
 Plug 'tpope/vim-fugitive'
 " theme and colors
-" Plug 'navarasu/onedark.nvim'
+Plug 'navarasu/onedark.nvim'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'tiagovla/tokyodark.nvim'
-Plug 'dracula/vim',{'as':'dracula'}
-Plug 'christianchiarulli/nvcode-color-schemes.vim'
+Plug 'Mofiqul/dracula.nvim'
+" Plug 'christianchiarulli/nvcode-color-schemes.vim'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'luochen1990/rainbow'
@@ -79,9 +78,8 @@ Plug 'szw/vim-maximizer'
 " Plug 'kevinoid/vim-jsonc'
 Plug 'unblevable/quick-scope'
 Plug 'honza/vim-snippets'
+Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
-
-" lua require'colorizer'.setup()
 
 source $HOME/.config/nvim/keymaps.vim
 source $HOME/.config/nvim/autocmd.vim
@@ -105,6 +103,8 @@ source $HOME/.config/nvim/plug-config/symbols.vim
 luafile $HOME/.config/nvim/plug-config/cmp.lua
 source $HOME/.config/nvim/plug-config/vsnips.vim
 luafile $HOME/.config/nvim/plug-config/kommentary.lua
+
+lua require'colorizer'.setup()
 
 set relativenumber
 set nu

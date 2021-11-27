@@ -3,7 +3,7 @@ if (not status) then return end
 lualine.setup {
   options = {
     icons_enabled = true,
-    theme = 'onedark',
+    theme = 'dracula-nvim',--onedark, tokyonight or dracula-nvim
     section_separators = {'', ''},
     component_separators = {'', ''},
     disabled_filetypes = {}
