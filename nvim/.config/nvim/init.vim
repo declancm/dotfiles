@@ -61,11 +61,11 @@ Plug 'mbbill/undotree'
 " git
 Plug 'tpope/vim-fugitive'
 " theme and colors
-Plug 'navarasu/onedark.nvim'
+" Plug 'navarasu/onedark.nvim'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'tiagovla/tokyodark.nvim'
-Plug 'morhetz/gruvbox'
-Plug 'dracula/vim'
+Plug 'dracula/vim',{'as':'dracula'}
+Plug 'christianchiarulli/nvcode-color-schemes.vim'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'luochen1990/rainbow'

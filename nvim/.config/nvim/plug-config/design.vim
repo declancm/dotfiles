@@ -1,9 +1,11 @@
 " design
 
-let g:onedark_style = 'dark'
-let g:onedark_transparent_background = v:true
-let g:onedark_italic_comment = v:false
-colorscheme onedark
+" highlight Comment ctermfg=DarkYellow guifg=DarkYellow
+
+" let g:onedark_style = 'dark'
+" let g:onedark_transparent_background = v:true
+" let g:onedark_italic_comment = v:false
+" colorscheme onedark
 
 " let g:tokyonight_style = 'storm'
 " let g:tokyonight_transparent = v:true
@@ -16,10 +18,15 @@ colorscheme onedark
 " let g:tokyodark_color_gamma = "0.8"
 " colorscheme tokyodark
 
-"colorscheme gruvbox
-"colorscheme dracula
+" colorscheme dracula
 
-highlight Comment ctermfg=DarkYellow
+let g:nvcode_termcolors=256
+colorscheme onedark
+if (has("termguicolors"))
+    set termguicolors
+    hi LineNr ctermbg=NONE guibg=NONE
+endif
+highlight Comment ctermfg=DarkYellow guifg=Gray
 
 highlight StatusLine ctermbg=0 guibg=Purple
 let g:rainbow_active = 1
