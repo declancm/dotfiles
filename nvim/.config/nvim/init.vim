@@ -87,8 +87,6 @@ source $HOME/.config/nvim/autocmd.vim
 source $HOME/.config/nvim/plug-config/quickscope.vim
 " source $HOME/.config/nvim/plug-config/snippets.vim
 " source $HOME/.config/nvim/plug-config/fzf.vim
-source $HOME/.config/nvim/plug-config/design.vim
-luafile $HOME/.config/nvim/plug-config/lualine.lua
 luafile $HOME/.config/nvim/plug-config/lspconfig.lua
 source $HOME/.config/nvim/plug-config/lspconfig.vim
 luafile $HOME/.config/nvim/plug-config/compeconfig.lua
@@ -102,6 +100,8 @@ luafile $HOME/.config/nvim/plug-config/symbols.lua
 source $HOME/.config/nvim/plug-config/symbols.vim
 luafile $HOME/.config/nvim/plug-config/cmp.lua
 source $HOME/.config/nvim/plug-config/vsnips.vim
+source $HOME/.config/nvim/plug-config/design.vim
+luafile $HOME/.config/nvim/plug-config/lualine.lua
 luafile $HOME/.config/nvim/plug-config/kommentary.lua
 
 lua require'colorizer'.setup()
