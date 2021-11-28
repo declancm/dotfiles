@@ -1,7 +1,10 @@
 " design
+
+" testing theme:
 " TODO
 " FIX
 " HACK
+
 " let g:onedark_style = 'dark'
 " let g:onedark_transparent_background = v:true
 " let g:onedark_italic_comment = v:false
@@ -20,7 +23,7 @@
 
 let g:dracula_transparent_bg = 1
 colorscheme dracula
-highlight ColorColumn ctermbg=0 guibg=#191A21
+" highlight ColorColumn ctermbg=0 guibg=#191A21
 
 " let g:nvcode_termcolors=256
 " colorscheme onedark
@@ -32,11 +35,12 @@ highlight ColorColumn ctermbg=0 guibg=#191A21
 
 " Status line color is used when lualine is not used:
 " highlight StatusLine ctermbg=0 guibg=Purple
-let g:rainbow_active = 1
-set colorcolumn=80
-" highlight ColorColumn ctermbg=0 guibg=NONE
-highlight Normal guibg=none
 
+" let g:rainbow_active = 1
+" set colorcolumn=80
+highlight ColorColumn ctermbg=0 guibg=NONE
+
+highlight Normal guibg=none
 " set up cursor for different modes
 if &term =~ '^xterm'
     " normal mode
