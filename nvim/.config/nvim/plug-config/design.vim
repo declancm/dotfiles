@@ -15,15 +15,15 @@
 " let g:tokyonight_italic_comments = v:false
 " colorscheme tokyonight
 
-" let g:tokyodark_transparent_background = 1
-" let g:tokyodark_enable_italic_comment = 0
-" let g:tokyodark_enable_italic = 1
-" let g:tokyodark_color_gamma = "0.8"
-" colorscheme tokyodark
+" let g:material_style = 'palenight'
+" lua << EOF
+" require('material').setup()
+" EOF
+" colorscheme material
 
 let g:dracula_transparent_bg = 1
 colorscheme dracula
-" highlight ColorColumn ctermbg=0 guibg=#191A21
+highlight ColorColumn ctermbg=0 guibg=#191A21
 
 " let g:nvcode_termcolors=256
 " colorscheme onedark

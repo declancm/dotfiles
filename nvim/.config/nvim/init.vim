@@ -66,6 +66,7 @@ Plug 'navarasu/onedark.nvim'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'tiagovla/tokyodark.nvim'
 Plug 'Mofiqul/dracula.nvim'
+Plug 'marko-cerovac/material.nvim'
 " Plug 'christianchiarulli/nvcode-color-schemes.vim'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
@@ -108,8 +109,8 @@ source $HOME/.config/nvim/plug-config/vsnips.vim
 source $HOME/.config/nvim/plug-config/design.vim
 luafile $HOME/.config/nvim/plug-config/lualine.lua
 luafile $HOME/.config/nvim/plug-config/kommentary.lua
-luafile $HOME/.config/nvim/plug-config/todo.lua
 luafile $HOME/.config/nvim/plug-config/lspcolors.lua
+luafile $HOME/.config/nvim/plug-config/todo.lua
 
 lua require'colorizer'.setup()
 
