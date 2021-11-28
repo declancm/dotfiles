@@ -3,4 +3,4 @@ My customized configuration files for nvim, zsh etc. in Ubuntu (for both WSL2 an
 
 Setup process (for debian/ubuntu):\
 git apt install stow\
-stow <each folder within the .dotfiles>
+./install.sh
