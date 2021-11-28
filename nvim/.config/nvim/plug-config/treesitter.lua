@@ -13,16 +13,16 @@ require 'nvim-treesitter.configs'.setup {
         extended_mode = true,
         max_file_lines = nil,
         colors = {
-            "#50fa7b",
-            "#BD93F9",
-            "#F1FA8C",
-            "#8BE9FD"
+            "#69FF94",
+            "#FF92DF",
+            "#FFFFA5",
+            "#A4FFFF"
         },
         termcolors = {
-            "#50fa7b",
-            "#BD93F9",
-            "#F1FA8C",
-            "#8BE9FD"
+            "#69FF94",
+            "#FF92DF",
+            "#FFFFA5",
+            "#A4FFFF"
         }
     }
 }
