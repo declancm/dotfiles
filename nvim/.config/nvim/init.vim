@@ -11,6 +11,7 @@ syntax on
 " TODO change color of TODO comments
 " TODO practice relative line jumping with vim-be-good
 " TODO add plug in for automatically adding pairs of braces?
+" FIX rainbow parethesis
 
 " setting up vim plug
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
@@ -70,16 +71,17 @@ Plug 'marko-cerovac/material.nvim'
 " Plug 'christianchiarulli/nvcode-color-schemes.vim'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'luochen1990/rainbow'
+" Plug 'luochen1990/rainbow'
+Plug 'p00f/nvim-ts-rainbow'
 Plug 'folke/todo-comments.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'folke/lsp-colors.nvim'
 " the debugger plugins
 " Plug 'puremourning/vimspector'
-Plug 'szw/vim-maximizer'
 " CoC auto completion
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'kevinoid/vim-jsonc'
+Plug 'szw/vim-maximizer'
 Plug 'unblevable/quick-scope'
 Plug 'honza/vim-snippets'
 Plug 'folke/trouble.nvim'
@@ -113,6 +115,7 @@ luafile $HOME/.config/nvim/plug-config/lspcolors.lua
 luafile $HOME/.config/nvim/plug-config/todo.lua
 
 lua require'colorizer'.setup()
+let g:rainbow_active = 1
 
 set relativenumber
 set nu
