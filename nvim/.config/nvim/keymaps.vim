@@ -65,3 +65,5 @@ vnoremap <leader>d ""d
 nnoremap <leader>c ""c
 nnoremap <leader>C ""C
 vnoremap <leader>c ""c
+" trouble toggle keymap
+" nnoremap <leader>tt :TroubleToggle<CR>

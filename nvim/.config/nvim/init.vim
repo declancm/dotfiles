@@ -72,6 +72,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'luochen1990/rainbow'
 Plug 'folke/todo-comments.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
+Plug 'folke/lsp-colors.nvim'
 " the debugger plugins
 " Plug 'puremourning/vimspector'
 Plug 'szw/vim-maximizer'
@@ -80,6 +81,7 @@ Plug 'szw/vim-maximizer'
 " Plug 'kevinoid/vim-jsonc'
 Plug 'unblevable/quick-scope'
 Plug 'honza/vim-snippets'
+Plug 'folke/trouble.nvim'
 Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
 
@@ -101,11 +103,13 @@ source $HOME/.config/nvim/plug-config/lspsaga.vim
 luafile $HOME/.config/nvim/plug-config/symbols.lua
 source $HOME/.config/nvim/plug-config/symbols.vim
 luafile $HOME/.config/nvim/plug-config/cmp.lua
+luafile $HOME/.config/nvim/plug-config/trouble.lua
 source $HOME/.config/nvim/plug-config/vsnips.vim
 source $HOME/.config/nvim/plug-config/design.vim
 luafile $HOME/.config/nvim/plug-config/lualine.lua
 luafile $HOME/.config/nvim/plug-config/kommentary.lua
 luafile $HOME/.config/nvim/plug-config/todo.lua
+luafile $HOME/.config/nvim/plug-config/lspcolors.lua
 
 lua require'colorizer'.setup()
 

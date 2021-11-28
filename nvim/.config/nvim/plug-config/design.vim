@@ -1,5 +1,7 @@
 " design
-
+" TODO
+" FIX
+" HACK
 " let g:onedark_style = 'dark'
 " let g:onedark_transparent_background = v:true
 " let g:onedark_italic_comment = v:false
