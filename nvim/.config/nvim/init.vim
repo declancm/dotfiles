@@ -115,7 +115,6 @@ luafile $HOME/.config/nvim/plug-config/lspcolors.lua
 luafile $HOME/.config/nvim/plug-config/todo.lua
 
 lua require'colorizer'.setup()
-let g:rainbow_active = 1
 
 set relativenumber
 set nu
