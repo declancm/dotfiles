@@ -5,10 +5,10 @@
 " FIX
 " HACK
 
-let g:onedark_style = 'dark'
-let g:onedark_transparent_background = v:true
-let g:onedark_italic_comment = v:false
-colorscheme onedark
+" let g:onedark_style = 'dark'
+" let g:onedark_transparent_background = v:true
+" let g:onedark_italic_comment = v:false
+" colorscheme onedark
 
 " let g:tokyonight_style = 'storm'
 " let g:tokyonight_transparent = v:true
@@ -21,8 +21,8 @@ colorscheme onedark
 " EOF
 " colorscheme material
 
-" let g:dracula_transparent_bg = 1
-" colorscheme dracula
+let g:dracula_transparent_bg = 1
+colorscheme dracula
 " highlight ColorColumn ctermbg=0 guibg=#191A21
 
 " let g:nvcode_termcolors=256

@@ -71,7 +71,6 @@ Plug 'marko-cerovac/material.nvim'
 " Plug 'christianchiarulli/nvcode-color-schemes.vim'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
-" Plug 'luochen1990/rainbow'
 Plug 'p00f/nvim-ts-rainbow'
 Plug 'folke/todo-comments.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
@@ -97,6 +96,7 @@ source $HOME/.config/nvim/plug-config/quickscope.vim
 luafile $HOME/.config/nvim/plug-config/lspconfig.lua
 source $HOME/.config/nvim/plug-config/lspconfig.vim
 luafile $HOME/.config/nvim/plug-config/compeconfig.lua
+source $HOME/.config/nvim/plug-config/design.vim
 luafile $HOME/.config/nvim/plug-config/treesitter.lua
 source $HOME/.config/nvim/plug-config/treesitter.vim
 luafile $HOME/.config/nvim/plug-config/telescope.lua
@@ -108,7 +108,6 @@ source $HOME/.config/nvim/plug-config/symbols.vim
 luafile $HOME/.config/nvim/plug-config/cmp.lua
 luafile $HOME/.config/nvim/plug-config/trouble.lua
 source $HOME/.config/nvim/plug-config/vsnips.vim
-source $HOME/.config/nvim/plug-config/design.vim
 luafile $HOME/.config/nvim/plug-config/lualine.lua
 luafile $HOME/.config/nvim/plug-config/kommentary.lua
 luafile $HOME/.config/nvim/plug-config/lspcolors.lua
