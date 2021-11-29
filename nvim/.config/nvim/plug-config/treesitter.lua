@@ -14,15 +14,15 @@ require 'nvim-treesitter.configs'.setup {
         max_file_lines = nil
     --     colors = {
     --         "#50fa7b", --Add these colours to: '$HOME/.vim/plugged/nvim-ts-rainbow/lua/rainbow/colors.lua'
-    --         "#FF79C6",
-    --         "#F1FA8C",
-    --         "#8BE9FD"
+    --         "#FFB86C",
+    --         "#8BE9FD",
+    --         "#FF79C6"
     --     },
     --     termcolors = {
     --         "#50fa7b",
-    --         "#FF79C6",
-    --         "#F1FA8C",
-    --         "#8BE9FD"
+    --         "#FFB86C",
+    --         "#8BE9FD",
+    --         "#FF79C6"
     --     }
     }
 }
