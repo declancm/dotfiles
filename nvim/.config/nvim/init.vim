@@ -85,6 +85,7 @@ Plug 'szw/vim-maximizer'
 Plug 'unblevable/quick-scope'
 Plug 'honza/vim-snippets'
 Plug 'folke/trouble.nvim'
+" Plug 'ThePrimeagen/refactoring.nvim'
 Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
 
@@ -102,6 +103,7 @@ luafile $HOME/.config/nvim/plug-config/treesitter.lua
 source $HOME/.config/nvim/plug-config/treesitter.vim
 luafile $HOME/.config/nvim/plug-config/telescope.lua
 source $HOME/.config/nvim/plug-config/telescope.vim
+" luafile $HOME/.config/nvim/plug-config/refactoring.lua
 luafile $HOME/.config/nvim/plug-config/lspsaga.lua
 source $HOME/.config/nvim/plug-config/lspsaga.vim
 luafile $HOME/.config/nvim/plug-config/symbols.lua
