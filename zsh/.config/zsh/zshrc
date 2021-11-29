@@ -14,6 +14,8 @@ zle_highlight=('paste:none')
 # beeping is annoying
 unsetopt BEEP
 
+# let terminal work in vim
+stty start undef stop undef
 
 # completions
 autoload -Uz compinit
