@@ -17,3 +17,4 @@ then
 fi
 stow -D x
 stow -D zsh
+rm -rf ~/.tmux
