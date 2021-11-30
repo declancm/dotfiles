@@ -88,8 +88,6 @@ xset r rate 210 40
 xset r rate 210 40
 
 # Change zsh-autosuggestions appearance:
-typeset -A ZSH_HIGHLIGHT_STYLES
-ZSH_HIGHLIGHT_STYLES='none'
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#808080"
 
 # Environment variables set everywhere
