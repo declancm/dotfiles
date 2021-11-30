@@ -87,6 +87,7 @@ Plug 'honza/vim-snippets'
 Plug 'folke/trouble.nvim'
 " Plug 'ThePrimeagen/refactoring.nvim'
 Plug 'ThePrimeagen/vim-be-good'
+Plug 'tpope/vim-obsession'
 call plug#end()
 
 source $HOME/.config/nvim/keymaps.vim
