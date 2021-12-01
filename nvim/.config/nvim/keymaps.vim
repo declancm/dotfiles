@@ -44,9 +44,8 @@ nnoremap <C-down> :m .+1<CR>==
 " replace a word then press . to change the next occurrence of it.
 nnoremap cn *``"_cgn
 nnoremap cN *``"_cgN
-" paste then delete off clipboard
-xnoremap <leader>p "_dP
-nnoremap p "+p
+" paste from global clipboard
+nnoremap <leader>p "+]p
 " yank to global clipboard
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
@@ -68,3 +67,5 @@ nnoremap <leader>C ""C
 vnoremap <leader>c ""c
 " trouble toggle keymap
 " nnoremap <leader>tt :TroubleToggle<CR>
+
+" nnoremap <silent> <F9> :set paste<CR> <F8> :set nopaste<CR>
