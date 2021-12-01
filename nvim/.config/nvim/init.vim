@@ -83,11 +83,11 @@ Plug 'folke/lsp-colors.nvim'
 " Plug 'kevinoid/vim-jsonc'
 Plug 'szw/vim-maximizer'
 Plug 'unblevable/quick-scope'
-Plug 'honza/vim-snippets'
+Plug 'tpope/vim-obsession'
 Plug 'folke/trouble.nvim'
+Plug 'honza/vim-snippets'
 " Plug 'ThePrimeagen/refactoring.nvim'
 Plug 'ThePrimeagen/vim-be-good'
-Plug 'tpope/vim-obsession'
 call plug#end()
 
 source $HOME/.config/nvim/keymaps.vim
