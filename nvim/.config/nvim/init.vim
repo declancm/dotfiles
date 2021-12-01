@@ -145,6 +145,8 @@ set wrapmargin=0
 set cmdheight=2
 set updatetime=50
 set shortmess+=c
+" set cindent
+" set cino+=g0
 
 let g:python3_host_prog = '/bin/python3'
 let g:python_host_prog = '/bin/python2'
