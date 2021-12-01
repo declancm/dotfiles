@@ -46,6 +46,7 @@ nnoremap cn *``"_cgn
 nnoremap cN *``"_cgN
 " paste then delete off clipboard
 xnoremap <leader>p "_dP
+nnoremap p "+p
 " yank to global clipboard
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
