@@ -35,6 +35,8 @@ call plug#begin('~/.vim/plugged')
 " snippets
 " Plug 'honza/vim-snippets'
 " Plug 'SirVer/ultisnips'
+Plug 'L3MON4D3/LuaSnip'
+Plug 'rafamadriz/friendly-snippets'
 " Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 Plug 'tami5/lspsaga.nvim'
 " telescope requirements
@@ -53,6 +55,7 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
+" Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
 " commenting
 Plug 'b3nj5m1n/kommentary'
 " vsnips
