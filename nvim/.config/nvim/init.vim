@@ -119,7 +119,6 @@ luafile $HOME/.config/nvim/plug-config/lspsaga.lua
 source $HOME/.config/nvim/plug-config/lspsaga.vim
 luafile $HOME/.config/nvim/plug-config/symbols.lua
 source $HOME/.config/nvim/plug-config/symbols.vim
-" source $HOME/.config/nvim/plug-config/snippets.vim
 " luafile $HOME/.config/nvim/plug-config/cmp-nvim-ultisnips.lua
 luafile $HOME/.config/nvim/plug-config/cmp.lua
 luafile $HOME/.config/nvim/plug-config/trouble.lua
