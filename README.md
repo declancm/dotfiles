@@ -7,8 +7,8 @@ My customized configuration files for nvim, zsh etc. in Ubuntu (for both WSL2 an
 sudo apt install stow
 
 **Install the .dotfiles:** \
-https://github.com/declancm/.dotfiles \
-cd ~/.dotfiles/ \
+git clone https://github.com/declancm/.dotfiles ~/.dotfiles \
+cd ~/.dotfiles \
 ./install.sh
 
 **Install tmux plugin manager:** \
