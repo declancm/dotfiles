@@ -3,17 +3,17 @@ My customized configuration files for nvim, zsh etc. in Ubuntu (for both WSL2 an
 
 ## Setup commands (for debian/ubuntu):
 
-**Install stow:**\
+**Install stow:** \
 sudo apt install stow
 
-**Install the .dotfiles:**\
-https://github.com/declancm/.dotfiles\
-cd ~/.dotfiles/\
+**Install the .dotfiles:** \
+https://github.com/declancm/.dotfiles \
+cd ~/.dotfiles/ \
 ./install.sh
 
-**Install tmux plugin manager:**\
+**Install tmux plugin manager:** \
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-**Install nvim plugin manager:**\
+**Install nvim plugin manager:** \
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \\ \
 &nbsp;&nbsp;&nbsp;&nbsp;https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
