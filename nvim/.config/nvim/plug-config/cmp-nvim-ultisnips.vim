@@ -32,10 +32,10 @@ use({
         -- more sources
       },
       -- Configure for <TAB> people
-      -- - <TAB> and <S-TAB>: cycle forward and backward through autocompletion items
-      -- - <TAB> and <S-TAB>: cycle forward and backward through snippets tabstops and placeholders
-      -- - <TAB> to expand snippet when no completion item selected (you don't need to select the snippet from completion item to expand)
-      -- - <C-space> to expand the selected snippet from completion menu
+      - <TAB> and <S-TAB>: cycle forward and backward through autocompletion items
+      - <TAB> and <S-TAB>: cycle forward and backward through snippets tabstops and placeholders
+      - <TAB> to expand snippet when no completion item selected (you don't need to select the snippet from completion item to expand)
+      - <C-space> to expand the selected snippet from completion menu
       mapping = {
         ["<C-Space>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
@@ -53,7 +53,7 @@ use({
           "i",
           "s",
           -- add this line when using cmp-cmdline:
-          -- "c",
+          "c",
         }),
         ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.get_selected_entry() == nil and vim.fn["UltiSnips#CanExpandSnippet"]() == 1 then
@@ -71,7 +71,7 @@ use({
           "i",
           "s",
           -- add this line when using cmp-cmdline:
-          -- "c",
+          "c",
         }),
         ["<S-Tab>"] = cmp.mapping(function(fallback)
           if vim.fn["UltiSnips#CanJumpBackwards"]() == 1 then
@@ -85,7 +85,7 @@ use({
           "i",
           "s",
           -- add this line when using cmp-cmdline:
-          -- "c",
+          "c",
         }),
       },
     })

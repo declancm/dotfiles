@@ -18,11 +18,11 @@ syntax on
 " TODO add printf debugging
 
 " setting up vim plug
-let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
-if empty(glob(data_dir . '/autoload/plug.vim'))
-  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
+" let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+" if empty(glob(data_dir . '/autoload/plug.vim'))
+"   silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+"   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+" endif
 
 " pre plugin commands
 lua vim.g.kommentary_create_default_mappings = false
@@ -45,8 +45,9 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 "Plug 'nvim-telescope/telescope-fzy-native.nvim'
 " lsp
 Plug 'neovim/nvim-lspconfig'
-" Plug 'hrsh7th/nvim-compe'
+" Plug 'nvim-lua/lsp_extensions.nvim'
 " completion
+" Plug 'hrsh7th/nvim-compe'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
@@ -100,7 +101,6 @@ source $HOME/.config/nvim/keymaps.vim
 source $HOME/.config/nvim/autocmd.vim
 " source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/plug-config/quickscope.vim
-" source $HOME/.config/nvim/plug-config/snippets.vim
 " source $HOME/.config/nvim/plug-config/fzf.vim
 luafile $HOME/.config/nvim/plug-config/lspconfig.lua
 source $HOME/.config/nvim/plug-config/lspconfig.vim
@@ -115,8 +115,9 @@ luafile $HOME/.config/nvim/plug-config/lspsaga.lua
 source $HOME/.config/nvim/plug-config/lspsaga.vim
 luafile $HOME/.config/nvim/plug-config/symbols.lua
 source $HOME/.config/nvim/plug-config/symbols.vim
-luafile $HOME/.config/nvim/plug-config/cmp.lua
+" source $HOME/.config/nvim/plug-config/snippets.vim
 source $HOME/.config/nvim/plug-config/cmp-nvim-ultisnips.vim
+luafile $HOME/.config/nvim/plug-config/cmp.lua
 luafile $HOME/.config/nvim/plug-config/trouble.lua
 " source $HOME/.config/nvim/plug-config/vsnips.vim
 luafile $HOME/.config/nvim/plug-config/lualine.lua
