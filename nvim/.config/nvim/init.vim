@@ -1,5 +1,8 @@
 syntax on
 
+"FIX CMP
+"FIX ultisnips
+
 " TODO go over the keybinds
 " TODO go over settings for cmp and vsnips and personalize
 " TODO learn how to use vsnips
@@ -30,8 +33,9 @@ let g:python_host_prog = '/bin/python2'
 
 call plug#begin('~/.vim/plugged')
 " snippets
-" Plug 'SirVer/ultisnips'
-" Plug 'honza/vim-snippets'
+Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
+Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 Plug 'tami5/lspsaga.nvim'
 " telescope requirements
 Plug 'nvim-lua/popup.nvim'
@@ -41,7 +45,7 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 "Plug 'nvim-telescope/telescope-fzy-native.nvim'
 " lsp
 Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/nvim-compe'
+" Plug 'hrsh7th/nvim-compe'
 " completion
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
@@ -51,9 +55,9 @@ Plug 'hrsh7th/nvim-cmp'
 " commenting
 Plug 'b3nj5m1n/kommentary'
 " vsnips
-Plug 'hrsh7th/cmp-vsnip'
-Plug 'hrsh7th/vim-vsnip'
-Plug 'hrsh7th/vim-vsnip-integ'
+" Plug 'hrsh7th/cmp-vsnip'
+" Plug 'hrsh7th/vim-vsnip'
+" Plug 'hrsh7th/vim-vsnip-integ'
 " fzf
 " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " Plug 'junegunn/fzf.vim'
@@ -100,7 +104,7 @@ source $HOME/.config/nvim/plug-config/quickscope.vim
 " source $HOME/.config/nvim/plug-config/fzf.vim
 luafile $HOME/.config/nvim/plug-config/lspconfig.lua
 source $HOME/.config/nvim/plug-config/lspconfig.vim
-luafile $HOME/.config/nvim/plug-config/compeconfig.lua
+" luafile $HOME/.config/nvim/plug-config/compeconfig.lua
 source $HOME/.config/nvim/plug-config/design.vim
 luafile $HOME/.config/nvim/plug-config/treesitter.lua
 source $HOME/.config/nvim/plug-config/treesitter.vim
@@ -112,6 +116,7 @@ source $HOME/.config/nvim/plug-config/lspsaga.vim
 luafile $HOME/.config/nvim/plug-config/symbols.lua
 source $HOME/.config/nvim/plug-config/symbols.vim
 luafile $HOME/.config/nvim/plug-config/cmp.lua
+luafile $HOME/.config/nvim/plug-config/cmp-nvim-ultisnips.lua
 luafile $HOME/.config/nvim/plug-config/trouble.lua
 " source $HOME/.config/nvim/plug-config/vsnips.vim
 luafile $HOME/.config/nvim/plug-config/lualine.lua
