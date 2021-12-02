@@ -147,6 +147,9 @@ set updatetime=50
 set shortmess+=c
 " set cindent
 " set cino+=g0
+set modifiable
+set splitbelow
+set splitright
 set pastetoggle=<F9>
 
 let g:python3_host_prog = '/bin/python3'
