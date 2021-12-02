@@ -33,12 +33,9 @@ let g:python_host_prog = '/bin/python2'
 
 call plug#begin('~/.vim/plugged')
 " snippets
-" Plug 'honza/vim-snippets'
-" Plug 'SirVer/ultisnips'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'rafamadriz/friendly-snippets'
-" Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 Plug 'tami5/lspsaga.nvim'
 " telescope requirements
 Plug 'nvim-lua/popup.nvim'
@@ -50,7 +47,6 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'neovim/nvim-lspconfig'
 " Plug 'nvim-lua/lsp_extensions.nvim'
 " completion
-" Plug 'hrsh7th/nvim-compe'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
@@ -59,14 +55,6 @@ Plug 'hrsh7th/nvim-cmp'
 " Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
 " commenting
 Plug 'b3nj5m1n/kommentary'
-" vsnips
-" Plug 'hrsh7th/cmp-vsnip'
-" Plug 'hrsh7th/vim-vsnip'
-" Plug 'hrsh7th/vim-vsnip-integ'
-" fzf
-" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-" Plug 'junegunn/fzf.vim'
-" Plug 'airblade/vim-rooter'
 " treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
@@ -88,11 +76,8 @@ Plug 'p00f/nvim-ts-rainbow'
 Plug 'folke/todo-comments.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'folke/lsp-colors.nvim'
-" the debugger plugins
+" miscellaneous
 " Plug 'puremourning/vimspector'
-" CoC auto completion
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'kevinoid/vim-jsonc'
 Plug 'szw/vim-maximizer'
 Plug 'unblevable/quick-scope'
 Plug 'tpope/vim-obsession'
@@ -103,12 +88,9 @@ call plug#end()
 
 source $HOME/.config/nvim/keymaps.vim
 source $HOME/.config/nvim/autocmd.vim
-" source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/plug-config/quickscope.vim
-" source $HOME/.config/nvim/plug-config/fzf.vim
 luafile $HOME/.config/nvim/plug-config/lspconfig.lua
 source $HOME/.config/nvim/plug-config/lspconfig.vim
-" luafile $HOME/.config/nvim/plug-config/compeconfig.lua
 source $HOME/.config/nvim/plug-config/design.vim
 luafile $HOME/.config/nvim/plug-config/treesitter.lua
 source $HOME/.config/nvim/plug-config/treesitter.vim
@@ -119,10 +101,8 @@ luafile $HOME/.config/nvim/plug-config/lspsaga.lua
 source $HOME/.config/nvim/plug-config/lspsaga.vim
 luafile $HOME/.config/nvim/plug-config/symbols.lua
 source $HOME/.config/nvim/plug-config/symbols.vim
-" luafile $HOME/.config/nvim/plug-config/cmp-nvim-ultisnips.lua
 luafile $HOME/.config/nvim/plug-config/cmp.lua
 luafile $HOME/.config/nvim/plug-config/trouble.lua
-" source $HOME/.config/nvim/plug-config/vsnips.vim
 luafile $HOME/.config/nvim/plug-config/lualine.lua
 luafile $HOME/.config/nvim/plug-config/kommentary.lua
 luafile $HOME/.config/nvim/plug-config/lspcolors.lua
