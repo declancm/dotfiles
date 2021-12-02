@@ -32,11 +32,6 @@ let g:python3_host_prog = '/bin/python3'
 let g:python_host_prog = '/bin/python2'
 
 call plug#begin('~/.vim/plugged')
-" snippets
-Plug 'L3MON4D3/LuaSnip'
-Plug 'saadparwaiz1/cmp_luasnip'
-Plug 'rafamadriz/friendly-snippets'
-Plug 'tami5/lspsaga.nvim'
 " telescope requirements
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -46,6 +41,11 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 " lsp
 Plug 'neovim/nvim-lspconfig'
 " Plug 'nvim-lua/lsp_extensions.nvim'
+" snippets
+Plug 'L3MON4D3/LuaSnip'
+Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'rafamadriz/friendly-snippets'
+Plug 'tami5/lspsaga.nvim'
 " completion
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
