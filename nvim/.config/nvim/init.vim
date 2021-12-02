@@ -25,6 +25,9 @@ endif
 lua vim.g.kommentary_create_default_mappings = false
 set background=dark
 
+let g:python3_host_prog = '/bin/python3'
+let g:python_host_prog = '/bin/python2'
+
 call plug#begin('~/.vim/plugged')
 " snippets
 " Plug 'SirVer/ultisnips'
@@ -85,7 +88,6 @@ Plug 'szw/vim-maximizer'
 Plug 'unblevable/quick-scope'
 Plug 'tpope/vim-obsession'
 Plug 'folke/trouble.nvim'
-Plug 'honza/vim-snippets'
 " Plug 'ThePrimeagen/refactoring.nvim'
 Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
@@ -111,7 +113,7 @@ luafile $HOME/.config/nvim/plug-config/symbols.lua
 source $HOME/.config/nvim/plug-config/symbols.vim
 luafile $HOME/.config/nvim/plug-config/cmp.lua
 luafile $HOME/.config/nvim/plug-config/trouble.lua
-source $HOME/.config/nvim/plug-config/vsnips.vim
+" source $HOME/.config/nvim/plug-config/vsnips.vim
 luafile $HOME/.config/nvim/plug-config/lualine.lua
 luafile $HOME/.config/nvim/plug-config/kommentary.lua
 luafile $HOME/.config/nvim/plug-config/lspcolors.lua
@@ -149,9 +151,6 @@ set modifiable
 set splitbelow
 set splitright
 set pastetoggle=<F9>
-
-let g:python3_host_prog = '/bin/python3'
-let g:python_host_prog = '/bin/python2'
 
 " tab and shift tab to work with autocompletion
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
