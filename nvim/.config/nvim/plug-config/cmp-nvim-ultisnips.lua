@@ -32,10 +32,10 @@ use({
         -- more sources
       },
       -- Configure for <TAB> people
-      - <TAB> and <S-TAB>: cycle forward and backward through autocompletion items
-      - <TAB> and <S-TAB>: cycle forward and backward through snippets tabstops and placeholders
-      - <TAB> to expand snippet when no completion item selected (you don't need to select the snippet from completion item to expand)
-      - <C-space> to expand the selected snippet from completion menu
+      -- - <TAB> and <S-TAB>: cycle forward and backward through autocompletion items
+      -- - <TAB> and <S-TAB>: cycle forward and backward through snippets tabstops and placeholders
+      -- - <TAB> to expand snippet when no completion item selected (you don't need to select the snippet from completion item to expand)
+      -- - <C-space> to expand the selected snippet from completion menu
       mapping = {
         ["<C-Space>"] = cmp.mapping(function(fallback)
           if cmp.visible() then

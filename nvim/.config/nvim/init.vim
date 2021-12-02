@@ -33,9 +33,9 @@ let g:python_host_prog = '/bin/python2'
 
 call plug#begin('~/.vim/plugged')
 " snippets
-Plug 'honza/vim-snippets'
-Plug 'SirVer/ultisnips'
-Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+" Plug 'honza/vim-snippets'
+" Plug 'SirVer/ultisnips'
+" Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 Plug 'tami5/lspsaga.nvim'
 " telescope requirements
 Plug 'nvim-lua/popup.nvim'
@@ -116,7 +116,7 @@ source $HOME/.config/nvim/plug-config/lspsaga.vim
 luafile $HOME/.config/nvim/plug-config/symbols.lua
 source $HOME/.config/nvim/plug-config/symbols.vim
 " source $HOME/.config/nvim/plug-config/snippets.vim
-luafile $HOME/.config/nvim/plug-config/cmp-nvim-ultisnips.lua
+" luafile $HOME/.config/nvim/plug-config/cmp-nvim-ultisnips.lua
 luafile $HOME/.config/nvim/plug-config/cmp.lua
 luafile $HOME/.config/nvim/plug-config/trouble.lua
 " source $HOME/.config/nvim/plug-config/vsnips.vim
