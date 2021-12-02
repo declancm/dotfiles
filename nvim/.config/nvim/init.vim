@@ -36,6 +36,7 @@ call plug#begin('~/.vim/plugged')
 " Plug 'honza/vim-snippets'
 " Plug 'SirVer/ultisnips'
 Plug 'L3MON4D3/LuaSnip'
+Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'rafamadriz/friendly-snippets'
 " Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 Plug 'tami5/lspsaga.nvim'
@@ -162,5 +163,5 @@ set splitright
 set pastetoggle=<F9>
 
 " tab and shift tab to work with autocompletion
-" inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
