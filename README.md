@@ -4,9 +4,11 @@ My customized configuration files for nvim, zsh etc. in Ubuntu (for both WSL2 an
 ## Setup commands (for debian/ubuntu):
 
 **Install stow:**\
-git apt install stow
+sudo apt install stow
 
 **Install the .dotfiles:**\
+https://github.com/declancm/.dotfiles\
+cd ~/.dotfiles/\
 ./install.sh
 
 **Install tmux plugin manager:**\
