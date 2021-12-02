@@ -145,8 +145,6 @@ set wrapmargin=0
 set cmdheight=2
 set updatetime=50
 set shortmess+=c
-" set cindent
-" set cino+=g0
 set modifiable
 set splitbelow
 set splitright
@@ -155,5 +153,6 @@ set pastetoggle=<F9>
 let g:python3_host_prog = '/bin/python3'
 let g:python_host_prog = '/bin/python2'
 
-" inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" tab and shift tab to work with autocompletion
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
