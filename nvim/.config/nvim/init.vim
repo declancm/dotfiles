@@ -1,5 +1,7 @@
 syntax on
 
+" FIX tab and shift tab dont work with autocompletion
+
 " TODO go over the keybinds
 " TODO let '_' between words count as a space for commands such as 'daw'
 " TODO change color of TODO comments
@@ -130,7 +132,3 @@ set modifiable
 set splitbelow
 set splitright
 set pastetoggle=<F9>
-
-" tab and shift tab to work with autocompletion
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"

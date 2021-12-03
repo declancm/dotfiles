@@ -21,8 +21,8 @@ autocmd TextYankPost * call system('echo '.shellescape(join(v:event.regcontents,
 
 augroup qs_colors
   autocmd!
-  autocmd ColorScheme * highlight QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=underline
-  autocmd ColorScheme * highlight QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline
+  autocmd ColorScheme * highlight QuickScopePrimary guifg='#FF5555' gui=underline ctermfg=155 cterm=underline
+  autocmd ColorScheme * highlight QuickScopeSecondary guifg='#F1FA8C' gui=underline ctermfg=81 cterm=underline
 augroup END
 
 " augroup myTodo
@@ -31,3 +31,8 @@ augroup END
 " augroup END
 
 " highlight link myTodo Todo
+
+" make tabs smaller for specific file types
+autocmd FileType html setlocal shiftwidth=2 tabstop=2
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+autocmd FileType lua setlocal shiftwidth=2 tabstop=2
