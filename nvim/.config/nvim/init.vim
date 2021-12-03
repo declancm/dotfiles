@@ -1,20 +1,10 @@
 syntax on
 
-"FIX CMP
-"FIX ultisnips
-
 " TODO go over the keybinds
-" TODO go over settings for cmp and vsnips and personalize
-" TODO learn how to use vsnips
-" TODO ensure that fzy is functioning correctly
-" TODO fix cn adding to clipboard when deleting a word (unless that is
-" required to do the replacing.)
-" TODO setup symbols-outline correcty
 " TODO let '_' between words count as a space for commands such as 'daw'
 " TODO change color of TODO comments
 " TODO practice relative line jumping with vim-be-good
 " TODO add plug in for automatically adding pairs of braces?
-" TODO add keymaps to enter and exit terminal mode easily in vim
 " TODO add printf debugging
 
 " setting up vim plug
