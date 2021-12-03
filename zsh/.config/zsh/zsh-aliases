@@ -9,6 +9,7 @@ tvim() {
 }
 alias ll='ls -alF'
 alias ls='ls -a'
+alias tmuxr='tmux source-file ~/.tmux.conf'
 alias j='z'
 alias f='zi'
 alias g='lazygit'
