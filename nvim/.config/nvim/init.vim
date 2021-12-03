@@ -1,7 +1,5 @@
 syntax on
 
-" FIX tab and shift tab dont work with autocompletion
-
 " TODO go over the keybinds
 " TODO let '_' between words count as a space for commands such as 'daw'
 " TODO change color of TODO comments
@@ -55,6 +53,7 @@ Plug 'simrat39/symbols-outline.nvim'
 Plug 'mbbill/undotree'
 " git
 Plug 'tpope/vim-fugitive'
+Plug 'f-person/git-blame.nvim'
 " theme and colors
 Plug 'navarasu/onedark.nvim'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
@@ -80,6 +79,7 @@ call plug#end()
 
 source $HOME/.config/nvim/keymaps.vim
 source $HOME/.config/nvim/autocmd.vim
+source $HOME/.config/nvim/plug-config/git.vim
 source $HOME/.config/nvim/plug-config/quickscope.vim
 luafile $HOME/.config/nvim/plug-config/lspconfig.lua
 source $HOME/.config/nvim/plug-config/lspconfig.vim
