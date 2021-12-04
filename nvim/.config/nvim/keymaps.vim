@@ -66,6 +66,18 @@ nnoremap <leader>c ""c
 nnoremap <leader>C ""C
 vnoremap <leader>c ""c
 " trouble toggle keymap
-" nnoremap <leader>tt :TroubleToggle<CR>
+nnoremap <leader>tt :TroubleToggle<CR>
+" open notes (todo.md from anywhere and return
+nnoremap <silent> <leader>ng `Z mZ :edit ~/.dotfiles/todo.md<CR>
+nnoremap <silent> <leader>nb `Z :delmarks Z<CR>
 
-" nnoremap <silent> <F9> :set paste<CR> <F8> :set nopaste<CR>
+" nnoremap <expr> <leader>td Todo_toggle()
+" function! Todo_toggle()
+"     if getcwd() ==# '~/.dotfiles/todo.md'
+"         return "`Z :delmarks Z<CR>"
+"     else
+"         return "mZ :edit ~/.dotfiles/todo.md<CR>"
+"     endif
+" endfunction
+
+" nnoremap <F9> :set paste<CR> "<F8>" :set topaste<CR>
