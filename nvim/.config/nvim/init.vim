@@ -73,6 +73,7 @@ Plug 'szw/vim-maximizer'
 Plug 'unblevable/quick-scope'
 Plug 'tpope/vim-obsession'
 Plug 'folke/trouble.nvim'
+Plug 'dkarter/bullets.vim'
 " Plug 'ThePrimeagen/refactoring.nvim'
 Plug 'ThePrimeagen/vim-be-good'
 call plug#end()

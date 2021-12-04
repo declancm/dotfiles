@@ -52,3 +52,7 @@ endif
 highlight CursorLineNr guifg=white
 set cursorline
 set cursorlineopt=number
+
+" add bullet points to selected file types
+let g:bullets_enabled_file_types = ['markdown', 'text']
+let g:bullets_enable_in_empty_buffers = 0 " default = 1
