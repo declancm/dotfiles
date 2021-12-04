@@ -86,4 +86,4 @@ nnoremap <silent> <leader>nb `Z :delmarks Z<CR>
 " nnoremap <silent> <leader>cp :Git add .<CR><bar>:Git commit -a -m "Auto commit and push."<CR><bar>:Git push origin master<CR>
 
 "
-nnoremap <leader>cp :!source ~/.dotfiles/git.sh<CR>
+nnoremap <silent> <leader>cp :!source ~/.dotfiles/git.sh<CR>
