@@ -1,13 +1,24 @@
 #!/usr/bin/env bash
 
-printf "Enter the directory location:"
-read directory
-printf "Enter the branch name:"
-read branch
+currentwd=$PWD
 
-cd directory
+printf "Enter the full directory address which will be automatically commited and pushed: "
+read directory
+printf "Enter the branch name: "
+read branch
+printf "Select the delay (in minutes) after each commit: "
+read number
+
+cd $directory
 while :
 do
-    printf "test"
-    sleep 4m
+    read userInput
+    if [ $userInput == 'end']
+    then
+        cd $currentwd
+        break
+    else
+        printf "test"
+        sleep '$number'm
+    fi
 done

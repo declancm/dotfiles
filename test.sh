@@ -5,13 +5,9 @@ read directory
 printf "Enter the branch name:"
 read branch
 
-cd directory
+cd $directory
 while :
 do
-    git add .
-    wait
-    git commit -a -m "auto commit and push @ `date +'%Y-%m-%d %H:%M:%S'`"
-    sleep 60
-    git push origin $branch
-    sleep 4m
+    pwd
+    sleep 1m
 done
