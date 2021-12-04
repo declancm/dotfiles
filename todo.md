@@ -15,6 +15,7 @@ NVIM:
 - add plug in for automatically adding pairs of braces?
 - add printf debugging
 - install cmp tabnine
+- remove the arrow key maps for autocomplete so its controlled by tab.
 
 ZSH:
  - finish trying to remove the underline from autosuggestions.
