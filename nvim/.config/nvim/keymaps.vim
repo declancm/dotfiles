@@ -83,4 +83,4 @@ nnoremap <silent> <leader>nb `Z :delmarks Z<CR>
 " nnoremap <F9> :set paste<CR> "<F8>" :set topaste<CR>
 
 " auto commit and push when <leader>cp is used
-nnoremap <silent> <leader>cp :Git add .<CR> :Git commit -a -m "Auto commit and push."<CR> :Git push origin master<CR>
+nnoremap <silent> <leader>cp :Git add .<CR><bar>:Git commit -a -m "Auto commit and push."<CR><bar>:Git push origin master<CR>
