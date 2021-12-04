@@ -8,16 +8,16 @@ augroup END
 
 autocmd TextYankPost * call system('echo '.shellescape(join(v:event.regcontents, "\<CR>")).' |  clip.exe')
 
-" fun! TrimWhitespace()
-"     let l:save = winsaveview()
-"     keeppatterns %s/\s\+$//e
-"     call winrestview(l:save)
-" endfun
+fun! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfun
 
-" augroup declancm
-"     autocmd!
-"     autocmd BufWritePre * :call TrimWhitespace()
-" augroup END
+augroup trim_white_space
+    autocmd!
+    autocmd BufWritePre * :call TrimWhitespace()
+augroup END
 
 augroup qs_colors
   autocmd!
