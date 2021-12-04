@@ -75,7 +75,7 @@ Plug 'tpope/vim-obsession'
 Plug 'folke/trouble.nvim'
 Plug 'dkarter/bullets.vim'
 " Plug 'ThePrimeagen/refactoring.nvim'
-Plug 'ThePrimeagen/vim-be-good'
+" Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
 
 source $HOME/.config/nvim/keymaps.vim
