@@ -3,6 +3,7 @@ General:
 - setup gitwatch?
 - message griffith about my idea for a thesis (noise cancellation)
 - message griffith racing team about potentially doing my word experience with them.
+- make something that autocommits when i save a file in vim.
 
 TMUX:
 
