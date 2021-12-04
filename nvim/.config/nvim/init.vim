@@ -42,7 +42,7 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
-" Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
+Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
 " commenting
 Plug 'b3nj5m1n/kommentary'
 " treesitter

@@ -31,6 +31,7 @@
       { name = 'luasnip' }, -- For luasnip users.
       -- { name = 'ultisnips' }, -- For ultisnips users.
       -- { name = 'snippy' }, -- For snippy users.
+      { name = 'cmp_tabnine' },
     }, {
       { name = 'buffer' },
     })
@@ -64,3 +65,17 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
   require('lspconfig')['vimls'].setup {
     capabilities = capabilities
   }
+
+-- Setup cmp_tabnine
+local tabnine = require('cmp_tabnine.config')
+tabnine:setup({
+	max_lines = 1000;
+	max_num_results = 20;
+	sort = true;
+	run_on_every_keystroke = true;
+	snippet_placeholder = '..';
+	ignored_file_types = { -- default is not to ignore
+		-- uncomment to ignore in lua:
+		-- lua = true
+	};
+})
