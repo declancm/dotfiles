@@ -1,5 +1,15 @@
 syntax on
 
+set path+=**
+
+set wildignore+=*.pyc
+set wildignore+=*_build/*
+set wildignore+=**/coverage/*
+set wildignore+=**/node_modules/*
+set wildignore+=**/android/*
+set wildignore+=**/ios/*
+set wildignore+=**/.git/*
+
 " setting up vim plug
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -46,6 +56,7 @@ Plug 'simrat39/symbols-outline.nvim'
 Plug 'mbbill/undotree'
 " git
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'f-person/git-blame.nvim'
 " theme and colors
 Plug 'navarasu/onedark.nvim'
@@ -98,6 +109,8 @@ luafile $HOME/.config/nvim/plug-config/todo.lua
 
 lua require'colorizer'.setup()
 
+set wildmode=longest,list,full
+set wildmenu
 set backspace=indent,eol,start
 set relativenumber
 set nu
