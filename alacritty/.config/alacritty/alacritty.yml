@@ -13,3 +13,7 @@ font:
     style: Bold Italic
 
   size: 12.0
+winow:
+  padding:
+    x: 2
+    y: 2
