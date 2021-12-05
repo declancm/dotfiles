@@ -11,5 +11,5 @@ if git rev-parse --git-dir > /dev/null 2>&1; then
     wait
     git push origin $branch
 else
-    printf "Not inside a git repository."
+    printf "You are not inside a git repository."
 fi
