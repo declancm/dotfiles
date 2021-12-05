@@ -68,7 +68,7 @@ vnoremap <leader>c ""c
 " trouble toggle keymap
 nnoremap <leader>tt :TroubleToggle<CR>
 " open notes (todo.md from anywhere and return
-nnoremap <silent> <leader>ng mZ :edit ~/.dotfiles/todo.md<CR>
+nnoremap <silent> <leader>ng mZ :edit ~/.dotfiles/notes.md<CR>
 nnoremap <silent> <leader>nb `Z :delmarks Z<CR>
 
 " nnoremap <expr> <leader>td Todo_toggle()

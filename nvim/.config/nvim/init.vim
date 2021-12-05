@@ -1,12 +1,5 @@
 syntax on
 
-" TODO go over the keybinds
-" TODO let '_' between words count as a space for commands such as 'daw'
-" TODO change color of TODO comments
-" TODO practice relative line jumping with vim-be-good
-" TODO add plug in for automatically adding pairs of braces?
-" TODO add printf debugging
-
 " setting up vim plug
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
