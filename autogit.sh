@@ -15,5 +15,6 @@ do
     git commit -a -m "auto commit @ `date +'%Y-%m-%d %H:%M:%S'`"
     wait
     git push origin $branch
+    wait
     sleep $seconds
 done
