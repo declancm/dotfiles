@@ -74,7 +74,9 @@ Plug 'unblevable/quick-scope'
 Plug 'tpope/vim-obsession'
 Plug 'folke/trouble.nvim'
 Plug 'dkarter/bullets.vim'
-" Plug 'ThePrimeagen/refactoring.nvim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-rails'
+" Plug 'ThePrimeagen/refactoring.nvim"
 " Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
 
@@ -103,6 +105,7 @@ luafile $HOME/.config/nvim/plug-config/todo.lua
 
 lua require'colorizer'.setup()
 
+set backspace=indent,eol,start
 set relativenumber
 set nu
 set nohlsearch
