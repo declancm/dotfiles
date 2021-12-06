@@ -8,8 +8,7 @@ sudo apt install stow
 
 **Install the .dotfiles:** \
 git clone https://github.com/declancm/.dotfiles ~/.dotfiles \
-cd ~/.dotfiles \
-./install.sh
+cd ~/.dotfiles && ./install.sh
 
 **Install tmux plugin manager:** \
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
