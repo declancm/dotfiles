@@ -6,6 +6,8 @@ General:
 - become more familiar with all my keymaps
 - FIX lspconfig not activating
 - Fix my preonic keymap upload. Only have the config file and the keymap file.
+- add git auto commit with the keymap to github
+- move alt to somewhere the right hand can press it (or maybe ctrl)
 
 TMUX:
 
