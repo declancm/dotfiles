@@ -5,6 +5,7 @@ General:
 - message griffith racing team about potentially doing my word experience with them.
 - become more familiar with all my keymaps
 - FIX lspconfig not activating
+- Fix my preonic keymap upload. Only have the config file and the keymap file.
 
 TMUX:
 
