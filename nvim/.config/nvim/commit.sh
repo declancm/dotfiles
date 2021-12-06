@@ -1,3 +1,6 @@
+# Created by Declan Mullen
+# Git repository can be found at git://github.com/declancm/git-auto-commit
+
 #!/usr/bin/env bash
 
 if git rev-parse --git-dir > /dev/null 2>&1; then
