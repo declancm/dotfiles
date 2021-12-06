@@ -69,7 +69,7 @@ vnoremap <leader>c ""c
 nnoremap <leader>tt :TroubleToggle<CR>
 " open notes (todo.md from anywhere and return
 nnoremap <silent> <leader>ng mZ :edit ~/.dotfiles/notes.md<CR>
-nnoremap <silent> <leader>nb `Z :delmarks Z<CR>
+nnoremap <silent> <leader>nb :w<CR> `Z :delmarks Z<CR>
 " auto commit and push
 nnoremap <silent> <leader>cp :!source ~/.config/nvim/git.sh<CR>
 

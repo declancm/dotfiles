@@ -1,7 +1,7 @@
 syntax on
 
+" for the :find command
 set path+=**
-
 set wildignore+=*.pyc
 set wildignore+=*_build/*
 set wildignore+=**/coverage/*
@@ -96,11 +96,11 @@ source $HOME/.config/nvim/plug-config/treesitter.vim
 luafile $HOME/.config/nvim/plug-config/telescope.lua
 source $HOME/.config/nvim/plug-config/telescope.vim
 " luafile $HOME/.config/nvim/plug-config/refactoring.lua
+luafile $HOME/.config/nvim/plug-config/cmp.lua
 luafile $HOME/.config/nvim/plug-config/lspsaga.lua
 source $HOME/.config/nvim/plug-config/lspsaga.vim
 luafile $HOME/.config/nvim/plug-config/symbols.lua
 source $HOME/.config/nvim/plug-config/symbols.vim
-luafile $HOME/.config/nvim/plug-config/cmp.lua
 luafile $HOME/.config/nvim/plug-config/trouble.lua
 luafile $HOME/.config/nvim/plug-config/lualine.lua
 luafile $HOME/.config/nvim/plug-config/kommentary.lua

@@ -4,6 +4,7 @@ General:
 - message griffith about my idea for a thesis (noise cancellation)
 - message griffith racing team about potentially doing my word experience with them.
 - become more familiar with all my keymaps
+- FIX lspconfig not activating
 
 TMUX:
 
