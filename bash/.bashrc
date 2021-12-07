@@ -118,4 +118,5 @@ fi
 
 alias vim='nvim'
 export EDITOR='nvim'
-alias pyvenv="source ~/pyvenv-creator/pyvenv.sh"
+
+source /home/declancm/pyvenv-creator/pyvenv.sh
