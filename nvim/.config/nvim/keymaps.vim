@@ -68,8 +68,8 @@ vnoremap <leader>c ""c
 " trouble toggle keymap
 nnoremap <leader>tt :TroubleToggle<CR>
 " open notes (todo.md from anywhere and return
-nnoremap <silent> <leader>ng mZ :!cd ~/notes<CR> :edit ~/notes/notes.md<CR>
-nnoremap <silent> <leader>nb :w<CR> :!cd -<CR> `Z :delmarks Z<CR>
+nnoremap <silent> <leader>ng mZ :lcd ~/notes<CR> :edit ~/notes/notes.md<CR>
+nnoremap <silent> <leader>nb :w<CR> :lcd -<CR> `Z :delmarks Z<CR>
 " save, auto commit and push
 nnoremap <silent> <leader>cp :!source ~/.config/nvim/auto-commit/commit.sh<CR>
 
