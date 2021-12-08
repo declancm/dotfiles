@@ -45,6 +45,7 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
+Plug 'onsails/lspkind-nvim'
 Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
 " commenting
 Plug 'b3nj5m1n/kommentary'
@@ -99,6 +100,7 @@ luafile $HOME/.config/nvim/plug-config/telescope.lua
 source $HOME/.config/nvim/plug-config/telescope.vim
 " luafile $HOME/.config/nvim/plug-config/refactoring.lua
 luafile $HOME/.config/nvim/plug-config/cmp.lua
+luafile $HOME/.config/nvim/plug-config/lspkind.lua
 luafile $HOME/.config/nvim/plug-config/lspsaga.lua
 source $HOME/.config/nvim/plug-config/lspsaga.vim
 luafile $HOME/.config/nvim/plug-config/symbols.lua
