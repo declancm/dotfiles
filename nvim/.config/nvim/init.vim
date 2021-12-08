@@ -86,8 +86,6 @@ Plug 'tpope/vim-dispatch'
 " Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
 
-source $HOME/.config/nvim/keymaps.vim
-source $HOME/.config/nvim/autocmd.vim
 source $HOME/.config/nvim/plug-config/git.vim
 source $HOME/.config/nvim/plug-config/quickscope.vim
 luafile $HOME/.config/nvim/plug-config/lspconfig.lua
@@ -108,6 +106,8 @@ luafile $HOME/.config/nvim/plug-config/lualine.lua
 luafile $HOME/.config/nvim/plug-config/kommentary.lua
 luafile $HOME/.config/nvim/plug-config/lspcolors.lua
 luafile $HOME/.config/nvim/plug-config/todo.lua
+source $HOME/.config/nvim/plug-config/keymaps.vim
+source $HOME/.config/nvim/plug-config/autocmd.vim
 
 lua require'colorizer'.setup()
 
