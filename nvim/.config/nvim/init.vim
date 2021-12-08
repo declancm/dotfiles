@@ -106,8 +106,8 @@ luafile $HOME/.config/nvim/plug-config/lualine.lua
 luafile $HOME/.config/nvim/plug-config/kommentary.lua
 luafile $HOME/.config/nvim/plug-config/lspcolors.lua
 luafile $HOME/.config/nvim/plug-config/todo.lua
-source $HOME/.config/nvim/plug-config/keymaps.vim
 source $HOME/.config/nvim/plug-config/autocmd.vim
+source $HOME/.config/nvim/plug-config/keymaps.vim
 
 lua require'colorizer'.setup()
 
