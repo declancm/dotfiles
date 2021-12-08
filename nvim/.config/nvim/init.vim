@@ -144,3 +144,7 @@ set modifiable
 set splitbelow
 set splitright
 set pastetoggle=<F9>
+
+source $HOME/.config/nvim/auto-commit/commit-keymap.vim
+if filereadable("$HOME/.config/nvim/auto-commit/commit-keymap.vim")
+endif
