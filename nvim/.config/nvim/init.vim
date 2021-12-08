@@ -94,7 +94,6 @@ source $HOME/.config/nvim/plug-config/git.vim
 source $HOME/.config/nvim/plug-config/quickscope.vim
 luafile $HOME/.config/nvim/plug-config/lspconfig.lua
 source $HOME/.config/nvim/plug-config/lspconfig.vim
-source $HOME/.config/nvim/plug-config/design.vim
 luafile $HOME/.config/nvim/plug-config/treesitter.lua
 source $HOME/.config/nvim/plug-config/treesitter.vim
 luafile $HOME/.config/nvim/plug-config/telescope.lua
@@ -109,6 +108,7 @@ source $HOME/.config/nvim/plug-config/symbols.vim
 luafile $HOME/.config/nvim/plug-config/trouble.lua
 luafile $HOME/.config/nvim/plug-config/lualine.lua
 luafile $HOME/.config/nvim/plug-config/kommentary.lua
+source $HOME/.config/nvim/plug-config/design.vim
 " luafile $HOME/.config/nvim/plug-config/lspcolors.lua
 " luafile $HOME/.config/nvim/plug-config/todo.lua
 
