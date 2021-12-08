@@ -1,14 +1,14 @@
 syntax on
 
 " for the :find command
-set path+=**
-set wildignore+=*.pyc
-set wildignore+=*_build/*
-set wildignore+=**/coverage/*
-set wildignore+=**/node_modules/*
-set wildignore+=**/android/*
-set wildignore+=**/ios/*
-set wildignore+=**/.git/*
+" set path+=**
+" set wildignore+=*.pyc
+" set wildignore+=*_build/*
+" set wildignore+=**/coverage/*
+" set wildignore+=**/node_modules/*
+" set wildignore+=**/android/*
+" set wildignore+=**/ios/*
+" set wildignore+=**/.git/*
 
 " setting up vim plug
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
@@ -88,6 +88,8 @@ Plug 'tpope/vim-dispatch'
 " Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
 
+lua require'colorizer'.setup()
+
 source $HOME/.config/nvim/plug-config/autocmd.vim
 source $HOME/.config/nvim/plug-config/keymaps.vim
 source $HOME/.config/nvim/plug-config/git.vim
@@ -103,6 +105,7 @@ source $HOME/.config/nvim/plug-config/telescope.vim
 luafile $HOME/.config/nvim/plug-config/lspsaga.lua
 source $HOME/.config/nvim/plug-config/lspsaga.vim
 luafile $HOME/.config/nvim/plug-config/cmp.lua
+" luafile $HOME/.config/nvim/plug-config/kickstart.lua
 luafile $HOME/.config/nvim/plug-config/symbols.lua
 source $HOME/.config/nvim/plug-config/symbols.vim
 luafile $HOME/.config/nvim/plug-config/trouble.lua
@@ -111,11 +114,9 @@ luafile $HOME/.config/nvim/plug-config/kommentary.lua
 " luafile $HOME/.config/nvim/plug-config/lspcolors.lua
 " luafile $HOME/.config/nvim/plug-config/todo.lua
 
-lua require'colorizer'.setup()
-
-set wildmode=longest,list,full
-set wildmenu
-set backspace=indent,eol,start
+" set wildmode=longest,list,full
+" set wildmenu
+" set backspace=indent,eol,start
 set relativenumber
 set nu
 set nohlsearch

@@ -1,21 +1,21 @@
 -- Setup nvim-cmp.
-  local lspkind = require('lspkind')
+  -- local lspkind = require('lspkind')
+  local luasnip = require 'luasnip'
+
   local cmp = require'cmp'
   cmp.setup({
     snippet = {
-      -- REQUIRED - you must specify a snippet engine
       expand = function(args)
-        -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
         require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-        -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-        -- require'snippy'.expand_snippet(args.body) -- For `snippy` users.
       end,
     },
     mapping = {
       ['<Tab>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
       ['<S-Tab>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
-      ['<Down>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
-      ['<Up>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
+      -- ['<Down>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
+      -- ['<Up>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
+      ['<Down>'] = cmp.config.disable,
+      ['<Up>'] = cmp.config.disable,
       ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
       ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
       ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
@@ -27,23 +27,9 @@
       -- ['<CR>'] = cmp.mapping.confirm({ select = true }),
       ['<CR>'] = cmp.mapping.confirm()
     },
-    -- format = lspkind.cmp_format({
-    --   with_text = false, -- do not show text alongside icons
-    --   maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-
-    --   -- The function below will be called before any actual modifications from lspkind
-    --   -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
-    --   before = function (entry, vim_item)
-    --     -- ...
-    --     return vim_item
-    --   end
-    -- }),
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
-      -- { name = 'vsnip' }, -- For vsnip users.
       { name = 'luasnip' }, -- For luasnip users.
-      -- { name = 'ultisnips' }, -- For ultisnips users.
-      -- { name = 'snippy' }, -- For snippy users.
       { name = 'cmp_tabnine' },
     }, {
       { name = 'buffer' },
@@ -70,15 +56,19 @@
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
   -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
   require('lspconfig')['pyright'].setup {
+    -- on_attach = on_attach,
     capabilities = capabilities
   }
   require('lspconfig')['clangd'].setup {
+    -- on_attach = on_attach,
     capabilities = capabilities
   }
   require('lspconfig')['vimls'].setup {
+    -- on_attach = on_attach,
     capabilities = capabilities
   }
   require('lspconfig')['bashls'].setup {
+    -- on_attach = on_attach,
     capabilities = capabilities
   }
 
@@ -95,3 +85,21 @@ tabnine:setup({
 		-- lua = true
 	};
 })
+
+local lspkind = require('lspkind')
+cmp.setup {
+  formatting = {
+    format = lspkind.cmp_format({
+      with_text = true, -- do not show text alongside icons
+      preset = 'default',
+      maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+
+      -- The function below will be called before any actual modifications from lspkind
+      -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
+      before = function (entry, vim_item)
+        -- ...
+        return vim_item
+      end
+    })
+  }
+}
