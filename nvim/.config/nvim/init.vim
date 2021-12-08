@@ -88,8 +88,6 @@ Plug 'tpope/vim-dispatch'
 " Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
 
-lua require'colorizer'.setup()
-
 source $HOME/.config/nvim/plug-config/autocmd.vim
 source $HOME/.config/nvim/plug-config/keymaps.vim
 source $HOME/.config/nvim/plug-config/git.vim
@@ -113,6 +111,8 @@ luafile $HOME/.config/nvim/plug-config/lualine.lua
 luafile $HOME/.config/nvim/plug-config/kommentary.lua
 " luafile $HOME/.config/nvim/plug-config/lspcolors.lua
 " luafile $HOME/.config/nvim/plug-config/todo.lua
+
+lua require'colorizer'.setup()
 
 " set wildmode=longest,list,full
 " set wildmenu
