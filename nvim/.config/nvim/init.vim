@@ -71,15 +71,17 @@ Plug 'p00f/nvim-ts-rainbow'
 Plug 'folke/todo-comments.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'folke/lsp-colors.nvim'
-" miscellaneous
+" debugging
 " Plug 'puremourning/vimspector'
+" miscellaneous
 Plug 'szw/vim-maximizer'
 Plug 'unblevable/quick-scope'
 Plug 'tpope/vim-obsession'
 Plug 'folke/trouble.nvim'
 Plug 'dkarter/bullets.vim'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-rails'
+" Plug 'tpope/vim-rails'
+Plug 'tpope/vim-dispatch'
 " Plug 'ThePrimeagen/refactoring.nvim"
 " Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
