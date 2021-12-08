@@ -20,6 +20,7 @@ endif
 " pre plugin commands
 lua vim.g.kommentary_create_default_mappings = false
 set background=dark
+set completeopt=menuone,noinsert,noselect
 
 let g:python3_host_prog = '/bin/python3'
 let g:python_host_prog = '/bin/python2'
@@ -45,6 +46,7 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
+Plug 'onsails/lspkind-nvim'
 Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
 " commenting
 Plug 'b3nj5m1n/kommentary'
@@ -68,9 +70,9 @@ Plug 'marko-cerovac/material.nvim'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'p00f/nvim-ts-rainbow'
-Plug 'folke/todo-comments.nvim'
+" Plug 'folke/todo-comments.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
-Plug 'folke/lsp-colors.nvim'
+" Plug 'folke/lsp-colors.nvim'
 " debugging
 " Plug 'puremourning/vimspector'
 " miscellaneous
@@ -98,15 +100,15 @@ source $HOME/.config/nvim/plug-config/treesitter.vim
 luafile $HOME/.config/nvim/plug-config/telescope.lua
 source $HOME/.config/nvim/plug-config/telescope.vim
 " luafile $HOME/.config/nvim/plug-config/refactoring.lua
-luafile $HOME/.config/nvim/plug-config/cmp.lua
 luafile $HOME/.config/nvim/plug-config/lspsaga.lua
 source $HOME/.config/nvim/plug-config/lspsaga.vim
+luafile $HOME/.config/nvim/plug-config/cmp.lua
 luafile $HOME/.config/nvim/plug-config/symbols.lua
 source $HOME/.config/nvim/plug-config/symbols.vim
 luafile $HOME/.config/nvim/plug-config/trouble.lua
 luafile $HOME/.config/nvim/plug-config/lualine.lua
 luafile $HOME/.config/nvim/plug-config/kommentary.lua
-luafile $HOME/.config/nvim/plug-config/lspcolors.lua
+" luafile $HOME/.config/nvim/plug-config/lspcolors.lua
 " luafile $HOME/.config/nvim/plug-config/todo.lua
 
 lua require'colorizer'.setup()
@@ -133,7 +135,6 @@ set incsearch
 set termguicolors
 set scrolloff=8
 set showmode
-set completeopt=menuone,noinsert,noselect
 set signcolumn=yes
 set textwidth=0
 set wrapmargin=0
