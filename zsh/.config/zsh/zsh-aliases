@@ -7,7 +7,8 @@ tvim() {
     touch "$1"
     nvim "$1"
 }
-alias make='make -j16'
+alias commit='source ~/git-auto-commit/commit.sh'
+alias make16='make -j16'
 alias notes='nvim ~/notes/notes.md'
 alias ll='ls -alF'
 alias ls='ls -a'

@@ -82,7 +82,7 @@ Plug 'tpope/vim-obsession'
 Plug 'folke/trouble.nvim'
 Plug 'dkarter/bullets.vim'
 Plug 'tpope/vim-surround'
-" Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rails'
 Plug 'tpope/vim-dispatch'
 " Plug 'ThePrimeagen/refactoring.nvim"
 " Plug 'ThePrimeagen/vim-be-good'
@@ -146,5 +146,3 @@ set modifiable
 set splitbelow
 set splitright
 set pastetoggle=<F9>
-
-source $HOME/git-auto-commit/keymap.vim
