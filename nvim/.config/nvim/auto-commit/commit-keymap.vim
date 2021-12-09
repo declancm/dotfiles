@@ -1,1 +1,0 @@
-nnoremap <leader>cp :!source ~/.config/nvim/auto-commit/commit.sh<CR>

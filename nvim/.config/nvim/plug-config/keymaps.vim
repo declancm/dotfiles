@@ -10,7 +10,7 @@ nnoremap <leader><left> :wincmd h<CR>
 nnoremap <leader><down> :wincmd j<CR>
 nnoremap <leader><up> :wincmd k<CR>
 nnoremap <leader><right> :wincmd l<CR>
-nnoremap <leader>ex :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
+nnoremap <leader>ex :wincmd v<bar> :wincmd H<bar> :Ex <bar> :vertical resize 30<CR>
 " nnoremap <Leader>ps :Rg<SPACE>
 nnoremap <silent> <leader>+ :vertical resize +5<CR>
 nnoremap <silent> <leader>- :vertical resize -5<CR>
@@ -75,7 +75,7 @@ nnoremap <leader>tt :TroubleToggle<CR>
 nnoremap <silent> <leader>ng mZ :lcd ~/notes<CR> :edit ~/notes/notes.md<CR>
 nnoremap <silent> <leader>nb :w<CR> :lcd -<CR> `Z :delmarks Z<CR>
 " save, auto commit and push
-nnoremap <silent> <leader>cp :!source ~/.config/nvim/auto-commit/commit.sh<CR>
+nnoremap <silent> <leader>cp :!source ~/.config/nvim/commit.sh<CR>
 
 " nnoremap <expr> <leader>td Todo_toggle()
 " function! Todo_toggle()

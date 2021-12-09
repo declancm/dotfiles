@@ -146,3 +146,5 @@ set modifiable
 set splitbelow
 set splitright
 set pastetoggle=<F9>
+
+source $HOME/git-auto-commit/keymap.vim
