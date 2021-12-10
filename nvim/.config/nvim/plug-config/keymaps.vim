@@ -1,5 +1,9 @@
 " TODO add arrow keybindings for moving text
 
+" improve home key
+:map <Home> ^
+:imap <Home> <Esc>I
+
 let mapleader = "\<BS>"
 " move between open windows
 nnoremap <leader>h :wincmd h<CR>
