@@ -7,8 +7,8 @@ tvim() {
     touch "$1"
     nvim "$1"
 }
-alias commit='source ~/Git/git-auto-commit/commit.sh'
-alias pyvenv='source ~/Git/python-venv-creator/pyvenv.sh'
+alias commit='source ~/Git/git-commit-kit/commit.sh'
+alias pyvenv='source ~/Git/virtualenv-creator/pyvenv.sh'
 alias make16='make -j16'
 alias notes='nvim ~/notes/notes.md'
 alias ll='ls -alF'
