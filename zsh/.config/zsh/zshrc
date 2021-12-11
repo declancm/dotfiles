@@ -93,7 +93,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#808080"
 # Environment variables set everywhere
 export EDITOR="nvim"
 export TERMINAL="alacritty"
-#export BROWSER="brave"
+export BROWSER="firefox"
 
 # For QT Themes
 export QT_QPA_PLATFORMTHEME=qt5ct
