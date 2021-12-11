@@ -11,9 +11,8 @@ font:
   bold_italic:
     family: "Hack Nerd Font"
     style: Bold Italic
-
   size: 12.0
-winow:
+window:
   padding:
     x: 2
     y: 2
