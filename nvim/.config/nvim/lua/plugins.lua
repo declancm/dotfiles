@@ -1,4 +1,5 @@
 return require('packer').startup(function()
+
   use 'wbthomason/packer.nvim'
   -- telescope requirements
   use 'nvim-lua/popup.nvim'
@@ -62,3 +63,10 @@ return require('packer').startup(function()
   use 'tpope/vim-rails'
   use 'tpope/vim-dispatch'
 end)
+
+vim.cmd([[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+  augroup end
+]])
