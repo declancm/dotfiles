@@ -25,6 +25,8 @@ set completeopt=menuone,noinsert,noselect
 let g:python3_host_prog = '/bin/python3'
 let g:python_host_prog = '/bin/python2'
 
+packadd packer.nvim
+
 lua require('plugins')
 
 " call plug#begin('~/.vim/plugged')
@@ -90,31 +92,31 @@ lua require('plugins')
 " " Plug 'ThePrimeagen/vim-be-good'
 " call plug#end()
 
-source $HOME/.config/nvim/plug-config/autocmd.vim
-source $HOME/.config/nvim/plug-config/keymaps.vim
-source $HOME/.config/nvim/plug-config/git.vim
-source $HOME/.config/nvim/plug-config/quickscope.vim
-luafile $HOME/.config/nvim/plug-config/lspconfig.lua
-source $HOME/.config/nvim/plug-config/lspconfig.vim
-luafile $HOME/.config/nvim/plug-config/treesitter.lua
-source $HOME/.config/nvim/plug-config/treesitter.vim
-luafile $HOME/.config/nvim/plug-config/telescope.lua
-source $HOME/.config/nvim/plug-config/telescope.vim
-" luafile $HOME/.config/nvim/plug-config/refactoring.lua
-luafile $HOME/.config/nvim/plug-config/lspsaga.lua
-source $HOME/.config/nvim/plug-config/lspsaga.vim
-luafile $HOME/.config/nvim/plug-config/cmp.lua
-" luafile $HOME/.config/nvim/plug-config/kickstart.lua
-luafile $HOME/.config/nvim/plug-config/symbols.lua
-source $HOME/.config/nvim/plug-config/symbols.vim
-luafile $HOME/.config/nvim/plug-config/trouble.lua
-luafile $HOME/.config/nvim/plug-config/lualine.lua
-luafile $HOME/.config/nvim/plug-config/kommentary.lua
-source $HOME/.config/nvim/plug-config/design.vim
-" luafile $HOME/.config/nvim/plug-config/lspcolors.lua
-" luafile $HOME/.config/nvim/plug-config/todo.lua
+"source $HOME/.config/nvim/plug-config/autocmd.vim
+"source $HOME/.config/nvim/plug-config/keymaps.vim
+"source $HOME/.config/nvim/plug-config/git.vim
+"source $HOME/.config/nvim/plug-config/quickscope.vim
+"luafile $HOME/.config/nvim/plug-config/lspconfig.lua
+"source $HOME/.config/nvim/plug-config/lspconfig.vim
+"luafile $HOME/.config/nvim/plug-config/treesitter.lua
+"source $HOME/.config/nvim/plug-config/treesitter.vim
+"luafile $HOME/.config/nvim/plug-config/telescope.lua
+"source $HOME/.config/nvim/plug-config/telescope.vim
+"" luafile $HOME/.config/nvim/plug-config/refactoring.lua
+"luafile $HOME/.config/nvim/plug-config/lspsaga.lua
+"source $HOME/.config/nvim/plug-config/lspsaga.vim
+"luafile $HOME/.config/nvim/plug-config/cmp.lua
+"" luafile $HOME/.config/nvim/plug-config/kickstart.lua
+"luafile $HOME/.config/nvim/plug-config/symbols.lua
+"source $HOME/.config/nvim/plug-config/symbols.vim
+"luafile $HOME/.config/nvim/plug-config/trouble.lua
+"luafile $HOME/.config/nvim/plug-config/lualine.lua
+"luafile $HOME/.config/nvim/plug-config/kommentary.lua
+"source $HOME/.config/nvim/plug-config/design.vim
+"" luafile $HOME/.config/nvim/plug-config/lspcolors.lua
+"" luafile $HOME/.config/nvim/plug-config/todo.lua
 
-lua require'colorizer'.setup()
+"lua require'colorizer'.setup()
 
 " set wildmode=longest,list,full
 " set wildmenu

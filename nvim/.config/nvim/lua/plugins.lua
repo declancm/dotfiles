@@ -13,7 +13,7 @@ return require('packer').startup(function()
   -- " snippets
   use {
     'saadparwaiz1/cmp_luasnip',
-    requires = 'L3MON4D3/LuaSnip', 'rafamadriz/friendly-snippets', 'tami5/lspsaga.nvim'
+    requires = {'L3MON4D3/LuaSnip', 'rafamadriz/friendly-snippets', 'tami5/lspsaga.nvim'}
   }
   -- completion
   use 'hrsh7th/cmp-nvim-lsp'
@@ -27,7 +27,7 @@ return require('packer').startup(function()
   use 'b3nj5m1n/kommentary'
   -- treesitter
   use {
-    'nvim-treesitter/nvim-treesitter'
+    'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
   use 'nvim-treesitter/playground'
@@ -62,11 +62,5 @@ return require('packer').startup(function()
   use 'tpope/vim-surround'
   use 'tpope/vim-rails'
   use 'tpope/vim-dispatch'
-end)
 
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-  augroup end
-]])
+end)
