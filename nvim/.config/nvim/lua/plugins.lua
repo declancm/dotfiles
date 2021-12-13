@@ -1,9 +1,4 @@
-packer = require 'packer'
-
-local use = packer.use
-packer.reset()
-
-packer.startup(function()
+return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
   -- telescope requirements
   use 'nvim-lua/popup.nvim'
