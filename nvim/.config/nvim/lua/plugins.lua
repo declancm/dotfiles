@@ -13,20 +13,20 @@ return require('packer').startup(function()
   use 'tami5/lspsaga.nvim'
   -- " snippets
   -- cmp completion start
-  -- use {
-  --   'saadparwaiz1/cmp_luasnip',
-  --   requires = {'L3MON4D3/LuaSnip', 'rafamadriz/friendly-snippets'}
-  -- }
-  -- use 'hrsh7th/cmp-nvim-lsp'
-  -- use 'hrsh7th/cmp-buffer'
-  -- use 'hrsh7th/cmp-path'
-  -- use 'hrsh7th/cmp-cmdline'
-  -- use 'hrsh7th/nvim-cmp'
-  -- use 'onsails/lspkind-nvim'
-  -- use {'tzachar/cmp-tabnine', run = './install.sh'}
+  use {
+    'saadparwaiz1/cmp_luasnip',
+    requires = {'L3MON4D3/LuaSnip', 'rafamadriz/friendly-snippets'}
+  }
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
+  use 'hrsh7th/nvim-cmp'
+  use 'onsails/lspkind-nvim'
+  use {'tzachar/cmp-tabnine', run = './install.sh'}
   -- cmp completion end
   -- coc completion
-  use {'neoclide/coc.nvim', branch = 'release'}
+  -- use {'neoclide/coc.nvim', branch = 'release'}
   -- commenting
   use 'b3nj5m1n/kommentary'
   -- treesitter
