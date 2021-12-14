@@ -76,7 +76,7 @@ nnoremap <leader>tt :TroubleToggle<CR>
 " nnoremap <silent> <leader>ng mZ :lcd ~/notes<CR> :silent exec "!git pull origin master > /dev/null"<CR> :edit ~/notes/notes.md<CR>
 " nnoremap <silent> <leader>nb :w<CR> :silent exec "!source ~/.config/nvim/auto-commit/commit.sh"<CR> :lcd -<CR> `Z :delmarks Z<CR>
 " open notes (todo.md) from anywhere and return.
-nnoremap <silent> <leader>ng mZ :lcd ~/notes<CR> :edit ~/notes/notes.md<CR>
+nnoremap <silent> <leader>ng mZ :lcd ~/notes<CR> :edit ~/notes/notes.txt<CR>
 nnoremap <silent> <leader>nb :w<CR> :lcd -<CR> `Z :delmarks Z<CR>
 " save, auto commit and push
 nnoremap <silent> <leader>cp :!source ~/.config/nvim/commit.sh<CR>
@@ -91,3 +91,9 @@ nnoremap <silent> <leader>cp :!source ~/.config/nvim/commit.sh<CR>
 " endfunction
 
 " nnoremap <F9> :set paste<CR> "<F8>" :set topaste<CR>
+
+" change position of cursor when pasting
+noremap p gp
+noremap P gP
+noremap gp p
+noremap gP P

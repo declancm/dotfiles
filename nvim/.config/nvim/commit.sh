@@ -13,6 +13,7 @@ if git rev-parse --git-dir > /dev/null 2>&1; then
     git commit -a -m "auto commit @ `date +'%Y-%m-%d %H:%M:%S'`"
     wait
     git push $remote $branch
+    cd -
 else
     printf "You are not inside a git repository!"
 fi

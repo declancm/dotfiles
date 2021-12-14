@@ -27,7 +27,11 @@ return require('packer').startup(function()
   -- use {'tzachar/cmp-tabnine', run = './install.sh'}
 
   -- coc completion
-  use {'neoclide/coc.nvim', run = 'yarn install --frozen-lockfile'}
+  use {
+    'neoclide/coc.nvim',
+    branch = 'master',
+    run = 'yarn install --frozen-lockfile'
+  }
   -- use 'wellle/tmux-complete.vim'
 
   -- commenting
