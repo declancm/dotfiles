@@ -7,6 +7,7 @@ tvim() {
     touch "$1"
     nvim "$1"
 }
+alias tmux='TERM=xterm-256color tmux'
 alias commit='source ~/Git/git-commit-kit/commit.sh'
 alias pyvenv='source ~/Git/virtualenv-creator/pyvenv.sh'
 alias make16='make -j16'
