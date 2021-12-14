@@ -22,29 +22,29 @@ packadd packer.nvim
 
 lua require('plugins')
 
-source $HOME/.config/nvim/plug-config/autocmd.vim
-source $HOME/.config/nvim/plug-config/keymaps.vim
-source $HOME/.config/nvim/plug-config/git.vim
-source $HOME/.config/nvim/plug-config/quickscope.vim
-luafile $HOME/.config/nvim/plug-config/lspconfig.lua
-source $HOME/.config/nvim/plug-config/lspconfig.vim
-luafile $HOME/.config/nvim/plug-config/treesitter.lua
-source $HOME/.config/nvim/plug-config/treesitter.vim
-luafile $HOME/.config/nvim/plug-config/telescope.lua
-source $HOME/.config/nvim/plug-config/telescope.vim
-" luafile $HOME/.config/nvim/plug-config/refactoring.lua
-luafile $HOME/.config/nvim/plug-config/lspsaga.lua
-source $HOME/.config/nvim/plug-config/lspsaga.vim
-luafile $HOME/.config/nvim/plug-config/cmp.lua
-" source $HOME/.config/nvim/plug-config/coc.vim
-" source $HOME/.config/nvim/plug-config/coc-ultisnips.vim
-luafile $HOME/.config/nvim/plug-config/symbols.lua
-source $HOME/.config/nvim/plug-config/symbols.vim
-luafile $HOME/.config/nvim/plug-config/trouble.lua
-luafile $HOME/.config/nvim/plug-config/lualine.lua
-luafile $HOME/.config/nvim/plug-config/kommentary.lua
-source $HOME/.config/nvim/plug-config/design.vim
-" luafile $HOME/.config/nvim/plug-config/lspcolors.lua
+source $HOME/.config/nvim/config/autocmd.vim
+source $HOME/.config/nvim/config/keymaps.vim
+source $HOME/.config/nvim/config/git.vim
+source $HOME/.config/nvim/config/quickscope.vim
+luafile $HOME/.config/nvim/config/lspconfig.lua
+source $HOME/.config/nvim/config/lspconfig.vim
+luafile $HOME/.config/nvim/config/treesitter.lua
+source $HOME/.config/nvim/config/treesitter.vim
+luafile $HOME/.config/nvim/config/telescope.lua
+source $HOME/.config/nvim/config/telescope.vim
+" luafile $HOME/.config/nvim/config/refactoring.lua
+luafile $HOME/.config/nvim/config/lspsaga.lua
+source $HOME/.config/nvim/config/lspsaga.vim
+" luafile $HOME/.config/nvim/config/cmp.lua
+source $HOME/.config/nvim/config/coc.vim
+source $HOME/.config/nvim/config/coc-ultisnips.vim
+luafile $HOME/.config/nvim/config/symbols.lua
+source $HOME/.config/nvim/config/symbols.vim
+luafile $HOME/.config/nvim/config/trouble.lua
+luafile $HOME/.config/nvim/config/lualine.lua
+luafile $HOME/.config/nvim/config/kommentary.lua
+source $HOME/.config/nvim/config/design.vim
+" luafile $HOME/.config/nvim/config/lspcolors.lua
 
 lua require'colorizer'.setup()
 
