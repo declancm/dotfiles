@@ -35,7 +35,9 @@ source $HOME/.config/nvim/plug-config/telescope.vim
 " luafile $HOME/.config/nvim/plug-config/refactoring.lua
 luafile $HOME/.config/nvim/plug-config/lspsaga.lua
 source $HOME/.config/nvim/plug-config/lspsaga.vim
-luafile $HOME/.config/nvim/plug-config/cmp.lua
+" luafile $HOME/.config/nvim/plug-config/cmp.lua
+source $HOME/.config/nvim/plug-config/coc.vim
+source $HOME/.config/nvim/plug-config/coc-ultisnips.vim
 luafile $HOME/.config/nvim/plug-config/symbols.lua
 source $HOME/.config/nvim/plug-config/symbols.vim
 luafile $HOME/.config/nvim/plug-config/trouble.lua
