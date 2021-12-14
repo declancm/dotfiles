@@ -94,6 +94,11 @@ _G.packer_plugins = {
     path = "/home/declancm/.local/share/nvim/site/pack/packer/start/kommentary",
     url = "https://github.com/b3nj5m1n/kommentary"
   },
+  ["lspsaga.nvim"] = {
+    loaded = true,
+    path = "/home/declancm/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
+    url = "https://github.com/tami5/lspsaga.nvim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/declancm/.local/share/nvim/site/pack/packer/start/lualine.nvim",
