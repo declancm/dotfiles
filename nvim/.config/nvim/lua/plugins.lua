@@ -27,17 +27,17 @@ return require('packer').startup(function()
   -- use {'tzachar/cmp-tabnine', run = './install.sh'}
 
   -- coc completion
-  -- use {
-  --   'neoclide/coc.nvim',
-  --   branch = 'master',
-  --   run = 'yarn install --frozen-lockfile'
-  -- }
-  -- -- use 'wellle/tmux-complete.vim'
+  use {
+    'neoclide/coc.nvim',
+    branch = 'master',
+    run = 'yarn install --frozen-lockfile'
+  }
+  -- use 'wellle/tmux-complete.vim'
 
   -- coq completion
-  use {'ms-jpg/coq_nvim', branch = 'coq'}
-  use {'ms-jpg/coq.artifacts', branch = 'artifacts'}
-  use {'ms-jpg/coq.thirdparty', branch = '3p'}
+  -- use {'ms-jpq/coq_nvim', branch = 'coq'}
+  -- use {'ms-jpg/coq.artifacts', branch = 'artifacts'}
+  -- -- use {'ms-jpg/coq.thirdparty', branch = '3p'}
 
   -- commenting
   use 'b3nj5m1n/kommentary'

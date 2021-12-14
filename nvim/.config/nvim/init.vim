@@ -27,8 +27,8 @@ source $HOME/.config/nvim/config/keymaps.vim
 source $HOME/.config/nvim/config/git.vim
 source $HOME/.config/nvim/config/quickscope.vim
 luafile $HOME/.config/nvim/config/lspconfig.lua
-" source $HOME/.config/nvim/config/lspconfig.vim
-luafile $HOME/.config/nvim/config/coq.lua
+source $HOME/.config/nvim/config/lspconfig.vim
+" luafile $HOME/.config/nvim/config/coq.lua
 luafile $HOME/.config/nvim/config/treesitter.lua
 source $HOME/.config/nvim/config/treesitter.vim
 luafile $HOME/.config/nvim/config/telescope.lua
@@ -37,8 +37,8 @@ source $HOME/.config/nvim/config/telescope.vim
 luafile $HOME/.config/nvim/config/lspsaga.lua
 source $HOME/.config/nvim/config/lspsaga.vim
 " luafile $HOME/.config/nvim/config/cmp.lua
-" source $HOME/.config/nvim/config/coc.vim
-" source $HOME/.config/nvim/config/coc-ultisnips.vim
+source $HOME/.config/nvim/config/coc.vim
+source $HOME/.config/nvim/config/coc-ultisnips.vim
 luafile $HOME/.config/nvim/config/symbols.lua
 source $HOME/.config/nvim/config/symbols.vim
 luafile $HOME/.config/nvim/config/trouble.lua
@@ -48,6 +48,9 @@ source $HOME/.config/nvim/config/design.vim
 " luafile $HOME/.config/nvim/config/lspcolors.lua
 
 lua require'colorizer'.setup()
+
+" let g:coq_settings = { 'auto_start': v:true }
+" let g:coq_settings = { 'display.icons.mode': 'none' }
 
 " set wildmode=longest,list,full
 " set wildmenu
