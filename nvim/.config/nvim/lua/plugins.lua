@@ -14,25 +14,25 @@ return require('packer').startup(function()
   -- " snippets
 
   -- cmp completion
-  -- use {
-  --   'saadparwaiz1/cmp_luasnip',
-  --   requires = {'L3MON4D3/LuaSnip', 'rafamadriz/friendly-snippets'}
-  -- }
-  -- use 'hrsh7th/cmp-nvim-lsp'
-  -- use 'hrsh7th/cmp-buffer'
-  -- use 'hrsh7th/cmp-path'
-  -- use 'hrsh7th/cmp-cmdline'
-  -- use 'hrsh7th/nvim-cmp'
-  -- use 'onsails/lspkind-nvim'
-  -- use {'tzachar/cmp-tabnine', run = './install.sh'}
+  use {
+    'saadparwaiz1/cmp_luasnip',
+    requires = {'l3mon4d3/luasnip', 'rafamadriz/friendly-snippets'}
+  }
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
+  use 'hrsh7th/nvim-cmp'
+  use 'onsails/lspkind-nvim'
+  use {'tzachar/cmp-tabnine', run = './install.sh'}
 
   -- coc completion
-  use {
-    'neoclide/coc.nvim',
-    branch = 'master',
-    run = 'yarn install --frozen-lockfile'
-  }
-  -- use 'wellle/tmux-complete.vim'
+  -- use {
+  --   'neoclide/coc.nvim',
+  --   branch = 'master',
+  --   run = 'yarn install --frozen-lockfile'
+  -- }
+  -- -- use 'wellle/tmux-complete.vim'
 
   -- coq completion
   -- use {'ms-jpq/coq_nvim', branch = 'coq'}
