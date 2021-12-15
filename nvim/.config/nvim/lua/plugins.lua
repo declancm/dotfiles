@@ -54,6 +54,7 @@ return require('packer').startup(function()
   -- git
   use 'tpope/vim-fugitive'
   use 'tpope/vim-rhubarb'
+  use 'junegunn/gv.vim'
   use 'f-person/git-blame.nvim'
   -- theme and colors
   use 'navarasu/onedark.nvim'
@@ -79,5 +80,6 @@ return require('packer').startup(function()
   use 'tpope/vim-surround'
   use 'tpope/vim-rails'
   use 'tpope/vim-dispatch'
+  use 'vim-utils/vim-man'
 
 end)
