@@ -1,4 +1,8 @@
 #!/bin/sh
+
+# stop conda from opening base
+conda config --set auto_activate_base false
+
 export ZDOTDIR=$HOME/.config/zsh
 HISTFILE=~/.zsh_history
 setopt appendhistory
