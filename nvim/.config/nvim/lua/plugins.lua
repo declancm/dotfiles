@@ -13,6 +13,7 @@ return require('packer').startup(function()
   use 'tami5/lspsaga.nvim'
   -- " snippets
 
+
   -- cmp completion
   use {
     'saadparwaiz1/cmp_luasnip',
@@ -26,6 +27,7 @@ return require('packer').startup(function()
   use 'onsails/lspkind-nvim'
   use {'tzachar/cmp-tabnine', run = './install.sh'}
 
+
   -- coc completion
   -- use {
   --   'neoclide/coc.nvim',
@@ -34,10 +36,12 @@ return require('packer').startup(function()
   -- }
   -- -- use 'wellle/tmux-complete.vim'
 
+
   -- coq completion
   -- use {'ms-jpq/coq_nvim', branch = 'coq'}
   -- use {'ms-jpg/coq.artifacts', branch = 'artifacts'}
   -- -- use {'ms-jpg/coq.thirdparty', branch = '3p'}
+
 
   -- commenting
   use 'b3nj5m1n/kommentary'
