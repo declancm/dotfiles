@@ -1,3 +1,10 @@
+let g:coc_global_extensions=[
+            \'coc-styled-components', 'coc-json', 'coc-pyright', 'coc-snippets',
+            \'coc-vimlsp', 'coc-tsserver', 'coc-clangd', 'coc-cmake',
+            \'coc-sh', 'coc-markdownlint', 'coc-solargraph', 'coc-powershell',
+            \'coc-tabnine', 'coc-json'
+            \]
+
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 " unicode characters in the file autoload/float.vim
 set encoding=utf-8
@@ -166,3 +173,4 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 " coc-sh setup
 lua require'lspconfig'.bashls.setup{}
+
