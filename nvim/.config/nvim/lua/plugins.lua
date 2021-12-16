@@ -31,7 +31,8 @@ return require('packer').startup(function()
     'neoclide/coc.nvim',
     branch = 'master',
     run = 'yarn install --frozen-lockfile',
-    ft = 'ps1',
+    ft = {'ps1', 'markdown', 'cmake'},
+    requires = {'SirVer/ultisnips', 'honza/vim-snippets'},
     config = function() vim.cmd('source $HOME/.config/nvim/config/coc.vim');
       require('cmp').setup.buffer { enabled = false } end
   }

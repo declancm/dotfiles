@@ -1,4 +1,7 @@
 {
+  // coc-powershell setup
+  "powershell.integratedConsole.showOnStartup": false,
+
   "diagnostic.checkCurrentLine": true,
   "diagnostic.messageTarget": "echo",
   "diagnostic.virtualText": true,
@@ -13,9 +16,6 @@
   //   "json",
   //   "python"
   // ],
-
-  // coc-powershell setup
-  "powershell.integratedConsole.showOnStartup": false,
 
   // python config
   "python.linting.enabled": true,
