@@ -36,8 +36,9 @@ colorscheme onedark
 " Status line color is used when lualine is not used:
 " highlight StatusLine ctermbg=0 guibg=Purple
 
-" set colorcolumn=80
-highlight ColorColumn ctermbg=0 guibg=NONE
+set colorcolumn=80
+" highlight ColorColumn ctermbg=0 guibg=NONE
+highlight ColorColumn ctermbg=0 guibg=#31353f
 
 highlight Normal guibg=none
 " set up cursor for different modes

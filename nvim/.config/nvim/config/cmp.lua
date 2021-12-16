@@ -71,6 +71,10 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
     -- on_attach = on_attach,
     capabilities = capabilities
   }
+  -- require('lspconfig')['powershell_es'].setup {
+  --   -- on_attach = on_attach,
+  --   capabilities = capabilities
+  -- }
 
 -- Setup cmp_tabnine
 local tabnine = require('cmp_tabnine.config')

@@ -13,26 +13,27 @@ return require('packer').startup(function()
   use 'tami5/lspsaga.nvim'
   -- " snippets
 
-
   -- cmp completion
-  -- use {
-  --   'saadparwaiz1/cmp_luasnip',
-  --   requires = {'l3mon4d3/luasnip', 'rafamadriz/friendly-snippets'}
-  -- }
-  -- use 'hrsh7th/cmp-nvim-lsp'
-  -- use 'hrsh7th/cmp-buffer'
-  -- use 'hrsh7th/cmp-path'
-  -- use 'hrsh7th/cmp-cmdline'
-  -- use 'hrsh7th/nvim-cmp'
-  -- use 'onsails/lspkind-nvim'
-  -- use {'tzachar/cmp-tabnine', run = './install.sh'}
-
+  use {
+    'hrsh7th/nvim-cmp',
+    config = function() vim.cmd('luafile $HOME/.config/nvim/config/cmp.lua') end,
+    requires = {
+      'hrsh7th/cmp-nvim-lsp', 'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-path', 'hrsh7th/cmp-cmdline',
+      'onsails/lspkind-nvim', {'tzachar/cmp-tabnine', run = './install.sh'},
+      'saadparwaiz1/cmp_luasnip', 'l3mon4d3/luasnip',
+      'rafamadriz/friendly-snippets'
+    }
+  }
 
   -- coc completion
   use {
     'neoclide/coc.nvim',
     branch = 'master',
-    run = 'yarn install --frozen-lockfile'
+    run = 'yarn install --frozen-lockfile',
+    ft = 'ps1',
+    config = function() vim.cmd('source $HOME/.config/nvim/config/coc.vim');
+      require('cmp').setup.buffer { enabled = false } end
   }
   -- use 'wellle/tmux-complete.vim'
 
