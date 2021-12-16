@@ -33,8 +33,10 @@ return require('packer').startup(function()
     run = 'yarn install --frozen-lockfile',
     ft = {'ps1', 'markdown', 'cmake'},
     requires = {'SirVer/ultisnips', 'honza/vim-snippets'},
-    config = function() vim.cmd('source $HOME/.config/nvim/config/coc.vim');
-      require('cmp').setup.buffer { enabled = false } end
+    config = function()
+      vim.cmd('source $HOME/.config/nvim/config/coc.vim')
+      require('cmp').setup.buffer { enabled = false }
+    end
   }
   -- use 'wellle/tmux-complete.vim'
 
