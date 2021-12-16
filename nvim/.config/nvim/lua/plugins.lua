@@ -45,7 +45,10 @@ return require('packer').startup(function()
 
 
   -- commenting
-  use 'b3nj5m1n/kommentary'
+  use {
+    'b3nj5m1n/kommentary',
+    config = function() vim.g.kommentary_create_default_mappings = false end
+  }
   -- treesitter
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
   use 'nvim-treesitter/playground'
@@ -79,7 +82,7 @@ return require('packer').startup(function()
   use 'folke/trouble.nvim'
   use 'dkarter/bullets.vim'
   use 'tpope/vim-surround'
-  use 'tpope/vim-rails'
+  -- use 'tpope/vim-rails'
   use 'tpope/vim-dispatch'
   use 'vim-utils/vim-man'
 

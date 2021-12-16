@@ -1,17 +1,6 @@
 syntax on
 
-" for the :find command
-" set path+=**
-" set wildignore+=*.pyc
-" set wildignore+=*_build/*
-" set wildignore+=**/coverage/*
-" set wildignore+=**/node_modules/*
-" set wildignore+=**/android/*
-" set wildignore+=**/ios/*
-" set wildignore+=**/.git/*
-
 " pre plugin commands
-lua vim.g.kommentary_create_default_mappings = false
 set background=dark
 set completeopt=menuone,noinsert,noselect
 
@@ -52,8 +41,6 @@ lua require'colorizer'.setup()
 " let g:coq_settings = { 'auto_start': v:true }
 " let g:coq_settings = { 'display.icons.mode': 'none' }
 
-" set wildmode=longest,list,full
-" set wildmenu
 " set backspace=indent,eol,start
 set relativenumber
 set nu
@@ -84,3 +71,18 @@ set modifiable
 set splitbelow
 set splitright
 set pastetoggle=<F9>
+
+" for the :find command
+set path+=**
+
+set wildmode=longest,list,full
+set wildmenu
+
+set wildignore+=*.pyc
+set wildignore+=*_build/*
+set wildignore+=**/coverage/*
+set wildignore+=**/node_modules/*
+set wildignore+=**/android/*
+set wildignore+=**/ios/*
+set wildignore+=**/.git/*
+
