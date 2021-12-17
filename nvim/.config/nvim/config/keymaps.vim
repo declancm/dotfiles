@@ -17,9 +17,9 @@ nnoremap <leader><right> :wincmd l<CR>
 " nnoremap <leader>ex :wincmd v<bar> :wincmd H<bar> :Ex <bar> :vertical resize 30<CR>
 
 " chadtree
-nnoremap <silent> <leader>ex :CHADopen<CR>
-nnoremap <silent> <leader>et :CHADopen --version-ctl<CR>
-nnoremap <silent> <leader>ec :call setqflist([])<CR>
+nnoremap <silent> <leader>e :CHADopen<CR>
+" nnoremap <silent> <leader>et :CHADopen --version-ctl<CR>
+" nnoremap <silent> <leader>ec :call setqflist([])<CR>
 
 " nnoremap <Leader>ps :Rg<SPACE>
 nnoremap <silent> <leader>+ :vertical resize +5<CR>
