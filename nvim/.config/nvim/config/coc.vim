@@ -5,7 +5,7 @@
 "             \'coc-tabnine', 'coc-json'
 "             \]
 
-let g:coc_global_extensions=[ 'coc-powershell', 'coc-markdownlint', 'coc-cmake']
+let g:coc_global_extensions=[ 'coc-powershell', 'coc-markdownlint', 'coc-cmake', 'coc-pairs' ]
 
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 " unicode characters in the file autoload/float.vim

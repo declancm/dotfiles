@@ -22,7 +22,7 @@ return require('packer').startup(function()
       'hrsh7th/cmp-path', 'hrsh7th/cmp-cmdline',
       'onsails/lspkind-nvim', {'tzachar/cmp-tabnine', run = './install.sh'},
       'saadparwaiz1/cmp_luasnip', 'l3mon4d3/luasnip',
-      'rafamadriz/friendly-snippets'
+      'rafamadriz/friendly-snippets', 'windwp/nvim-autopairs'
     }
   }
 
@@ -47,6 +47,12 @@ return require('packer').startup(function()
   -- -- use {'ms-jpg/coq.thirdparty', branch = '3p'}
 
 
+  -- file tree
+  use {
+    'ms-jpq/chadtree',
+    branch = 'chad',
+    run = 'python3 -m chadtree deps'
+  }
   -- commenting
   use {
     'b3nj5m1n/kommentary',
