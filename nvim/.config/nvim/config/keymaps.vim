@@ -16,10 +16,17 @@ nnoremap <leader><up> :wincmd k<CR>
 nnoremap <leader><right> :wincmd l<CR>
 " nnoremap <leader>ex :wincmd v<bar> :wincmd H<bar> :Ex <bar> :vertical resize 30<CR>
 
+" tmux-like previous window switch
+nnoremap <leader>; :wincmd p<CR>
+
 " chadtree
 nnoremap <silent> <leader>e :CHADopen<CR>
 " nnoremap <silent> <leader>et :CHADopen --version-ctl<CR>
 " nnoremap <silent> <leader>ec :call setqflist([])<CR>
+
+" markdown preview
+nnoremap <leader>mdp :MarkdownPreview<CR>
+nnoremap <leader>mds :MarkdownPreviewStop<CR>
 
 " nnoremap <Leader>ps :Rg<SPACE>
 nnoremap <silent> <leader>+ :vertical resize +5<CR>

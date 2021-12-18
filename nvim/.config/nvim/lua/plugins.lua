@@ -40,12 +40,10 @@ return require('packer').startup(function()
   }
   -- use 'wellle/tmux-complete.vim'
 
-
   -- coq completion
   -- use {'ms-jpq/coq_nvim', branch = 'coq'}
   -- use {'ms-jpg/coq.artifacts', branch = 'artifacts'}
   -- -- use {'ms-jpg/coq.thirdparty', branch = '3p'}
-
 
   -- file tree
   use {
@@ -80,7 +78,10 @@ return require('packer').startup(function()
   use 'kyazdani42/nvim-web-devicons'
   use 'p00f/nvim-ts-rainbow'
   -- " Plug 'folke/todo-comments.nvim'
-  use 'norcalli/nvim-colorizer.lua'
+  use {
+    'norcalli/nvim-colorizer.lua',
+    config = function() require'colorizer'.setup() end
+  }
   -- " Plug 'folke/lsp-colors.nvim'
   -- debugging
   -- " Plug 'puremourning/vimspector'
@@ -94,5 +95,10 @@ return require('packer').startup(function()
   -- use 'tpope/vim-rails'
   use 'tpope/vim-dispatch'
   use 'vim-utils/vim-man'
+  use {
+    'iamcco/markdown-preview.nvim',
+    run = 'cd app && yarn install',
+    config = function() vim.g.mkdp_auto_start = 1 end
+  }
 
 end)

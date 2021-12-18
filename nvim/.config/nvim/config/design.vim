@@ -5,10 +5,13 @@
 " FIX
 " HACK
 
+set colorcolumn=80
+
 let g:onedark_style = 'dark'
 let g:onedark_transparent_background = v:true
 let g:onedark_italic_comment = v:false
 colorscheme onedark
+highlight ColorColumn ctermbg=0 guibg=#31353f
 
 " let g:tokyonight_style = 'storm'
 " let g:tokyonight_transparent = v:true
@@ -36,9 +39,7 @@ colorscheme onedark
 " Status line color is used when lualine is not used:
 " highlight StatusLine ctermbg=0 guibg=Purple
 
-set colorcolumn=80
 " highlight ColorColumn ctermbg=0 guibg=NONE
-highlight ColorColumn ctermbg=0 guibg=#31353f
 
 highlight Normal guibg=none
 " set up cursor for different modes

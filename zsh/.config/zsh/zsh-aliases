@@ -8,7 +8,8 @@ tvim() {
     nvim "$1"
 }
 alias tmux='TERM=xterm-256color tmux'
-alias commit='source ~/Git/git-commit-kit/commit.sh'
+# export PATH=$PATH:$HOME/Git/git-commit/build/commit
+# alias commit='source ~/Git/git-commit-kit/commit.sh'
 alias pyvenv='source ~/Git/virtualenv-creator/pyvenv-bash.sh'
 alias make16='make -j16'
 alias notes='nvim ~/notes/notes.md'
