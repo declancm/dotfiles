@@ -36,6 +36,8 @@ luafile $HOME/.config/nvim/config/kommentary.lua
 source $HOME/.config/nvim/config/design.vim
 " luafile $HOME/.config/nvim/config/lspcolors.lua
 
+luafile $HOME/.config/nvim/config/toggleterm.lua
+
 " lua require'colorizer'.setup()
 
 " let g:coq_settings = { 'auto_start': v:true }

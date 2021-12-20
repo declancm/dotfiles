@@ -100,5 +100,6 @@ return require('packer').startup(function()
     run = 'cd app && yarn install',
     -- config = function() vim.g.mkdp_auto_start = 1 end
   }
+  use {"akinsho/toggleterm.nvim"}
 
 end)
