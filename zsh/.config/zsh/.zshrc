@@ -117,3 +117,7 @@ unset __conda_setup
 # fnm
 export PATH=/home/declancm/.local/bin:$PATH
 eval "`fnm env`"
+
+# fnm
+export PATH=/home/declancm/.local/bin:$PATH
+eval "`fnm env`"
