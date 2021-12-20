@@ -103,3 +103,7 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 # setxkbmap -option caps:escape
 # swap escape and caps
 # setxkbmap -option caps:swapescape
+
+# fnm
+export PATH=/home/declancm/.local/bin:$PATH
+eval "`fnm env`"
