@@ -6,10 +6,9 @@ return require('packer').startup(function()
   use 'nvim-lua/plenary.nvim'
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}
   use 'nvim-telescope/telescope.nvim'
-  -- "Plug 'nvim-telescope/telescope-fzy-native.nvim'
   -- lsp
   use 'neovim/nvim-lspconfig'
-  -- " Plug 'nvim-lua/lsp_extensions.nvim'
+  -- use 'nvim-lua/lsp_extensions.nvim'
   use 'tami5/lspsaga.nvim'
   -- " snippets
 
