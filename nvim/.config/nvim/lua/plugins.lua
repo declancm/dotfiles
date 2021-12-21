@@ -8,7 +8,7 @@ return require('packer').startup(function()
   use 'nvim-telescope/telescope.nvim'
   -- lsp
   use 'neovim/nvim-lspconfig'
-  use 'nvim-lua/lsp_extensions.nvim'
+  -- use 'nvim-lua/lsp_extensions.nvim'
   use 'tami5/lspsaga.nvim'
   -- " snippets
 
