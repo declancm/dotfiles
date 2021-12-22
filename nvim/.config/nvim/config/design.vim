@@ -14,6 +14,19 @@ highlight ColorColumn ctermbg=0 guibg=#31353f
 " colorscheme dracula
 " highlight ColorColumn ctermbg=0 guibg=#191A21
 
+" tokyonight setup
+" let g:tokyonight_style = 'storm'
+" let g:tokyonight_transparent = v:true
+" let g:tokyonight_italic_comments = v:false
+" colorscheme tokyonight
+
+" material setup
+" let g:material_style = 'palenight'
+" lua << EOF
+" require('material').setup()
+" EOF
+" colorscheme material
+
 " Status line color is used when lualine is not used:
 " highlight StatusLine ctermbg=0 guibg=Purple
 
