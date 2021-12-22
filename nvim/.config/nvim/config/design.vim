@@ -1,40 +1,18 @@
 " design
 
-" testing theme:
-" TODO
-" FIX
-" HACK
-
 set colorcolumn=80
 
+" onedark setup
 let g:onedark_style = 'dark'
 let g:onedark_transparent_background = v:true
 let g:onedark_italic_comment = v:false
 colorscheme onedark
 highlight ColorColumn ctermbg=0 guibg=#31353f
 
-" let g:tokyonight_style = 'storm'
-" let g:tokyonight_transparent = v:true
-" let g:tokyonight_italic_comments = v:false
-" colorscheme tokyonight
-
-" let g:material_style = 'palenight'
-" lua << EOF
-" require('material').setup()
-" EOF
-" colorscheme material
-
+" dracula setup
 " let g:dracula_transparent_bg = 1
 " colorscheme dracula
 " highlight ColorColumn ctermbg=0 guibg=#191A21
-
-" let g:nvcode_termcolors=256
-" colorscheme onedark
-" if (has("termguicolors"))
-"     set termguicolors
-"     hi LineNr ctermbg=NONE guibg=NONE
-" endif
-" highlight Comment ctermfg=Gray guifg=Gray
 
 " Status line color is used when lualine is not used:
 " highlight StatusLine ctermbg=0 guibg=Purple

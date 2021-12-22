@@ -67,19 +67,18 @@ return require('packer').startup(function()
   use 'f-person/git-blame.nvim'
   -- theme and colors
   use 'navarasu/onedark.nvim'
-  -- Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
-  -- Plug 'tiagovla/tokyodark.nvim'
-  use 'Mofiqul/dracula.nvim'
-  -- Plug 'marko-cerovac/material.nvim'
-  -- " Plug 'christianchiarulli/nvcode-color-schemes.vim'
+  -- use 'folke/tokyonight.nvim', branch = 'main' }
+  -- use 'tiagovla/tokyodark.nvim'
+  -- use 'Mofiqul/dracula.nvim',
+  -- use 'marko-cerovac/material.nvim'
   use 'hoob3rt/lualine.nvim'
   use 'kyazdani42/nvim-web-devicons'
   use 'p00f/nvim-ts-rainbow'
-  -- " Plug 'folke/todo-comments.nvim'
+  -- " use 'folke/todo-comments.nvim'
   use 'norcalli/nvim-colorizer.lua'
-  -- " Plug 'folke/lsp-colors.nvim'
+  -- " use 'folke/lsp-colors.nvim'
   -- debugging
-  -- " Plug 'puremourning/vimspector'
+  -- " use 'puremourning/vimspector'
   -- miscellaneous
   use 'szw/vim-maximizer'
   use 'unblevable/quick-scope'
