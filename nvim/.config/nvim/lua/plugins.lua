@@ -10,7 +10,6 @@ return require('packer').startup(function()
   use 'neovim/nvim-lspconfig'
   -- use 'nvim-lua/lsp_extensions.nvim'
   use 'tami5/lspsaga.nvim'
-  -- " snippets
 
   -- cmp completion
   use {
@@ -77,10 +76,7 @@ return require('packer').startup(function()
   use 'kyazdani42/nvim-web-devicons'
   use 'p00f/nvim-ts-rainbow'
   -- " Plug 'folke/todo-comments.nvim'
-  use {
-    'norcalli/nvim-colorizer.lua',
-    config = function() require'colorizer'.setup() end
-  }
+  use 'norcalli/nvim-colorizer.lua'
   -- " Plug 'folke/lsp-colors.nvim'
   -- debugging
   -- " Plug 'puremourning/vimspector'

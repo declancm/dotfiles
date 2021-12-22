@@ -13,6 +13,8 @@ lua require('plugins')
 
 source $HOME/.config/nvim/config/autocmd.vim
 source $HOME/.config/nvim/config/keymaps.vim
+
+" PLUGIN_CONFIGURATIONS:
 source $HOME/.config/nvim/config/git.vim
 source $HOME/.config/nvim/config/quickscope.vim
 luafile $HOME/.config/nvim/config/lspconfig.lua
@@ -25,11 +27,8 @@ source $HOME/.config/nvim/config/telescope.vim
 " luafile $HOME/.config/nvim/config/refactoring.lua
 luafile $HOME/.config/nvim/config/lspsaga.lua
 source $HOME/.config/nvim/config/lspsaga.vim
-luafile $HOME/.config/nvim/config/cmp.lua
+" luafile $HOME/.config/nvim/config/cmp.lua
 " source $HOME/.config/nvim/config/coc.vim
-" source $HOME/.config/nvim/config/coc-ultisnips.vim
-luafile $HOME/.config/nvim/config/symbols.lua
-source $HOME/.config/nvim/config/symbols.vim
 luafile $HOME/.config/nvim/config/trouble.lua
 luafile $HOME/.config/nvim/config/lualine.lua
 luafile $HOME/.config/nvim/config/kommentary.lua
