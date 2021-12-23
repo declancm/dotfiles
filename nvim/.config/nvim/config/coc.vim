@@ -1,3 +1,6 @@
+" disable cmp
+lua require('cmp').setup.buffer { enabled = false }
+
 " let g:coc_global_extensions=[
 "             \'coc-styled-components', 'coc-json', 'coc-pyright', 'coc-snippets',
 "             \'coc-vimlsp', 'coc-tsserver', 'coc-clangd', 'coc-cmake',

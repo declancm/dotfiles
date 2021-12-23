@@ -1,17 +1,17 @@
 return require('packer').startup(function()
 
   use "wbthomason/packer.nvim"
-  -- telescope requirements
+  -- TELESCOPE:
   use "nvim-lua/popup.nvim"
   use "nvim-lua/plenary.nvim"
   use {"nvim-telescope/telescope-fzf-native.nvim", run = "make"}
   use "nvim-telescope/telescope.nvim"
-  -- lsp
+  -- LSP:
   use "neovim/nvim-lspconfig"
   -- use "nvim-lua/lsp_extensions.nvim"
   use "tami5/lspsaga.nvim"
 
-  -- cmp completion
+  -- CMP_COMPLETION:
   use {
     "hrsh7th/nvim-cmp",
     config = function() vim.cmd('luafile $HOME/.config/nvim/config/cmp.lua') end,
@@ -24,48 +24,49 @@ return require('packer').startup(function()
     }
   }
 
-  -- coc completion
+  -- COC_COMPLETION:
   use {
     "neoclide/coc.nvim",
-    branch = "master",
-    run = "yarn install --frozen-lockfile",
+    -- branch = "master",
+    -- run = "yarn install --frozen-lockfile",
+    branch = "release",
     ft = {"ps1", "markdown", "cmake"},
     requires = {"SirVer/ultisnips", "honza/vim-snippets"},
     config = function()
       vim.cmd('source $HOME/.config/nvim/config/coc.vim')
-      require('cmp').setup.buffer { enabled = false }
+      -- require('cmp').setup.buffer { enabled = false }
     end
   }
   -- use "wellle/tmux-complete.vim"
 
-  -- coq completion
+  -- COQ_COMPLETION:
   -- use {"ms-jpq/coq_nvim", branch = "coq"}
   -- use {"ms-jpg/coq.artifacts", branch = "artifacts"}
   -- -- use {"ms-jpg/coq.thirdparty", branch = "3p"}
 
-  -- file tree
+  -- FILE_TREE:
   use {
     "ms-jpq/chadtree",
     branch = "chad",
     run = "python3 -m chadtree deps"
   }
-  -- commenting
+  -- COMMENTS:
   use {
     "b3nj5m1n/kommentary",
     config = function() vim.g.kommentary_create_default_mappings = false end
   }
-  -- treesitter
+  -- TREESITTER:
   use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
   use "nvim-treesitter/playground"
   use "simrat39/symbols-outline.nvim"
-  -- undo tree
+  -- UNDO_TREE:
   use "mbbill/undotree"
-  -- git
+  -- GIT:
   use "tpope/vim-fugitive"
   use "tpope/vim-rhubarb"
   use "junegunn/gv.vim"
   use "f-person/git-blame.nvim"
-  -- theme and colors
+  -- DESIGN:
   use "navarasu/onedark.nvim"
   use {
     "folke/tokyonight.nvim",
@@ -84,9 +85,9 @@ return require('packer').startup(function()
   -- " use "folke/todo-comments.nvim"
   use "norcalli/nvim-colorizer.lua"
   -- " use "folke/lsp-colors.nvim"
-  -- debugging
+  -- DEBUGGING:
   -- " use "puremourning/vimspector"
-  -- miscellaneous
+  -- MISCELLANEOUS:
   use "szw/vim-maximizer"
   use "unblevable/quick-scope"
   use "tpope/vim-obsession"

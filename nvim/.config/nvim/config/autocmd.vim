@@ -47,7 +47,7 @@ autocmd FileType json setlocal shiftwidth=2 tabstop=2
 " chadtree auto opens when opening a directory with nvim
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
-    \ execute 'CHADopen' | endif
+    \ execute 'CHADopen' | execute 'cd '.argv()[0] | endif
 
 " stop auto inserting comments
 autocmd BufEnter * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
