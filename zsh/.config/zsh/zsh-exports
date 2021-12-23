@@ -8,6 +8,12 @@ export MANWIDTH=999
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.local/share/go/bin:$PATH
 export GOPATH=$HOME/.local/share/go
+
+# cuda
+export PATH=/usr/local/cuda-11.5/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-11.5/lib64\
+                         ${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+
 #export PATH=$HOME/.fnm:$PATH
 #eval "$(fnm env)"
 eval "$(zoxide init zsh)"
