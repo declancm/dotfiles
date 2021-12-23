@@ -122,7 +122,7 @@ export EDITOR='nvim'
 source /home/declancm/pyvenv-creator/pyvenv.sh
 
 # cuda
-export PATH=/usr/local/cuda-11.5/bin${PATH:+:${PATH}}
-export LD_LIBRARY_PATH=/usr/local/cuda-11.5/lib64\
-                         ${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+export PATH="/usr/local/cuda-11.5/bin"${PATH:+:"${PATH}"}""
+export LD_LIBRARY_PATH="/usr/local/cuda-11.5/lib64\
+    "${LD_LIBRARY_PATH:+:"${LD_LIBRARY_PATH}"}""
 
