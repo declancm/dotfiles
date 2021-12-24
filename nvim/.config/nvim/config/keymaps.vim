@@ -95,7 +95,7 @@ nnoremap <silent> <leader>ng mZ :lcd ~/notes<CR> :silent exec "!git pull origin 
 " nnoremap <silent> <leader>ng mZ :lcd ~/notes<CR> :edit ~/notes/notes.txt<CR>
 nnoremap <silent> <leader>nb :w<CR> :lcd -<CR> `Z :delmarks Z<CR>
 " save, auto commit and push
-nnoremap <silent> <leader>cp :!source ~/Git/git-commit-kit/commit.sh<CR>
+nnoremap <silent> <leader>gc :!source ~/Git/git-commit-kit/commit.sh<CR>
 
 " nnoremap <expr> <leader>td Todo_toggle()
 " function! Todo_toggle()
