@@ -87,6 +87,10 @@ nnoremap <leader>C ""C
 vnoremap <leader>c ""c
 " trouble toggle keymap
 nnoremap <leader>tt :TroubleToggle<CR>
+
+" save, auto commit and push
+nnoremap <silent> <leader>cp :!source ~/Git/git-commit-kit/commit.sh<CR>
+
 " open notes (todo.txt) from anywhere and return. Automatically git pull when
 " opening and then git commit and push when closing.
 " nnoremap <silent> <leader>ng mZ :lcd ~/notes<CR> :silent exec "!git pull origin master > /dev/null"<CR> :edit ~/notes/notes.txt<CR>
@@ -94,10 +98,9 @@ nnoremap <leader>tt :TroubleToggle<CR>
 " open notes (todo.txt) from anywhere and return.
 " nnoremap <silent> <leader>ng mZ :lcd ~/notes<CR> :edit ~/notes/notes.txt<CR>
 " nnoremap <silent> <leader>nb :w<CR> :lcd -<CR> `Z :delmarks Z<CR>
-" save, auto commit and push
-nnoremap <silent> <leader>cp :!source ~/Git/git-commit-kit/commit.sh<CR>
 
 nnoremap <silent> <expr> <leader>nt Notes_toggle()
+
 function! Notes_toggle()
     let currentDir = getcwd(0)
     if currentDir ==# $HOME . '/notes'
@@ -109,11 +112,11 @@ function! Notes_toggle()
 endfunction
 
 " function! Notes_toggle()
-"     let currentDir = getcwd(0)
-"     if currentDir ==# $HOME . '/notes' && originDir != v:null
+"     let g:currentDir = getcwd(0)
+"     if g:currentDir ==# $HOME . '/notes' && g:originDir != v:null
 "         silent call feedkeys(":w\<CR> `Z :lcd " . originDir . "\<CR> :delmarks Z\<CR>")
 "     else
-"         let g:originDir = currentDir
+"         let g:originDir = g:currentDir
 "         silent call feedkeys("mZ :lcd ~/notes\<CR> :silent exec \"!git pull origin master > /dev/null\"\<CR> :edit ~/notes/notes.txt\<CR>")
 "         " call feedkeys("mZ :lcd ~/notes\<CR> :silent exec \"!git pull $(git remote) $(git rev-parse --abbrev-ref HEAD) > /dev/null\"\<CR> :edit ~/notes/notes.txt\<CR>")
 "     endif
