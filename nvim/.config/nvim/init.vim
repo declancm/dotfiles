@@ -69,6 +69,7 @@ set modifiable
 set splitbelow
 set splitright
 set pastetoggle=<F9>
+set timeoutlen=500
 
 " for the :find command
 set path+=**

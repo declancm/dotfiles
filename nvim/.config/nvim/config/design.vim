@@ -1,5 +1,9 @@
 " design
 
+" chadtree theme
+" let g:chadtree_settings.theme.text_colour_set = 'solarized_dark_256'
+" lua local chadtree_settings = { ["theme.text_colour_set"] = "solarized_light" }
+
 set colorcolumn=80
 
 " onedark setup

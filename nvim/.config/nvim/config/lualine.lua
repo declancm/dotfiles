@@ -1,11 +1,9 @@
-local status, lualine = pcall(require, "lualine")
-if (not status) then return end
-lualine.setup {
+require'lualine'.setup{
   options = {
     icons_enabled = true,
     theme = 'tokyonight',--onedark, tokyonight, material-nvim or dracula-nvim
-    section_separators = {'', ''},
-    component_separators = {'', ''},
+    component_separators = { left = '', right = ''},
+    section_separators = { left = '', right = ''},
     disabled_filetypes = {}
   },
   sections = {

@@ -48,7 +48,11 @@ return require('packer').startup(function()
   use {
     "ms-jpq/chadtree",
     branch = "chad",
-    run = "python3 -m chadtree deps"
+    run = "python3 -m chadtree deps",
+    config = function()
+      local chadtree_settings = { ["theme.text_colour_set"] = "solarized_light" }
+      vim.api.nvim_set_var("chadtree_settings", chadtree_settings)
+    end
   }
   -- COMMENTS:
   use {
@@ -102,5 +106,9 @@ return require('packer').startup(function()
     -- config = function() vim.g.mkdp_auto_start = 1 end
   }
   use "akinsho/toggleterm.nvim"
+  use {
+    "folke/which-key.nvim",
+    config = function() require("which-key").setup{} end
+  }
 
 end)
