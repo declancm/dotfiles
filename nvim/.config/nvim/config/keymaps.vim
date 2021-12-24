@@ -100,7 +100,7 @@ nnoremap <silent> <leader>cp :!source ~/Git/git-commit-kit/commit.sh<CR>
 nnoremap <silent> <expr> <leader>nt Notes_toggle()
 function! Notes_toggle()
     let currentDir = getcwd(0)
-    if currentDir ==# $HOME . '/notes'
+    if currentDir ==# $HOME . '/notes' && originDir != v:null
         call feedkeys(":w\<CR> `Z :lcd " . originDir . "\<CR> :delmarks Z\<CR>")
     else
         let originDir = currentDir
