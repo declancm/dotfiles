@@ -97,14 +97,15 @@ nnoremap <silent> <leader>nb :w<CR> :lcd -<CR> `Z :delmarks Z<CR>
 " save, auto commit and push
 nnoremap <silent> <leader>cp :!source ~/Git/git-commit-kit/commit.sh<CR>
 
-" nnoremap <expr> <leader>td Todo_toggle()
-" function! Todo_toggle()
-"     if getcwd() ==# '~/.dotfiles/todo.md'
-"         return "`Z :delmarks Z<CR>"
-"     else
-"         return "mZ :edit ~/.dotfiles/todo.md<CR>"
-"     endif
-" endfunction
+nnoremap <silent> <expr> <leader>nt Notes_toggle()
+function! Notes_toggle()
+    " '==#' means match the case
+    if getcwd(0) ==# $HOME . '/notes'
+        call feedkeys(":w\<CR> :lcd -\<CR> `Z :delmarks Z\<CR>")
+    else
+        call feedkeys("mZ :lcd ~/notes\<CR> :silent exec \"!git pull origin master > /dev/null\"\<CR> :edit ~/notes/notes.txt\<CR>")
+    endif
+endfunction
 
 " nnoremap <F9> :set paste<CR> "<F8>" :set topaste<CR>
 
