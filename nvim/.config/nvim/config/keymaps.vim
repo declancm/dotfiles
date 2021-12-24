@@ -104,7 +104,8 @@ function! Notes_toggle()
     if currentd ==# $HOME . '/notes'
         call feedkeys(":w\<CR> :lcd -\<CR> `Z :delmarks Z\<CR>")
     else
-        call feedkeys("mZ :lcd ~/notes\<CR> :silent exec \"!git pull origin master > /dev/null\"\<CR> :edit ~/notes/notes.txt\<CR>")
+        " call feedkeys("mZ :lcd ~/notes\<CR> :silent exec \"!git pull origin master > /dev/null\"\<CR> :edit ~/notes/notes.txt\<CR>")
+        call feedkeys("mZ :lcd ~/notes\<CR> :silent exec \"!git pull $(git remote) $(git rev-parse --abbrev-ref HEAD) > /dev/null\"\<CR> :edit ~/notes/notes.txt\<CR>")
     endif
 endfunction
 
