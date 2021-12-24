@@ -101,10 +101,10 @@ nnoremap <silent> <expr> <leader>nt Notes_toggle()
 function! Notes_toggle()
     let currentDir = getcwd(0)
     if currentDir ==# $HOME . '/notes' && originDir != v:null
-        call feedkeys(":w\<CR> `Z :lcd " . originDir . "\<CR> :delmarks Z\<CR>")
+        silent call feedkeys(":w\<CR> `Z :lcd " . originDir . "\<CR> :delmarks Z\<CR>")
     else
         let originDir = currentDir
-        call feedkeys("mZ :lcd ~/notes\<CR> :silent exec \"!git pull origin master > /dev/null\"\<CR> :edit ~/notes/notes.txt\<CR>")
+        silent call feedkeys("mZ :lcd ~/notes\<CR> :silent exec \"!git pull origin master > /dev/null\"\<CR> :edit ~/notes/notes.txt\<CR>")
         " call feedkeys("mZ :lcd ~/notes\<CR> :silent exec \"!git pull $(git remote) $(git rev-parse --abbrev-ref HEAD) > /dev/null\"\<CR> :edit ~/notes/notes.txt\<CR>")
     endif
 endfunction
