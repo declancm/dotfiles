@@ -89,25 +89,35 @@ vnoremap <leader>c ""c
 nnoremap <leader>tt :TroubleToggle<CR>
 " open notes (todo.txt) from anywhere and return. Automatically git pull when
 " opening and then git commit and push when closing.
-nnoremap <silent> <leader>ng mZ :lcd ~/notes<CR> :silent exec "!git pull origin master > /dev/null"<CR> :edit ~/notes/notes.txt<CR>
+" nnoremap <silent> <leader>ng mZ :lcd ~/notes<CR> :silent exec "!git pull origin master > /dev/null"<CR> :edit ~/notes/notes.txt<CR>
 " nnoremap <silent> <leader>nb :w<CR> :silent exec "!source ~/.config/nvim/auto-commit/commit.sh"<CR> :lcd -<CR> `Z :delmarks Z<CR>
 " open notes (todo.txt) from anywhere and return.
 " nnoremap <silent> <leader>ng mZ :lcd ~/notes<CR> :edit ~/notes/notes.txt<CR>
-nnoremap <silent> <leader>nb :w<CR> :lcd -<CR> `Z :delmarks Z<CR>
+" nnoremap <silent> <leader>nb :w<CR> :lcd -<CR> `Z :delmarks Z<CR>
 " save, auto commit and push
 nnoremap <silent> <leader>cp :!source ~/Git/git-commit-kit/commit.sh<CR>
 
 nnoremap <silent> <expr> <leader>nt Notes_toggle()
 function! Notes_toggle()
     let currentDir = getcwd(0)
-    if currentDir ==# $HOME . '/notes' && originDir != v:null
-        silent call feedkeys(":w\<CR> `Z :lcd " . originDir . "\<CR> :delmarks Z\<CR>")
+    if currentDir ==# $HOME . '/notes'
+        silent call feedkeys(":w\<CR> `Z :lcd -\<CR> :delmarks Z\<CR>")
     else
-        let originDir = currentDir
         silent call feedkeys("mZ :lcd ~/notes\<CR> :silent exec \"!git pull origin master > /dev/null\"\<CR> :edit ~/notes/notes.txt\<CR>")
         " call feedkeys("mZ :lcd ~/notes\<CR> :silent exec \"!git pull $(git remote) $(git rev-parse --abbrev-ref HEAD) > /dev/null\"\<CR> :edit ~/notes/notes.txt\<CR>")
     endif
 endfunction
+
+" function! Notes_toggle()
+"     let currentDir = getcwd(0)
+"     if currentDir ==# $HOME . '/notes' && originDir != v:null
+"         silent call feedkeys(":w\<CR> `Z :lcd " . originDir . "\<CR> :delmarks Z\<CR>")
+"     else
+"         let g:originDir = currentDir
+"         silent call feedkeys("mZ :lcd ~/notes\<CR> :silent exec \"!git pull origin master > /dev/null\"\<CR> :edit ~/notes/notes.txt\<CR>")
+"         " call feedkeys("mZ :lcd ~/notes\<CR> :silent exec \"!git pull $(git remote) $(git rev-parse --abbrev-ref HEAD) > /dev/null\"\<CR> :edit ~/notes/notes.txt\<CR>")
+"     endif
+" endfunction
 
 " nnoremap <F9> :set paste<CR> "<F8>" :set topaste<CR>
 
