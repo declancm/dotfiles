@@ -99,13 +99,11 @@ nnoremap <silent> <leader>cp :!source ~/Git/git-commit-kit/commit.sh<CR>
 
 nnoremap <silent> <expr> <leader>nt Notes_toggle()
 function! Notes_toggle()
-    let currentd = getcwd(0)
-    " '==#' means match the case
-    if currentd ==# $HOME . '/notes'
+    if getcwd(0) ==# $HOME . '/notes'
         call feedkeys(":w\<CR> :lcd -\<CR> `Z :delmarks Z\<CR>")
     else
-        " call feedkeys("mZ :lcd ~/notes\<CR> :silent exec \"!git pull origin master > /dev/null\"\<CR> :edit ~/notes/notes.txt\<CR>")
-        call feedkeys("mZ :lcd ~/notes\<CR> :silent exec \"!git pull $(git remote) $(git rev-parse --abbrev-ref HEAD) > /dev/null\"\<CR> :edit ~/notes/notes.txt\<CR>")
+        call feedkeys("mZ :lcd ~/notes\<CR> :silent exec \"!git pull origin master > /dev/null\"\<CR> :edit ~/notes/notes.txt\<CR>")
+        " call feedkeys("mZ :lcd ~/notes\<CR> :silent exec \"!git pull $(git remote) $(git rev-parse --abbrev-ref HEAD) > /dev/null\"\<CR> :edit ~/notes/notes.txt\<CR>")
     endif
 endfunction
 
