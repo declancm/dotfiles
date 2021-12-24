@@ -43,6 +43,8 @@ endif
 
 " change the color of the character under the cursor
 " hi Cursor guifg=black
+" hi lCursor guifg=black
+" hi CursorIM guifg=black
 
 " highlight the line number
 highlight CursorLineNr guifg=white

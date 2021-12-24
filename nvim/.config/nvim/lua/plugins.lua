@@ -70,7 +70,6 @@ return require('packer').startup(function()
   use "navarasu/onedark.nvim"
   use {
     "folke/tokyonight.nvim",
-    branch = "main",
     requires = { "folke/todo-comments.nvim",
       config = function() require('todo-comments').setup{} end
     }
@@ -86,12 +85,12 @@ return require('packer').startup(function()
   use "norcalli/nvim-colorizer.lua"
   -- " use "folke/lsp-colors.nvim"
   -- DEBUGGING:
+  use "folke/trouble.nvim"
   -- " use "puremourning/vimspector"
   -- MISCELLANEOUS:
   use "szw/vim-maximizer"
   use "unblevable/quick-scope"
   use "tpope/vim-obsession"
-  use "folke/trouble.nvim"
   use "dkarter/bullets.vim"
   use "tpope/vim-surround"
   -- use "tpope/vim-rails"
