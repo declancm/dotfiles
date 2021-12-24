@@ -44,3 +44,6 @@ vim.schedule(function ()
 end)
 
 -- coq_settings.clients.tabnine.enabled=true
+
+vim.cmd('let g:coq_settings = { \'auto_start\': v:true }')
+vim.cmd('let g:coq_settings = { \'display.icons.mode\': \'none\' }')

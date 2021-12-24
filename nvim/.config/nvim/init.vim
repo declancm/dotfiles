@@ -36,9 +36,6 @@ source $HOME/.config/nvim/config/design.vim
 " luafile $HOME/.config/nvim/config/lspcolors.lua
 luafile $HOME/.config/nvim/config/toggleterm.lua
 
-" let g:coq_settings = { 'auto_start': v:true }
-" let g:coq_settings = { 'display.icons.mode': 'none' }
-
 " set backspace=indent,eol,start
 set relativenumber
 set nu
