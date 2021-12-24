@@ -101,7 +101,7 @@ nnoremap <silent> <expr> <leader>nt Notes_toggle()
 function! Notes_toggle()
     let currentDir = getcwd(0)
     if currentDir ==# $HOME . '/notes'
-        call feedkeys(":w\<CR> :lcd " . originDir . "\<CR> `Z :delmarks Z\<CR>")
+        call feedkeys(":w\<CR> `Z :lcd " . originDir . "\<CR> :delmarks Z\<CR>")
     else
         let originDir = currentDir
         call feedkeys("mZ :lcd ~/notes\<CR> :silent exec \"!git pull origin master > /dev/null\"\<CR> :edit ~/notes/notes.txt\<CR>")
@@ -112,7 +112,7 @@ endfunction
 " nnoremap <F9> :set paste<CR> "<F8>" :set topaste<CR>
 
 " change position of cursor when pasting
-noremap p gp
-noremap P gP
-noremap gp p
-noremap gP P
+" noremap p gp
+" noremap P gP
+" noremap gp p
+" noremap gP P
