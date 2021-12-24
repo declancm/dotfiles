@@ -78,7 +78,7 @@ return require('packer').startup(function()
   -- use "tiagovla/tokyodark.nvim"
   use "Mofiqul/dracula.nvim"
   -- use "marko-cerovac/material.nvim"
-  use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
+  -- use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
   use "hoob3rt/lualine.nvim"
   use "kyazdani42/nvim-web-devicons"
   use "p00f/nvim-ts-rainbow"

@@ -3,11 +3,11 @@
 set colorcolumn=80
 
 " onedark setup
-let g:onedark_style = 'dark'
-let g:onedark_transparent_background = v:true
-let g:onedark_italic_comment = v:false
-colorscheme onedark
-highlight ColorColumn ctermbg=0 guibg=#31353f
+" let g:onedark_style = 'dark'
+" let g:onedark_transparent_background = v:true
+" let g:onedark_italic_comment = v:false
+" colorscheme onedark
+" highlight ColorColumn ctermbg=0 guibg=#31353f
 
 " dracula setup
 " let g:dracula_transparent_bg = 1
@@ -15,10 +15,10 @@ highlight ColorColumn ctermbg=0 guibg=#31353f
 " highlight ColorColumn ctermbg=0 guibg=#191A21
 
 " tokyonight setup
-" let g:tokyonight_style = 'storm'
-" let g:tokyonight_transparent = v:true
-" let g:tokyonight_italic_comments = v:false
-" colorscheme tokyonight
+let g:tokyonight_style = 'storm'
+let g:tokyonight_transparent = v:true
+let g:tokyonight_italic_comments = v:false
+colorscheme tokyonight
 
 " material setup
 " let g:material_style = 'palenight'
