@@ -91,6 +91,12 @@ nnoremap <leader>tt :TroubleToggle<CR>
 " save, auto commit and push
 nnoremap <silent> <leader>cp :!source ~/Git/git-commit-kit/commit.sh<CR>
 
+" auto indent pasted content
+noremap p p`[v`]=
+noremap P p`[v`]=
+noremap gp gp`[v`]=
+noremap gP gP`[v`]=
+
 " open notes (todo.txt) from anywhere and return. Automatically git pull when
 " opening and then git commit and push when closing.
 " nnoremap <silent> <leader>ng mZ :lcd ~/notes<CR> :silent exec "!git pull origin master > /dev/null"<CR> :edit ~/notes/notes.txt<CR>
@@ -129,3 +135,4 @@ endfunction
 " noremap P gP
 " noremap gp p
 " noremap gP P
+
