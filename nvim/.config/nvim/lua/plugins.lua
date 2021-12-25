@@ -1,11 +1,13 @@
 return require('packer').startup(function()
 
   use "wbthomason/packer.nvim"
+
   -- TELESCOPE:
   use "nvim-lua/popup.nvim"
   use "nvim-lua/plenary.nvim"
   use {"nvim-telescope/telescope-fzf-native.nvim", run = "make"}
   use "nvim-telescope/telescope.nvim"
+
   -- LSP:
   use "neovim/nvim-lspconfig"
   -- use "nvim-lua/lsp_extensions.nvim"
@@ -55,22 +57,27 @@ return require('packer').startup(function()
       vim.api.nvim_set_var("chadtree_settings", chadtree_settings)
     end
   }
+
   -- COMMENTS:
   use {
     "b3nj5m1n/kommentary",
     config = function() vim.g.kommentary_create_default_mappings = false end
   }
+
   -- TREESITTER:
   use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
   use "nvim-treesitter/playground"
   use "simrat39/symbols-outline.nvim"
+
   -- UNDO_TREE:
   use "mbbill/undotree"
+
   -- GIT:
   use "tpope/vim-fugitive"
   use "tpope/vim-rhubarb"
   use "junegunn/gv.vim"
   use "f-person/git-blame.nvim"
+
   -- DESIGN:
   use "navarasu/onedark.nvim"
   use {
@@ -92,9 +99,11 @@ return require('packer').startup(function()
   }
   use "unblevable/quick-scope"
   -- " use "folke/lsp-colors.nvim"
+
   -- DEBUGGING:
   use "folke/trouble.nvim"
   -- " use "puremourning/vimspector"
+
   -- MISCELLANEOUS:
   use "szw/vim-maximizer"
   use "tpope/vim-obsession"
@@ -108,10 +117,10 @@ return require('packer').startup(function()
     run = "cd app && yarn install",
     -- config = function() vim.g.mkdp_auto_start = 1 end
   }
-  use "akinsho/toggleterm.nvim"
   use {
     "folke/which-key.nvim",
     config = function() require("which-key").setup{} end
   }
+  use "akinsho/toggleterm.nvim"
 
 end)

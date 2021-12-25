@@ -25,8 +25,6 @@ colorscheme tokyonight
 " let g:tokyodark_enable_italic_comment = 0
 " colorscheme tokyodark
 
-" highlight ColorColumn ctermbg=0 guibg=NONE
-
 highlight Normal guibg=none
 " set up cursor for different modes
 if &term =~ '^xterm'
