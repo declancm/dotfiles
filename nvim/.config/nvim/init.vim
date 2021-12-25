@@ -16,12 +16,10 @@ source $HOME/.config/nvim/config/keymaps.vim
 
 " PLUGIN_CONFIGURATIONS:
 source $HOME/.config/nvim/config/git.vim
-source $HOME/.config/nvim/config/quickscope.vim
 luafile $HOME/.config/nvim/config/lspconfig.lua
 source $HOME/.config/nvim/config/lspconfig.vim
 " luafile $HOME/.config/nvim/config/coq.lua
 luafile $HOME/.config/nvim/config/treesitter.lua
-source $HOME/.config/nvim/config/treesitter.vim
 luafile $HOME/.config/nvim/config/telescope.lua
 source $HOME/.config/nvim/config/telescope.vim
 " luafile $HOME/.config/nvim/config/refactoring.lua

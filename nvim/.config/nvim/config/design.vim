@@ -36,6 +36,8 @@ colorscheme tokyonight
 
 " highlight ColorColumn ctermbg=0 guibg=NONE
 
+
+
 highlight Normal guibg=none
 " set up cursor for different modes
 if &term =~ '^xterm'
@@ -58,3 +60,7 @@ set cursorlineopt=number
 " add bullet points to selected file types
 let g:bullets_enabled_file_types = ['markdown', 'text']
 let g:bullets_enable_in_empty_buffers = 0 " default = 1
+
+" quickscope setup
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+let g:qs_max_chars=150

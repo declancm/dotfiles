@@ -19,10 +19,11 @@ augroup writing_file
     autocmd BufWritePre * :call TrimWhitespace()
 augroup END
 
+" quickscop colors selection
 augroup qs_colors
   autocmd!
-  autocmd ColorScheme * highlight QuickScopePrimary guifg='#FF5555' gui=underline ctermfg=155 cterm=underline
-  autocmd ColorScheme * highlight QuickScopeSecondary guifg='#F1FA8C' gui=underline ctermfg=81 cterm=underline
+  autocmd ColorScheme * highlight QuickScopePrimary guifg='#F1FA8C' gui=underline ctermfg=155 cterm=underline
+  autocmd ColorScheme * highlight QuickScopeSecondary guifg='#FF5555' gui=underline ctermfg=81 cterm=underline
 augroup END
 
 " augroup myTodo
