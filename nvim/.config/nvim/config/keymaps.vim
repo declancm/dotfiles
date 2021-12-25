@@ -1,10 +1,9 @@
 " TODO add arrow keybindings for moving text
 
+let mapleader = "\<BS>"
 " improve home key
 :map <Home> ^
 :imap <Home> <Esc>I
-
-let mapleader = "\<BS>"
 " move between open windows
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
@@ -14,29 +13,35 @@ nnoremap <leader><left> :wincmd h<CR>
 nnoremap <leader><down> :wincmd j<CR>
 nnoremap <leader><up> :wincmd k<CR>
 nnoremap <leader><right> :wincmd l<CR>
-" nnoremap <leader>ex :wincmd v<bar> :wincmd H<bar> :Ex <bar> :vertical resize 30<CR>
-
+" nnoremap <leader>v <C-w>v
+" nnoremap <leader>s <C-w>s
+" open nerdtree explorer
+nnoremap <silent> <leader>ne :Lex 30<CR>
 " tmux-like previous window switch
 nnoremap <leader>; :wincmd p<CR>
-
 " symbols outline keymap
 nnoremap <leader>so :SymbolsOutline<CR>
-
 " chadtree
 nnoremap <silent> <leader>e :CHADopen<CR>
 nnoremap <silent> <leader>te :CHADopen --version-ctl<CR>
 " clear quickfix list
 nnoremap <silent> <leader>qf :call setqflist([])<CR>
-
 " markdown preview
 nnoremap <leader>mdp :MarkdownPreview<CR>
 nnoremap <leader>mds :MarkdownPreviewStop<CR>
 
 " nnoremap <Leader>ps :Rg<SPACE>
-nnoremap <silent> <leader>+ :vertical resize +5<CR>
-nnoremap <silent> <leader>- :vertical resize -5<CR>
+
+" resize windows
+" up and right are increase, down and left are decrease
+nnoremap <silent> <A-Up> :resize +5<CR>
+nnoremap <silent> <A-Down> : resize -5<CR>
+nnoremap <silent> <A-Right> :vertical resize +5<CR>
+nnoremap <silent> <A-Left> :vertical resize -5<CR>
+
+" undo tree
 nnoremap <F5> :UndotreeToggle<CR>
-" Sets default bindings for vim maximier which is 'F3':
+" sets default bindings for vim maximier which is 'F3':
 let g:maximizer_set_default_mapping = 1
 " Y works like D and C
 nnoremap Y yg_
@@ -55,7 +60,7 @@ vnoremap K :m '<-2<CR>gv=gv
 inoremap <C-j> <esc>:m .+1<CR>==a
 inoremap <C-k> <esc>:m .-2<CR>==a
 nnoremap <leader>k :m .-2<CR>==
-nnoremap <leader>j :m .+1<CR>==
+nnoremap <leader>j :m .+1CR>==
 vnoremap <S-up> :m '<-2<CR>gv=gv
 vnoremap <S-down> :m '>+1<CR>gv=gv
 inoremap <C-up> <esc>:m .-2<CR>==a
