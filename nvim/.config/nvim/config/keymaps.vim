@@ -24,8 +24,9 @@ nnoremap <leader>so :SymbolsOutline<CR>
 
 " chadtree
 nnoremap <silent> <leader>e :CHADopen<CR>
-" nnoremap <silent> <leader>et :CHADopen --version-ctl<CR>
-" nnoremap <silent> <leader>ec :call setqflist([])<CR>
+nnoremap <silent> <leader>te :CHADopen --version-ctl<CR>
+" clear quickfix list
+nnoremap <silent> <leader>qf :call setqflist([])<CR>
 
 " markdown preview
 nnoremap <leader>mdp :MarkdownPreview<CR>
