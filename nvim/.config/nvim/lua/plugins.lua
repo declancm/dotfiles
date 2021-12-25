@@ -92,17 +92,18 @@ return require('packer').startup(function()
   use "hoob3rt/lualine.nvim"
   use "kyazdani42/nvim-web-devicons"
   use "p00f/nvim-ts-rainbow"
-  -- " use "folke/todo-comments.nvim"
+  -- use "folke/todo-comments.nvim"
   use {
     "norcalli/nvim-colorizer.lua",
     config = function() require'colorizer'.setup() end
   }
   use "unblevable/quick-scope"
-  -- " use "folke/lsp-colors.nvim"
+  -- use "folke/lsp-colors.nvim"
 
   -- DEBUGGING:
   use "folke/trouble.nvim"
-  -- " use "puremourning/vimspector"
+  -- use "mfussenegger/nvim-dap"
+  -- use "ThePrimeagen/refactoring.nvim"
 
   -- MISCELLANEOUS:
   use "szw/vim-maximizer"
