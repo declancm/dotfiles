@@ -26,13 +26,6 @@ augroup qs_colors
   autocmd ColorScheme * highlight QuickScopeSecondary guifg='#FF5555' gui=underline ctermfg=81 cterm=underline
 augroup END
 
-" augroup myTodo
-"   autocmd!
-"   autocmd Syntax * syntax match myTodo /\v\_.<(TODO|FIXME).*/hs=s+1 containedin=.*Comment
-" augroup END
-
-" highlight link myTodo Todo
-
 " make tabs smaller for specific file types
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
@@ -40,10 +33,6 @@ autocmd FileType lua setlocal shiftwidth=2 tabstop=2
 autocmd FileType markdown setlocal shiftwidth=2 tabstop=2
 autocmd FileType ps1 setlocal shiftwidth=2 tabstop=2
 autocmd FileType json setlocal shiftwidth=2 tabstop=2
-
-" autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
-"     \ execute 'CHADopen' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | wincmd h | endif
 
 " chadtree auto opens when opening a directory with nvim
 autocmd StdinReadPre * let s:std_in=1
