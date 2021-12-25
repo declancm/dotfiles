@@ -1,7 +1,7 @@
 require'lualine'.setup{
   options = {
     icons_enabled = true,
-    theme = 'tokyonight',--onedark, tokyonight, material-nvim or dracula-nvim
+    theme = 'tokyonight',--onedark, tokyonight, tokyodark or dracula-nvim
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
     disabled_filetypes = {}

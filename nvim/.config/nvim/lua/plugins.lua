@@ -78,9 +78,8 @@ return require('packer').startup(function()
       config = function() require('todo-comments').setup{} end
     }
   }
-  -- use "tiagovla/tokyodark.nvim"
+  use "tiagovla/tokyodark.nvim"
   use "Mofiqul/dracula.nvim"
-  -- use "marko-cerovac/material.nvim"
   -- use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
   use "hoob3rt/lualine.nvim"
   use "kyazdani42/nvim-web-devicons"
