@@ -3,7 +3,7 @@
 #Exit immediately if a command exits with a non-zero status.
 set -e
 
-printf "This script is only for ubuntu/debian, would you like to proceed? (y/n) "
+printf "This script is for Ubuntu. Would you like to proceed? (y/n) "
 read input
 if [ "$input" != "y" ]
 then
