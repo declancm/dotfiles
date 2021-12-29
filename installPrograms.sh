@@ -130,4 +130,4 @@ curl -fsSL https://fnm.vercel.app/install | bash -s -- --install-dir $HOME/.loca
 sudo apt install stow
 
 #dotfiles
-source install.sh
+. ./install.sh
