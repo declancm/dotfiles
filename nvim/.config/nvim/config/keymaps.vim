@@ -1,5 +1,3 @@
-" TODO add arrow keybindings for moving text
-
 let mapleader = "\<BS>"
 " improve home key
 :map <Home> ^
