@@ -72,6 +72,44 @@ then
     printf "You did not enter a valid input.\n"
 fi
 
+#ruby
+printf "Would you like to install Ruby on Rails? (y/n) "
+read input
+if [ "$input" = "y" ]
+then
+    rudo apt install -y ruby-full
+    sudo gem install neovim
+    sudo gem install rails
+    sudo apt-get install -y sqlite3 libsqlite3-dev
+    sudo apt install yarn
+    sudo apt install bundler
+elif [ "$input" != "n" ]
+then
+    printf "You did not enter a valid input.\n"
+fi
+
+#powershell
+printf "Would you like to install PowerShell? (y/n) "
+read input
+if [ "$input" = "y" ]
+then
+    # Update the list of packages
+    sudo apt-get update
+    # Install pre-requisite packages.
+    sudo apt-get install -y wget apt-transport-https software-properties-common
+    # Download the Microsoft repository GPG keys
+    wget -q https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb
+    # Register the Microsoft repository GPG keys
+    sudo dpkg -i packages-microsoft-prod.deb
+    # Update the list of packages after we added packages.microsoft.com
+    sudo apt-get update
+    # Install PowerShell
+    sudo apt-get install -y powershell
+elif [ "$input" != "n" ]
+then
+    printf "You did not enter a valid input.\n"
+fi
+
 #xsel
 sudo apt-get install -y xsel
 export DISPLAY=:0
@@ -84,3 +122,9 @@ sudo apt install -y golang
 git clone https://github.com/jesseduffield/lazygit.git ~/lazygit
 cd ~/lazygit && go install && cd -
 
+#tree
+sudo apt install tree
+
+#fnm
+sudo apt install curl
+curl -fsSL https://fnm.vercel.app/install | bash -s -- --install-dir $HOME/.local/bin
