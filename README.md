@@ -36,7 +36,7 @@ git clone <https://github.com/tmux-plugins/tpm> ~/.tmux/plugins/tpm
 
 ### Quick Installation
 
-_Note: This method includes required programs._
+_Note: This method includes installation of required programs._
 
 ```bash
 git clone https://github.com/declancm/.dotfiles.git ~/.dotfiles
