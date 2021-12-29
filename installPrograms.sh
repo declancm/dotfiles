@@ -16,9 +16,6 @@ apt_update()
     sudo apt upgrade -y
 }
 
-#stow
-sudo apt install stow
-
 #nvim
 sudo add-apt-repository ppa:neovim-ppa/unstable
 sudo apt-get update
@@ -128,3 +125,9 @@ sudo apt install tree
 #fnm
 sudo apt install curl
 curl -fsSL https://fnm.vercel.app/install | bash -s -- --install-dir $HOME/.local/bin
+
+#stow
+sudo apt install stow
+
+#dotfiles
+source install.sh
