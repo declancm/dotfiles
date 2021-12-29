@@ -26,14 +26,6 @@ cd ~/.dotfiles && ./install.sh
 git clone <https://github.com/tmux-plugins/tpm> ~/.tmux/plugins/tpm
 ```
 
-**Within Neovim:**
-
-```vim
-:PackerInstall
-:PackerCompile
-:TSInstall
-```
-
 ### Quick Installation
 
 _Note: This method includes installation of required programs._
