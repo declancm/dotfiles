@@ -86,7 +86,7 @@ then
 fi
 
 #powershell
-printf "Would you like to install PowerShell? (y/n) "
+printf "Would you like to install PowerShell for Ubuntu 20.04? (y/n) "
 read input
 if [ "$input" = "y" ]
 then
