@@ -34,6 +34,7 @@ source $HOME/.config/nvim/config/design.vim
 " luafile $HOME/.config/nvim/config/lspcolors.lua
 luafile $HOME/.config/nvim/config/toggleterm.lua
 
+" OPTIONS:
 " set backspace=indent,eol,start
 set relativenumber
 set nu
@@ -68,10 +69,8 @@ set timeoutlen=500
 
 " for the :find command
 set path+=**
-
 set wildmode=longest,list,full
 set wildmenu
-
 set wildignore+=*.pyc
 set wildignore+=*_build/*
 set wildignore+=**/coverage/*

@@ -93,7 +93,6 @@ return require('packer').startup(function()
   use "hoob3rt/lualine.nvim"
   use "kyazdani42/nvim-web-devicons"
   use "p00f/nvim-ts-rainbow"
-  -- use "folke/todo-comments.nvim"
   use {
     "norcalli/nvim-colorizer.lua",
     config = function() require'colorizer'.setup() end
