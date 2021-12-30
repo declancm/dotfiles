@@ -26,7 +26,7 @@ cd ~/.dotfiles && ./install.sh
 git clone <https://github.com/tmux-plugins/tpm> ~/.tmux/plugins/tpm
 ```
 
-### Quick Installation
+<!-- ### Quick Installation
 
 _Note: This method includes installation of required programs._
 
@@ -34,4 +34,4 @@ _Note: This method includes installation of required programs._
 git clone https://github.com/declancm/.dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 source installPrograms.sh
-```
+``` -->
