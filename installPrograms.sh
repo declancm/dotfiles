@@ -16,6 +16,13 @@ apt_update()
     sudo apt upgrade -y
 }
 
+#snap
+apt_update
+sudo apt install snapd
+
+#curl
+sudo apt install curl
+
 #nvim
 sudo add-apt-repository ppa:neovim-ppa/unstable
 sudo apt-get update
@@ -106,6 +113,9 @@ elif [ "$input" != "n" ]
 then
     printf "You did not enter a valid input.\n"
 fi
+
+#vscode
+sudo snap install --classic code
 
 #xsel
 sudo apt-get install -y xsel
