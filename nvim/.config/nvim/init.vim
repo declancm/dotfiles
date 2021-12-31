@@ -35,7 +35,7 @@ source $HOME/.config/nvim/config/design.vim
 luafile $HOME/.config/nvim/config/toggleterm.lua
 
 " OPTIONS:
-" set backspace=indent,eol,start
+set backspace=indent,eol,start
 set relativenumber
 set nu
 set nohlsearch

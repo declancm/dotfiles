@@ -93,13 +93,17 @@ vnoremap <leader>c ""c
 nnoremap <leader>tt :TroubleToggle<CR>
 
 " save, auto commit and push
-nnoremap <silent> <leader>cp :!source ~/Git/git-commit-kit/commit.sh<CR>
+nnoremap <silent> <leader>cp :w<CR>:!source ~/Git/git-commit-kit/commit.sh<CR>
 
 " auto indent pasted content
 noremap p p`[v`]=
 noremap P p`[v`]=
 noremap gp gp`[v`]=
 noremap gP gP`[v`]=
+
+" delete previous word
+" imap <C-BS> <C-W>
+" noremap! <C-BS> <C-w>
 
 " open notes (todo.txt) from anywhere and return. Automatically git pull when
 " opening and then git commit and push when closing.
