@@ -114,7 +114,8 @@ nnoremap <silent> <expr> <leader>nt Notes_toggle()
 function! Notes_toggle()
     let currentDir = getcwd(0)
     if currentDir ==# $HOME . '/notes'
-        silent call feedkeys(":w\<CR> `Z :lcd -\<CR> :delmarks Z\<CR>")
+        " silent call feedkeys(":w\<CR> `Z :lcd -\<CR> :delmarks Z\<CR>")
+        silent call feedkeys(":w\<CR> :silent exec \"!source ~/.config/nvim/auto-commit/commit.sh\"\<CR> `Z :lcd -\<CR> :delmarks Z\<CR>")
     else
         silent call feedkeys("mZ :lcd ~/notes\<CR> :silent exec \"!git pull origin master > /dev/null\"\<CR> :edit ~/notes/notes.txt\<CR>")
         " call feedkeys("mZ :lcd ~/notes\<CR> :silent exec \"!git pull $(git remote) $(git rev-parse --abbrev-ref HEAD) > /dev/null\"\<CR> :edit ~/notes/notes.txt\<CR>")
