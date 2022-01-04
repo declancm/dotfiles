@@ -1,7 +1,7 @@
 let mapleader = "\<BS>"
 " improve home key
-:map <Home> ^
-:imap <Home> <Esc>I
+:map <Home> ^zH
+:imap <Home> <Esc>zHI
 " move between open windows
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
