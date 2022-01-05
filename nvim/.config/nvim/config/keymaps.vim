@@ -38,7 +38,8 @@ nnoremap <silent> <A-Right> :vertical resize +5<CR>
 nnoremap <silent> <A-Left> :vertical resize -5<CR>
 
 " undo tree
-nnoremap <F5> :UndotreeToggle<CR>
+nnoremap <F5> :UndotreeToggle<CR>:wincmd p<CR>
+
 " sets default bindings for vim maximier which is 'F3':
 let g:maximizer_set_default_mapping = 1
 " Y works like D and C

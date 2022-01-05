@@ -14,6 +14,7 @@ require('telescope').setup{
   pickers = {
       find_files = {
           find_command = { "rg", "--ignore", "-L", "--hidden", "--files" },
+          -- hidden = true,
           file_ignore_patterns = { "^.git/" }
       }
     -- Default configuration for builtin pickers goes here:
