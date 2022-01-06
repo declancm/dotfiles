@@ -127,3 +127,5 @@ export LD_LIBRARY_PATH="/usr/local/cuda-11.5/lib64\
     "${LD_LIBRARY_PATH:+:"${LD_LIBRARY_PATH}"}""
 export CUDACXX=/usr/local/cuda/bin/nvcc
 export CUDA_HOME=/usr/local/cuda
+
+alias pyvenv='source /home/declancm/virtualenv-creator/src/Bash/pyvenv.sh'
