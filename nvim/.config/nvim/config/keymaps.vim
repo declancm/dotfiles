@@ -98,7 +98,7 @@ nnoremap <silent> <leader>cp :w<CR>:!source ~/Git/git-commit-kit/commit.sh<CR>
 
 " auto indent pasted content
 noremap p p`[v`]=
-noremap P p`[v`]=
+noremap P P`[v`]=
 noremap gp gp`[v`]=
 noremap gP gP`[v`]=
 
