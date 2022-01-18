@@ -7,7 +7,7 @@ set completeopt=menuone,noinsert,noselect
 let g:python3_host_prog = '/bin/python3'
 let g:python_host_prog = '/bin/python2'
 
-packadd packer.nvim
+" packadd packer.nvim
 
 lua require('plugins')
 
