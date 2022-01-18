@@ -4,6 +4,8 @@ syntax on
 set background=dark
 set completeopt=menuone,noinsert,noselect
 
+require('plugins')
+
 vim.g.python3_host_prog = '/bin/python3'
 vim.g.python_host_prog = '/bin/python2'
 

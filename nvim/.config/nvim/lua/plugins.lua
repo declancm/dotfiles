@@ -42,7 +42,7 @@ return require('packer').startup(function()
     requires = {"SirVer/ultisnips", "honza/vim-snippets"},
     config = function()
       vim.cmd('source $HOME/.config/nvim/config/coc.vim')
-      -- require('cmp').setup.buffer { enabled = false }
+      require('cmp').setup.buffer { enabled = false }
     end
   }
   -- use "wellle/tmux-complete.vim"
