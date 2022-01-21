@@ -36,7 +36,7 @@ luafile $HOME/.config/nvim/config/toggleterm.lua
 
 " OPTIONS:
 set backspace=indent,eol,start,nostop
-set relativenumber
+" packadd packer.nvimset relativenumber
 set nu
 set nohlsearch
 set hidden
