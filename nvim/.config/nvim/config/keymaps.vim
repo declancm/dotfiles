@@ -103,9 +103,9 @@ noremap gp gp`[v`]=
 noremap gP gP`[v`]=
 
 " delete previous word
-imap <C-BS> <C-w>
-" inoremap <C-BS> <C-\><C-O>db
-" noremap! <C-BS> <C-w>
+imap <M-BS> <C-W>
+" <C-H> is <C-BS>
+imap <C-H> <C-w>
 
 " open notes (todo.txt) from anywhere and return. Automatically git pull when
 " opening and then git commit and push when closing.
