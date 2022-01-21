@@ -13,23 +13,8 @@ nnoremap <leader><up> :wincmd k<CR>
 nnoremap <leader><right> :wincmd l<CR>
 " nnoremap <leader>v <C-w>v
 " nnoremap <leader>s <C-w>s
-" open nerdtree explorer
-nnoremap <silent> <leader>ne :Lex 30<CR>
 " tmux-like previous window switch
 nnoremap <leader>; :wincmd p<CR>
-" symbols outline keymap
-nnoremap <leader>so :SymbolsOutline<CR>
-" chadtree
-nnoremap <silent> <leader>e :CHADopen<CR>
-nnoremap <silent> <leader>te :CHADopen --version-ctl<CR>
-" clear quickfix list
-nnoremap <silent> <leader>qf :call setqflist([])<CR>
-" markdown preview
-nnoremap <leader>mdp :MarkdownPreview<CR>
-nnoremap <leader>mds :MarkdownPreviewStop<CR>
-
-" nnoremap <Leader>ps :Rg<SPACE>
-
 " resize windows
 " up and right are increase, down and left are decrease
 nnoremap <silent> <A-Up> :resize +5<CR>
@@ -37,11 +22,27 @@ nnoremap <silent> <A-Down> : resize -5<CR>
 nnoremap <silent> <A-Right> :vertical resize +5<CR>
 nnoremap <silent> <A-Left> :vertical resize -5<CR>
 
+" open nerdtree explorer
+nnoremap <silent> <leader>ne :Lex 30<CR>
+" chadtree
+nnoremap <silent> <leader>e :CHADopen<CR>
+nnoremap <silent> <leader>te :CHADopen --version-ctl<CR>
+" clear quickfix list
+nnoremap <silent> <leader>qf :call setqflist([])<CR>
+
+" symbols outline keymap
+nnoremap <leader>so :SymbolsOutline<CR>
+
+" markdown preview
+nnoremap <leader>mdp :MarkdownPreview<CR>
+nnoremap <leader>mds :MarkdownPreviewStop<CR>
+
 " undo tree
 nnoremap <F5> :UndotreeToggle<CR>:wincmd p<CR>
 
 " sets default bindings for vim maximier which is 'F3':
 let g:maximizer_set_default_mapping = 1
+
 " Y works like D and C
 nnoremap Y yg_
 " staying centered
@@ -66,9 +67,11 @@ inoremap <C-up> <esc>:m .-2<CR>==a
 inoremap <C-down> <esc>:m .+1<CR>==a
 nnoremap <C-up> :m .-2<CR>==
 nnoremap <C-down> :m .+1<CR>==
+
 " replace a word then press . to change the next occurrence of it.
 nnoremap cn *``"_cgn
 nnoremap cN *``"_cgN
+
 " paste from global clipboard
 nnoremap <leader>p "+]p
 " yank to global clipboard
@@ -90,6 +93,7 @@ vnoremap <leader>d ""d
 nnoremap <leader>c ""c
 nnoremap <leader>C ""C
 vnoremap <leader>c ""c
+
 " trouble toggle keymap
 nnoremap <leader>tt :TroubleToggle<CR>
 
