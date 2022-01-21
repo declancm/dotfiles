@@ -59,8 +59,6 @@ return require('packer').startup(function()
     run = "python3 -m chadtree deps",
     config = function()
       -- local chadtree_settings = { ["theme.text_colour_set"] = "solarized_light" }
-      -- local chadtree_settings = {{ ["theme.text_colour_set"] = "solarized_light" },
-      -- { ["options.session"] = false }}
       local chadtree_settings = { ["theme.text_colour_set"] = "solarized_light", ["options.session"] = false }
       vim.api.nvim_set_var("chadtree_settings", chadtree_settings)
     end
