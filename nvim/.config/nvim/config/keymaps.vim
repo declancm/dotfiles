@@ -100,16 +100,17 @@ nnoremap <leader>tt :TroubleToggle<CR>
 " save, auto commit and push
 nnoremap <silent> <leader>cp :w<CR>:!source ~/Git/git-commit-kit/commit.sh<CR>
 
-" auto indent pasted content
-noremap p p`[v`]=
-noremap P P`[v`]=
-noremap gp gp`[v`]=
-noremap gP gP`[v`]=
+" auto format indent for pasted content
+" TODO make this work with python and PowerShell files
+noremap <silent>p p`[v`]=
+noremap <silent>P P`[v`]=
+noremap <silent>gp gp`[v`]=
+noremap <silent>gP gP`[v`]=
 
 " delete previous word
-imap <M-BS> <C-W>
 " <C-H> is <C-BS>
 imap <C-H> <C-w>
+imap <M-BS> <C-W>
 
 " open notes (todo.txt) from anywhere and return. Automatically git pull when
 " opening and then git commit and push when closing.
