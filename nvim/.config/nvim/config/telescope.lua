@@ -7,7 +7,15 @@ require('telescope').setup{
         -- map actions.which_key to <C-h> (default: <C-/>)
         -- actions.which_key shows the mappings for your picker,
         -- e.g. git_{create, delete, ...}_branch for the git_branches picker
-        ["<C-h>"] = "which_key"
+        -- ["<C-h>"] = "which_key"
+
+        -- so <C-BS> works in telescope
+        ["<C-H>"] = function()
+          vim.cmd [[normal! cB]]
+        end,
+        ["<M-BS>"] = function()
+          vim.cmd [[normal! cB]]
+        end,
       }
     }
   },
