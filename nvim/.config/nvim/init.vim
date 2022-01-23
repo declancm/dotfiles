@@ -36,7 +36,7 @@ luafile $HOME/.config/nvim/config/toggleterm.lua
 
 " OPTIONS:
 set backspace=indent,eol,start,nostop
-" packadd packer.nvimset relativenumber
+set relativenumber
 set nu
 set nohlsearch
 set hidden
@@ -44,7 +44,9 @@ set noerrorbells
 set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
+set autoindent
 set smartindent
+" set cindent
 set nowrap
 set smartcase
 set noswapfile
