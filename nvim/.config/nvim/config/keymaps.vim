@@ -110,7 +110,7 @@ noremap <silent>gP gP`[v`]=
 " delete previous word
 " <C-H> is <C-BS>
 imap <C-H> <C-w>
-imap <M-BS> <C-W>
+imap <M-BS> <esc>vBc
 
 " open notes (todo.txt) from anywhere and return. Automatically git pull when
 " opening and then git commit and push when closing.
