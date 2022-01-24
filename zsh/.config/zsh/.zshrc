@@ -14,7 +14,7 @@ zle_highlight=('paste:none')
 unsetopt BEEP
 
 # ctrl-backspace
-bindkey '^H' backward-kill-word
+bindkey "^H" backward-kill-word
 
 # let terminal work in vim
 stty start undef stop undef
