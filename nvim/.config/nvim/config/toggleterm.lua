@@ -35,10 +35,9 @@ function _G.set_terminal_keymaps()
   vim.api.nvim_buf_set_keymap(0, 't', '<C-k>', [[<C-\><C-n><C-W>k]], opts)
   vim.api.nvim_buf_set_keymap(0, 't', '<C-l>', [[<C-\><C-n><C-W>l]], opts)
   -- delete previous word
-  vim.api.nvim_buf_set_keymap(0, 't', '<C-H>', [[<C-w>]], opts)
-  vim.api.nvim_buf_set_keymap(0, 't', '<M-BS>', [[<esc>vBc]], opts)
-  -- vim.api.nvim_buf_set_keymap(0, 't', '<dd>', [[i<home><esc>"_D]], opts)
-  -- vim.api.nvim_buf_set_keymap(0, 't', '<cc>', [[i<home><esc>"_C]], opts)
+  vim.api.nvim_buf_set_keymap(0, 't', '<C-H>', [[<esc>vBc]], opts)
+  -- vim.api.nvim_buf_set_keymap(0, 't', '<C-H>', [[<C-w>]], opts)
+  -- vim.api.nvim_buf_set_keymap(0, 't', '<M-BS>', [[<esc>vBc]], opts)
 end
 
 vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
