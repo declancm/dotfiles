@@ -117,6 +117,7 @@ noremap <silent>gP gP`[v`]=
 " <C-H> is <C-BS>
 imap <C-H> <C-w>
 imap <M-BS> <esc>vBc
+
 " delete end of word
 imap <expr> <C-Del> Delete_end()
 imap <expr> <M-Del> Delete_END()
