@@ -107,6 +107,12 @@ noremap <silent>P P`[v`]=
 noremap <silent>gp gp`[v`]=
 noremap <silent>gP gP`[v`]=
 
+" change position of cursor when pasting
+" noremap p gp
+" noremap P gP
+" noremap gp p
+" noremap gP P
+
 " delete previous word
 " <C-H> is <C-BS>
 imap <C-H> <C-w>
@@ -145,10 +151,3 @@ endfunction
 " endfunction
 
 " nnoremap <F9> :set paste<CR> "<F8>" :set topaste<CR>
-
-" change position of cursor when pasting
-" noremap p gp
-" noremap P gP
-" noremap gp p
-" noremap gP P
-
