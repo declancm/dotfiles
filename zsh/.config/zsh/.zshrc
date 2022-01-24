@@ -13,8 +13,13 @@ zle_highlight=('paste:none')
 # beeping is annoying
 unsetopt BEEP
 
+# home and end
+bindkey '^[[H' beginning-of-line
+bindkey '^[[F' end-of-line
+
 # ctrl-backspace
-bindkey "^H" backward-kill-word
+bindkey "\C-H" backward-kill-word
+# bindkey "\M-BS" backward-kill-word
 
 # let terminal work in vim
 stty start undef stop undef
