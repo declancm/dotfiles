@@ -1,7 +1,9 @@
 let mapleader = "\<BS>"
+
 " improve home key
 map <Home> zH^
 imap <Home> <Esc>zHI
+
 " move between open windows
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
@@ -106,7 +108,6 @@ noremap <silent>p p`[v`]=
 noremap <silent>P P`[v`]=
 noremap <silent>gp gp`[v`]=
 noremap <silent>gP gP`[v`]=
-
 " change position of cursor when pasting
 " noremap p gp
 " noremap P gP
@@ -117,7 +118,6 @@ noremap <silent>gP gP`[v`]=
 " <C-H> is <C-BS>
 imap <C-H> <C-w>
 imap <M-BS> <esc>vBc
-
 " delete end of word
 imap <expr> <C-Del> Delete_end()
 imap <expr> <M-Del> Delete_END()
