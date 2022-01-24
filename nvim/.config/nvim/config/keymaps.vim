@@ -113,19 +113,33 @@ noremap <silent>gP gP`[v`]=
 " noremap gp p
 " noremap gP P
 
-" delete previous word
+" delete start of word
 " <C-H> is <C-BS>
 imap <C-H> <C-w>
 imap <M-BS> <esc>vBc
-" imap <C-Del> <esc>lvec
-" imap <M-Del> <esc>lvEc
-" imap <expr> <C-Del> Delete_end()
+" delete end of word
+imap <expr> <C-Del> Delete_end()
+imap <expr> <M-Del> Delete_END()
 
-" function! Delete_end()
-"     let currentpos = getpos('.')
-"     echo currentpos
-"     " if currentpos = 0
-" endfunction
+function! Delete_end()
+    let l:cursorpos = getpos('.')
+    if l:cursorpos[2] == 1
+        call feedkeys("\<esc>vec")
+    else
+        call feedkeys("\<esc>lvec")
+    endif
+    return ''
+endfunction
+
+function! Delete_END()
+    let l:cursorpos = getpos('.')
+    if l:cursorpos[2] == 1
+        call feedkeys("\<esc>vEc")
+    else
+        call feedkeys("\<esc>lvEc")
+    endif
+    return ''
+endfunction
 
 " open notes (todo.txt) from anywhere and return. Automatically git pull when
 " opening and then git commit and push when closing.
@@ -138,8 +152,8 @@ imap <M-BS> <esc>vBc
 nnoremap <silent> <expr> <leader>nt Notes_toggle()
 
 function! Notes_toggle()
-    let currentDir = getcwd(0)
-    if currentDir ==# $HOME . '/notes'
+    let l:currentDir = getcwd(0)
+    if l:currentDir ==# $HOME . '/notes'
         " silent call feedkeys(":w\<CR> `Z :lcd -\<CR> :delmarks Z\<CR>")
         silent call feedkeys(":w\<CR> :silent exec \"!source ~/Git/git-commit-kit/commit.sh\"\<CR> `Z :lcd -\<CR> :delmarks Z\<CR>")
     else
