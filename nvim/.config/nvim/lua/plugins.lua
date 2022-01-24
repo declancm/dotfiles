@@ -9,10 +9,13 @@ return require('packer').startup(function()
   use "wbthomason/packer.nvim"
 
   -- TELESCOPE:
-  use "nvim-lua/popup.nvim"
-  use "nvim-lua/plenary.nvim"
-  use {"nvim-telescope/telescope-fzf-native.nvim", run = "make"}
-  use "nvim-telescope/telescope.nvim"
+  use {
+    "nvim-telescope/telescope.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      {"nvim-telescope/telescope-fzf-native.nvim", run = "make"}
+    }
+  }
 
   -- LSP:
   use "neovim/nvim-lspconfig"
@@ -128,5 +131,6 @@ return require('packer').startup(function()
     config = function() require("which-key").setup{} end
   }
   use "akinsho/toggleterm.nvim"
+  use "chaoren/vim-wordmotion"
 
 end)
