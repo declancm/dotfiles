@@ -17,9 +17,6 @@ unsetopt BEEP
 bindkey '^[[H' beginning-of-line
 bindkey '^[[F' end-of-line
 
-# ctrl-backspace
-# bindkey "^H" backward-delete-word
-
 # let terminal work in vim
 stty start undef stop undef
 
@@ -70,6 +67,12 @@ bindkey "^k" up-line-or-beginning-search # Up
 bindkey "^j" down-line-or-beginning-search # Down
 bindkey -r "^u"
 bindkey -r "^d"
+
+# delete start of word
+bindkey "^H" backward-kill-word
+
+# delete end of word
+bindkey "^[[3;5~" kill-word
 
 # FZF
 # TODO update for mac
