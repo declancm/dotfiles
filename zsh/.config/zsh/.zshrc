@@ -18,8 +18,7 @@ bindkey '^[[H' beginning-of-line
 bindkey '^[[F' end-of-line
 
 # ctrl-backspace
-bindkey "\C-H" backward-kill-word
-# bindkey "\M-BS" backward-kill-word
+# bindkey "^H" backward-kill-word
 
 # let terminal work in vim
 stty start undef stop undef
@@ -97,8 +96,8 @@ xset r rate 210 40
 
 # Environment variables set everywhere
 export EDITOR="nvim"
-export TERMINAL="alacritty"
-export BROWSER="brave"
+# export TERMINAL="alacritty"
+# export BROWSER="brave"
 
 # For QT Themes
 export QT_QPA_PLATFORMTHEME=qt5ct

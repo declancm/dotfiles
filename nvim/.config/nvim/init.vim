@@ -35,6 +35,8 @@ source $HOME/.config/nvim/config/design.vim
 luafile $HOME/.config/nvim/config/toggleterm.lua
 
 " OPTIONS:
+" add underscore as word delimiter
+set iskeyword-=_
 set backspace=indent,eol,start,nostop
 set relativenumber
 set nu

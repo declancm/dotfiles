@@ -13,8 +13,12 @@ zle_highlight=('paste:none')
 # beeping is annoying
 unsetopt BEEP
 
+# home and end
+bindkey '^[[H' beginning-of-line
+bindkey '^[[F' end-of-line
+
 # ctrl-backspace
-bindkey "^H" backward-kill-word
+# bindkey "^H" backward-delete-word
 
 # let terminal work in vim
 stty start undef stop undef
@@ -96,8 +100,8 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#808080"
 
 # Environment variables set everywhere
 export EDITOR="nvim"
-export TERMINAL="alacritty"
-export BROWSER="firefox"
+# export TERMINAL="alacritty"
+# export BROWSER="firefox"
 
 # For QT Themes
 export QT_QPA_PLATFORMTHEME=qt5ct
