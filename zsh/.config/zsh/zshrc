@@ -13,6 +13,9 @@ zle_highlight=('paste:none')
 # beeping is annoying
 unsetopt BEEP
 
+# ctrl-backspace
+bindkey '^H' backward-kill-word
+
 # let terminal work in vim
 stty start undef stop undef
 
@@ -64,8 +67,6 @@ bindkey "^k" up-line-or-beginning-search # Up
 bindkey "^j" down-line-or-beginning-search # Down
 bindkey -r "^u"
 bindkey -r "^d"
-# ctrl-backspace
-bindkey '^H' backward-kill-word
 
 # FZF
 # TODO update for mac

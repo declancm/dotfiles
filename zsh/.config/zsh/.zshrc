@@ -1,4 +1,5 @@
 #!/bin/sh
+
 export ZDOTDIR=$HOME/.config/zsh
 HISTFILE=~/.zsh_history
 setopt appendhistory
@@ -12,6 +13,11 @@ zle_highlight=('paste:none')
 # beeping is annoying
 unsetopt BEEP
 
+# ctrl-backspace
+bindkey '^H' backward-kill-word
+
+# let terminal work in vim
+stty start undef stop undef
 
 # completions
 autoload -Uz compinit
@@ -61,7 +67,7 @@ bindkey "^j" down-line-or-beginning-search # Down
 bindkey -r "^u"
 bindkey -r "^d"
 
-# FZF 
+# FZF
 # TODO update for mac
 [ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
@@ -69,6 +75,7 @@ bindkey -r "^d"
 [ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] && source /usr/share/doc/fzf/examples/key-bindings.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f $ZDOTDIR/completion/_fnm ] && fpath+="$ZDOTDIR/completion/"
+[ -f $ZDOTDIR/completion/_cmake ] && fpath+="$ZDOTDIR/completion/"
 # export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
 compinit
 
@@ -95,28 +102,6 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 # setxkbmap -option caps:escape
 # swap escape and caps
 # setxkbmap -option caps:swapescape
-
-
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/declancm/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/declancm/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/declancm/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/declancm/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-
-# fnm
-export PATH=/home/declancm/.local/bin:$PATH
-eval "`fnm env`"
 
 # fnm
 export PATH=/home/declancm/.local/bin:$PATH
