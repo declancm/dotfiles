@@ -131,6 +131,7 @@ return require('packer').startup(function()
     config = function() require("which-key").setup{} end
   }
   use "akinsho/toggleterm.nvim"
+  -- w, b and e work with camelCase
   use "chaoren/vim-wordmotion"
 
 end)
