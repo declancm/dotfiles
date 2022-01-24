@@ -11,9 +11,6 @@ let g:python_host_prog = '/bin/python2'
 
 lua require('plugins')
 
-source $HOME/.config/nvim/config/autocmd.vim
-source $HOME/.config/nvim/config/keymaps.vim
-
 " PLUGIN_CONFIGURATIONS:
 source $HOME/.config/nvim/config/git.vim
 luafile $HOME/.config/nvim/config/lspconfig.lua

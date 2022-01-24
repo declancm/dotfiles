@@ -11,7 +11,8 @@ bindkey -M menuselect '^[[Z' vi-up-line-or-history
 bindkey -v '^?' backward-delete-char
 
 # ctrl backspace
-bindkey -v '^H' backward-delete-word
+bindkey '^H' backward-delete-word
+bindkey '5~' delete-word
 
 # Change cursor shape for different vi modes.
 function zle-keymap-select () {

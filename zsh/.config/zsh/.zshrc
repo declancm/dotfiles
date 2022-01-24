@@ -18,7 +18,7 @@ bindkey '^[[H' beginning-of-line
 bindkey '^[[F' end-of-line
 
 # ctrl-backspace
-# bindkey "^H" backward-kill-word
+# bindkey "^H" backward-delete-word
 
 # let terminal work in vim
 stty start undef stop undef

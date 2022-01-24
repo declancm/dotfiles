@@ -117,6 +117,15 @@ noremap <silent>gP gP`[v`]=
 " <C-H> is <C-BS>
 imap <C-H> <C-w>
 imap <M-BS> <esc>vBc
+" imap <C-Del> <esc>lvec
+" imap <M-Del> <esc>lvEc
+" imap <expr> <C-Del> Delete_end()
+
+" function! Delete_end()
+"     let currentpos = getpos('.')
+"     echo currentpos
+"     " if currentpos = 0
+" endfunction
 
 " open notes (todo.txt) from anywhere and return. Automatically git pull when
 " opening and then git commit and push when closing.
