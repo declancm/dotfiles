@@ -9,7 +9,7 @@ tvim() {
 }
 # alias tmux='TERM=xterm-256color tmux'
 alias tmux='tmux -2'
-alias rgtree='rg --files | tree --fromfile'
+alias tree='rg --files | tree --fromfile'
 # export PATH="$PATH":~/Git/git-commit/build/commit
 # alias commit='source ~/Git/git-commit-kit/commit.sh'
 alias pyvenv='source ~/virtualenv-creator/src/Bash/pyvenv.sh'
