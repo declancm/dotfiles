@@ -13,7 +13,7 @@ let g:python_host_prog = '/bin/python2'
 lua require('plugins')
 
 " PLUGIN_CONFIGURATIONS:
-source $HOME/.config/nvim/config/git.vim
+source $HOME/.config/nvim/config/gitblame.vim
 luafile $HOME/.config/nvim/config/lspconfig.lua
 source $HOME/.config/nvim/config/lspconfig.vim
 " luafile $HOME/.config/nvim/config/coq.lua
