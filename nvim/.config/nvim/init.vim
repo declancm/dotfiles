@@ -12,6 +12,9 @@ let g:python_host_prog = '/bin/python2'
 
 lua require('plugins')
 
+" PRE_PLUGIN_CONFIGS:
+source $HOME/.config/nvim/config/autocmd.vim
+
 " PLUGIN_CONFIGURATIONS:
 source $HOME/.config/nvim/config/gitblame.vim
 luafile $HOME/.config/nvim/config/lspconfig.lua
@@ -32,7 +35,7 @@ source $HOME/.config/nvim/config/design.vim
 " luafile $HOME/.config/nvim/config/lspcolors.lua
 luafile $HOME/.config/nvim/config/toggleterm.lua
 
-source $HOME/.config/nvim/config/autocmd.vim
+" POST_PLUGIN_CONFIGS:
 source $HOME/.config/nvim/config/keymaps.vim
 
 " OPTIONS:
