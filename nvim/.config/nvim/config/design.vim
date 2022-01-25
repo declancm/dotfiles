@@ -14,6 +14,7 @@ let g:tokyonight_style = 'storm'
 let g:tokyonight_transparent = v:true
 let g:tokyonight_italic_comments = v:false
 colorscheme tokyonight
+highlight ColorColumn ctermbg=0 guibg=#1f2335
 
 " dracula setup
 " let g:dracula_transparent_bg = 1
