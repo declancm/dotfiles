@@ -15,6 +15,11 @@ export PATH="$PATH":~/.local/bin
 eval "$(zoxide init zsh)"
 # eval "`pip completion --zsh`"
 
+# FZF
+# shows hidden files
+# export FZF_CTRL_T_COMMAND='ag --hidden --ignore .git -g ""'
+# shows hidden files and ignores node_modules and .git
+export FZF_CTRL_T_COMMAND="rg --files --follow --no-ignore-vcs --hidden -g '!{**/node_modules/*,**/.git/*}'"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

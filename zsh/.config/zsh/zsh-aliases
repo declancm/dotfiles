@@ -7,9 +7,13 @@ tvim() {
     touch "$1"
     nvim "$1"
 }
+# tmux in 256 colors
 # alias tmux='TERM=xterm-256color tmux'
 alias tmux='tmux -2'
+
+# tree to ignore files
 alias tree='rg --files | tree --fromfile'
+
 # export PATH="$PATH":~/Git/git-commit/build/commit
 # alias commit='source ~/Git/git-commit-kit/commit.sh'
 alias pyvenv='source ~/virtualenv-creator/src/Bash/pyvenv.sh'
@@ -23,6 +27,7 @@ alias f='zi'
 alias g='lazygit'
 alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
 alias nvimrc='nvim ~/.config/nvim/'
+
 # trash-cli
 alias tp='trash-put'
 alias tl='trash-list'
