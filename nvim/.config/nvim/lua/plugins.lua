@@ -13,7 +13,8 @@ return require('packer').startup(function()
     "nvim-telescope/telescope.nvim",
     requires = {
       "nvim-lua/plenary.nvim",
-      {"nvim-telescope/telescope-fzf-native.nvim", run = "make"}
+      {"nvim-telescope/telescope-fzf-native.nvim", run = "make"},
+      "nvim-lua/popup.nvim"
     }
   }
 
@@ -132,6 +133,6 @@ return require('packer').startup(function()
   }
   use "akinsho/toggleterm.nvim"
   -- w, b and e work with camelCase
-  use "chaoren/vim-wordmotion"
+  -- use "chaoren/vim-wordmotion"
 
 end)

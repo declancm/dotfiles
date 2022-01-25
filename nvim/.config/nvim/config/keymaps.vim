@@ -1,5 +1,3 @@
-let mapleader = "\<BS>"
-
 " improve home key
 map <Home> zH^
 imap <Home> <Esc>zHI
@@ -92,9 +90,9 @@ vnoremap c "_c
 nnoremap <leader>d ""d
 nnoremap <leader>D ""D
 vnoremap <leader>d ""d
-nnoremap <leader>c ""c
-nnoremap <leader>C ""C
-vnoremap <leader>c ""c
+" nnoremap <leader>c ""c
+" nnoremap <leader>C ""C
+" vnoremap <leader>c ""c
 
 " trouble toggle keymap
 nnoremap <leader>tt :TroubleToggle<CR>

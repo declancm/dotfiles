@@ -3,6 +3,7 @@ syntax on
 " pre plugin commands
 set background=dark
 set completeopt=menuone,noinsert,noselect
+let mapleader = "\<BS>"
 
 let g:python3_host_prog = '/bin/python3'
 let g:python_host_prog = '/bin/python2'
