@@ -2,6 +2,9 @@
 map <Home> zH^
 imap <Home> <Esc>zHI
 
+" source init.vim
+nnoremap <silent> <leader>si :wa<CR>:source $MYVIMRC<CR>:echo 'init.vim was sourced'<CR>
+
 " move between open windows
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
@@ -173,3 +176,4 @@ endfunction
 " endfunction
 
 " nnoremap <F9> :set paste<CR> "<F8>" :set topaste<CR>
+
