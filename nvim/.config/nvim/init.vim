@@ -39,8 +39,7 @@ luafile $HOME/.config/nvim/config/toggleterm.lua
 source $HOME/.config/nvim/config/keymaps.vim
 
 " OPTIONS:
-" add underscore as word delimiter
-set iskeyword-=_
+set iskeyword-=_ " add underscore as word delimiter
 set backspace=indent,eol,start,nostop
 set relativenumber
 set nu
@@ -51,8 +50,7 @@ set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
 set autoindent
-set smartindent
-" set cindent
+set smartindent " or 'set cindent'
 set nowrap
 set smartcase
 set noswapfile
