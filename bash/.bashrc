@@ -116,7 +116,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-alias vim='nvim'
+# alias vim='nvim'
 export EDITOR='nvim'
 
 source /home/declancm/pyvenv-creator/pyvenv.sh

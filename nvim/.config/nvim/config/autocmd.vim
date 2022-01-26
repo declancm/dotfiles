@@ -39,5 +39,9 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
     \ execute 'CHADopen' | execute 'cd '.argv()[0] | endif
 
+" chadtree closes when it's the last thing open
+" TODO: adjust this for chadtree
+" autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
 " stop auto inserting comments
 autocmd BufEnter * setlocal formatoptions-=c formatoptions-=r formatoptions-=o

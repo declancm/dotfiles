@@ -63,7 +63,7 @@ return require('packer').startup(function()
     run = "python3 -m chadtree deps",
     config = function()
       -- local chadtree_settings = { ["theme.text_colour_set"] = "solarized_light" }
-      local chadtree_settings = { ["theme.text_colour_set"] = "solarized_light", ["options.session"] = false }
+      local chadtree_settings = { ["theme.text_colour_set"] = "solarized_light", ["options.session"] = false, ["options.close_on_open"] = true }
       vim.api.nvim_set_var("chadtree_settings", chadtree_settings)
     end
   }
@@ -133,6 +133,6 @@ return require('packer').startup(function()
   }
   use "akinsho/toggleterm.nvim"
   -- w, b and e work with camelCase
-  -- use "chaoren/vim-wordmotion"
+  use "chaoren/vim-wordmotion"
 
 end)
