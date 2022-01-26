@@ -13,7 +13,10 @@ function! GetBuffers()
 
     " save the activeBuffers to another file then use python
 
+    " use python to change the vscode settings
+
     " remove everything that isn't inside the quotation marks to get the name using sed
+
 
     " let l:listOfBuffers = getbufinfo({'bufloaded': 1, 'buflisted': 1, 'hidden': 0})
     " echo l:listOfBuffers
