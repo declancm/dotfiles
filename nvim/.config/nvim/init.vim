@@ -39,6 +39,8 @@ luafile $HOME/.config/nvim/config/toggleterm.lua
 source $HOME/.config/nvim/config/keymaps.vim
 " source $HOME/.config/nvim/config/commands.vim
 
+" let g:vim2vscode_no_defaults = 1
+
 " OPTIONS:
 set iskeyword-=_ " add underscore as word delimiter
 set backspace=indent,eol,start,nostop
