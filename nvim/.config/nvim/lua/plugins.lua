@@ -134,5 +134,6 @@ return require('packer').startup(function()
   use "akinsho/toggleterm.nvim"
   -- w, b and e work with camelCase
   use "chaoren/vim-wordmotion"
+  use "declancm/vim2vscode"
 
 end)
