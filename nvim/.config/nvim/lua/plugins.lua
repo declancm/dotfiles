@@ -101,7 +101,11 @@ return require('packer').startup(function()
   -- use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
   use "hoob3rt/lualine.nvim"
   use "kyazdani42/nvim-web-devicons"
-  -- use "p00f/nvim-ts-rainbow"
+  -- use "p00f/nvim-ts-rainbow" -- fix this
+  use {
+    "luochen1990/rainbow",
+    config = function() vim.g.rainbow_active = 1 end
+  }
   use {
     "norcalli/nvim-colorizer.lua",
     config = function() require'colorizer'.setup() end
@@ -110,6 +114,7 @@ return require('packer').startup(function()
   -- use "folke/lsp-colors.nvim"
 
   -- DEBUGGING:
+  use "declancm/vim2vscode"
   use "folke/trouble.nvim"
   -- use "mfussenegger/nvim-dap"
   -- use "ThePrimeagen/refactoring.nvim"
@@ -134,6 +139,5 @@ return require('packer').startup(function()
   use "akinsho/toggleterm.nvim"
   -- w, b and e work with camelCase
   use "chaoren/vim-wordmotion"
-  use "declancm/vim2vscode"
 
 end)

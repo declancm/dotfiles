@@ -74,6 +74,9 @@ bindkey "^H" backward-kill-word
 # delete end of word
 bindkey "^[[3;5~" kill-word
 
+# Change zsh-autosuggestions appearance:
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#808080"
+
 # FZF
 # TODO update for mac
 [ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
