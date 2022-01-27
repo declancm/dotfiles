@@ -75,7 +75,8 @@ bindkey "^H" backward-kill-word
 bindkey "^[[3;5~" kill-word
 
 # Change zsh-autosuggestions appearance:
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#808080"
+# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#808080"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#565f89"
 
 # FZF
 # TODO update for mac

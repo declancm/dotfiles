@@ -58,6 +58,7 @@ alias pscpu='ps auxf | sort -nr -k 3 | head -5'
 alias bm="git checkout master"
 alias bs="git checkout stable"
 alias bf="git checkout feature"
+alias bt="git checkout test"
 
 case "$(uname -s)" in
 

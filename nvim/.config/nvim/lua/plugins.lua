@@ -114,7 +114,7 @@ return require('packer').startup(function()
   -- use "folke/lsp-colors.nvim"
 
   -- DEBUGGING:
-  use "declancm/vim2vscode"
+  use {"declancm/vim2vscode", branch = "test"}
   use "folke/trouble.nvim"
   -- use "mfussenegger/nvim-dap"
   -- use "ThePrimeagen/refactoring.nvim"
