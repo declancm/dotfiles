@@ -101,7 +101,7 @@ vnoremap <leader>d ""d
 nnoremap <leader>tt :TroubleToggle<CR>
 
 " save, auto commit and push
-nnoremap <silent> <leader>co :w<CR>:!source ~/Git/git-commit-script/commit.sh<CR>
+nnoremap <silent> <leader>cp :w<CR>:!source ~/Git/git-commit-script/commit.sh<CR>
 
 " auto format indent for pasted content
 " TODO make this work with python and PowerShell files
