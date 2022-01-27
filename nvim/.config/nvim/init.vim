@@ -37,9 +37,6 @@ luafile $HOME/.config/nvim/config/toggleterm.lua
 
 " POST_PLUGIN_CONFIGS:
 source $HOME/.config/nvim/config/keymaps.vim
-" source $HOME/.config/nvim/config/commands.vim
-
-" let g:vim2vscode_no_defaults = 1
 
 " OPTIONS:
 set iskeyword-=_ " add underscore as word delimiter
