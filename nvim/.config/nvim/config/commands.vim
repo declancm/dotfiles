@@ -12,9 +12,6 @@ function! OpenInCode()
     let l:cursorpos = getpos('.')
     silent execute("!code --goto " . l:fullpath . ":" . l:cursorpos[1] . ":" . l:cursorpos[2])
 
-    " open file in current instance of vscode
-    " silent execute("!code -r " . l:fullpath)
-
 endfunction
 
 function! OpenBuffersInCode()
