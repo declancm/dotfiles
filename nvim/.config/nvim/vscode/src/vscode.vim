@@ -2,36 +2,38 @@ command! VSCode :call GetBuffers()
 
 function! GetBuffers()
 
+    " get name of current buffer
+    let l:currentFile = bufname()
+    let l:currentFullPath = fnamemodify(l:currentFile, ":p")
+
+    echom "Opening your active buffers in vscode..."
+
     let l:activeBuffers = execute("buffers(a)")
-    " echo l:activeBuffers
-    call writefile([getcwd()], expand('$HOME/.config/nvim/vscode/data/directory.txt'))
-    call writefile([l:activeBuffers], expand('$HOME/.config/nvim/vscode/data/files.txt'))
+    let l:lenActiveBuffers = len(l:activeBuffers)
+    " echo "length of activeBuffers is: " l:lenActiveBuffers
+    let l:i = 0
+    let l:number = 0
+    while i < l:lenActiveBuffers
+        if "\n" == l:activeBuffers[i]
+            let l:number += 1
+            let l:bufnr = str2nr(l:activeBuffers[i+1:i+4])
+            " echo l:bufnr
+            let l:bufname = bufname(l:bufnr)
+            let l:fullpath = fnamemodify(l:bufname, ":p")
+            " if fullpath = name of current file, open with current cursor pos
+            " else,
+            " silent execute("!code -r " . l:fullpath)
+        endif
+        " let l:remainder = l:count % 2
+        " if l:remainder == 0
+        "     " copy stuff inside the " and then save to variable when count changes
+        " endif
+        let l:i += 1
+    endwhile
 
-    " let l:activeBuffers = execute("buffers(a)")
-    " let l:listOfBuffers = str2list(l:activeBuffers)
-    " call writefile(l:listOfBuffers, expand('$HOME/.config/nvim/files.txt'))
-
-    " save the activeBuffers to another file then use python
-
-    " use python to change the vscode settings
-
-    " remove everything that isn't inside the quotation marks to get the name using sed
-
-
-    " let l:listOfBuffers = getbufinfo({'bufloaded': 1, 'buflisted': 1, 'hidden': 0})
-    " echo l:listOfBuffers
-
-    " find the highest buffer number
-    " let l:largestBufnr = bufnr('$')
-    " echo "The largest bufnr is: " l:largestBufnr
-
-    " let l:lengthBufnr = len(l:activeBuffers)
-    " echo "The length of the largest bufnr is: " l:lengthBufnr
-    " echo l:activeBuffers[:lengthBufnr]
-
-    " echo l:activeBuffers[:3][1:]
-
-    " the current directory is:
-    " pwd()
+    " open file in vscode at current cursor position
+    " needs to be last for the cursor to work correctly? Test this
+    let l:cursorpos = getpos('.')
+    silent execute("!code --goto " . l:currentFullPath . ":" . l:cursorpos[1] . ":" . l:cursorpos[2])
 
 endfunction
