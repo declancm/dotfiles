@@ -73,6 +73,8 @@ function! s:OpenAllBuffersInCode()
         if "\n" == l:activeBuffers[i]
             let l:number += 1
             let l:bufferNumber = str2nr(l:activeBuffers[i+1:i+4])
+            " line()
+            " col()
             let l:bufferName = bufname(l:bufferNumber)
             let l:fullPath = fnamemodify(l:bufferName, ":p")
 
