@@ -8,13 +8,17 @@ return require('packer').startup(function()
 
   use "wbthomason/packer.nvim"
 
+  -- MY_PLUGINS:
+  use "declancm/vim2vscode"
+  -- use {"declancm/vim2vscode", branch = "test"}
+
   -- TELESCOPE:
   use {
     "nvim-telescope/telescope.nvim",
     requires = {
       "nvim-lua/plenary.nvim",
       {"nvim-telescope/telescope-fzf-native.nvim", run = "make"},
-      "nvim-lua/popup.nvim"
+      -- "nvim-lua/popup.nvim"
     }
   }
 
@@ -114,8 +118,6 @@ return require('packer').startup(function()
   -- use "folke/lsp-colors.nvim"
 
   -- DEBUGGING:
-  use "declancm/vim2vscode"
-  -- use {"declancm/vim2vscode", branch = "test"}
   use "folke/trouble.nvim"
   -- use "mfussenegger/nvim-dap"
   -- use "ThePrimeagen/refactoring.nvim"
