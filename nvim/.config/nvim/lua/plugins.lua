@@ -81,7 +81,7 @@ return require('packer').startup(function()
   -- TREESITTER:
   use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
   use "nvim-treesitter/playground"
-  use "simrat39/symbols-outline.nvim"
+  -- use "simrat39/symbols-outline.nvim"
 
   -- UNDO_TREE:
   use "mbbill/undotree"
@@ -141,6 +141,6 @@ return require('packer').startup(function()
   }
   use "akinsho/toggleterm.nvim"
   -- w, b and e work with camelCase
-  use "chaoren/vim-wordmotion"
+  -- use "chaoren/vim-wordmotion"
 
 end)

@@ -44,7 +44,7 @@ source $HOME/.config/nvim/config/keymaps.vim
 set iskeyword-=_ " add underscore as word delimiter
 set backspace=indent,eol,start,nostop
 set relativenumber
-set nu
+set nu " add line number to the current line
 set nohlsearch
 set hidden
 set noerrorbells
@@ -59,8 +59,8 @@ set noswapfile
 set nobackup
 set undodir=~/.vim/undodir
 set undofile
-set incsearch
-set termguicolors
+set incsearch " incremental search
+set termguicolors " support true colors
 set scrolloff=8
 set showmode
 set signcolumn=yes
