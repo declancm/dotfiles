@@ -43,6 +43,7 @@ function! s:OpenCurrentBufferInCode()
 
     " open file in vscode at current cursor position
     silent execute("!code -g " . l:fullPath . ":" . l:cursorPos[1] . ":" . l:cursorPos[2])
+    silent execute("!code -g " . l:fullPath . ":" . l:cursorPos[1] . ":" . l:cursorPos[2])
 
 endfunction
 
@@ -87,6 +88,7 @@ function! s:OpenAllBuffersInCode()
     endwhile
 
     " open the current file at current cursor position
+    silent execute("!code -g " . l:currentFullPath . ":" . l:cursorPos[1] . ":" . l:cursorPos[2])
     silent execute("!code -g " . l:currentFullPath . ":" . l:cursorPos[1] . ":" . l:cursorPos[2])
 
 endfunction
