@@ -18,7 +18,6 @@ return require('packer').startup(function()
     requires = {
       "nvim-lua/plenary.nvim",
       {"nvim-telescope/telescope-fzf-native.nvim", run = "make"},
-      -- "nvim-lua/popup.nvim"
     }
   }
 
@@ -104,16 +103,11 @@ return require('packer').startup(function()
   use "hoob3rt/lualine.nvim"
   use "kyazdani42/nvim-web-devicons"
   use "p00f/nvim-ts-rainbow"
-  -- use {
-  --   "luochen1990/rainbow",
-  --   config = function() vim.g.rainbow_active = 1 end
-  -- }
   use {
     "norcalli/nvim-colorizer.lua",
     config = function() require'colorizer'.setup() end
   }
   use "unblevable/quick-scope"
-  -- use "folke/lsp-colors.nvim"
 
   -- DEBUGGING:
   use "folke/trouble.nvim"
