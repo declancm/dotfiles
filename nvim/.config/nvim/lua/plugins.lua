@@ -102,14 +102,13 @@ return require('packer').startup(function()
   }
   use "tiagovla/tokyodark.nvim"
   use "Mofiqul/dracula.nvim"
-  -- use {"ellisonleao/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
   use "hoob3rt/lualine.nvim"
   use "kyazdani42/nvim-web-devicons"
-  -- use "p00f/nvim-ts-rainbow" -- fix this
-  use {
-    "luochen1990/rainbow",
-    config = function() vim.g.rainbow_active = 1 end
-  }
+  use "p00f/nvim-ts-rainbow"
+  -- use {
+  --   "luochen1990/rainbow",
+  --   config = function() vim.g.rainbow_active = 1 end
+  -- }
   use {
     "norcalli/nvim-colorizer.lua",
     config = function() require'colorizer'.setup() end
@@ -120,7 +119,7 @@ return require('packer').startup(function()
   -- DEBUGGING:
   use "folke/trouble.nvim"
   -- use "mfussenegger/nvim-dap"
-  -- use "ThePrimeagen/refactoring.nvim"
+  use "ThePrimeagen/refactoring.nvim"
 
   -- MISCELLANEOUS:
   use "szw/vim-maximizer"
