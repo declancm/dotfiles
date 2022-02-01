@@ -96,6 +96,7 @@ vnoremap <leader>d ""d
 " nnoremap <leader>c ""c
 " nnoremap <leader>C ""C
 " vnoremap <leader>c ""c
+" leader c was having conflicts with kommentary keymaps
 
 " trouble toggle keymap
 nnoremap <leader>tt :TroubleToggle<CR>
