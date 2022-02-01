@@ -23,7 +23,6 @@ return require('packer').startup(function()
 
   -- LSP:
   use "neovim/nvim-lspconfig"
-  -- use "nvim-lua/lsp_extensions.nvim"
   use "tami5/lspsaga.nvim"
 
   -- CMP_COMPLETION:
@@ -109,12 +108,17 @@ return require('packer').startup(function()
     "norcalli/nvim-colorizer.lua",
     config = function() require'colorizer'.setup() end
   }
-  use "unblevable/quick-scope"
 
   -- DEBUGGING:
   use "folke/trouble.nvim"
   -- use "mfussenegger/nvim-dap"
   use "ThePrimeagen/refactoring.nvim"
+
+  -- MOVEMENT:
+  use "unblevable/quick-scope"
+  -- w, b and e work with camelCase
+  use "chaoren/vim-wordmotion"
+
 
   -- MISCELLANEOUS:
   use "szw/vim-maximizer"
@@ -134,7 +138,5 @@ return require('packer').startup(function()
     config = function() require("which-key").setup{} end
   }
   use "akinsho/toggleterm.nvim"
-  -- w, b and e work with camelCase
-  -- use "chaoren/vim-wordmotion"
 
 end)

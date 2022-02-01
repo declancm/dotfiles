@@ -3,7 +3,7 @@ map <Home> zH^
 imap <Home> <Esc>zHI
 
 " source init.vim
-nnoremap <silent> <leader>si :wa<CR>:source $MYVIMRC<CR>:echom 'init.vim was sourced'<CR>
+nnoremap <silent> <leader>si :wa<CR>:source $MYVIMRC<CR>:echom "'init.vim' was sourced."<CR>
 
 " move between open windows
 nnoremap <leader>h :wincmd h<CR>
