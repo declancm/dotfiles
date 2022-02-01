@@ -91,17 +91,19 @@ return require('packer').startup(function()
   use "f-person/git-blame.nvim"
 
   -- DESIGN:
-  use "navarasu/onedark.nvim"
+  -- use "navarasu/onedark.nvim"
   use {
     "folke/tokyonight.nvim",
     requires = { "folke/todo-comments.nvim",
       config = function() require('todo-comments').setup{} end
     }
   }
-  use "tiagovla/tokyodark.nvim"
-  use "Mofiqul/dracula.nvim"
-  use "hoob3rt/lualine.nvim"
-  use "kyazdani42/nvim-web-devicons"
+  -- use "tiagovla/tokyodark.nvim"
+  -- use "Mofiqul/dracula.nvim"
+  use {
+    "hoob3rt/lualine.nvim",
+    requires = "kyazdani42/nvim-web-devicons"
+  }
   use "p00f/nvim-ts-rainbow"
   use {
     "norcalli/nvim-colorizer.lua",
