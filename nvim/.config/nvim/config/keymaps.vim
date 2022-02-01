@@ -14,8 +14,8 @@ nnoremap <leader><left> :wincmd h<CR>
 nnoremap <leader><down> :wincmd j<CR>
 nnoremap <leader><up> :wincmd k<CR>
 nnoremap <leader><right> :wincmd l<CR>
-" nnoremap <leader>v <C-w>v
-" nnoremap <leader>s <C-w>s
+nnoremap <leader>v <C-w>v
+nnoremap <leader>s <C-w>s
 " tmux-like previous window switch
 nnoremap <leader>; :wincmd p<CR>
 " resize windows
