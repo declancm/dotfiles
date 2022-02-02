@@ -22,7 +22,7 @@ source $HOME/.config/nvim/config/lspconfig.vim
 luafile $HOME/.config/nvim/config/treesitter.lua
 luafile $HOME/.config/nvim/config/telescope.lua
 source $HOME/.config/nvim/config/telescope.vim
-" luafile $HOME/.config/nvim/config/refactoring.lua
+luafile $HOME/.config/nvim/config/refactoring.lua
 luafile $HOME/.config/nvim/config/lspsaga.lua
 " luafile $HOME/.config/nvim/config/cmp.lua
 " source $HOME/.config/nvim/config/coc.vim
@@ -30,7 +30,7 @@ luafile $HOME/.config/nvim/config/trouble.lua
 luafile $HOME/.config/nvim/config/lualine.lua
 luafile $HOME/.config/nvim/config/kommentary.lua
 source $HOME/.config/nvim/config/design.vim
-" luafile $HOME/.config/nvim/config/lspcolors.lua
+luafile $HOME/.config/nvim/config/lspcolors.lua
 luafile $HOME/.config/nvim/config/toggleterm.lua
 luafile $HOME/.config/nvim/config/null-ls.lua
 

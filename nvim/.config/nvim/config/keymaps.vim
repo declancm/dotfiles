@@ -2,8 +2,8 @@
 map <Home> zH^
 imap <Home> <Esc>zHI
 
-" source init.vim
-nnoremap <silent> <leader>si :wa<CR>:source $MYVIMRC<CR>:echom "'init.vim' was sourced."<CR>
+" source config file
+nnoremap <silent> <leader>sc :wa<CR>:source $MYVIMRC<CR>:echom "Your config file was sourced."<CR>
 
 " move between open windows
 nnoremap <leader>h :wincmd h<CR>
@@ -128,19 +128,24 @@ endfunction
 
 " open notes (todo.txt) from anywhere and return. Automatically git pull when
 " opening and then git commit and push when closing.
-nnoremap <silent> <expr> <leader>nt <SID>Notes_toggle()
+nnoremap <silent> <leader>nt :call <SID>Notes_toggle()<CR>
 
 function! s:Notes_toggle()
+
     let l:currentDir = getcwd(0)
     if l:currentDir ==# $HOME . '/notes'
         if &modified
-            silent call feedkeys(":w\<CR> :silent execute(\"!source ~/Git/git-commit-script/commit.sh\")\<CR> `Z :lcd -\<CR> :delmarks Z\<CR>")
+            silent execute("w")
+            execute("!source ~/Git/git-commit-script/commit.sh")
+            silent execute("e# | lcd - | delmarks Z")
         else
-            silent call feedkeys(":w\<CR> `Z :lcd -\<CR> :delmarks Z\<CR>")
+            silent execute("w | e# | lcd - | delmarks Z")
         endif
     else
-        " silent call feedkeys("mZ :lcd ~/notes\<CR> :silent execute(\"!git pull origin master > /dev/null\")\<CR> :edit ~/notes/notes.txt\<CR>")
-        call feedkeys("mZ :lcd ~/notes\<CR> :silent execute(\"!git pull $(git remote) $(git rev-parse --abbrev-ref HEAD) > /dev/null\")\<CR> :edit ~/notes/notes.txt\<CR>")
+        silent execute("lcd ~/notes")
+        silent execute("!git pull $(git remote) $(git rev-parse --abbrev-ref HEAD)")
+        silent execute("edit ~/notes/notes.txt")
+        " echom "notes.txt was opened."
     endif
 endfunction
 

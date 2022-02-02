@@ -99,6 +99,7 @@ return require('packer').startup(function()
   }
   -- use "tiagovla/tokyodark.nvim"
   -- use "Mofiqul/dracula.nvim"
+  use "folke/lsp-colors.nvim"
   use {
     "hoob3rt/lualine.nvim",
     requires = "kyazdani42/nvim-web-devicons"
