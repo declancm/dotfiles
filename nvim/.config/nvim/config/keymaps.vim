@@ -134,14 +134,13 @@ function! s:Notes_toggle()
     let l:currentDir = getcwd(0)
     if l:currentDir ==# $HOME . '/notes'
         if &modified
-            " if the notes.txt file was modified, commit it
             silent call feedkeys(":w\<CR> :silent execute(\"!source ~/Git/git-commit-script/commit.sh\")\<CR> `Z :lcd -\<CR> :delmarks Z\<CR>")
         else
             silent call feedkeys(":w\<CR> `Z :lcd -\<CR> :delmarks Z\<CR>")
         endif
     else
-        silent call feedkeys("mZ :lcd ~/notes\<CR> :silent execute(\"!git pull origin master > /dev/null\")\<CR> :edit ~/notes/notes.txt\<CR>")
-        " call feedkeys("mZ :lcd ~/notes\<CR> :silent execute(\"!git pull $(git remote) $(git rev-parse --abbrev-ref HEAD) > /dev/null\")\<CR> :edit ~/notes/notes.txt\<CR>")
+        " silent call feedkeys("mZ :lcd ~/notes\<CR> :silent execute(\"!git pull origin master > /dev/null\")\<CR> :edit ~/notes/notes.txt\<CR>")
+        call feedkeys("mZ :lcd ~/notes\<CR> :silent execute(\"!git pull $(git remote) $(git rev-parse --abbrev-ref HEAD) > /dev/null\")\<CR> :edit ~/notes/notes.txt\<CR>")
     endif
 endfunction
 
