@@ -124,8 +124,8 @@ return require('packer').startup(function()
   use "jose-elias-alvarez/null-ls.nvim"
 
   -- MOVEMENT:
-  use "unblevable/quick-scope"
   use "tpope/vim-surround"
+  use "unblevable/quick-scope"
   -- w, b and e work with camelCase
   use "chaoren/vim-wordmotion"
 
