@@ -103,10 +103,10 @@ noremap <silent>gP gP`[v`]=
 imap <C-H> <C-w>
 imap <M-BS> <esc>vBc
 " delete end of word
-imap <expr> <C-Del> Delete_end()
-imap <expr> <M-Del> Delete_END()
+imap <silent> <C-Del> <Cmd>call <SID>Delete_end()<CR>
+imap <silent> <M-Del> <Cmd>call <SID>Delete_END()<CR>
 
-function! Delete_end()
+function! s:Delete_end()
     let l:cursorpos = getpos('.')
     if l:cursorpos[2] == 1
         call feedkeys("\<esc>vec")
@@ -116,7 +116,7 @@ function! Delete_end()
     return ''
 endfunction
 
-function! Delete_END()
+function! s:Delete_END()
     let l:cursorpos = getpos('.')
     if l:cursorpos[2] == 1
         call feedkeys("\<esc>vEc")
@@ -128,16 +128,20 @@ endfunction
 
 " open notes (todo.txt) from anywhere and return. Automatically git pull when
 " opening and then git commit and push when closing.
-nnoremap <silent> <expr> <leader>nt Notes_toggle()
+nnoremap <silent> <expr> <leader>nt <SID>Notes_toggle()
 
-function! Notes_toggle()
+function! s:Notes_toggle()
     let l:currentDir = getcwd(0)
     if l:currentDir ==# $HOME . '/notes'
-        " silent call feedkeys(":w\<CR> `Z :lcd -\<CR> :delmarks Z\<CR>")
-        silent call feedkeys(":w\<CR> :silent exec \"!source ~/Git/git-commit-kit/commit.sh\"\<CR> `Z :lcd -\<CR> :delmarks Z\<CR>")
+        if &modified
+            " if the notes.txt file was modified, commit it
+            silent call feedkeys(":w\<CR> :silent execute(\"!source ~/Git/git-commit-script/commit.sh\")\<CR> `Z :lcd -\<CR> :delmarks Z\<CR>")
+        else
+            silent call feedkeys(":w\<CR> `Z :lcd -\<CR> :delmarks Z\<CR>")
+        endif
     else
-        silent call feedkeys("mZ :lcd ~/notes\<CR> :silent exec \"!git pull origin master > /dev/null\"\<CR> :edit ~/notes/notes.txt\<CR>")
-        " call feedkeys("mZ :lcd ~/notes\<CR> :silent exec \"!git pull $(git remote) $(git rev-parse --abbrev-ref HEAD) > /dev/null\"\<CR> :edit ~/notes/notes.txt\<CR>")
+        silent call feedkeys("mZ :lcd ~/notes\<CR> :silent execute(\"!git pull origin master > /dev/null\")\<CR> :edit ~/notes/notes.txt\<CR>")
+        " call feedkeys("mZ :lcd ~/notes\<CR> :silent execute(\"!git pull $(git remote) $(git rev-parse --abbrev-ref HEAD) > /dev/null\")\<CR> :edit ~/notes/notes.txt\<CR>")
     endif
 endfunction
 
