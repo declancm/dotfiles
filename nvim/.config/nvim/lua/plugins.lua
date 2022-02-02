@@ -76,7 +76,7 @@ return require('packer').startup(function()
   }
 
   -- TREESITTER:
-  use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
+  use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
   use "nvim-treesitter/playground"
   -- use "simrat39/symbols-outline.nvim"
 
