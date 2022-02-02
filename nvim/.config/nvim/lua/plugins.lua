@@ -114,6 +114,10 @@ return require('packer').startup(function()
   -- use "mfussenegger/nvim-dap"
   use "ThePrimeagen/refactoring.nvim"
 
+  -- LINTERS:
+  -- black, prettier, clang_format
+  use "jose-elias-alvarez/null-ls.nvim"
+
   -- MOVEMENT:
   use "unblevable/quick-scope"
   -- w, b and e work with camelCase

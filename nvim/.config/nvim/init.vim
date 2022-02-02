@@ -1,6 +1,6 @@
 syntax on
 
-" pre plugin commands
+" PRE_PLUGIN_COMMANDS:
 let mapleader = "\<BS>"
 set background=dark
 set completeopt=menuone,noinsert,noselect
@@ -8,14 +8,14 @@ set completeopt=menuone,noinsert,noselect
 let g:python3_host_prog = '/bin/python3'
 let g:python_host_prog = '/bin/python2'
 
-" packadd packer.nvim
-
+" PACKER:
+packadd packer.nvim
 lua require('plugins')
 
 " PRE_PLUGIN_CONFIGS:
 source $HOME/.config/nvim/config/autocmd.vim
 
-" PLUGIN_CONFIGURATIONS:
+" PLUGIN_CONFIGS:
 source $HOME/.config/nvim/config/gitblame.vim
 luafile $HOME/.config/nvim/config/lspconfig.lua
 source $HOME/.config/nvim/config/lspconfig.vim
@@ -34,6 +34,7 @@ luafile $HOME/.config/nvim/config/kommentary.lua
 source $HOME/.config/nvim/config/design.vim
 " luafile $HOME/.config/nvim/config/lspcolors.lua
 luafile $HOME/.config/nvim/config/toggleterm.lua
+luafile $HOME/.config/nvim/config/null-ls.lua
 
 " POST_PLUGIN_CONFIGS:
 source $HOME/.config/nvim/config/keymaps.vim
