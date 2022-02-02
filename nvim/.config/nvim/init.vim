@@ -9,7 +9,6 @@ let g:python3_host_prog = '/bin/python3'
 let g:python_host_prog = '/bin/python2'
 
 " PACKER:
-packadd packer.nvim
 lua require('plugins')
 
 " PRE_PLUGIN_CONFIGS:
@@ -25,7 +24,6 @@ luafile $HOME/.config/nvim/config/telescope.lua
 source $HOME/.config/nvim/config/telescope.vim
 " luafile $HOME/.config/nvim/config/refactoring.lua
 luafile $HOME/.config/nvim/config/lspsaga.lua
-source $HOME/.config/nvim/config/lspsaga.vim
 " luafile $HOME/.config/nvim/config/cmp.lua
 " source $HOME/.config/nvim/config/coc.vim
 luafile $HOME/.config/nvim/config/trouble.lua
@@ -38,6 +36,7 @@ luafile $HOME/.config/nvim/config/null-ls.lua
 
 " POST_PLUGIN_CONFIGS:
 source $HOME/.config/nvim/config/keymaps.vim
+source $HOME/.config/nvim/config/plugin-keymaps.vim
 
 " source $HOME/.config/nvim/vim2vscode.vim
 

@@ -27,24 +27,9 @@ nnoremap <silent> <A-Left> :vertical resize -5<CR>
 
 " open nerdtree explorer
 nnoremap <silent> <leader>ne :Lex 30<CR>
-" chadtree
-nnoremap <silent> <leader>e :CHADopen<CR>
-nnoremap <silent> <leader>te :CHADopen --version-ctl<CR>
-" clear quickfix list
-nnoremap <silent> <leader>qf :call setqflist([])<CR>
-
-" symbols outline keymap
-nnoremap <leader>so :SymbolsOutline<CR>
-
-" markdown preview
-nnoremap <leader>mdp :MarkdownPreview<CR>
-nnoremap <leader>mds :MarkdownPreviewStop<CR>
 
 " undo tree
 nnoremap <F5> :UndotreeToggle<CR>:wincmd p<CR>
-
-" sets default bindings for vim maximier which is 'F3':
-let g:maximizer_set_default_mapping = 1
 
 " Y works like D and C
 nnoremap Y yg_
@@ -97,9 +82,6 @@ vnoremap <leader>d ""d
 " nnoremap <leader>C ""C
 " vnoremap <leader>c ""c
 " leader c was having conflicts with kommentary keymaps
-
-" trouble toggle keymap
-nnoremap <leader>tt :TroubleToggle<CR>
 
 " save, auto commit and push
 nnoremap <silent> <leader>cp :w<CR>:!source ~/Git/git-commit-script/commit.sh<CR>

@@ -113,6 +113,11 @@ return require('packer').startup(function()
   use "folke/trouble.nvim"
   -- use "mfussenegger/nvim-dap"
   use "ThePrimeagen/refactoring.nvim"
+  use {
+    "iamcco/markdown-preview.nvim",
+    run = "cd app && yarn install",
+    -- config = function() vim.g.mkdp_auto_start = 1 end
+  }
 
   -- LINTERS:
   -- black, prettier, clang_format
@@ -130,13 +135,7 @@ return require('packer').startup(function()
   use "dkarter/bullets.vim"
   use "tpope/vim-surround"
   -- use "tpope/vim-rails"
-  use "tpope/vim-dispatch"
-  use "vim-utils/vim-man"
-  use {
-    "iamcco/markdown-preview.nvim",
-    run = "cd app && yarn install",
-    -- config = function() vim.g.mkdp_auto_start = 1 end
-  }
+  -- use "tpope/vim-dispatch"
   use {
     "folke/which-key.nvim",
     config = function() require("which-key").setup{} end
