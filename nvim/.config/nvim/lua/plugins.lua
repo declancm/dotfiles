@@ -125,15 +125,14 @@ return require('packer').startup(function()
 
   -- MOVEMENT:
   use "unblevable/quick-scope"
+  use "tpope/vim-surround"
   -- w, b and e work with camelCase
   use "chaoren/vim-wordmotion"
-
 
   -- MISCELLANEOUS:
   use "szw/vim-maximizer"
   use "tpope/vim-obsession"
   use "dkarter/bullets.vim"
-  use "tpope/vim-surround"
   -- use "tpope/vim-rails"
   -- use "tpope/vim-dispatch"
   use {
