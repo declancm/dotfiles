@@ -128,7 +128,7 @@ imap <silent> <M-BS> <Cmd>call <SID>Delete_START()<CR>
 
 function! s:Delete_start()
     let l:cursorpos = getpos('.')
-    if l:cursorpos[2] <= 2
+    if l:cursorpos[2] < 3
         call feedkeys("\<BS>")
     else
         call feedkeys("\<esc>vbc")
@@ -137,7 +137,7 @@ endfunction
 
 function! s:Delete_START()
     let l:cursorpos = getpos('.')
-    if l:cursorpos[2] <= 2
+    if l:cursorpos[2] < 3
         call feedkeys("\<BS>")
     else
         call feedkeys("\<esc>vBc")
