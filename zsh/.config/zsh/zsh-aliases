@@ -15,7 +15,8 @@ alias tmux='tmux -2'
 alias tree='rg --files | tree --fromfile'
 
 # export PATH="$PATH":~/Git/git-commit/build/commit
-# alias commit='source ~/Git/git-commit-kit/commit.sh'
+# alias commit='source ~/git-scripts/commit.sh'
+alias pull='source ~/git-scripts/commit.sh'
 alias pyvenv='source ~/virtualenv-creator/src/Bash/pyvenv.sh'
 alias make16='make -j16'
 alias notes='nvim ~/notes/notes.md'
