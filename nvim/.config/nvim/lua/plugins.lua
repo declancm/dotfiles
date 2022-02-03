@@ -10,6 +10,7 @@ return require('packer').startup(function()
 
   -- MY_PLUGINS:
   use "declancm/vim2vscode"
+  use "declancm/git-scripts-vim"
   -- use {"declancm/vim2vscode", branch = "test"}
 
   -- TELESCOPE:

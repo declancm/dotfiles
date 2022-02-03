@@ -7,6 +7,11 @@ tvim() {
     touch "$1"
     nvim "$1"
 }
+extract() {
+    cp -a "$1"/. .
+    rm -r "$1"
+}
+
 # tmux in 256 colors
 # alias tmux='TERM=xterm-256color tmux'
 alias tmux='tmux -2'
@@ -14,17 +19,16 @@ alias tmux='tmux -2'
 # tree to ignore files
 alias tree='rg --files | tree --fromfile'
 
-# export PATH="$PATH":~/Git/git-commit/build/commit
 # alias commit='source ~/git-scripts/commit.sh'
 alias pull='source ~/git-scripts/commit.sh'
 alias pyvenv='source ~/virtualenv-creator/src/Bash/pyvenv.sh'
 alias make16='make -j16'
-alias notes='nvim ~/notes/notes.md'
+alias notes='nvim ~/notes/notes.txt'
 alias ll='ls -alF'
 alias ls='ls -a'
 alias rtmux='tmux source-file ~/.tmux.conf'
-alias j='z'
-alias f='zi'
+# alias j='z'
+# alias f='zi'
 alias g='lazygit'
 alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
 alias nvimrc='nvim ~/.config/nvim/'

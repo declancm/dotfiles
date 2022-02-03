@@ -119,10 +119,32 @@ noremap <silent>gP gP`[v`]=
 
 " delete start of word
 " <C-H> is <C-BS>
-imap <C-H> <C-w>
-imap <M-BS> <esc>vBc
+" imap <C-H> <C-w>
+" imap <M-BS> <esc>vBc
 
-" delete end of word
+" delete start of word (works with wordmotion)
+imap <silent> <C-H> <Cmd>call <SID>Delete_start()<CR>
+imap <silent> <M-BS> <Cmd>call <SID>Delete_START()<CR>
+
+function! s:Delete_start()
+    let l:cursorpos = getpos('.')
+    if l:cursorpos[2] == 2
+        call feedkeys("\<esc>cl")
+    elseif l:cursorpos[2] != 1
+        call feedkeys("\<esc>vbc")
+    endif
+endfunction
+
+function! s:Delete_START()
+    let l:cursorpos = getpos('.')
+    if l:cursorpos[2] == 2
+        call feedkeys("\<esc>cl")
+    elseif l:cursorpos[2] != 1
+        call feedkeys("\<esc>vBc")
+    endif
+endfunction
+
+" delete end of word (works with wordmotion)
 imap <silent> <C-Del> <Cmd>call <SID>Delete_end()<CR>
 imap <silent> <M-Del> <Cmd>call <SID>Delete_END()<CR>
 
@@ -133,7 +155,6 @@ function! s:Delete_end()
     else
         call feedkeys("\<esc>lvec")
     endif
-    return ''
 endfunction
 
 function! s:Delete_END()
@@ -143,6 +164,5 @@ function! s:Delete_END()
     else
         call feedkeys("\<esc>lvEc")
     endif
-    return ''
 endfunction
 
