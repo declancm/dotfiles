@@ -47,7 +47,7 @@ set relativenumber
 set nu " add line number to the current line
 set nohlsearch
 set hidden
-set noerrorbells
+set noerrorbells " silent
 set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
@@ -66,7 +66,7 @@ set showmode
 set signcolumn=yes
 set textwidth=0
 set wrapmargin=0
-set cmdheight=2
+set cmdheight=2 " space to show two messages
 set updatetime=50
 set shortmess+=c
 set modifiable

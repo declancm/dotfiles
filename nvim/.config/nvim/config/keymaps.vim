@@ -1,3 +1,29 @@
+" save, auto commit and push
+" get the script from https://github.com/declancm/git-scripts.git
+nnoremap <silent> <leader>cp :w<CR>:!source ~/git-scripts/commit.sh<CR>
+
+" open notes (todo.txt) from anywhere and return. Automatically git pull when
+" opening and then git commit and push when closing.
+nnoremap <silent> <leader>n :call <SID>Notes_toggle()<CR>
+
+function! s:Notes_toggle()
+    let l:currentDir = getcwd(0)
+    if l:currentDir ==# $HOME . '/notes'
+        if &modified
+            silent execute("w")
+            execute("!source ~/git-scripts/commit.sh")
+            silent execute("e# | lcd -")
+        else
+            silent execute("w | e# | lcd -")
+        endif
+    else
+        silent execute("lcd ~/notes")
+        silent execute("!git pull $(git remote) $(git rev-parse --abbrev-ref HEAD)")
+        silent execute("edit ~/notes/notes.txt")
+        " echom "notes.txt was opened."
+    endif
+endfunction
+
 " improve home key
 map <Home> zH^
 imap <Home> <Esc>zHI
@@ -26,7 +52,7 @@ nnoremap <silent> <A-Right> :vertical resize +5<CR>
 nnoremap <silent> <A-Left> :vertical resize -5<CR>
 
 " open nerdtree explorer
-nnoremap <silent> <leader>ne :Lex 30<CR>
+" nnoremap <silent> <leader>ne :Lex 30<CR>
 
 " undo tree
 nnoremap <F5> :UndotreeToggle<CR>:wincmd p<CR>
@@ -74,17 +100,10 @@ vnoremap d "_d
 nnoremap c "_c
 nnoremap C "_C
 vnoremap c "_c
-" leader c and d is now cut
+" leader d is now cut
 nnoremap <leader>d ""d
 nnoremap <leader>D ""D
 vnoremap <leader>d ""d
-" nnoremap <leader>c ""c
-" nnoremap <leader>C ""C
-" vnoremap <leader>c ""c
-" leader c was having conflicts with kommentary keymaps
-
-" save, auto commit and push
-nnoremap <silent> <leader>cp :w<CR>:!source ~/Git/git-commit-script/commit.sh<CR>
 
 " auto format indent for pasted content
 " TODO make this work with python and PowerShell files
@@ -125,29 +144,4 @@ function! s:Delete_END()
     endif
     return ''
 endfunction
-
-" open notes (todo.txt) from anywhere and return. Automatically git pull when
-" opening and then git commit and push when closing.
-nnoremap <silent> <leader>nt :call <SID>Notes_toggle()<CR>
-
-function! s:Notes_toggle()
-
-    let l:currentDir = getcwd(0)
-    if l:currentDir ==# $HOME . '/notes'
-        if &modified
-            silent execute("w")
-            execute("!source ~/Git/git-commit-script/commit.sh")
-            silent execute("e# | lcd - | delmarks Z")
-        else
-            silent execute("w | e# | lcd - | delmarks Z")
-        endif
-    else
-        silent execute("lcd ~/notes")
-        silent execute("!git pull $(git remote) $(git rev-parse --abbrev-ref HEAD)")
-        silent execute("edit ~/notes/notes.txt")
-        " echom "notes.txt was opened."
-    endif
-endfunction
-
-" nnoremap <F9> :set paste<CR> "<F8>" :set topaste<CR>
 
