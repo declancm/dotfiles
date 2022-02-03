@@ -20,7 +20,7 @@ alias tmux='tmux -2'
 alias tree='rg --files | tree --fromfile'
 
 # alias commit='source ~/git-scripts/commit.sh'
-alias pull='source ~/git-scripts/commit.sh'
+alias pull='source ~/git-scripts/pull.sh'
 alias pyvenv='source ~/virtualenv-creator/src/Bash/pyvenv.sh'
 alias make16='make -j16'
 alias notes='nvim ~/notes/notes.txt'
