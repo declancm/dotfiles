@@ -1,6 +1,6 @@
 " save, auto commit and push
 " get the script from https://github.com/declancm/git-scripts.git
-nnoremap <silent> <leader>cp :echom "Runnning the commit script."<CR>:w<CR>:!source ~/git-scripts/commit-silent.sh<CR>
+nnoremap <silent> <leader>cp :w<CR>:!source ~/git-scripts/commit-silent.sh<CR>
 
 " open notes (todo.txt) from anywhere and return. Automatically git pull when
 " opening and then git commit and push when closing.
@@ -20,7 +20,6 @@ function! s:Notes_toggle()
         silent execute("lcd ~/notes")
         execute("!git pull -q $(git remote) $(git rev-parse --abbrev-ref HEAD)")
         silent execute("edit ~/notes/notes.txt")
-        " echom "notes.txt was opened."
     endif
 endfunction
 
