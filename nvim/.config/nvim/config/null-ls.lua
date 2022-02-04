@@ -8,6 +8,7 @@ require("null-ls").setup({
         require("null-ls").builtins.formatting.prettier,
         -- npm install --save-dev --save-exact prettier
         require("null-ls").builtins.formatting.stylua,
+        -- cargo install stylua
     },
     on_attach = function(client)
         if client.resolved_capabilities.document_formatting then

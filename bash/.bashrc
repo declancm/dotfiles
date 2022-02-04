@@ -129,3 +129,4 @@ export CUDACXX=/usr/local/cuda/bin/nvcc
 export CUDA_HOME=/usr/local/cuda
 
 alias pyvenv='source /home/declancm/virtualenv-creator/src/Bash/pyvenv.sh'
+. "$HOME/.cargo/env"
