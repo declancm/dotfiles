@@ -7,7 +7,7 @@ require("null-ls").setup({
 		-- sudo apt install clang-format
 		require("null-ls").builtins.formatting.prettier,
 		-- npm install --save-dev --save-exact prettier
-		require("null-ls").builtins.formatting.stylua,
+		-- require("null-ls").builtins.formatting.stylua,
 		-- cargo install stylua
 	},
 	-- automatically format on save
@@ -17,6 +17,7 @@ require("null-ls").setup({
             augroup LspFormatting
                 autocmd! * <buffer>
                 autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
+                -- autocmd BufWritePre <buffer> retab
             augroup END
             ]])
 		end
