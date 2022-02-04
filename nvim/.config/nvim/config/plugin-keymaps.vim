@@ -5,7 +5,7 @@ nnoremap <silent> <leader>te :CHADopen --version-ctl<CR>
 nnoremap <silent> <leader>qf :call setqflist([])<CR>
 
 " symbols outline keymap
-nnoremap <leader>so :SymbolsOutline<CR>
+" nnoremap <leader>so :SymbolsOutline<CR>
 
 " markdown preview
 nnoremap <leader>mdp :MarkdownPreview<CR>
