@@ -1,10 +1,29 @@
 -- Refactoring operations:
 -- Remaps for each of the four debug operations currently offered by the plugin
-vim.api.nvim_set_keymap("v", "<Leader>re", [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function')<CR>]], {noremap = true, silent = true, expr = false})
-vim.api.nvim_set_keymap("v", "<Leader>rf", [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function To File')<CR>]], {noremap = true, silent = true, expr = false})
-vim.api.nvim_set_keymap("v", "<Leader>rv", [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Variable')<CR>]], {noremap = true, silent = true, expr = false})
-vim.api.nvim_set_keymap("v", "<Leader>ri", [[ <Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]], {noremap = true, silent = true, expr = false})
-
+vim.api.nvim_set_keymap(
+	"v",
+	"<Leader>re",
+	[[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function')<CR>]],
+	{ noremap = true, silent = true, expr = false }
+)
+vim.api.nvim_set_keymap(
+	"v",
+	"<Leader>rf",
+	[[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function To File')<CR>]],
+	{ noremap = true, silent = true, expr = false }
+)
+vim.api.nvim_set_keymap(
+	"v",
+	"<Leader>rv",
+	[[ <Esc><Cmd>lua require('refactoring').refactor('Extract Variable')<CR>]],
+	{ noremap = true, silent = true, expr = false }
+)
+vim.api.nvim_set_keymap(
+	"v",
+	"<Leader>ri",
+	[[ <Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]],
+	{ noremap = true, silent = true, expr = false }
+)
 
 -- Debug operations:
 -- You can also use below = true here to to change the position of the printf
@@ -21,7 +40,6 @@ vim.api.nvim_set_keymap("v", "<leader>rv", ":lua require('refactoring').debug.pr
 
 -- Cleanup function: this remap should be made in normal mode
 vim.api.nvim_set_keymap("n", "<leader>rc", ":lua require('refactoring').debug.cleanup({})<CR>", { noremap = true })
-
 
 -- activating prompts:
 -- require('refactoring').setup({

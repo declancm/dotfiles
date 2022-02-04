@@ -68,7 +68,7 @@ set textwidth=0
 set wrapmargin=0
 set cmdheight=2 " space to show two messages
 set updatetime=50
-set shortmess+=c
+set shortmess+=ac
 set modifiable
 set splitbelow
 set splitright

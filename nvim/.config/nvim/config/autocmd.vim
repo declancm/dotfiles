@@ -10,7 +10,7 @@ augroup END
 
 augroup HighlightYank
     autocmd!
-    autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 100})
+    autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 200})
 augroup END
 
 autocmd TextYankPost * call system('echo '.shellescape(join(v:event.regcontents, "\<CR>")).' |  clip.exe')
@@ -26,22 +26,26 @@ augroup writing_file
     autocmd BufWritePre * :call TrimWhitespace()
 augroup END
 
+autocmd BufLeave
+
 " make tabs smaller for specific file types
-autocmd FileType html setlocal shiftwidth=2 tabstop=2
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
-autocmd FileType lua setlocal shiftwidth=2 tabstop=2
-autocmd FileType markdown setlocal shiftwidth=2 tabstop=2
-autocmd FileType ps1 setlocal shiftwidth=2 tabstop=2
-autocmd FileType json setlocal shiftwidth=2 tabstop=2
+augroup smaller_tabs
+    autocmd!
+    autocmd FileType html setlocal shiftwidth=2 tabstop=2
+    autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+    autocmd FileType lua setlocal shiftwidth=2 tabstop=2
+    autocmd FileType markdown setlocal shiftwidth=2 tabstop=2
+    autocmd FileType ps1 setlocal shiftwidth=2 tabstop=2
+    autocmd FileType json setlocal shiftwidth=2 tabstop=2
+augroup END
 
 " chadtree auto opens when opening a directory with nvim
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
-    \ execute 'CHADopen' | execute 'cd '.argv()[0] | endif
-
-" chadtree closes when it's the last thing open
-" TODO: adjust this for chadtree
-" autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+augroup open_chadtree
+    autocmd!
+    autocmd StdinReadPre * let s:std_in=1
+    autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
+        \ execute 'CHADopen' | execute 'cd '.argv()[0] | endif
+augroup END
 
 " stop auto inserting comments
 autocmd BufEnter * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
