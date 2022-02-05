@@ -107,8 +107,7 @@ nnoremap <silent> <leader>D "*D
 vnoremap <silent> <leader>d "*ygv"_d
 " vnoremap <silent> <leader>d "*d
 
-" delete start of word
+" delete start of word for command line
 " <C-H> is <C-BS>
-" imap <C-H> <C-w>
-" imap <M-BS> <esc>vBc
+cmap <C-H> <C-w>
 
