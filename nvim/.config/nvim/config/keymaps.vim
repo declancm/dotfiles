@@ -65,19 +65,27 @@ nnoremap cn *``"_cgn
 nnoremap cN *``"_cgN
 
 " yank to global clipboard
-nnoremap <silent>y "*y
-vnoremap <silent>y "*y
+nnoremap <silent> y "*y
+vnoremap <silent> y "*y
 nnoremap <silent> <leader>Y gg"*yG
 
 " paste from global clipboard and auto format indent
-noremap <silent>p "*p`[v`]=`]$
-noremap <silent>P "*P`[v`]=`]$
-noremap <silent>gp "*gp
-noremap <silent>gP "*gP
+noremap <silent> p "*p`[v`]=`]$
+noremap <silent> P "*P`[v`]=`]$
+noremap <silent> gp "*gp
+noremap <silent> gP "*gP
 
 " paste from global clipboard for filetypes that don't like auto indent
 noremap <silent> <leader>p "*p`[v`]
 noremap <silent> <leader>P "*P`[v`]
+
+" try 'equalprg' and set to reindent.py for python using an autocmd
+" pip3 install reindent
+" augroup python_indent
+"     autocmd!
+"     " autocmd FileType python setlocal equalprg=$HOME/.local/lib/python3.9/site-packages/reindent.py
+"     autocmd FileType python setlocal equalprg=$HOME/.local/bin/reindent
+" augroup END
 
 " higlight after indenting
 vnoremap <silent> > >gv
