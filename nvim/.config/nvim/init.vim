@@ -36,6 +36,7 @@ luafile $HOME/.config/nvim/config/null-ls.lua
 
 " POST_PLUGIN_CONFIGS:
 source $HOME/.config/nvim/config/keymaps.vim
+source $HOME/.config/nvim/config/function-keymaps.vim
 source $HOME/.config/nvim/config/plugin-keymaps.vim
 
 " source $HOME/.config/nvim/vim2vscode.vim

@@ -2,27 +2,6 @@
 " get the script from https://github.com/declancm/git-scripts.git
 nnoremap <silent> <leader>cp :w<CR>:!source ~/git-scripts/commit-silent.sh<CR>
 
-" open notes (todo.txt) from anywhere and return. Automatically git pull when
-" opening and then git commit and push when closing.
-nnoremap <silent> <leader>n :call <SID>Notes_toggle()<CR>
-
-function! s:Notes_toggle()
-    let l:currentDir = getcwd(0)
-    if l:currentDir ==# $HOME . '/notes'
-        if &modified
-            silent execute("w")
-            execute("!source ~/git-scripts/commit-silent.sh")
-            silent execute("e# | lcd -")
-        else
-            silent execute("w | e# | lcd -")
-        endif
-    else
-        silent execute("lcd ~/notes")
-        execute("!git pull -q $(git remote) $(git rev-parse --abbrev-ref HEAD)")
-        silent execute("edit ~/notes/notes.txt")
-    endif
-endfunction
-
 " improve home key
 map <Home> zH^
 imap <Home> <Esc>zHI
@@ -104,9 +83,9 @@ nnoremap c "_c
 nnoremap C "_C
 vnoremap c "_c
 " leader d is now cut
-nnoremap <silent> <leader>d ""d
-nnoremap <silent> <leader>D ""D
-vnoremap <silent> <leader>d ""d
+nnoremap <silent> <leader>d "*d
+nnoremap <silent> <leader>D "*D
+vnoremap <silent> <leader>d "*d
 
 " auto format indent for pasted content
 " TODO make this work with python and PowerShell files
@@ -128,48 +107,4 @@ noremap <silent>gP "*gP`[v`]=
 " <C-H> is <C-BS>
 " imap <C-H> <C-w>
 " imap <M-BS> <esc>vBc
-
-" delete start of word (works with wordmotion)
-imap <silent> <C-H> <Cmd>call <SID>Delete_start()<CR>
-imap <silent> <M-BS> <Cmd>call <SID>Delete_START()<CR>
-
-function! s:Delete_start()
-    let l:cursorpos = getpos('.')
-    if l:cursorpos[2] < 3
-        call feedkeys("\<BS>")
-    else
-        call feedkeys("\<esc>vbc")
-    endif
-endfunction
-
-function! s:Delete_START()
-    let l:cursorpos = getpos('.')
-    if l:cursorpos[2] < 3
-        call feedkeys("\<BS>")
-    else
-        call feedkeys("\<esc>vBc")
-    endif
-endfunction
-
-" delete end of word (works with wordmotion)
-imap <silent> <C-Del> <Cmd>call <SID>Delete_end()<CR>
-imap <silent> <M-Del> <Cmd>call <SID>Delete_END()<CR>
-
-function! s:Delete_end()
-    let l:cursorpos = getpos('.')
-    if l:cursorpos[2] == 1
-        call feedkeys("\<esc>vec")
-    else
-        call feedkeys("\<esc>lvec")
-    endif
-endfunction
-
-function! s:Delete_END()
-    let l:cursorpos = getpos('.')
-    if l:cursorpos[2] == 1
-        call feedkeys("\<esc>vEc")
-    else
-        call feedkeys("\<esc>lvEc")
-    endif
-endfunction
 
