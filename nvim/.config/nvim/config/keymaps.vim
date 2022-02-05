@@ -71,7 +71,7 @@ vnoremap <silent> < <gv
 " yank to global clipboard
 nnoremap <silent>y "*y
 vnoremap <silent>y "*y
-nnoremap <silent>Y gg"*yG
+nnoremap <silent> <leader>Y gg"*yG
 
 " paste from global clipboard and auto format indent
 noremap <silent>p "*p`[v`]=`]$
