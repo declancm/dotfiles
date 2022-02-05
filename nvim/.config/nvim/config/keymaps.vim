@@ -103,6 +103,7 @@ vnoremap c "_c
 nnoremap <silent> <leader>d "*d
 nnoremap <silent> <leader>D "*D
 vnoremap <silent> <leader>d "*ygv"_d
+" vnoremap <silent> <leader>d "*d
 
 " delete start of word
 " <C-H> is <C-BS>
