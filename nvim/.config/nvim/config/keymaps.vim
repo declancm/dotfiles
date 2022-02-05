@@ -64,15 +64,32 @@ nnoremap <C-down> :m .+1<CR>==
 nnoremap cn *``"_cgn
 nnoremap cN *``"_cgN
 
-" paste from global clipboard
-" nnoremap <leader>p "*p`[v`]=$
+" higlight after indenting
+vnoremap <silent> > >gv
+vnoremap <silent> < <gv
+
 " yank to global clipboard
-" nnoremap <leader>y "*y
-" vnoremap <leader>y "*y
-" nnoremap <leader>Y gg"*yG
 nnoremap <silent>y "*y
 vnoremap <silent>y "*y
 nnoremap <silent>Y gg"*yG
+
+" paste from global clipboard and auto format indent
+noremap <silent>p "*p`[v`]=`]$
+noremap <silent>P "*P`[v`]=`]$
+noremap <silent>gp "*gp
+noremap <silent>gP "*gP
+
+" paste from global clipboard for filetypes that don't like auto indent
+noremap <silent> <leader>p "*p`[v`]
+noremap <silent> <leader>P "*P`[v`]
+
+" augroup no_indent_paste
+"     autocmd!
+"     " count number of indents on the current line and then shift the copied text
+"     " by that amount
+"     autocmd FileType ps1, python noremap <buffer> <silent>p "*p`[v`]
+"     autocmd FileType ps1, python noremap <buffer> <silent>P "*P`[v`]
+" augroup END
 
 " c, d and x are now delete without yanking
 nnoremap x "_x
@@ -85,23 +102,7 @@ vnoremap c "_c
 " leader d is now cut
 nnoremap <silent> <leader>d "*d
 nnoremap <silent> <leader>D "*D
-vnoremap <silent> <leader>d "*d
-
-" auto format indent for pasted content
-" TODO make this work with python and PowerShell files
-" noremap <silent>p p`[v`]=$
-" noremap <silent>P P`[v`]=$
-" noremap <silent>gp gp`[v`]=
-" noremap <silent>gP gP`[v`]=
-noremap <silent>p "*p`[v`]=`]$
-noremap <silent>P "*P`[v`]=`]$
-noremap <silent>gp "*gp`[v`]=
-noremap <silent>gP "*gP`[v`]=
-" change position of cursor when pasting
-" noremap p gp
-" noremap P gP
-" noremap gp p
-" noremap gP P
+vnoremap <silent> <leader>d "*ygv"_d
 
 " delete start of word
 " <C-H> is <C-BS>
