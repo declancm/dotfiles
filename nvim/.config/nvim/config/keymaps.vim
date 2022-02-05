@@ -93,8 +93,8 @@ vnoremap <silent> <leader>d "*d
 " noremap <silent>P P`[v`]=$
 " noremap <silent>gp gp`[v`]=
 " noremap <silent>gP gP`[v`]=
-noremap <silent>p "*p`[v`]=$
-noremap <silent>P "*P`[v`]=$
+noremap <silent>p "*p`[v`]=`]$
+noremap <silent>P "*P`[v`]=`]$
 noremap <silent>gp "*gp`[v`]=
 noremap <silent>gP "*gP`[v`]=
 " change position of cursor when pasting

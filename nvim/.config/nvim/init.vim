@@ -29,10 +29,10 @@ luafile $HOME/.config/nvim/config/lspsaga.lua
 luafile $HOME/.config/nvim/config/trouble.lua
 luafile $HOME/.config/nvim/config/lualine.lua
 luafile $HOME/.config/nvim/config/kommentary.lua
-source $HOME/.config/nvim/config/design.vim
-luafile $HOME/.config/nvim/config/lspcolors.lua
 luafile $HOME/.config/nvim/config/toggleterm.lua
 luafile $HOME/.config/nvim/config/null-ls.lua
+source $HOME/.config/nvim/config/design.vim
+luafile $HOME/.config/nvim/config/lspcolors.lua
 
 " POST_PLUGIN_CONFIGS:
 source $HOME/.config/nvim/config/keymaps.vim

@@ -6,10 +6,12 @@ function! s:Notes_toggle()
     let l:currentDir = getcwd(0)
     if l:currentDir ==# $HOME . '/notes'
         if &modified
+            " commit and push when file has been modified
             silent execute("w")
             execute("!source ~/git-scripts/commit-silent.sh")
             silent execute("e# | lcd -")
         else
+            " only return when nothing has been modified
             silent execute("w | e# | lcd -")
         endif
     else
