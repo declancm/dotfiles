@@ -86,11 +86,15 @@ nnoremap cn *``"_cgn
 nnoremap cN *``"_cgN
 
 " paste from global clipboard
-nnoremap <leader>p "*p`[v`]=$
+" nnoremap <leader>p "*p`[v`]=$
 " yank to global clipboard
-nnoremap <leader>y "*y
-vnoremap <leader>y "*y
-nnoremap <leader>Y gg"*yG
+" nnoremap <leader>y "*y
+" vnoremap <leader>y "*y
+" nnoremap <leader>Y gg"*yG
+nnoremap <silent>y "*y
+vnoremap <silent>y "*y
+nnoremap <silent>Y gg"*yG
+
 " c, d and x are now delete without yanking
 nnoremap x "_x
 nnoremap d "_d
@@ -100,16 +104,20 @@ nnoremap c "_c
 nnoremap C "_C
 vnoremap c "_c
 " leader d is now cut
-nnoremap <leader>d ""d
-nnoremap <leader>D ""D
-vnoremap <leader>d ""d
+nnoremap <silent> <leader>d ""d
+nnoremap <silent> <leader>D ""D
+vnoremap <silent> <leader>d ""d
 
 " auto format indent for pasted content
 " TODO make this work with python and PowerShell files
-noremap <silent>p p`[v`]=$
-noremap <silent>P P`[v`]=$
-noremap <silent>gp gp`[v`]=
-noremap <silent>gP gP`[v`]=
+" noremap <silent>p p`[v`]=$
+" noremap <silent>P P`[v`]=$
+" noremap <silent>gp gp`[v`]=
+" noremap <silent>gP gP`[v`]=
+noremap <silent>p "*p`[v`]=$
+noremap <silent>P "*P`[v`]=$
+noremap <silent>gp "*gp`[v`]=
+noremap <silent>gP "*gP`[v`]=
 " change position of cursor when pasting
 " noremap p gp
 " noremap P gP
