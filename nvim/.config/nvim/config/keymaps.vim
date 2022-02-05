@@ -64,10 +64,6 @@ nnoremap <C-down> :m .+1<CR>==
 nnoremap cn *``"_cgn
 nnoremap cN *``"_cgN
 
-" higlight after indenting
-vnoremap <silent> > >gv
-vnoremap <silent> < <gv
-
 " yank to global clipboard
 nnoremap <silent>y "*y
 vnoremap <silent>y "*y
@@ -82,6 +78,12 @@ noremap <silent>gP "*gP
 " paste from global clipboard for filetypes that don't like auto indent
 noremap <silent> <leader>p "*p`[v`]
 noremap <silent> <leader>P "*P`[v`]
+
+" higlight after indenting
+vnoremap <silent> > >gv
+vnoremap <silent> < <gv
+vnoremap <silent> <S-Right> >gv
+vnoremap <silent> <S-Left> <gv
 
 " augroup no_indent_paste
 "     autocmd!
