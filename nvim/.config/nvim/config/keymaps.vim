@@ -79,7 +79,7 @@ noremap <silent> gP "*gP
 noremap <silent> <leader>p "*p`[v`]
 noremap <silent> <leader>P "*P`[v`]
 
-" try 'equalprg' and set to reindent.py for python using an autocmd
+" try 'equalprg' and set to reindent.py or autopep8 for python using an autocmd
 " pip3 install reindent
 " augroup python_indent
 "     autocmd!
@@ -92,14 +92,6 @@ vnoremap <silent> > >gv
 vnoremap <silent> < <gv
 vnoremap <silent> <S-Right> >gv
 vnoremap <silent> <S-Left> <gv
-
-" augroup no_indent_paste
-"     autocmd!
-"     " count number of indents on the current line and then shift the copied text
-"     " by that amount
-"     autocmd FileType ps1, python noremap <buffer> <silent>p "*p`[v`]
-"     autocmd FileType ps1, python noremap <buffer> <silent>P "*P`[v`]
-" augroup END
 
 " c, d and x are now delete without yanking
 nnoremap x "_x
