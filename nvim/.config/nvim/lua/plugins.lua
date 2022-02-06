@@ -15,8 +15,8 @@ return require("packer").startup(function()
   use("wbthomason/packer.nvim")
 
   -- MY_PLUGINS:
-  -- use("declancm/vim2vscode")
-  use({ "declancm/vim2vscode", branch = "test" })
+  use("declancm/vim2vscode")
+  -- use({ "declancm/vim2vscode", branch = "test" })
   -- use "declancm/git-scripts-vim"
 
   -- TELESCOPE:

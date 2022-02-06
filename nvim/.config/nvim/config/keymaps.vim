@@ -1,6 +1,6 @@
 " save, auto commit and push
 " get the script from https://github.com/declancm/git-scripts.git
-nnoremap <silent> <leader>cp :w<CR>:!source ~/git-scripts/commit-silent.sh<CR>
+nnoremap <silent> <leader>cp :wa<CR>:!source ~/git-scripts/commit-silent.sh<CR>
 
 " improve home key
 map <Home> zH^
@@ -90,8 +90,6 @@ noremap <silent> <leader>P "*P`[v`]
 " higlight after indenting
 vnoremap <silent> > >gv
 vnoremap <silent> < <gv
-vnoremap <silent> <S-Right> >gv
-vnoremap <silent> <S-Left> <gv
 
 " c, d and x are now delete without yanking
 nnoremap x "_x
