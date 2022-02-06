@@ -3,9 +3,6 @@
 set colorcolumn=80
 
 " onedark setup
-" let g:onedark_style = 'dark'
-" let g:onedark_transparent_background = v:true
-" let g:onedark_italic_comment = v:false
 " colorscheme onedark
 " highlight ColorColumn ctermbg=0 guibg=#31353f
 
