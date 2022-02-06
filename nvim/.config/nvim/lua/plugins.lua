@@ -98,7 +98,6 @@ return require("packer").startup(function()
   -- TREESITTER:
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
   -- use("nvim-treesitter/playground")
-  -- use "simrat39/symbols-outline.nvim"
 
   -- UNDO_TREE:
   use("mbbill/undotree")
@@ -111,6 +110,8 @@ return require("packer").startup(function()
 
   -- DESIGN:
   -- use "navarasu/onedark.nvim"
+  -- use "tiagovla/tokyodark.nvim"
+  -- use "Mofiqul/dracula.nvim"
   use({
     "folke/tokyonight.nvim",
     requires = {
@@ -120,8 +121,6 @@ return require("packer").startup(function()
       end,
     },
   })
-  -- use "tiagovla/tokyodark.nvim"
-  -- use "Mofiqul/dracula.nvim"
   use("folke/lsp-colors.nvim")
   use({
     "hoob3rt/lualine.nvim",
@@ -138,6 +137,7 @@ return require("packer").startup(function()
   -- DEBUGGING:
   use("folke/trouble.nvim")
   -- use "mfussenegger/nvim-dap"
+  -- use "simrat39/symbols-outline.nvim"
   use("ThePrimeagen/refactoring.nvim")
   use({
     "iamcco/markdown-preview.nvim",

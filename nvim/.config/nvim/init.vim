@@ -39,8 +39,6 @@ source $HOME/.config/nvim/config/keymaps.vim
 source $HOME/.config/nvim/config/function-keymaps.vim
 source $HOME/.config/nvim/config/plugin-keymaps.vim
 
-" source $HOME/.config/nvim/vim2vscode.vim
-
 " OPTIONS:
 set iskeyword-=_ " add underscore as word delimiter
 set backspace=indent,eol,start,nostop

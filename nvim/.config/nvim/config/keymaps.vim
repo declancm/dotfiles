@@ -24,10 +24,10 @@ nnoremap <leader>s <C-w>s
 nnoremap <leader>; :wincmd p<CR>
 " resize windows
 " up and right are increase, down and left are decrease
-nnoremap <silent> <A-Up> :resize +5<CR>
-nnoremap <silent> <A-Down> : resize -5<CR>
-nnoremap <silent> <A-Right> :vertical resize +5<CR>
-nnoremap <silent> <A-Left> :vertical resize -5<CR>
+nnoremap <silent> <S-Up> :resize +5<CR>
+nnoremap <silent> <S-Down> : resize -5<CR>
+nnoremap <silent> <S-Right> :vertical resize +5<CR>
+nnoremap <silent> <S-Left> :vertical resize -5<CR>
 
 " open nerdtree explorer
 " nnoremap <silent> <leader>ne :Lex 30<CR>
