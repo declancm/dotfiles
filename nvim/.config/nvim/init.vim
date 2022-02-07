@@ -73,8 +73,7 @@ set splitbelow
 set splitright
 set pastetoggle=<F9>
 set timeoutlen=500
-set mouse=n " scrolling in normal mode
-" set mouse=a
+set mouse=nvi " scrolling in normal, visual and insert modes
 
 " for the :find command
 set path+=**

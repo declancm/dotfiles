@@ -27,7 +27,8 @@ imap <silent> <M-BS> <Cmd>call <SID>Delete_START()<CR>
 
 function! s:Delete_start()
     let l:cursorpos = getpos('.')
-    " check if only whitespace
+    " check if only whitespace, delete whitespace to start of the line
+    " check if the first character of a word, becomes <BS>
     if l:cursorpos[2] < 3
         call feedkeys("\<BS>")
     else

@@ -21,7 +21,7 @@ nnoremap <leader><right> :wincmd l<CR>
 nnoremap <leader>v <C-w>v
 nnoremap <leader>s <C-w>s
 " tmux-like previous window switch
-nnoremap <leader>; :wincmd p<CR>
+" nnoremap <leader>; :wincmd p<CR>
 " resize windows
 " up and right are increase, down and left are decrease
 nnoremap <silent> <S-Up> :resize +5<CR>
