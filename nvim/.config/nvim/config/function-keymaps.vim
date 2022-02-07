@@ -42,17 +42,11 @@ function! s:Delete_start()
         normal b
         let l:cursormiddle = getcurpos()
         normal w
-        " let l:cursorend = getcurpos()
         silent execute("call cursor(l:cursorstart[1], l:cursorstart[2])")
         if l:cursormiddle[1] - l:cursorstart[1] != 0
             normal d0i
-        " elseif l:cursormiddle[2] == 1
-        "     normal d0i
-        " elseif l:cursorstart[2] - l:cursorend[2] <= 0
-        "     normal lcl
         else
-            call feedkeys("\<esc>vbc")
-            " normal vbc
+            call feedkeys("\<Space>\<Esc>vbc")
         endif
     endif
 endfunction
@@ -71,12 +65,7 @@ imap <silent> <C-Del> <Cmd>call <SID>Delete_end()<CR>
 imap <silent> <M-Del> <Cmd>call <SID>Delete_END()<CR>
 
 function! s:Delete_end()
-    let l:cursorpos = getpos('.')
-    if l:cursorpos[2] == 1
-        call feedkeys("\<esc>vec")
-    else
-        call feedkeys("\<esc>lvec")
-    endif
+    call feedkeys("\<Space>\<Esc>vec")
 endfunction
 
 function! s:Delete_END()
