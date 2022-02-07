@@ -48,4 +48,4 @@ augroup open_chadtree
 augroup END
 
 " stop auto inserting comments
-autocmd BufEnter * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+autocmd FileType * set formatoptions-=c formatoptions-=r formatoptions-=o
