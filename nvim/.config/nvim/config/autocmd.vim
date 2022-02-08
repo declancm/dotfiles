@@ -29,6 +29,7 @@ augroup END
 autocmd BufLeave
 
 " make tabs smaller for specific file types
+" fix this being reset
 augroup smaller_tabs
     autocmd!
     autocmd FileType html setlocal shiftwidth=2 tabstop=2
