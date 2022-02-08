@@ -1,6 +1,6 @@
-vim.api.nvim_set_keymap("n", "<BS>cc", "<Plug>kommentary_line_default", {})
-vim.api.nvim_set_keymap("n", "<BS>c", "<Plug>kommentary_motion_default", {})
-vim.api.nvim_set_keymap("x", "<BS>c", "<Plug>kommentary_visual_default<C-c>", {})
+-- vim.api.nvim_set_keymap("n", "<BS>cc", "<Plug>kommentary_line_default", {})
+-- vim.api.nvim_set_keymap("n", "<BS>c", "<Plug>kommentary_motion_default", {})
+-- vim.api.nvim_set_keymap("x", "<BS>c", "<Plug>kommentary_visual_default<C-c>", {})
 
 -- set <C-/>
 vim.api.nvim_set_keymap("i", "<C-_>", "<Esc><Plug>kommentary_line_default", {})
