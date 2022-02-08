@@ -47,10 +47,16 @@ autocmd FileType json setlocal shiftwidth=2 tabstop=2
 
 " use clang_format on save
 function! Formatonsave()
-  let l:formatdiff = 1
-  python sys.argv = ["-style=file:$HOME/.config/nvim/config/.clang-format"]
-  pyfile /usr/share/clang/clang-format-12/clang-format.py
+    let l:formatdiff = 1
+    pyfile /usr/share/clang/clang-format-12/clang-format.py
 endfunction
+
+" function! Formatonsave()
+"     let l:file = bufname()
+"     let l:fullPath = fnamemodify(l:file, ":p")
+"     silent execute("!clang-format -style=file:$HOME/.dotfiles/.clang-format " . l:fullPath)
+" endfunction
+
 autocmd BufWritePre *.h,*.c,*.cpp call Formatonsave()
 
 " chadtree auto opens when opening a directory with nvim
