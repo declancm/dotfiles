@@ -48,7 +48,8 @@ autocmd FileType json setlocal shiftwidth=2 tabstop=2
 " use clang_format on save
 function! Formatonsave()
   let l:formatdiff = 1
-  pyf /usr/share/clang/clang-format-12/clang-format.py
+  python sys.argv = ["-style=file:$HOME/.config/nvim/config/.clang-format"]
+  pyfile /usr/share/clang/clang-format-12/clang-format.py
 endfunction
 autocmd BufWritePre *.h,*.c,*.cpp call Formatonsave()
 
