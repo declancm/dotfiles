@@ -26,19 +26,24 @@ augroup writing_file
     autocmd BufWritePre * :call TrimWhitespace()
 augroup END
 
-autocmd BufLeave
-
 " make tabs smaller for specific file types
 " fix this being reset
-augroup smaller_tabs
-    autocmd!
-    autocmd FileType html setlocal shiftwidth=2 tabstop=2
-    autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
-    autocmd FileType lua setlocal shiftwidth=2 tabstop=2
-    autocmd FileType markdown setlocal shiftwidth=2 tabstop=2
-    autocmd FileType ps1 setlocal shiftwidth=2 tabstop=2
-    autocmd FileType json setlocal shiftwidth=2 tabstop=2
-augroup END
+" augroup smaller_tabs
+"     autocmd!
+"     autocmd FileType html setlocal shiftwidth=2 tabstop=2
+"     autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+"     autocmd FileType lua setlocal shiftwidth=2 tabstop=2
+"     autocmd FileType markdown setlocal shiftwidth=2 tabstop=2
+"     autocmd FileType ps1 setlocal shiftwidth=2 tabstop=2
+"     autocmd FileType json setlocal shiftwidth=2 tabstop=2
+" augroup END
+
+autocmd FileType html setlocal shiftwidth=2 tabstop=2
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+autocmd FileType lua setlocal shiftwidth=2 tabstop=2
+autocmd FileType markdown setlocal shiftwidth=2 tabstop=2
+autocmd FileType ps1 setlocal shiftwidth=2 tabstop=2
+autocmd FileType json setlocal shiftwidth=2 tabstop=2
 
 " chadtree auto opens when opening a directory with nvim
 augroup open_chadtree
