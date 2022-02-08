@@ -45,6 +45,13 @@ autocmd FileType markdown setlocal shiftwidth=2 tabstop=2
 autocmd FileType ps1 setlocal shiftwidth=2 tabstop=2
 autocmd FileType json setlocal shiftwidth=2 tabstop=2
 
+" use clang_format on save
+function! Formatonsave()
+  let l:formatdiff = 1
+  pyf /usr/share/clang/clang-format-12/clang-format.py
+endfunction
+autocmd BufWritePre *.h,*.c,*.cpp call Formatonsave()
+
 " chadtree auto opens when opening a directory with nvim
 augroup open_chadtree
     autocmd!
