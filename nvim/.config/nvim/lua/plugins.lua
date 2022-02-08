@@ -168,8 +168,8 @@ return require("packer").startup(function()
 
   -- MISCELLANEOUS:
   use("szw/vim-maximizer")
-  use("tpope/vim-obsession")
   use("dkarter/bullets.vim")
+  use("tpope/vim-obsession")
   -- use "tpope/vim-rails"
   -- use "tpope/vim-dispatch"
   use({

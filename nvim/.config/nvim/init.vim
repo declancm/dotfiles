@@ -61,6 +61,7 @@ set undofile
 set incsearch " incremental search
 set termguicolors " support true colors
 set scrolloff=8
+" set scrolloff=999
 set showmode
 set signcolumn=yes
 set textwidth=0

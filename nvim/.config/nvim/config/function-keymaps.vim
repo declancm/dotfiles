@@ -25,25 +25,15 @@ endfunction
 imap <silent> <C-H> <Cmd>call <SID>Delete_start()<CR>
 imap <silent> <M-BS> <Cmd>call <SID>Delete_START()<CR>
 
-" function! s:Delete_start()
-"     let l:cursorpos = getpos('.')
-"     if l:cursorpos[2] < 3
-"         call feedkeys("\<BS>")
-"     else
-"         call feedkeys("\<Esc>vbc")
-"     endif
-" endfunction
-
 function! s:Delete_start()
-    let l:cursorstart = getcurpos()
-    if l:cursorstart[2] < 3
+    let l:cursorpos = getcurpos()
+    if l:cursorpos[2] < 3
         call feedkeys("\<BS>")
     else
         normal b
-        let l:cursormiddle = getcurpos()
-        normal w
-        silent execute("call cursor(l:cursorstart[1], l:cursorstart[2])")
-        if l:cursormiddle[1] - l:cursorstart[1] != 0
+        let l:cursornew = getcurpos()
+        silent execute("call cursor(l:cursorpos[1], l:cursorpos[2])")
+        if l:cursorpos[1] - l:cursornew[1] != 0
             normal d0i
         else
             call feedkeys("\<Space>\<Esc>vbc")
@@ -52,11 +42,18 @@ function! s:Delete_start()
 endfunction
 
 function! s:Delete_START()
-    let l:cursorpos = getpos('.')
+    let l:cursorpos = getcurpos()
     if l:cursorpos[2] < 3
         call feedkeys("\<BS>")
     else
-        call feedkeys("\<esc>vBc")
+        normal b
+        let l:cursornew = getcurpos()
+        silent execute("call cursor(l:cursorpos[1], l:cursorpos[2])")
+        if l:cursorpos[1] - l:cursornew[1] != 0
+            normal d0i
+        else
+            call feedkeys("\<Space>\<Esc>vBc")
+        endif
     endif
 endfunction
 
@@ -69,11 +66,6 @@ function! s:Delete_end()
 endfunction
 
 function! s:Delete_END()
-    let l:cursorpos = getpos('.')
-    if l:cursorpos[2] == 1
-        call feedkeys("\<esc>vEc")
-    else
-        call feedkeys("\<esc>lvEc")
-    endif
+    call feedkeys("\<Space>\<Esc>vEc")
 endfunction
 
