@@ -178,11 +178,11 @@ return require("packer").startup(function()
   use("tpope/vim-obsession")
   -- use "tpope/vim-rails"
   -- use "tpope/vim-dispatch"
-  use({
-    "folke/which-key.nvim",
-    config = function()
-      require("which-key").setup({})
-    end,
-  })
+  -- use({
+  --   "folke/which-key.nvim",
+  --   config = function()
+  --     require("which-key").setup({})
+  --   end,
+  -- })
   use("akinsho/toggleterm.nvim")
 end)
