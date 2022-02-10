@@ -73,12 +73,13 @@ function! s:Delete_END()
 endfunction
 
 " paste from global clipboard and auto format indent
-noremap <silent> p <Cmd>call <SID>PrintAfterCursor()<CR>
+noremap <silent> p <Cmd>call <SID>PrintAfterCursor("p")<CR>
 noremap <silent> P <Cmd>call <SID>PrintBeforeCursor()<CR>
 noremap <silent> gp <Cmd>call <SID>GPrintAfterCursor()<CR>
 noremap <silent> gP <Cmd>call <SID>GPrintBeforeCursor()<CR>
 
-function! s:PrintPrintAfterCursor()
+function! s:PrintPrintAfterCursor(input)
+    echom a:input
     let l:printType = getregtype('*')
     if l:printType ==# 'V'
         normal! "*p`[v`]=`]$
