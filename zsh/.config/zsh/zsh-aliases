@@ -15,21 +15,26 @@ function extract() {
 }
 function cf() {
     # check if .clang-format already exists
-    if [ -z "$1" ]
+    if [ -e "./.clang-format" ]
     then
-        default="Microsoft"
-        cfConfigPath="$HOME/.config/nvim/config/.clang-format"
-        if [ -e "$cfConfigPath" ]
-        then
-            cp $cfConfigPath ./.clang-format
-            if [ $? -eq 0 ]; then; printf "The default .clang-format file was copied.\n"; fi
-        else
-            clang-format -style=$default -dump-config > .clang-format
-            if [ $? -eq 0 ]; then; printf "Created a .clang-format file using $default style.\n"; fi
-        fi
+        printf "A .clang-format file already exists.\n"
     else
-        clang-format -style=$1 -dump-config > .clang-format
-        if [ $? -eq 0 ]; then; printf "Created a .clang-format file using $1 style.\n"; fi
+        if [ -z "$1" ]
+        then
+            default="Microsoft"
+            cfConfigPath="$HOME/.config/nvim/config/.clang-format"
+            if [ -e "$cfConfigPath" ]
+            then
+                cp $cfConfigPath ./.clang-format
+                if [ $? -eq 0 ]; then; printf "The default .clang-format file was copied.\n"; fi
+            else
+                clang-format -style=$default -dump-config > .clang-format
+                if [ $? -eq 0 ]; then; printf "Created a .clang-format file using $default style.\n"; fi
+            fi
+        else
+            clang-format -style=$1 -dump-config > .clang-format
+            if [ $? -eq 0 ]; then; printf "Created a .clang-format file using $1 style.\n"; fi
+        fi
     fi
 }
 

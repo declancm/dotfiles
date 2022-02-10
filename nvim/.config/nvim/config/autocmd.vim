@@ -45,19 +45,25 @@ autocmd FileType markdown setlocal shiftwidth=2 tabstop=2
 autocmd FileType ps1 setlocal shiftwidth=2 tabstop=2
 autocmd FileType json setlocal shiftwidth=2 tabstop=2
 
-" use clang_format on save
-function! Formatonsave()
-    let l:formatdiff = 1
-    pyfile /usr/share/clang/clang-format-12/clang-format.py
-endfunction
-
+" " use clang_format on save
 " function! Formatonsave()
-"     let l:file = bufname()
-"     let l:fullPath = fnamemodify(l:file, ":p")
-"     silent execute("!clang-format -style=file:$HOME/.dotfiles/.clang-format " . l:fullPath)
+"     let l:formatdiff = 1
+"     " save cursor pos
+"     normal ggVG
+"     pyfile /usr/share/clang/clang-format-12/clang-format.py
+"     " jump to cursor pos
 " endfunction
+" autocmd BufWritePre *.h,*.c,*.cpp call Formatonsave()
 
-autocmd BufWritePre *.h,*.c,*.cpp call Formatonsave()
+function! FormatOnSave()
+    let l:file = bufname()
+    let l:fullPath = fnamemodify(l:file, ":p")
+    " silent execute("!clang-format -i -style=file " . l:fullPath)
+    let l:cfConfig = "'{ BasedOnStyle: Google, UseTab: Never, IndentWidth: 4, TabWidth: 4, BreakBeforeBraces: Attach, AllowShortIfStatementsOnASingleLine: true, IndentCaseLabels: false, ColumnLimit: 0, AccessModifierOffset: -4 }'"
+    silent execute("!clang-format -i -style=" . l:cfConfig . " " . l:fullPath)
+    e
+endfunction
+autocmd BufWritePost *.h,*.c,*.cpp call FormatOnSave()
 
 " chadtree auto opens when opening a directory with nvim
 augroup open_chadtree

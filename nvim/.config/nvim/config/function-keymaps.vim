@@ -69,3 +69,18 @@ function! s:Delete_END()
     call feedkeys("\<Space>\<Esc>vEc")
 endfunction
 
+" append yank
+vnoremap <leader>y <Cmd>call <SID>AppendYank()<CR>
+nnoremap <leader>Y <Cmd>call <SID>AppendYankEnd()<CR>
+
+function! s:AppendYank()
+    normal! "xy
+    " call setreg('*', getreg('*') . getreg('x'), 'V')
+    call setreg('*', getreg('*') . getreg('x'), getregtype('*'))
+endfunction
+
+function! s:AppendYankEnd()
+    normal! "xyg_
+    call setreg('*', getreg('*') . getreg('x'), getregtype('*'))
+endfunction
+

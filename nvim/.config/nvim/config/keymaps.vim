@@ -3,8 +3,14 @@
 nnoremap <silent> <leader>cp :wa<CR>:!source ~/git-scripts/commit-silent.sh<CR>
 
 " improve home key
-map <Home> zH^
-imap <Home> <Esc>zHI
+noremap <Home> zH^
+inoremap <Home> <Esc>zHI
+
+" smoothe scrolling
+map <PageUp> <C-b>
+map <PageDown> <C-f>
+inoremap <PageUp> <Cmd>normal <C-b><CR>
+inoremap <PageDown> <Cmd>normal <C-f><CR>
 
 " source config file
 nnoremap <silent> <leader>sc :wa<CR>:source $MYVIMRC<CR>:echom "Your config file was sourced."<CR>
@@ -67,7 +73,7 @@ nnoremap cN *``"_cgN
 " yank to global clipboard
 nnoremap <silent> y "*y
 vnoremap <silent> y "*y
-nnoremap <silent> <leader>Y gg"*yG
+" nnoremap <silent> <leader>Y gg"*yG
 
 " paste from global clipboard and auto format indent
 noremap <silent> p "*p`[v`]=`]$

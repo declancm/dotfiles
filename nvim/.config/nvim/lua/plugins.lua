@@ -48,7 +48,7 @@ return require("packer").startup(function()
       "saadparwaiz1/cmp_luasnip",
       "l3mon4d3/luasnip",
       "rafamadriz/friendly-snippets",
-      "windwp/nvim-autopairs",
+      -- "windwp/nvim-autopairs",
     },
   })
 
@@ -168,6 +168,12 @@ return require("packer").startup(function()
 
   -- MISCELLANEOUS:
   use("szw/vim-maximizer")
+  -- use({
+  --   "karb94/neoscroll.nvim",
+  --   config = function()
+  --     require("neoscroll").setup()
+  --   end,
+  -- })
   use("dkarter/bullets.vim")
   use("tpope/vim-obsession")
   -- use "tpope/vim-rails"

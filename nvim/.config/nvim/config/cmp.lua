@@ -1,8 +1,8 @@
 -- Setup nvim-cmp.
 local luasnip = require("luasnip")
 
-require("nvim-autopairs").setup({})
-local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+-- require("nvim-autopairs").setup({})
+-- local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 
 local cmp = require("cmp")
 cmp.setup({
@@ -78,7 +78,7 @@ require("lspconfig")["bashls"].setup({
 --   capabilities = capabilities
 -- }
 
--- Setup cmp_tabnine
+-- CMP_TABNINE:
 local tabnine = require("cmp_tabnine.config")
 tabnine:setup({
   max_lines = 1000,
@@ -92,6 +92,7 @@ tabnine:setup({
   },
 })
 
+-- LSPKIND:
 -- local lspkind = require("lspkind")
 -- cmp.setup({
 --  formatting = {
@@ -110,5 +111,6 @@ tabnine:setup({
 --  },
 -- })
 
-cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done({ map_char = { tex = "" } }))
-cmp_autopairs.lisp[#cmp_autopairs.lisp + 1] = "racket"
+-- AUTOPAIRS:
+-- cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done({ map_char = { tex = "" } }))
+-- cmp_autopairs.lisp[#cmp_autopairs.lisp + 1] = "racket"

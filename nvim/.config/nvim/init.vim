@@ -75,6 +75,7 @@ set splitright
 set pastetoggle=<F9>
 set timeoutlen=500
 set mouse=nvi " scrolling in normal, visual and insert modes
+" set autoread
 
 " for the :find command
 set path+=**
