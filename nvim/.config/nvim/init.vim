@@ -17,7 +17,6 @@ source $HOME/.config/nvim/config/autocmd.vim
 " PLUGIN_CONFIGS:
 source $HOME/.config/nvim/config/gitblame.vim
 luafile $HOME/.config/nvim/config/lspconfig.lua
-" source $HOME/.config/nvim/config/lspconfig.vim
 " luafile $HOME/.config/nvim/config/coq.lua
 luafile $HOME/.config/nvim/config/treesitter.lua
 luafile $HOME/.config/nvim/config/telescope.lua
@@ -47,8 +46,8 @@ set nu " add line number to the current line
 set nohlsearch
 set hidden
 set noerrorbells " silent
-set tabstop=4 softtabstop=4
-set shiftwidth=4
+" set tabstop=4 softtabstop=4
+" set shiftwidth=4
 set expandtab
 set autoindent
 set smartindent " or 'set cindent'

@@ -26,24 +26,19 @@ augroup writing_file
     autocmd BufWritePre * :call TrimWhitespace()
 augroup END
 
-" make tabs smaller for specific file types
-" fix this being reset
-" augroup smaller_tabs
-"     autocmd!
-"     autocmd FileType html setlocal shiftwidth=2 tabstop=2
-"     autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
-"     autocmd FileType lua setlocal shiftwidth=2 tabstop=2
-"     autocmd FileType markdown setlocal shiftwidth=2 tabstop=2
-"     autocmd FileType ps1 setlocal shiftwidth=2 tabstop=2
-"     autocmd FileType json setlocal shiftwidth=2 tabstop=2
-" augroup END
+autocmd BufEnter * call <SID>TabSize()
+autocmd BufWritePost * call <SID>TabSize()
 
-autocmd FileType html setlocal shiftwidth=2 tabstop=2
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
-autocmd FileType lua setlocal shiftwidth=2 tabstop=2
-autocmd FileType markdown setlocal shiftwidth=2 tabstop=2
-autocmd FileType ps1 setlocal shiftwidth=2 tabstop=2
-autocmd FileType json setlocal shiftwidth=2 tabstop=2
+function! s:TabSize()
+    if &ft == 'html' | setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    elseif &ft == 'javascript' | setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    elseif &ft == 'lua' | setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    elseif &ft == 'markdown' | setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    elseif &ft == 'ps1' | setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    elseif &ft == 'json' | setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    " elseif &ft != '' | setlocal shiftwidth=4 tabstop=4 softtabstop=4 | endif
+    else | setlocal shiftwidth=4 tabstop=4 softtabstop=4 | endif
+endfunction
 
 " " use clang_format on save
 " function! Formatonsave()
@@ -61,8 +56,9 @@ function! FormatOnSave()
     " silent execute("!clang-format -i -style=file " . l:fullPath)
     let l:cfConfig = "'{ BasedOnStyle: Google, UseTab: Never, IndentWidth: 4, TabWidth: 4, BreakBeforeBraces: Attach, AllowShortBlocksOnASingleLine: true, AllowShortIfStatementsOnASingleLine: true, IndentCaseLabels: false, ColumnLimit: 0, AccessModifierOffset: -4, DerivePointerAlignment: false, PointerAlignment: Left }'"
     silent execute("!clang-format -i -style=" . l:cfConfig . " " . l:fullPath)
-    e
+    silent execute("e")
 endfunction
+
 autocmd BufWritePost *.h,*.c,*.cpp call FormatOnSave()
 
 " chadtree auto opens when opening a directory with nvim
