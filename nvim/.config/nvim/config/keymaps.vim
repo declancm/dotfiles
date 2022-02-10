@@ -75,12 +75,6 @@ nnoremap <silent> y "*y
 vnoremap <silent> y "*y
 " nnoremap <silent> <leader>Y gg"*yG
 
-" paste from global clipboard and auto format indent
-noremap <silent> p "*p`[v`]=`]$
-noremap <silent> P "*P`[v`]=`]$
-noremap <silent> gp "*gp
-noremap <silent> gP "*gP
-
 " paste from global clipboard for filetypes that don't like auto indent
 noremap <silent> <leader>p "*p`[v`]
 noremap <silent> <leader>P "*P`[v`]

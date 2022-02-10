@@ -53,6 +53,9 @@ function! s:Delete_START()
             normal d0i
         else
             call feedkeys("\<Space>\<Esc>vBc")
+            noremap <silent> p "*p`[v`]=`]$
+            noremap <silent> P "*P`[v`]=`]$
+            noremap <silent> gp "*gp
         endif
     endif
 endfunction
@@ -67,6 +70,48 @@ endfunction
 
 function! s:Delete_END()
     call feedkeys("\<Space>\<Esc>vEc")
+endfunction
+
+" paste from global clipboard and auto format indent
+noremap <silent> p <Cmd>call <SID>PrintAfterCursor()<CR>
+noremap <silent> P <Cmd>call <SID>PrintBeforeCursor()<CR>
+noremap <silent> gp <Cmd>call <SID>GPrintAfterCursor()<CR>
+noremap <silent> gP <Cmd>call <SID>GPrintBeforeCursor()<CR>
+
+function! s:PrintPrintAfterCursor()
+    let l:printType = getregtype('*')
+    if l:printType ==# 'V'
+        normal! "*p`[v`]=`]$
+    else
+        normal! "*p
+    endif
+endfunction
+
+function! s:PrintBeforeCursor()
+    let l:printType = getregtype('*')
+    if l:printType ==# 'V'
+        normal! "*P`[v`]=`]$
+    else
+        normal! "*P
+    endif
+endfunction
+
+function! s:GPrintAfterCursor()
+    let l:printType = getregtype('*')
+    if l:printType ==# 'V'
+        normal! "*gp`[v`]=`]$
+    else
+        normal! "*gp
+    endif
+endfunction
+
+function! s:GPrintBeforeCursor()
+    let l:printType = getregtype('*')
+    if l:printType ==# 'V'
+        normal! "*gP`[v`]=`]$
+    else
+        normal! "*gP
+    endif
 endfunction
 
 " append yank
