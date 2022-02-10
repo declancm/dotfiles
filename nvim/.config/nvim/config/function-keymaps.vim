@@ -71,7 +71,7 @@ vnoremap <leader>y <Cmd>call <SID>AppendYank("y")<CR>
 nnoremap <leader>Y <Cmd>call <SID>AppendYank("yg_")<CR>
 
 function! s:AppendYank(yankMode)
-    silent execute("normal! \"x" . a:yankMode)
-    call setreg('*', getreg('*') . getreg('x'), getregtype('*'))
+    silent execute("normal! \"0" . a:yankMode)
+    call setreg('*', getreg('*') . getreg('0'), getregtype('*'))
 endfunction
 
