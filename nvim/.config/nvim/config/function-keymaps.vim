@@ -22,10 +22,10 @@ function! s:Notes_toggle()
 endfunction
 
 " delete start of word (works with wordmotion)
-imap <silent> <C-H> <Cmd>call <SID>Delete_start()<CR>
-imap <silent> <M-BS> <Cmd>call <SID>Delete_START()<CR>
+imap <silent> <C-H> <Cmd>call <SID>DeleteStartWord("b")<CR>
+imap <silent> <M-BS> <Cmd>call <SID>DeleteStartWord("B")<CR>
 
-function! s:Delete_start()
+function! s:DeleteStartWord(backKey)
     let l:cursorpos = getcurpos()
     if l:cursorpos[2] < 3
         call feedkeys("\<BS>")
@@ -36,97 +36,42 @@ function! s:Delete_start()
         if l:cursorpos[1] - l:cursornew[1] != 0
             normal d0i
         else
-            call feedkeys("\<Space>\<Esc>vbc")
-        endif
-    endif
-endfunction
-
-function! s:Delete_START()
-    let l:cursorpos = getcurpos()
-    if l:cursorpos[2] < 3
-        call feedkeys("\<BS>")
-    else
-        normal b
-        let l:cursornew = getcurpos()
-        silent execute("call cursor(l:cursorpos[1], l:cursorpos[2])")
-        if l:cursorpos[1] - l:cursornew[1] != 0
-            normal d0i
-        else
-            call feedkeys("\<Space>\<Esc>vBc")
-            noremap <silent> p "*p`[v`]=`]$
-            noremap <silent> P "*P`[v`]=`]$
-            noremap <silent> gp "*gp
+            call feedkeys("\<Space>\<Esc>v" . a:backKey . "c")
         endif
     endif
 endfunction
 
 " delete end of word (works with wordmotion)
-imap <silent> <C-Del> <Cmd>call <SID>Delete_end()<CR>
-imap <silent> <M-Del> <Cmd>call <SID>Delete_END()<CR>
+imap <silent> <C-Del> <Cmd>call <SID>DeleteEndWord("e")<CR>
+imap <silent> <M-Del> <Cmd>call <SID>DeleteEndWord("E")<CR>
 
-function! s:Delete_end()
-    call feedkeys("\<Space>\<Esc>vec")
-endfunction
-
-function! s:Delete_END()
-    call feedkeys("\<Space>\<Esc>vEc")
+function! s:DeleteEndWord(endKey)
+    call feedkeys("\<Space>\<Esc>v" . a:endKey . "c")
 endfunction
 
 " paste from global clipboard and auto format indent
-noremap <silent> p <Cmd>call <SID>PrintAfterCursor("p")<CR>
-noremap <silent> P <Cmd>call <SID>PrintBeforeCursor()<CR>
-noremap <silent> gp <Cmd>call <SID>GPrintAfterCursor()<CR>
-noremap <silent> gP <Cmd>call <SID>GPrintBeforeCursor()<CR>
+noremap <silent> p <Cmd>call <SID>GlobalPaste("p")<CR>
+noremap <silent> P <Cmd>call <SID>GlobalPaste("P")<CR>
+noremap <silent> gp <Cmd>call <SID>GlobalPaste("gp")<CR>
+noremap <silent> gP <Cmd>call <SID>GlobalPaste("gP")<CR>
 
-function! s:PrintPrintAfterCursor(input)
-    echom a:input
-    let l:printType = getregtype('*')
-    if l:printType ==# 'V'
-        normal! "*p`[v`]=`]$
-    else
-        normal! "*p
-    endif
-endfunction
-
-function! s:PrintBeforeCursor()
-    let l:printType = getregtype('*')
-    if l:printType ==# 'V'
-        normal! "*P`[v`]=`]$
-    else
-        normal! "*P
-    endif
-endfunction
-
-function! s:GPrintAfterCursor()
-    let l:printType = getregtype('*')
-    if l:printType ==# 'V'
-        normal! "*gp`[v`]=`]$
-    else
-        normal! "*gp
-    endif
-endfunction
-
-function! s:GPrintBeforeCursor()
-    let l:printType = getregtype('*')
-    if l:printType ==# 'V'
-        normal! "*gP`[v`]=`]$
-    else
-        normal! "*gP
+function! s:GlobalPaste(pasteMode)
+    if getreg('*') != ""
+        let l:pasteType = getregtype('*')
+        if l:pasteType ==# 'V'
+            silent execute("normal! \"*" . a:pasteMode . "`[v`]=`]$")
+        else
+            silent execute("normal! \"*" . a:pasteMode)
+        endif
     endif
 endfunction
 
 " append yank
-vnoremap <leader>y <Cmd>call <SID>AppendYank()<CR>
-nnoremap <leader>Y <Cmd>call <SID>AppendYankEnd()<CR>
+vnoremap <leader>y <Cmd>call <SID>AppendYank("y")<CR>
+nnoremap <leader>Y <Cmd>call <SID>AppendYank("yg_")<CR>
 
-function! s:AppendYank()
-    normal! "xy
-    " call setreg('*', getreg('*') . getreg('x'), 'V')
-    call setreg('*', getreg('*') . getreg('x'), getregtype('*'))
-endfunction
-
-function! s:AppendYankEnd()
-    normal! "xyg_
+function! s:AppendYank(yankMode)
+    silent execute("normal! \"x" . a:yankMode)
     call setreg('*', getreg('*') . getreg('x'), getregtype('*'))
 endfunction
 
