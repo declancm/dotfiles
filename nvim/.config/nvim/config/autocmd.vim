@@ -41,7 +41,7 @@ endfunction
 " autocmd BufWritePost * :call <SID>TabSize()
 
 " use clang_format on save
-function! FormatOnSave()
+function! s:FormatOnSave()
     let l:file = bufname()
     let l:fullPath = fnamemodify(l:file, ":p")
     " silent execute("!clang-format -i -style=file " . l:fullPath)
@@ -54,7 +54,8 @@ endfunction
 
 augroup post_writing_buffer
     autocmd!
-    autocmd BufWritePost *.h,*.c,*.cpp call FormatOnSave()
+    autocmd BufWritePost *.h,*.c,*.cpp call <SID>FormatOnSave()
+    " autocmd FileType * set formatoptions-=cro
     autocmd BufWritePost * :call <SID>TabSize()
 augroup END
 
