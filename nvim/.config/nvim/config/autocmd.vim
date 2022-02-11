@@ -26,9 +26,7 @@ augroup writing_file
     autocmd BufWritePre * :call TrimWhitespace()
 augroup END
 
-autocmd BufEnter * call <SID>TabSize()
-autocmd BufWritePost * call <SID>TabSize()
-
+" automatically set the tab size
 function! s:TabSize()
     if &ft == 'html' | setlocal shiftwidth=2 tabstop=2 softtabstop=2
     elseif &ft == 'javascript' | setlocal shiftwidth=2 tabstop=2 softtabstop=2
@@ -36,9 +34,11 @@ function! s:TabSize()
     elseif &ft == 'markdown' | setlocal shiftwidth=2 tabstop=2 softtabstop=2
     elseif &ft == 'ps1' | setlocal shiftwidth=2 tabstop=2 softtabstop=2
     elseif &ft == 'json' | setlocal shiftwidth=2 tabstop=2 softtabstop=2
-    " elseif &ft != '' | setlocal shiftwidth=4 tabstop=4 softtabstop=4 | endif
     else | setlocal shiftwidth=4 tabstop=4 softtabstop=4 | endif
 endfunction
+
+autocmd BufEnter * call <SID>TabSize()
+autocmd BufWritePost * call <SID>TabSize()
 
 " " use clang_format on save
 " function! Formatonsave()
@@ -50,6 +50,7 @@ endfunction
 " endfunction
 " autocmd BufWritePre *.h,*.c,*.cpp call Formatonsave()
 
+" use clang_format on save
 function! FormatOnSave()
     let l:file = bufname()
     let l:fullPath = fnamemodify(l:file, ":p")
