@@ -30,10 +30,10 @@ augroup END
 function! s:TabSize()
     if &ft == 'html' | setlocal shiftwidth=2 tabstop=2 softtabstop=2
     elseif &ft == 'javascript' | setlocal shiftwidth=2 tabstop=2 softtabstop=2
+    elseif &ft == 'json' | setlocal shiftwidth=2 tabstop=2 softtabstop=2
     elseif &ft == 'lua' | setlocal shiftwidth=2 tabstop=2 softtabstop=2
     elseif &ft == 'markdown' | setlocal shiftwidth=2 tabstop=2 softtabstop=2
     elseif &ft == 'ps1' | setlocal shiftwidth=2 tabstop=2 softtabstop=2
-    elseif &ft == 'json' | setlocal shiftwidth=2 tabstop=2 softtabstop=2
     else | setlocal shiftwidth=4 tabstop=4 softtabstop=4 | endif
 endfunction
 
