@@ -21,7 +21,7 @@ fun! TrimWhitespace()
     call winrestview(l:save)
 endfun
 
-augroup writing_file
+augroup writing_buffer
     autocmd!
     autocmd BufWritePre * :call TrimWhitespace()
 augroup END
@@ -37,18 +37,8 @@ function! s:TabSize()
     else | setlocal shiftwidth=4 tabstop=4 softtabstop=4 | endif
 endfunction
 
-autocmd BufEnter * call <SID>TabSize()
-autocmd BufWritePost * call <SID>TabSize()
-
-" " use clang_format on save
-" function! Formatonsave()
-"     let l:formatdiff = 1
-"     " save cursor pos
-"     normal ggVG
-"     pyfile /usr/share/clang/clang-format-12/clang-format.py
-"     " jump to cursor pos
-" endfunction
-" autocmd BufWritePre *.h,*.c,*.cpp call Formatonsave()
+" autocmd BufEnter * :call <SID>TabSize()
+" autocmd BufWritePost * :call <SID>TabSize()
 
 " use clang_format on save
 function! FormatOnSave()
@@ -60,10 +50,21 @@ function! FormatOnSave()
     silent execute("e")
 endfunction
 
-autocmd BufWritePost *.h,*.c,*.cpp call FormatOnSave()
+" autocmd BufWritePost *.h,*.c,*.cpp call FormatOnSave()
+
+augroup post_writing_buffer
+    autocmd!
+    autocmd BufWritePost *.h,*.c,*.cpp call FormatOnSave()
+    autocmd BufWritePost * :call <SID>TabSize()
+augroup END
+
+augroup entering_buffer
+    autocmd!
+    autocmd BufEnter * :call <SID>TabSize()
+augroup END
 
 " chadtree auto opens when opening a directory with nvim
-augroup open_chadtree
+augroup entering_vim
     autocmd!
     autocmd StdinReadPre * let s:std_in=1
     autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
