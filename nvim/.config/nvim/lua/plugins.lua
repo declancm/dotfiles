@@ -104,7 +104,7 @@ return require("packer").startup(function()
 
   -- GIT:
   use("tpope/vim-fugitive")
-  use("tpope/vim-rhubarb")
+  -- use("tpope/vim-rhubarb")
   use("junegunn/gv.vim")
   use("f-person/git-blame.nvim")
 

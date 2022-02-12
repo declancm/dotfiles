@@ -50,10 +50,12 @@ function! s:DeleteEndWord(endKey)
 endfunction
 
 " paste from global clipboard and auto format indent
-noremap <silent> p <Cmd>call <SID>GlobalPaste("p")<CR>
-noremap <silent> P <Cmd>call <SID>GlobalPaste("P")<CR>
-noremap <silent> gp <Cmd>call <SID>GlobalPaste("gp")<CR>
-noremap <silent> gP <Cmd>call <SID>GlobalPaste("gP")<CR>
+nnoremap <silent> p <Cmd>call <SID>GlobalPaste("p")<CR>
+nnoremap <silent> P <Cmd>call <SID>GlobalPaste("P")<CR>
+nnoremap <silent> gp <Cmd>call <SID>GlobalPaste("gp")<CR>
+nnoremap <silent> gP <Cmd>call <SID>GlobalPaste("gP")<CR>
+nnoremap <silent> <leader>p <Cmd>call <SID>GlobalPaste("p")<CR>a
+nnoremap <silent> <leader>P <Cmd>call <SID>GlobalPaste("P")<CR>a
 
 function! s:GlobalPaste(pasteMode)
     if getreg('*') != ""
