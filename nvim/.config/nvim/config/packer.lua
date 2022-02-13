@@ -163,7 +163,9 @@ return require("packer").startup(function()
 
   -- MOVEMENT:
   use("tpope/vim-surround")
+  -- use("machakann/vim-sandwhich")
   use("unblevable/quick-scope")
+  -- use("justinmk/vim-sneak")
   -- w, b and e work with camelCase
   use("chaoren/vim-wordmotion")
 
