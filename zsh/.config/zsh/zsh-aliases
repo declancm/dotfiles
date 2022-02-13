@@ -22,7 +22,7 @@ function cf() {
         if [ -z "$1" ]
         then
             default="Microsoft"
-            cfConfigPath="$HOME/.config/nvim/config/.clang-format"
+            cfConfigPath="$HOME/.config/nvim/.clang-format"
             if [ -e "$cfConfigPath" ]
             then
                 cp $cfConfigPath ./.clang-format
