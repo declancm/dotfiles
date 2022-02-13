@@ -99,6 +99,7 @@ return require("packer").startup(function()
 
   -- GIT:
   use("tpope/vim-fugitive")
+  use("airblade/vim-gitgutter")
   -- use("tpope/vim-rhubarb")
   use("junegunn/gv.vim")
   use("f-person/git-blame.nvim")
@@ -146,6 +147,8 @@ return require("packer").startup(function()
   -- use "mfussenegger/nvim-dap"
   -- use("simrat39/symbols-outline.nvim")
   use("ThePrimeagen/refactoring.nvim")
+
+  -- DEV:
   use({
     "iamcco/markdown-preview.nvim",
     run = "cd app && yarn install",
