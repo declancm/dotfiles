@@ -44,9 +44,9 @@ endfunction
 function! s:FormatOnSave()
     let l:file = bufname()
     let l:fullPath = fnamemodify(l:file, ":p")
-    " silent execute("!clang-format -i -style=file " . l:fullPath)
-    let l:cfConfig = "'{ BasedOnStyle: Google, UseTab: Never, IndentWidth: 4, TabWidth: 4, BreakBeforeBraces: Attach, AllowShortBlocksOnASingleLine: true, AllowShortIfStatementsOnASingleLine: true, IndentCaseLabels: false, ColumnLimit: 0, AccessModifierOffset: -4, DerivePointerAlignment: false, PointerAlignment: Left }'"
-    silent execute("!clang-format -i -style=" . l:cfConfig . " " . l:fullPath)
+    silent execute("!clang-format -i -style=file " . l:fullPath)
+    " let l:cfConfig = "'{ BasedOnStyle: Google, UseTab: Never, IndentWidth: 4, TabWidth: 4, BreakBeforeBraces: Attach, AllowShortBlocksOnASingleLine: true, AllowShortIfStatementsOnASingleLine: true, IndentCaseLabels: false, ColumnLimit: 0, AccessModifierOffset: -4, DerivePointerAlignment: false, PointerAlignment: Left }'"
+    " silent execute("!clang-format -i -style=" . l:cfConfig . " " . l:fullPath)
     silent execute("e")
 endfunction
 
@@ -73,4 +73,4 @@ augroup entering_vim
 augroup END
 
 " stop auto inserting comments
-autocmd FileType * set formatoptions-=c formatoptions-=r formatoptions-=o
+autocmd FileType * set formatoptions-=cro
