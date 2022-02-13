@@ -79,3 +79,25 @@ function! s:AppendYank(yankMode)
     call setreg('*', getreg('*') . getreg('0'), getregtype('*'))
 endfunction
 
+" window movement
+nnoremap <leader>h <Cmd>call <SID>WindowMovement('h')<CR>
+nnoremap <leader>j <Cmd>call <SID>WindowMovement('j')<CR>
+nnoremap <leader>k <Cmd>call <SID>WindowMovement('k')<CR>
+nnoremap <leader>l <Cmd>call <SID>WindowMovement('l')<CR>
+nnoremap <leader><left> <Cmd>call <SID>WindowMovement('h')<CR>
+nnoremap <leader><down> <Cmd>call <SID>WindowMovement('j')<CR>
+nnoremap <leader><up> <Cmd>call <SID>WindowMovement('k')<CR>
+nnoremap <leader><right> <Cmd>call <SID>WindowMovement('l')<CR>
+
+function s:WindowMovement(key)
+    let l:currentWin = winnr()
+    silent execute("wincmd " . a:key)
+    if (l:currentWin == winnr())
+        if (match(a:key,'[jk]'))
+            wincmd v
+        else
+            wincmd s
+        endif
+        silent execute("wincmd ".a:key)
+    endif
+endfunction

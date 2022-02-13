@@ -9,25 +9,15 @@ inoremap <Home> <Esc>zHI
 " smoothe scrolling
 map <PageUp> <C-b>
 map <PageDown> <C-f>
-inoremap <PageUp> <Cmd>normal <C-b><CR>
-inoremap <PageDown> <Cmd>normal <C-f><CR>
 
 " source config file
 nnoremap <silent> <leader>sc :wa<CR>:source $MYVIMRC<CR>:echom "Your config file was sourced."<CR>
 
-" move between open windows
-nnoremap <leader>h :wincmd h<CR>
-nnoremap <leader>j :wincmd j<CR>
-nnoremap <leader>k :wincmd k<CR>
-nnoremap <leader>l :wincmd l<CR>
-nnoremap <leader><left> :wincmd h<CR>
-nnoremap <leader><down> :wincmd j<CR>
-nnoremap <leader><up> :wincmd k<CR>
-nnoremap <leader><right> :wincmd l<CR>
+" windows
 nnoremap <leader>v <C-w>v
 nnoremap <leader>s <C-w>s
 " tmux-like previous window switch
-" nnoremap <leader>; :wincmd p<CR>
+nnoremap <leader>; :wincmd p<CR>
 " resize windows
 " up and right are increase, down and left are decrease
 nnoremap <silent> <S-Up> :resize +5<CR>
