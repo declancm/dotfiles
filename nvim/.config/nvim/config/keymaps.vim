@@ -1,6 +1,6 @@
 " save, auto commit and push
 " get the script from https://github.com/declancm/git-scripts.git
-" nnoremap <silent> <leader>cp :wa<CR>:!source ~/git-scripts/commit-silent.sh<CR>
+nnoremap <silent> <leader>cp :wa<CR>:!source ~/git-scripts/commit-silent.sh<CR>
 
 " improve home key
 noremap <Home> zH^
