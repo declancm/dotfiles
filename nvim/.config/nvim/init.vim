@@ -46,8 +46,6 @@ set nu " add line number to the current line
 set nohlsearch
 set hidden
 set noerrorbells " silent
-" set tabstop=4 softtabstop=4
-" set shiftwidth=4
 set expandtab
 set autoindent
 set smartindent " or 'set cindent'
@@ -74,7 +72,6 @@ set splitright
 set pastetoggle=<F9>
 set timeoutlen=500
 set mouse=nvi " scrolling in normal, visual and insert modes
-" set autoread
 
 " for the :find command
 set path+=**

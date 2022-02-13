@@ -67,11 +67,6 @@ return require("packer").startup(function()
   })
   -- use "wellle/tmux-complete.vim"
 
-  -- COQ_COMPLETION:
-  -- use {"ms-jpq/coq_nvim", branch = "coq"}
-  -- use {"ms-jpg/coq.artifacts", branch = "artifacts"}
-  -- -- use {"ms-jpg/coq.thirdparty", branch = "3p"}
-
   -- FILE_TREE:
   use({
     "ms-jpq/chadtree",
@@ -137,6 +132,7 @@ return require("packer").startup(function()
     "hoob3rt/lualine.nvim",
     requires = "kyazdani42/nvim-web-devicons",
   })
+  use("dkarter/bullets.vim")
   use("p00f/nvim-ts-rainbow")
   use({
     "norcalli/nvim-colorizer.lua",
@@ -174,7 +170,6 @@ return require("packer").startup(function()
   --     require("neoscroll").setup()
   --   end,
   -- })
-  use("dkarter/bullets.vim")
   use("tpope/vim-obsession")
   -- use "tpope/vim-rails"
   -- use "tpope/vim-dispatch"
