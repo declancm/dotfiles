@@ -65,7 +65,7 @@ return require("packer").startup(function()
       require("cmp").setup.buffer({ enabled = false })
     end,
   })
-  -- use "wellle/tmux-complete.vim"
+  -- use("wellle/tmux-complete.vim")
 
   -- FILE_TREE:
   use({
@@ -144,12 +144,14 @@ return require("packer").startup(function()
   -- DEBUGGING:
   use("folke/trouble.nvim")
   -- use "mfussenegger/nvim-dap"
-  -- use "simrat39/symbols-outline.nvim"
+  -- use("simrat39/symbols-outline.nvim")
   use("ThePrimeagen/refactoring.nvim")
   use({
     "iamcco/markdown-preview.nvim",
     run = "cd app && yarn install",
-    -- config = function() vim.g.mkdp_auto_start = 1 end
+    config = function()
+      vim.g.mkdp_auto_start = 1
+    end,
   })
 
   -- LINTERS:
@@ -173,11 +175,11 @@ return require("packer").startup(function()
   use("tpope/vim-obsession")
   -- use "tpope/vim-rails"
   -- use "tpope/vim-dispatch"
+  use("akinsho/toggleterm.nvim")
   -- use({
   --   "folke/which-key.nvim",
   --   config = function()
   --     require("which-key").setup({})
   --   end,
   -- })
-  use("akinsho/toggleterm.nvim")
 end)
