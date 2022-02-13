@@ -9,7 +9,8 @@ let g:python3_host_prog = '/bin/python3'
 let g:python_host_prog = '/bin/python2'
 
 " PACKER:
-lua require('plugins')
+" lua require('plugins')
+luafile $HOME/.config/nvim/config/packer.lua
 
 " PRE_PLUGIN_CONFIGS:
 source $HOME/.config/nvim/config/autocmd.vim
