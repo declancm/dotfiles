@@ -54,7 +54,7 @@ endfunction
 
 augroup post_writing_buffer
     autocmd!
-    autocmd BufWritePost *.h,*.c,*.cpp call <SID>FormatOnSave()
+    autocmd BufWritePost *.h,*.hpp,*.c,*.cpp call <SID>FormatOnSave()
     " autocmd FileType * set formatoptions-=cro
     autocmd BufWritePost * :call <SID>TabSize()
 augroup END
