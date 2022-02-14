@@ -100,18 +100,18 @@ return require("packer").startup(function()
   })
 
   -- DESIGN:
-  -- use({
-  --   "navarasu/onedark.nvim",
-  --   config = function()
-  --     require("onedark").setup({
-  --       style = "darker",
-  --       transparent = true,
-  --       code_style = {
-  --         comments = "none",
-  --       },
-  --     })
-  --   end,
-  -- })
+  use({
+    "navarasu/onedark.nvim",
+    config = function()
+      require("onedark").setup({
+        style = "darker",
+        transparent = true,
+        code_style = {
+          comments = "none",
+        },
+      })
+    end,
+  })
   use({
     "folke/tokyonight.nvim",
     requires = {
@@ -121,8 +121,6 @@ return require("packer").startup(function()
       end,
     },
   })
-  -- use("tiagovla/tokyodark.nvim")
-  -- use("Mofiqul/dracula.nvim")
   use("folke/lsp-colors.nvim")
   use({
     "hoob3rt/lualine.nvim",

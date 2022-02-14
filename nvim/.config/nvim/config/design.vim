@@ -1,5 +1,3 @@
-" design
-
 set colorcolumn=80
 
 " onedark setup
@@ -13,16 +11,6 @@ let g:tokyonight_italic_comments = v:false
 colorscheme tokyonight
 highlight ColorColumn ctermbg=0 guibg=#1f2335
 
-" dracula setup
-" let g:dracula_transparent_bg = 1
-" colorscheme dracula
-" highlight ColorColumn ctermbg=0 guibg=#191A21
-
-" tokyodark
-" let g:tokyodark_transparent_background = 1
-" let g:tokyodark_enable_italic_comment = 0
-" colorscheme tokyodark
-
 highlight Normal guibg=none
 " set up cursor for different modes
 if &term =~ '^xterm'
@@ -31,9 +19,6 @@ if &term =~ '^xterm'
     " insert mode
     let &t_SI .= "\<Esc>[5 q"
 endif
-
-" change the color of the character under the cursor
-" hi Cursor guifg=black
 
 " highlight the line number
 highlight CursorLineNr guifg=white
