@@ -37,8 +37,7 @@ function! s:TabSize()
     else | setlocal shiftwidth=4 tabstop=4 softtabstop=4 | endif
 endfunction
 
-" autocmd BufEnter * :call <SID>TabSize()
-" autocmd BufWritePost * :call <SID>TabSize()
+" autocmd BufEnter,BufWritePost * :call <SID>TabSize()
 
 " use clang_format on save
 function! s:FormatOnSave()
@@ -72,7 +71,4 @@ augroup entering_vim
         \ execute 'CHADopen' | execute 'cd '.argv()[0] | endif
 augroup END
 
-" stop auto inserting comments
-autocmd FileType * set formatoptions-=cro
-
-autocmd FileType * set signcolumn=yes
+autocmd FileType * set formatoptions-=cro | set signcolumn=yes

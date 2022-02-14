@@ -121,8 +121,8 @@ return require("packer").startup(function()
       end,
     },
   })
-  -- use "tiagovla/tokyodark.nvim"
-  -- use "Mofiqul/dracula.nvim"
+  -- use("tiagovla/tokyodark.nvim")
+  -- use("Mofiqul/dracula.nvim")
   use("folke/lsp-colors.nvim")
   use({
     "hoob3rt/lualine.nvim",
