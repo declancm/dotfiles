@@ -92,25 +92,6 @@ tabnine:setup({
   },
 })
 
--- LSPKIND:
--- local lspkind = require("lspkind")
--- cmp.setup({
---  formatting = {
---    format = lspkind.cmp_format({
---      with_text = true, -- do not show text alongside icons
---      preset = "default",
---      maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-
---      -- The function below will be called before any actual modifications from lspkind
---      -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
---      before = function(entry, vim_item)
---        -- ...
---        return vim_item
---      end,
---    }),
---  },
--- })
-
 -- AUTOPAIRS:
 -- cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done({ map_char = { tex = "" } }))
 -- cmp_autopairs.lisp[#cmp_autopairs.lisp + 1] = "racket"

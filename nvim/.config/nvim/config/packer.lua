@@ -19,9 +19,6 @@ return require("packer").startup(function()
   -- use({ "declancm/vim2vscode", branch = "test" })
   use("declancm/git-scripts-vim")
 
-  -- DEPENDENCIES:
-  -- use("nvim-lua/plenary.nvim")
-
   -- TELESCOPE:
   use({
     "nvim-telescope/telescope.nvim",
@@ -46,7 +43,6 @@ return require("packer").startup(function()
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-cmdline",
-      -- "onsails/lspkind-nvim",
       { "tzachar/cmp-tabnine", run = "./install.sh" },
       "saadparwaiz1/cmp_luasnip",
       "l3mon4d3/luasnip",
@@ -58,17 +54,17 @@ return require("packer").startup(function()
   -- COC_COMPLETION:
   use({
     "neoclide/coc.nvim",
-    -- branch = "master",
-    -- run = "yarn install --frozen-lockfile",
     branch = "release",
     ft = { "ps1", "markdown", "cmake" },
-    requires = { "SirVer/ultisnips", "honza/vim-snippets" },
+    requires = {
+      "SirVer/ultisnips",
+      "honza/vim-snippets",
+    },
     config = function()
       vim.cmd("source $HOME/.config/nvim/config/coc.vim")
       require("cmp").setup.buffer({ enabled = false })
     end,
   })
-  -- use("wellle/tmux-complete.vim")
 
   -- FILE_TREE:
   use({
@@ -149,28 +145,25 @@ return require("packer").startup(function()
   use({
     "iamcco/markdown-preview.nvim",
     run = "cd app && yarn install",
-    -- config = function()
-    --   vim.g.mkdp_auto_start = 1
-    -- end,
   })
 
   -- GIT:
   use("airblade/vim-gitgutter")
-  use("tpope/vim-fugitive")
-  use("tpope/vim-rhubarb")
-  use("junegunn/gv.vim")
+  use({
+    "tpope/vim-fugitive",
+    requires = { "tpope/vim-rhubarb", "junegunn/gv.vim" },
+  })
   use("f-person/git-blame.nvim")
 
   -- LINTERS:
-  -- black, prettier, clang_format
   use("jose-elias-alvarez/null-ls.nvim")
 
   -- MOVEMENT:
-  use("tpope/vim-surround")
   use("machakann/vim-sandwich")
+  -- use("tpope/vim-surround")
   use("unblevable/quick-scope")
-  -- w, b and e work with camelCase
   use("chaoren/vim-wordmotion")
+  use("tpope/vim-abolish")
 
   -- MISCELLANEOUS:
   use("mbbill/undotree")
@@ -182,6 +175,6 @@ return require("packer").startup(function()
   --   end,
   -- })
   use("tpope/vim-obsession")
-  -- use "tpope/vim-dispatch"
   use("akinsho/toggleterm.nvim")
+  -- use "tpope/vim-dispatch"
 end)
