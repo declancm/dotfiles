@@ -74,3 +74,5 @@ augroup END
 
 " stop auto inserting comments
 autocmd FileType * set formatoptions-=cro
+
+autocmd FileType * set signcolumn=yes

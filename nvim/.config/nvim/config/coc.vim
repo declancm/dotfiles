@@ -5,10 +5,10 @@ lua require('cmp').setup.buffer { enabled = false }
 "             \'coc-styled-components', 'coc-json', 'coc-pyright', 'coc-snippets',
 "             \'coc-vimlsp', 'coc-tsserver', 'coc-clangd', 'coc-cmake',
 "             \'coc-sh', 'coc-markdownlint', 'coc-solargraph', 'coc-powershell',
-"             \'coc-tabnine', 'coc-json'
+"             \'coc-tabnine', 'coc-json', 'coc-pairs'
 "             \]
 
-let g:coc_global_extensions=[ 'coc-powershell', 'coc-markdownlint', 'coc-cmake', 'coc-pairs', 'coc-snippets' ]
+let g:coc_global_extensions=[ 'coc-powershell', 'coc-markdownlint', 'coc-cmake', 'coc-snippets' ]
 
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 " unicode characters in the file autoload/float.vim

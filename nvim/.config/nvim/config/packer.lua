@@ -19,6 +19,9 @@ return require("packer").startup(function()
   -- use({ "declancm/vim2vscode", branch = "test" })
   use("declancm/git-scripts-vim")
 
+  -- DEPENDENCIES:
+  -- use("nvim-lua/plenary.nvim")
+
   -- TELESCOPE:
   use({
     "nvim-telescope/telescope.nvim",
@@ -93,16 +96,12 @@ return require("packer").startup(function()
   -- TREESITTER:
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
   -- use("nvim-treesitter/playground")
-
-  -- UNDO_TREE:
-  use("mbbill/undotree")
-
-  -- GIT:
-  use("tpope/vim-fugitive")
-  use("airblade/vim-gitgutter")
-  -- use("tpope/vim-rhubarb")
-  use("junegunn/gv.vim")
-  use("f-person/git-blame.nvim")
+  use({
+    "ThePrimeagen/refactoring.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim",
+    },
+  })
 
   -- DESIGN:
   -- use({
@@ -145,8 +144,6 @@ return require("packer").startup(function()
   -- DEBUGGING:
   use("folke/trouble.nvim")
   -- use "mfussenegger/nvim-dap"
-  -- use("simrat39/symbols-outline.nvim")
-  use("ThePrimeagen/refactoring.nvim")
 
   -- DEV:
   use({
@@ -157,19 +154,26 @@ return require("packer").startup(function()
     -- end,
   })
 
+  -- GIT:
+  use("airblade/vim-gitgutter")
+  use("tpope/vim-fugitive")
+  use("tpope/vim-rhubarb")
+  use("junegunn/gv.vim")
+  use("f-person/git-blame.nvim")
+
   -- LINTERS:
   -- black, prettier, clang_format
   use("jose-elias-alvarez/null-ls.nvim")
 
   -- MOVEMENT:
   use("tpope/vim-surround")
-  -- use("machakann/vim-sandwhich")
+  use("machakann/vim-sandwich")
   use("unblevable/quick-scope")
-  -- use("justinmk/vim-sneak")
   -- w, b and e work with camelCase
   use("chaoren/vim-wordmotion")
 
   -- MISCELLANEOUS:
+  use("mbbill/undotree")
   use("szw/vim-maximizer")
   -- use({
   --   "karb94/neoscroll.nvim",
@@ -178,13 +182,6 @@ return require("packer").startup(function()
   --   end,
   -- })
   use("tpope/vim-obsession")
-  -- use "tpope/vim-rails"
   -- use "tpope/vim-dispatch"
   use("akinsho/toggleterm.nvim")
-  -- use({
-  --   "folke/which-key.nvim",
-  --   config = function()
-  --     require("which-key").setup({})
-  --   end,
-  -- })
 end)
