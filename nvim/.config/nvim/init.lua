@@ -1,4 +1,4 @@
-vim.cmd("syntax on")
+vim.opt.syntax = "on"
 
 -- PRE_PLUGIN_COMMANDS:
 vim.g.mapleader = "<BS>"
@@ -50,7 +50,8 @@ vim.opt.wrap = false
 vim.opt.smartcase = true
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = "$HOME/.vim/undodir"
+-- vim.opt.undodir = "$HOME/.vim/undodir"
+vim.opt.undodir = vim.fn.stdpath("config") .. "/undodir"
 vim.opt.undofile = true
 vim.opt.incsearch = true
 vim.opt.termguicolors = true

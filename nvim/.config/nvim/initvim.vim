@@ -53,7 +53,8 @@ set nowrap
 set smartcase
 set noswapfile
 set nobackup
-set undodir=~/.vim/undodir
+" set undodir=~/.vim/undodir
+set undodir=stdpath('config') . '/undodir'
 set undofile
 set incsearch " incremental search
 set termguicolors " support true colors
