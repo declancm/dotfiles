@@ -153,7 +153,7 @@ return require("packer").startup(function()
   })
   use("f-person/git-blame.nvim")
 
-  -- LINTERS:
+  -- FORMAT:
   use("jose-elias-alvarez/null-ls.nvim")
 
   -- MOVEMENT:
