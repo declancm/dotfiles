@@ -1,21 +1,21 @@
-require("lspconfig").pyright.setup({})
-require("lspconfig").clangd.setup({})
--- TO USE clangd FOR A C++ PROJECT, ADD THIS TO CMakeLists.txt:
--- set(CMAKE_EXPORT_COMPILE_COMMANDS ON CACHE INTERNAL "")
-require("lspconfig").vimls.setup({})
-require("lspconfig").bashls.setup({})
+-- require("lspconfig").pyright.setup({})
+-- require("lspconfig").clangd.setup({})
+-- -- TO USE clangd FOR A C++ PROJECT, ADD THIS TO CMakeLists.txt:
+-- -- set(CMAKE_EXPORT_COMPILE_COMMANDS ON CACHE INTERNAL "")
+-- require("lspconfig").vimls.setup({})
+-- require("lspconfig").bashls.setup({})
 
-local opts = { noremap = true, silent = true }
+-- local opts = { noremap = true, silent = true }
 
-vim.api.nvim_set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-vim.api.nvim_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-vim.api.nvim_set_keymap("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-vim.api.nvim_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+-- vim.api.nvim_set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+-- vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+-- vim.api.nvim_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+-- vim.api.nvim_set_keymap("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+-- vim.api.nvim_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 
 -- local on_attach = function(client, bufnr)
 --   -- Enable completion triggered by <c-x><c-o>
---   -- vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+--   vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
 --   -- Mappings.
 --   -- See `:help vim.lsp.*` for documentation on any of the below functions

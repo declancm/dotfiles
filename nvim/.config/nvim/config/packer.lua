@@ -14,27 +14,18 @@ end
 return require("packer").startup(function()
   use("wbthomason/packer.nvim")
 
-  -- MY_PLUGINS:
-  use("declancm/vim2vscode")
-  -- use({ "declancm/vim2vscode", branch = "test" })
-  use("declancm/git-scripts-vim")
-
-  -- TELESCOPE:
-  use({
-    "nvim-telescope/telescope.nvim",
-    requires = {
-      "nvim-lua/plenary.nvim",
-      { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
-    },
-  })
+  -- DEPENDENCIES:
+  use("neovim/nvim-lspconfig")
+  use("nvim-lua/plenary.nvim")
+  use("kyazdani42/nvim-web-devicons")
 
   -- LSP:
-  use({
-    "neovim/nvim-lspconfig",
-    config = function()
-      vim.cmd("source $HOME/.config/nvim/config/lspconfig.lua")
-    end,
-  })
+  -- use({
+  --   "neovim/nvim-lspconfig",
+  --   config = function()
+  --     vim.cmd("source $HOME/.config/nvim/config/lspconfig.lua")
+  --   end,
+  -- })
   use("tami5/lspsaga.nvim")
 
   -- CMP_COMPLETION:
@@ -71,6 +62,19 @@ return require("packer").startup(function()
     end,
   })
 
+  -- MY_PLUGINS:
+  use("declancm/vim2vscode")
+  -- use({ "declancm/vim2vscode", branch = "test" })
+  use("declancm/git-scripts-vim")
+
+  -- TELESCOPE:
+  use({
+    "nvim-telescope/telescope.nvim",
+    requires = {
+      { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
+    },
+  })
+
   -- FILE_TREE:
   use({
     "ms-jpq/chadtree",
@@ -97,12 +101,7 @@ return require("packer").startup(function()
   -- TREESITTER:
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
   -- use("nvim-treesitter/playground")
-  use({
-    "ThePrimeagen/refactoring.nvim",
-    requires = {
-      "nvim-lua/plenary.nvim",
-    },
-  })
+  use("ThePrimeagen/refactoring.nvim")
 
   -- DESIGN:
   use({
@@ -127,10 +126,7 @@ return require("packer").startup(function()
     },
   })
   use("folke/lsp-colors.nvim")
-  use({
-    "hoob3rt/lualine.nvim",
-    requires = "kyazdani42/nvim-web-devicons",
-  })
+  use("hoob3rt/lualine.nvim")
   use("dkarter/bullets.vim")
   use("p00f/nvim-ts-rainbow")
   use({
