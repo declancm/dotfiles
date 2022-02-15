@@ -1,8 +1,8 @@
 " open notes (todo.txt) from anywhere and return. Automatically git pull when
 " opening and then git commit and push when closing.
-nnoremap <silent> <leader>n :call <SID>Notes_toggle()<CR>
+nnoremap <silent> <leader>n :call <SID>NotesToggle()<CR>
 
-function! s:Notes_toggle()
+function! s:NotesToggle()
     let l:currentDir = getcwd(0)
     if l:currentDir ==# $HOME . '/notes'
         if &modified

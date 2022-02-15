@@ -29,14 +29,19 @@ return require("packer").startup(function()
   })
 
   -- LSP:
-  use("neovim/nvim-lspconfig")
+  use({
+    "neovim/nvim-lspconfig",
+    config = function()
+      vim.cmd("source $HOME/.config/nvim/config/lspconfig.lua")
+    end,
+  })
   use("tami5/lspsaga.nvim")
 
   -- CMP_COMPLETION:
   use({
     "hrsh7th/nvim-cmp",
     config = function()
-      vim.cmd("luafile $HOME/.config/nvim/config/cmp.lua")
+      vim.cmd("source $HOME/.config/nvim/config/cmp.lua")
     end,
     requires = {
       "hrsh7th/cmp-nvim-lsp",

@@ -9,28 +9,28 @@ let g:python3_host_prog = '/bin/python3'
 let g:python_host_prog = '/bin/python2'
 
 " PACKER:
-luafile $HOME/.config/nvim/config/packer.lua
+source $HOME/.config/nvim/config/packer.lua
 
 " PRE_PLUGIN_CONFIGS:
 source $HOME/.config/nvim/config/autocmd.vim
 
 " PLUGIN_CONFIGS:
-luafile $HOME/.config/nvim/config/lspconfig.lua
+" source $HOME/.config/nvim/config/lspconfig.lua
 source $HOME/.config/nvim/config/gitblame.vim
-luafile $HOME/.config/nvim/config/treesitter.lua
-luafile $HOME/.config/nvim/config/telescope.lua
+source $HOME/.config/nvim/config/treesitter.lua
+source $HOME/.config/nvim/config/telescope.lua
 source $HOME/.config/nvim/config/telescope.vim
-luafile $HOME/.config/nvim/config/refactoring.lua
-luafile $HOME/.config/nvim/config/lspsaga.lua
-" luafile $HOME/.config/nvim/config/cmp.lua
+source $HOME/.config/nvim/config/refactoring.lua
+source $HOME/.config/nvim/config/lspsaga.lua
+" source $HOME/.config/nvim/config/cmp.lua
 " source $HOME/.config/nvim/config/coc.vim
-luafile $HOME/.config/nvim/config/trouble.lua
-luafile $HOME/.config/nvim/config/lualine.lua
-luafile $HOME/.config/nvim/config/kommentary.lua
-luafile $HOME/.config/nvim/config/toggleterm.lua
-luafile $HOME/.config/nvim/config/null-ls.lua
+source $HOME/.config/nvim/config/trouble.lua
+source $HOME/.config/nvim/config/lualine.lua
+source $HOME/.config/nvim/config/kommentary.lua
+source $HOME/.config/nvim/config/toggleterm.lua
+source $HOME/.config/nvim/config/null-ls.lua
 source $HOME/.config/nvim/config/design.vim
-luafile $HOME/.config/nvim/config/lspcolors.lua
+source $HOME/.config/nvim/config/lspcolors.lua
 source $HOME/.config/nvim/config/my-plugins.vim
 
 " POST_PLUGIN_CONFIGS:
@@ -53,8 +53,7 @@ set nowrap
 set smartcase
 set noswapfile
 set nobackup
-" set undodir=~/.vim/undodir
-set undodir=stdpath('config') . '/undodir'
+set undodir=~/.config/nvim/undodir
 set undofile
 set incsearch " incremental search
 set termguicolors " support true colors
