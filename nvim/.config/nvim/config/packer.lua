@@ -173,7 +173,7 @@ return require("packer").startup(function()
   --     require("neoscroll").setup()
   --   end,
   -- })
-  use("psliwka/vim-smoothie")
+  -- use("psliwka/vim-smoothie")
   use("tpope/vim-obsession")
   use("akinsho/toggleterm.nvim")
   -- use "tpope/vim-dispatch"
