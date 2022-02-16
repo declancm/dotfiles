@@ -1,15 +1,23 @@
 " KEYMAPS:
+
+" <Cmd>call <SID>Scroll(arg1, arg2, arg3, arg4)
+" arg1 = movement command (eg. 'gg')
+" arg2 = length of delay (in ms)
+" arg3 = scroll the window (1 for on, 0 for off)
+" arg4 = slowdown at the end (1 for on, 0 for off)
+" Note: each argument is a string
+
 " paragraph movements
-nnoremap <silent> { <Cmd>call <SID>Scroll('{','10','1','0')<CR>
-nnoremap <silent> } <Cmd>call <SID>Scroll('}','10','1','0')<CR>
-vnoremap <silent> { k<Cmd>call <SID>Scroll('{j','10','1','0')<CR>
-vnoremap <silent> } j<Cmd>call <SID>Scroll('}k','10','1','0')<CR>
+nnoremap <silent> { <Cmd>call <SID>Scroll('{','7','1','1')<CR>
+nnoremap <silent> } <Cmd>call <SID>Scroll('}','7','1','1')<CR>
+vnoremap <silent> { k<Cmd>call <SID>Scroll('{j','7','1','1')<CR>
+vnoremap <silent> } j<Cmd>call <SID>Scroll('}k','7','1','1')<CR>
 
 " half-window movements
-nnoremap <silent> <C-u> <Cmd>call <SID>Scroll('<C-u>','7','1','0')<CR>
-nnoremap <silent> <C-d> <Cmd>call <SID>Scroll('<C-d>','7','1','0')<CR>
-inoremap <silent> <C-u> <Cmd>call <SID>Scroll('<C-u>','7','1','0')<CR>
-inoremap <silent> <C-d> <Cmd>call <SID>Scroll('<C-d>','7','1','0')<CR>
+nnoremap <silent> <C-u> <Cmd>call <SID>Scroll('<C-u>','7','1','1')<CR>
+nnoremap <silent> <C-d> <Cmd>call <SID>Scroll('<C-d>','7','1','1')<CR>
+inoremap <silent> <C-u> <Cmd>call <SID>Scroll('<C-u>','7','1','1')<CR>
+inoremap <silent> <C-d> <Cmd>call <SID>Scroll('<C-d>','7','1','1')<CR>
 
 " page movements
 nnoremap <silent> <C-b> <Cmd>call <SID>Scroll('<C-b>','7','1','1')<CR>
@@ -24,8 +32,7 @@ inoremap <silent> <PageDown> <Cmd>call <SID>Scroll('<C-f>','7','1','1')<CR>
 " nnoremap <silent> G <Cmd>call <SID>Scroll('G','2','1','1')<CR>
 
 " FUNCTIONS:
-
-function! s:Scroll(movement, speed, scrollWin, slowdown)
+function! s:Scroll(movement, delay, scrollWin, slowdown)
     let l:pos = getcurpos()[1]
     let l:distance = <SID>MovementDistance(a:movement)
     if l:distance == 0 | return | endif
@@ -39,12 +46,9 @@ function! s:Scroll(movement, speed, scrollWin, slowdown)
                     silent execute("normal! \<C-E>")
                 endif
             endif
-
             let l:remaining = l:distance - l:counter
-            call <SID>SleepDelay(l:remaining, a:speed, a:slowdown)
-
+            call <SID>SleepDelay(l:remaining, a:delay, a:slowdown)
             let l:counter = <SID>CheckFoldCounter(l:counter)
-
         endwhile
     else
         " scrolling upwards
@@ -55,12 +59,9 @@ function! s:Scroll(movement, speed, scrollWin, slowdown)
                     silent execute("normal! \<C-Y>")
                 endif
             endif
-
             let l:remaining = -l:distance - l:counter
-            call <SID>SleepDelay(l:remaining, a:speed, a:slowdown)
-
+            call <SID>SleepDelay(l:remaining, a:delay, a:slowdown)
             let l:counter = <SID>CheckFoldCounter(l:counter)
-
         endwhile
     endif
 endfunction
@@ -87,15 +88,15 @@ function! s:MovementDistance(movement)
     return l:distance
 endfunction
 
-function! s:SleepDelay(remaining, speed, slowdown)
+function! s:SleepDelay(remaining, delay, slowdown)
     if a:slowdown == 1
-        if a:remaining <= 3
-            silent execute("sleep " . (a:speed * (4 - a:remaining)) . "m")
+        if a:remaining <= 4
+            silent execute("sleep " . (a:delay * (5 - a:remaining)) . "m")
         else
-            silent execute("sleep " . a:speed . "m")
+            silent execute("sleep " . a:delay . "m")
         endif
     else
-        silent execute("sleep " . a:speed . "m")
+        silent execute("sleep " . a:delay . "m")
     endif
     redraw
 endfunction
