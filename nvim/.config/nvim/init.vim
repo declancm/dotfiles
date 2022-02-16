@@ -31,8 +31,6 @@ source $HOME/.config/nvim/config/toggleterm.lua
 source $HOME/.config/nvim/config/null-ls.lua
 source $HOME/.config/nvim/config/design.vim
 source $HOME/.config/nvim/config/lspcolors.lua
-" source $HOME/.config/nvim/config/neoscroll.vim
-" source $HOME/.config/nvim/config/smoothie.vim
 
 source $HOME/.config/nvim/config/my-plugins.vim
 source $HOME/.config/nvim/config/scroll.vim
