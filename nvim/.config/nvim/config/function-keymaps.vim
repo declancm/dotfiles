@@ -26,14 +26,14 @@ imap <silent> <C-H> <Cmd>call <SID>DeleteStartWord("b")<CR>
 imap <silent> <M-BS> <Cmd>call <SID>DeleteStartWord("B")<CR>
 
 function! s:DeleteStartWord(backKey)
-    let l:cursorpos = getcurpos()
-    if l:cursorpos[2] < 3
+    let l:cursorPos = getcurpos()
+    if l:cursorPos[2] < 3
         call feedkeys("\<BS>")
     else
         normal b
-        let l:cursornew = getcurpos()
-        silent execute("call cursor(l:cursorpos[1], l:cursorpos[2])")
-        if l:cursorpos[1] - l:cursornew[1] != 0
+        let l:cursorNew = getcurpos()
+        silent execute("call cursor(l:cursorPos[1], l:cursorPos[2])")
+        if l:cursorPos[1] - l:cursorNew[1] != 0
             normal d0i
         else
             call feedkeys("\<Space>\<Esc>v" . a:backKey . "c")
@@ -100,4 +100,91 @@ function s:WindowMovement(key)
         endif
         silent execute("wincmd ".a:key)
     endif
+endfunction
+
+" close other buffers
+nnoremap <silent> <leader>bd <Cmd>call <SID>BufferDelete()<CR>
+
+function! s:BufferDelete()
+    let l:cursorPos = getcurpos()
+    silent execute("wa | %bdelete | normal! \<C-^>")
+    silent execute("call cursor(l:cursorPos[1], l:cursorPos[2])")
+endfunction
+
+" scroll through paragraphs
+nnoremap <silent> { <Cmd>call ParagraphUp()<CR>
+nnoremap <silent> } <Cmd>call ParagraphDown()<CR>
+
+function! ParagraphUp()
+    let l:scrolloff = &scrolloff
+    let l:lnum = getcurpos()[1]
+    if l:lnum == 0 | return | endif
+    let l:originalLnum = getcurpos()[1]
+    let l:distance = 0
+    let l:notEmpty = 0
+    while l:lnum >= 0
+        let l:line=getline(l:lnum)
+        if l:line != '' | let l:notEmpty = 1 | endif
+        if l:line == '' && l:notEmpty == 1
+            let l:distance = l:lnum - l:originalLnum
+            break
+        endif
+        let l:lnum -= 1
+    endwhile
+    if l:distance == 0 | let l:distance = 1 - l:lnum | endif
+
+    let l:counter = 0
+    while l:counter < -l:distance
+        silent execute("normal! k")
+        if l:originalLnum - l:counter >= line("$") - l:scrolloff
+        else
+            silent execute("normal! \<C-Y>")
+        endif
+        sleep 10m | redraw
+        let l:counter += 1
+    endwhile
+endfunction
+
+function! ParagraphDown()
+    let l:scrolloff = &scrolloff
+    let l:lnum = getcurpos()[1]
+    if l:lnum == line("$") | return | endif
+    let l:originalLnum = getcurpos()[1]
+    let l:distance = 0
+    let l:notEmpty = 0
+    while l:lnum <= line("$")
+        let l:line=getline(l:lnum)
+        if l:line != '' | let l:notEmpty = 1 | endif
+        if l:line == '' && l:notEmpty == 1
+            let l:distance = l:lnum - l:originalLnum
+            break
+        endif
+        let l:lnum += 1
+    endwhile
+    if l:distance == 0 | let l:distance = line("$") - l:originalLnum | endif
+
+    let l:counter = 1
+    while l:counter <= l:distance
+        silent execute("normal! j")
+        if l:originalLnum + l:counter <= l:scrolloff || l:originalLnum + l:counter >= line("$") - winheight('%') + winline()
+        else
+            silent execute("normal! \<C-E>")
+        endif
+        sleep 10m
+        redraw
+        let l:counter += 1
+    endwhile
+endfunction
+
+" nmap <silent> { <Cmd>call MovementDistance('{')<CR>
+" nmap <silent> } <Cmd>call MovementDistance('}')<CR>
+function! MovementDistance(command)
+    let l:winview = winsaveview()
+    let l:pos = getcurpos()[1]
+    silent execute("normal! " . a:command)
+    let l:newPos = getcurpos()[1]
+    let l:distance = l:newPos - l:pos
+    echom l:distance
+    call winrestview(l:winview)
+    return l:distance
 endfunction

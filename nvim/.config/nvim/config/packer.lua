@@ -27,6 +27,7 @@ return require("packer").startup(function()
   --   end,
   -- })
   use("tami5/lspsaga.nvim")
+  use("folke/lsp-colors.nvim")
 
   -- CMP_COMPLETION:
   use({
@@ -102,6 +103,7 @@ return require("packer").startup(function()
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
   -- use("nvim-treesitter/playground")
   use("ThePrimeagen/refactoring.nvim")
+  use("p00f/nvim-ts-rainbow")
 
   -- DESIGN:
   use({
@@ -125,10 +127,8 @@ return require("packer").startup(function()
       end,
     },
   })
-  use("folke/lsp-colors.nvim")
   use("hoob3rt/lualine.nvim")
   use("dkarter/bullets.vim")
-  use("p00f/nvim-ts-rainbow")
   use({
     "norcalli/nvim-colorizer.lua",
     config = function()
@@ -167,13 +167,13 @@ return require("packer").startup(function()
   -- MISCELLANEOUS:
   use("mbbill/undotree")
   use("szw/vim-maximizer")
-  use({
-    "karb94/neoscroll.nvim",
-    config = function()
-      require("neoscroll").setup()
-    end,
-  })
-  -- use("psliwka/vim-smoothie")
+  -- use({
+  --   "karb94/neoscroll.nvim",
+  --   config = function()
+  --     require("neoscroll").setup()
+  --   end,
+  -- })
+  use("psliwka/vim-smoothie")
   use("tpope/vim-obsession")
   use("akinsho/toggleterm.nvim")
   -- use "tpope/vim-dispatch"
