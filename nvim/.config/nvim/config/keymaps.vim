@@ -6,10 +6,6 @@ nnoremap <silent> <leader>cp :wa<CR>:!source ~/git-scripts/commit-silent.sh<CR>
 noremap <Home> zH^
 inoremap <Home> <Esc>zHI
 
-" smoothe scrolling
-" map <PageUp> <C-b>
-" map <PageDown> <C-f>
-
 " source config file
 nnoremap <silent> <leader>sc :wa<CR>:source $MYVIMRC<CR>:echom "Your config file was sourced."<CR>
 

@@ -1,11 +1,11 @@
 " KEYMAPS:
 
 " <Cmd>call <SID>Scroll(arg1, arg2, arg3, arg4)
-" arg1 = movement command (eg. 'gg')
-" arg2 = length of delay (in ms)
-" arg3 = scroll the window (1 for on, 0 for off)
-" arg4 = slowdown at the end (1 for on, 0 for off)
-" Note: each argument is a string
+" arg1 = Movement command (eg. 'gg')
+" arg2 = Length of delay (in ms)
+" arg3 = Scroll the window ('1' for on, '0' for off)
+" arg4 = Slowdown at the end ('1' for on, '0' for off)
+" Note: Each input argument is a string.
 
 " paragraph movements
 nnoremap <silent> { <Cmd>call <SID>Scroll('{','7','1','1')<CR>
@@ -32,6 +32,7 @@ inoremap <silent> <PageDown> <Cmd>call <SID>Scroll('<C-f>','7','1','1')<CR>
 " nnoremap <silent> G <Cmd>call <SID>Scroll('G','2','1','1')<CR>
 
 " FUNCTIONS:
+
 function! s:Scroll(movement, delay, scrollWin, slowdown)
     let l:pos = getcurpos()[1]
     let l:distance = <SID>MovementDistance(a:movement)
