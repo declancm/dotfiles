@@ -1,20 +1,18 @@
 " KEYMAPS:
 
-" <Cmd>Scroll arg1 arg2 = '1' arg3 = '0' arg4 = '5' arg5 = '1' <CR>
+" <Cmd>Scroll arg1 arg2 arg3 arg4 arg5 <CR>
 
-" arg1 = Movement command (eg. 'gg')
-" arg2 = Scroll the window ('1' for on, '0' for off)
-" arg3 = Accept a count before the command ('1' for on, '0' for off)
-" arg4 = Length of delay (in ms)
-" arg5 = Slowdown at the end of the movement ('1' for on, '0' for off)
-
-" Note: Each input argument is a string and the defaults are shown in the function above.
+" arg1 = Movement command (eg. 'gg'). This argument is required as there's no default value.
+" arg2 = Scroll the window (1 for on, 0 for off). Default is 1.
+" arg3 = Accept a count before the command (1 for on, 0 for off). Default is 0.
+" arg4 = Length of delay (in ms). Default is 5.
+" arg5 = Slowdown at the end of the movement (1 for on, 0 for off). Default is 1.
 
 " paragraph movements
 nnoremap <silent> { <Cmd>Scroll { 0 <CR>
 nnoremap <silent> } <Cmd>Scroll } 0 <CR>
-vnoremap <silent> { k<Cmd>Scroll {j 0 <CR>
-vnoremap <silent> } j<Cmd>Scroll }k 0 <CR>
+xnoremap <silent> { k<Cmd>Scroll {j 0 <CR>
+xnoremap <silent> } j<Cmd>Scroll }k 0 <CR>
 
 " half-window movements
 nnoremap <silent> <C-u> <Cmd>Scroll <C-u> <CR>
@@ -33,20 +31,20 @@ inoremap <silent> <PageUp> <Cmd>Scroll <C-b> <CR>
 inoremap <silent> <PageDown> <Cmd>Scroll <C-f> <CR>
 
 " start and end of file
-nnoremap <silent> gg <Cmd>Scroll gg 0 0 1 <CR>
-nnoremap <silent> G <Cmd>Scroll G 0 0 1 <CR>
-vnoremap <silent> gg <Cmd>Scroll gg 0 0 1 <CR>
-vnoremap <silent> G <Cmd>Scroll G 0 0 1 <CR>
+" nnoremap <silent> gg <Cmd>Scroll gg 0 0 1 <CR>
+" nnoremap <silent> G <Cmd>Scroll G 0 0 1 <CR>
+" xnoremap <silent> gg <Cmd>Scroll gg 0 0 1 <CR>
+" xnoremap <silent> G <Cmd>Scroll G 0 0 1 <CR>
 
-" " up and down movements
-" nnoremap <silent> k <Cmd>Scroll 'k' '0' '1' '2' <CR>
-" nnoremap <silent> j <Cmd>Scroll 'j' '0' '1' '2' <CR>
-" nnoremap <silent> <Up> <Cmd>Scroll 'k' '0' '1' '2' <CR>
-" nnoremap <silent> <Down> <Cmd>Scroll 'j','0','1','2' <CR>
-" vnoremap <silent> k <Cmd>Scroll 'k','0','1','2' <CR>
-" vnoremap <silent> j <Cmd>Scroll 'j','0','1','2' <CR>
-" vnoremap <silent> <Up> <Cmd>Scroll 'k','0','1','2' <CR>
-" vnoremap <silent> <Down> <Cmd>Scroll 'j','0','1','2' <CR>
+" up and down movements
+" nnoremap <silent> k <Cmd>Scroll k 0 1 2 0 <CR>
+" nnoremap <silent> j <Cmd>Scroll j 0 1 2 0 <CR>
+" nnoremap <silent> <Up> <Cmd>Scroll k 0 1 2 0 <CR>
+" nnoremap <silent> <Down> <Cmd>Scroll j 0 1 2 0 <CR>
+" xnoremap <silent> k <Cmd>Scroll k 0 1 2 0 <CR>
+" xnoremap <silent> j <Cmd>Scroll j 0 1 2 0 <CR>
+" xnoremap <silent> <Up> <Cmd>Scroll k 0 1 2 0 <CR>
+" xnoremap <silent> <Down> <Cmd>Scroll j 0 1 2 0 <CR>
 
 " COMMANDS:
 
@@ -103,7 +101,6 @@ endfunction
 function! s:MovementDistance(movement, useCount)
     let l:winview = winsaveview()
     let l:pos = getcurpos()[1]
-    " echom a:movement
     if a:useCount == 1
         silent execute("normal! " . v:count1 . a:movement)
     else
