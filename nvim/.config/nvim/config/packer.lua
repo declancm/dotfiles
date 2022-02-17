@@ -67,6 +67,7 @@ return require("packer").startup(function()
   use("declancm/vim2vscode")
   -- use({ "declancm/vim2vscode", branch = "test" })
   use("declancm/git-scripts-vim")
+  use("declancm/cinnamon-scrolls")
 
   -- TELESCOPE:
   use({

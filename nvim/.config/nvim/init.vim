@@ -33,7 +33,7 @@ source $HOME/.config/nvim/config/design.vim
 source $HOME/.config/nvim/config/lspcolors.lua
 
 source $HOME/.config/nvim/config/my-plugins.vim
-source $HOME/.config/nvim/config/scroll.vim
+" source $HOME/.config/nvim/config/scroll.vim
 
 " POST_PLUGIN_CONFIGS:
 source $HOME/.config/nvim/config/keymaps.vim

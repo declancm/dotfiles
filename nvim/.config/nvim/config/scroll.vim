@@ -8,45 +8,55 @@
 " arg4 = Length of delay (in ms). Default is 5.
 " arg5 = Slowdown at the end of the movement (1 for on, 0 for off). Default is 1.
 
-" paragraph movements
-nnoremap <silent> { <Cmd>Scroll { 0 <CR>
-nnoremap <silent> } <Cmd>Scroll } 0 <CR>
-xnoremap <silent> { k<Cmd>Scroll {j 0 <CR>
-xnoremap <silent> } j<Cmd>Scroll }k 0 <CR>
+if !exists("g:cinnamon_no_defaults")
+    let g:cinnamon_no_defaults = 0
+endif
+if g:cinnamon_no_defaults != 1
+    " paragraph movements
+    nnoremap <silent> { <Cmd>Scroll { 0 <CR>
+    nnoremap <silent> } <Cmd>Scroll } 0 <CR>
+    xnoremap <silent> { k<Cmd>Scroll {j 0 <CR>
+    xnoremap <silent> } j<Cmd>Scroll }k 0 <CR>
 
-" half-window movements
-nnoremap <silent> <C-u> <Cmd>Scroll <C-u> <CR>
-nnoremap <silent> <C-d> <Cmd>Scroll <C-d> <CR>
-inoremap <silent> <C-u> <Cmd>Scroll <C-u> <CR>
-inoremap <silent> <C-d> <Cmd>Scroll <C-d> <CR>
+    " half-window movements
+    nnoremap <silent> <C-u> <Cmd>Scroll <C-u> <CR>
+    nnoremap <silent> <C-d> <Cmd>Scroll <C-d> <CR>
+    inoremap <silent> <C-u> <Cmd>Scroll <C-u> <CR>
+    inoremap <silent> <C-d> <Cmd>Scroll <C-d> <CR>
 
-" page movements
-nnoremap <silent> <C-b> <Cmd>Scroll <C-b> <CR>
-nnoremap <silent> <C-f> <Cmd>Scroll <C-f> <CR>
-inoremap <silent> <C-b> <Cmd>Scroll <C-b> <CR>
-inoremap <silent> <C-f> <Cmd>Scroll <C-f> <CR>
-nnoremap <silent> <PageUp> <Cmd>Scroll <C-b> <CR>
-nnoremap <silent> <PageDown> <Cmd>Scroll <C-f> <CR>
-inoremap <silent> <PageUp> <Cmd>Scroll <C-b> <CR>
-inoremap <silent> <PageDown> <Cmd>Scroll <C-f> <CR>
+    " page movements
+    nnoremap <silent> <C-b> <Cmd>Scroll <C-b> <CR>
+    nnoremap <silent> <C-f> <Cmd>Scroll <C-f> <CR>
+    inoremap <silent> <C-b> <Cmd>Scroll <C-b> <CR>
+    inoremap <silent> <C-f> <Cmd>Scroll <C-f> <CR>
+    nnoremap <silent> <PageUp> <Cmd>Scroll <C-b> <CR>
+    nnoremap <silent> <PageDown> <Cmd>Scroll <C-f> <CR>
+    inoremap <silent> <PageUp> <Cmd>Scroll <C-b> <CR>
+    inoremap <silent> <PageDown> <Cmd>Scroll <C-f> <CR>
+endif
 
-" start and end of file
-" nnoremap <silent> gg <Cmd>Scroll gg 0 0 1 <CR>
-" nnoremap <silent> G <Cmd>Scroll G 0 0 1 <CR>
-" xnoremap <silent> gg <Cmd>Scroll gg 0 0 1 <CR>
-" xnoremap <silent> G <Cmd>Scroll G 0 0 1 <CR>
+if !exists("g:cinnamon_extra_defaults")
+    let g:cinnamon_extras = 0
+endif
+if g:cinnamon_extras != 1
+    " start and end of file movements
+    nnoremap <silent> gg <Cmd>Scroll gg 0 0 1 <CR>
+    nnoremap <silent> G <Cmd>Scroll G 0 0 1 <CR>
+    xnoremap <silent> gg <Cmd>Scroll gg 0 0 1 <CR>
+    xnoremap <silent> G <Cmd>Scroll G 0 0 1 <CR>
 
-" up and down movements
-" nnoremap <silent> k <Cmd>Scroll k 0 1 2 0 <CR>
-" nnoremap <silent> j <Cmd>Scroll j 0 1 2 0 <CR>
-" nnoremap <silent> <Up> <Cmd>Scroll k 0 1 2 0 <CR>
-" nnoremap <silent> <Down> <Cmd>Scroll j 0 1 2 0 <CR>
-" xnoremap <silent> k <Cmd>Scroll k 0 1 2 0 <CR>
-" xnoremap <silent> j <Cmd>Scroll j 0 1 2 0 <CR>
-" xnoremap <silent> <Up> <Cmd>Scroll k 0 1 2 0 <CR>
-" xnoremap <silent> <Down> <Cmd>Scroll j 0 1 2 0 <CR>
+    " up and down movements
+    nnoremap <silent> k <Cmd>Scroll k 0 1 2 0 <CR>
+    nnoremap <silent> j <Cmd>Scroll j 0 1 2 0 <CR>
+    nnoremap <silent> <Up> <Cmd>Scroll k 0 1 2 0 <CR>
+    nnoremap <silent> <Down> <Cmd>Scroll j 0 1 2 0 <CR>
+    xnoremap <silent> k <Cmd>Scroll k 0 1 2 0 <CR>
+    xnoremap <silent> j <Cmd>Scroll j 0 1 2 0 <CR>
+    xnoremap <silent> <Up> <Cmd>Scroll k 0 1 2 0 <CR>
+    xnoremap <silent> <Down> <Cmd>Scroll j 0 1 2 0 <CR>
+endif
 
-" COMMANDS:
+" COMMAND:
 
 command! -nargs=+ Scroll call <SID>Scroll(<f-args>)
 

@@ -1,7 +1,3 @@
-" save, auto commit and push
-" get the script from https://github.com/declancm/git-scripts.git
-nnoremap <silent> <leader>cp :wa<CR>:!source ~/git-scripts/commit-silent.sh<CR>
-
 " improve home key
 noremap <Home> zH^
 inoremap <Home> <Esc>zHI
@@ -20,9 +16,6 @@ nnoremap <silent> <S-Up> :resize +5<CR>
 nnoremap <silent> <S-Down> : resize -5<CR>
 nnoremap <silent> <S-Right> :vertical resize +5<CR>
 nnoremap <silent> <S-Left> :vertical resize -5<CR>
-
-" open nerdtree explorer
-" nnoremap <silent> <leader>ne :Lex 30<CR>
 
 " undo tree
 nnoremap <F5> :UndotreeToggle<CR>:wincmd p<CR>
@@ -64,14 +57,6 @@ vnoremap <silent> y "*y
 " paste from global clipboard for filetypes that don't like auto indent
 noremap <silent> <leader>p "*p`[v`]
 noremap <silent> <leader>P "*P`[v`]
-
-" try 'equalprg' and set to reindent.py or autopep8 for python using an autocmd
-" pip3 install reindent
-" augroup python_indent
-"     autocmd!
-"     " autocmd FileType python setlocal equalprg=$HOME/.local/lib/python3.9/site-packages/reindent.py
-"     autocmd FileType python setlocal equalprg=$HOME/.local/bin/reindent
-" augroup END
 
 " higlight after indenting
 vnoremap <silent> > >gv
