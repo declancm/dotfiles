@@ -9,4 +9,4 @@
 
 " CINNAMON-SCROLLS:
 
-let g:cinnamon_extras = 1
+" let g:cinnamon_extras = 1
