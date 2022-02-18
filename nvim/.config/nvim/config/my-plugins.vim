@@ -9,6 +9,9 @@
 
 " let g:gitscripts_location = "~/.config/nvim/git-scripts"
 
-" CINNAMON-SCROLLS:
+" CINNAMON-SCROLL:
 
 " let g:cinnamon_extras = 1
+
+" xnoremap <silent> { k<Cmd>Cinnamon {j 0 <CR>
+" xnoremap <silent> } j<Cmd>Cinnamon }k 0 <CR>
