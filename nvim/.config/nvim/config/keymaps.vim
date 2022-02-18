@@ -23,8 +23,8 @@ nnoremap <F5> :UndotreeToggle<CR>:wincmd p<CR>
 " Y works like D and C
 nnoremap Y "*yg_
 " staying centered
-" nnoremap n nzzzv
-" nnoremap N Nzzzv
+nnoremap n nzzzv
+nnoremap N Nzzzv
 nnoremap <silent> J mzJ`z :delmarks z<CR>
 " adding undo break points
 inoremap , ,<c-g>u
