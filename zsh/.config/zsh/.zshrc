@@ -14,8 +14,8 @@ zle_highlight=('paste:none')
 unsetopt BEEP
 
 # home and end
-bindkey '^[[H' beginning-of-line
-bindkey '^[[F' end-of-line
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
 
 # let terminal work in vim
 stty start undef stop undef
