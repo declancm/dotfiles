@@ -8,17 +8,23 @@ vim.g.coq_settings = {
 local lsp = require("lspconfig")
 
 lsp.bashls.setup({})
+
 lsp.clangd.setup({})
 -- TO USE clangd FOR A C++ PROJECT, ADD THIS TO CMakeLists.txt:
 -- set(CMAKE_EXPORT_COMPILE_COMMANDS ON CACHE INTERNAL "")
+
 lsp.cmake.setup({}) -- pip3 install cmake-language-server
+
 require("lspconfig").powershell_es.setup({
   bundle_path = "~/lsp/PowerShell/PowerShellEditorServices",
   shell = "powershell.exe",
 })
+
 lsp.pyright.setup({})
+
 lsp.vimls.setup({})
 
+-- LSP_KEYMAPS:
 local opts = { noremap = true, silent = true }
 
 vim.api.nvim_set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
