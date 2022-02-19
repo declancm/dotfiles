@@ -17,9 +17,6 @@ nnoremap <silent> <S-Down> : resize -5<CR>
 nnoremap <silent> <S-Right> :vertical resize +5<CR>
 nnoremap <silent> <S-Left> :vertical resize -5<CR>
 
-" undo tree
-nnoremap <F5> :UndotreeToggle<CR>:wincmd p<CR>
-
 " Y works like D and C
 nnoremap Y "*yg_
 " staying centered

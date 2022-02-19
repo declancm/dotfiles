@@ -78,6 +78,7 @@ return require("packer").startup(function()
       "jvgrootveld/telescope-zoxide",
     },
   })
+  -- use({ "simrat39/symbols-outline.nvim" })
 
   -- FILE_TREE:
   use({
@@ -141,7 +142,7 @@ return require("packer").startup(function()
 
   -- DEBUGGING:
   use("folke/trouble.nvim")
-  -- use "mfussenegger/nvim-dap"
+  use("mfussenegger/nvim-dap")
   use({
     "iamcco/markdown-preview.nvim",
     run = "cd app && yarn install",
@@ -157,7 +158,6 @@ return require("packer").startup(function()
 
   -- MOVEMENT:
   use("machakann/vim-sandwich")
-  -- use("tpope/vim-surround")
   use("unblevable/quick-scope")
   use("chaoren/vim-wordmotion")
   use("tpope/vim-abolish")

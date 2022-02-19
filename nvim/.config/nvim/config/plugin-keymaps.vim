@@ -1,3 +1,6 @@
+" undo tree
+nnoremap <F5> :UndotreeToggle<CR>:wincmd p<CR>
+
 " chadtree
 nnoremap <silent> <leader>e :CHADopen<CR>
 nnoremap <silent> <leader>te :CHADopen --version-ctl<CR>
