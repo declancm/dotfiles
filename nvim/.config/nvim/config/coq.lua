@@ -14,6 +14,7 @@ local lsp = require("lspconfig")
 -- clangd:        sudo apt-get install clangd-12
 -- cmake:         pip3 install cmake-language-server
 -- powershell_es: https://github.com/PowerShell/PowerShellEditorServices/releases
+--                Extract the zip file to '~/lsp/PowerShellEditorServices'
 -- pyright:       pip3 install pyright
 -- vimls:         npm install -g vim-language-server
 

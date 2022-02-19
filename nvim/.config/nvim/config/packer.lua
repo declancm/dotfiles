@@ -167,5 +167,4 @@ return require("packer").startup(function()
   use("szw/vim-maximizer")
   use("tpope/vim-obsession")
   use("akinsho/toggleterm.nvim")
-  -- use "tpope/vim-dispatch"
 end)

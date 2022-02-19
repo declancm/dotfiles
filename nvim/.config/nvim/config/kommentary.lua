@@ -1,12 +1,13 @@
--- vim.api.nvim_set_keymap("n", "<BS>cc", "<Plug>kommentary_line_default", {})
--- vim.api.nvim_set_keymap("n", "<BS>c", "<Plug>kommentary_motion_default", {})
--- vim.api.nvim_set_keymap("x", "<BS>c", "<Plug>kommentary_visual_default<C-c>", {})
-
--- set <C-/>
+-- Set <C-/> keymaps.
 vim.api.nvim_set_keymap("i", "<C-_>", "<Esc><Plug>kommentary_line_default", {})
 vim.api.nvim_set_keymap("n", "<C-_>", "<Plug>kommentary_line_default", {})
 vim.api.nvim_set_keymap("x", "<C-_>", "<Plug>kommentary_visual_default<Esc>", {})
 
+-- Keymaps to increase or decrease the comment depth level.
+vim.api.nvim_set_keymap("n", "<leader>cic", "<Plug>kommentary_line_increase", {})
+vim.api.nvim_set_keymap("n", "<leader>cdc", "<Plug>kommentary_line_decrease", {})
+
+-- Configure the languages.
 require("kommentary.config").configure_language("default", {
   prefer_single_line_comments = true,
   use_consistent_indentation = true,
