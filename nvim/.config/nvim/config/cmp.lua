@@ -61,7 +61,7 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = "nvim_lsp" },
     { name = "luasnip" }, -- For luasnip users.
-    { name = "cmp_tabnine" },
+    -- { name = "cmp_tabnine" },
   }, {
     { name = "buffer" },
   }),
@@ -83,18 +83,18 @@ cmp.setup.cmdline(":", {
   }),
 })
 
--- SETUP_CMP_TABNINE:
-local tabnine = require("cmp_tabnine.config")
-tabnine:setup({
-  max_lines = 1000,
-  max_num_results = 20,
-  sort = true,
-  run_on_every_keystroke = true,
-  snippet_placeholder = "..",
-  ignored_file_types = {
-    -- lua = true
-  },
-})
+-- -- SETUP_CMP_TABNINE:
+-- local tabnine = require("cmp_tabnine.config")
+-- tabnine:setup({
+--   max_lines = 1000,
+--   max_num_results = 20,
+--   sort = true,
+--   run_on_every_keystroke = true,
+--   snippet_placeholder = "..",
+--   ignored_file_types = {
+--     -- lua = true
+--   },
+-- })
 
 -- SETUP_AUTOPAIRS:
 -- cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done({ map_char = { tex = "" } }))

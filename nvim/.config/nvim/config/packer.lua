@@ -29,39 +29,46 @@ return require("packer").startup(function()
   use("tami5/lspsaga.nvim")
   use("folke/lsp-colors.nvim")
 
-  -- CMP_COMPLETION:
+  -- COQ_COMPLETION:
   use({
-    "hrsh7th/nvim-cmp",
-    config = function()
-      vim.cmd("source $HOME/.config/nvim/config/cmp.lua")
-    end,
-    requires = {
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "hrsh7th/cmp-cmdline",
-      { "tzachar/cmp-tabnine", run = "./install.sh" },
-      "saadparwaiz1/cmp_luasnip",
-      "l3mon4d3/luasnip",
-      "rafamadriz/friendly-snippets",
-      -- "windwp/nvim-autopairs",
-    },
+    "ms-jpq/coq_nvim",
+    branch = "coq",
+    requires = { "ms-jpq/coq.artifacts", branch = "artifacts" },
   })
 
-  -- COC_COMPLETION:
-  use({
-    "neoclide/coc.nvim",
-    branch = "release",
-    ft = { "ps1", "markdown", "cmake" },
-    requires = {
-      "SirVer/ultisnips",
-      "honza/vim-snippets",
-    },
-    config = function()
-      vim.cmd("source $HOME/.config/nvim/config/coc.vim")
-      require("cmp").setup.buffer({ enabled = false })
-    end,
-  })
+  -- -- CMP_COMPLETION:
+  -- use({
+  --   "hrsh7th/nvim-cmp",
+  --   config = function()
+  --     vim.cmd("source $HOME/.config/nvim/config/cmp.lua")
+  --   end,
+  --   requires = {
+  --     "hrsh7th/cmp-nvim-lsp",
+  --     "hrsh7th/cmp-buffer",
+  --     "hrsh7th/cmp-path",
+  --     "hrsh7th/cmp-cmdline",
+  --     { "tzachar/cmp-tabnine", run = "./install.sh" },
+  --     "saadparwaiz1/cmp_luasnip",
+  --     "l3mon4d3/luasnip",
+  --     "rafamadriz/friendly-snippets",
+  --     -- "windwp/nvim-autopairs",
+  --   },
+  -- })
+
+  -- -- COC_COMPLETION:
+  -- use({
+  --   "neoclide/coc.nvim",
+  --   branch = "release",
+  --   ft = { "ps1", "markdown", "cmake" },
+  --   requires = {
+  --     "SirVer/ultisnips",
+  --     "honza/vim-snippets",
+  --   },
+  --   config = function()
+  --     vim.cmd("source $HOME/.config/nvim/config/coc.vim")
+  --     require("cmp").setup.buffer({ enabled = false })
+  --   end,
+  -- })
 
   -- MY_PLUGINS:
   use("declancm/cinnamon-scroll")
