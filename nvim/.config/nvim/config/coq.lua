@@ -8,22 +8,30 @@ vim.g.coq_settings = {
 
 local lsp = require("lspconfig")
 
-lsp.bashls.setup({}) -- npm i -g bash-language-server
+-- Installing the Language Servers
 
-lsp.clangd.setup({}) -- sudo apt-get install clangd-12
--- TO USE clangd FOR A C++ PROJECT, ADD THIS TO CMakeLists.txt:
--- set(CMAKE_EXPORT_COMPILE_COMMANDS ON CACHE INTERNAL "")
-
-lsp.cmake.setup({}) -- pip3 install cmake-language-server
+-- bashls:        npm i -g bash-language-server
+-- clangd:        sudo apt-get install clangd-12
+-- cmake:         pip3 install cmake-language-server
+-- powershell_es: https://github.com/PowerShell/PowerShellEditorServices/releases
+-- pyright:       pip3 install pyright
+-- vimls:         npm install -g vim-language-server
 
 vim.cmd('let g:powershell_es_path = expand("$HOME/lsp/PowerShellEditorServices")')
+
+lsp.bashls.setup({})
+lsp.clangd.setup({})
+lsp.cmake.setup({})
 lsp.powershell_es.setup({
   bundle_path = vim.g.powershell_es_path,
-}) -- https://github.com/PowerShell/PowerShellEditorServices/releases
+})
+lsp.pyright.setup({})
+lsp.vimls.setup({})
 
-lsp.pyright.setup({}) -- pip3 install pyright
+-- Notes
 
-lsp.vimls.setup({}) -- npm install -g vim-language-server
+-- clangd:       To use clangd for a cpp project, add this to the CMakeLists.txt:
+--               set(CMAKE_EXPORT_COMPILE_COMMANDS ON CACHE INTERNAL "")
 
 -- LSP_KEYMAPS:
 local opts = { noremap = true, silent = true }

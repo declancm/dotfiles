@@ -5,6 +5,8 @@ require("null-ls").setup({
     -- pip3 install black
     -- require("null-ls").builtins.formatting.clang_format,
     -- sudo apt install clang-format
+    -- require("null-ls").builtins.formatting.cmake_format,
+    -- pip3 install cmakelang
     require("null-ls").builtins.formatting.prettier,
     -- npm install --save-dev --save-exact prettier
     require("null-ls").builtins.formatting.stylua,
