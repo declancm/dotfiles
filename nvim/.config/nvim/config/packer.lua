@@ -20,12 +20,7 @@ return require("packer").startup(function()
   use("kyazdani42/nvim-web-devicons")
 
   -- LSP:
-  -- use({
-  --   "neovim/nvim-lspconfig",
-  --   config = function()
-  --     vim.cmd("source $HOME/.config/nvim/config/lspconfig.lua")
-  --   end,
-  -- })
+  use("jose-elias-alvarez/null-ls.nvim")
   use("tami5/lspsaga.nvim")
   use("folke/lsp-colors.nvim")
 
@@ -80,6 +75,7 @@ return require("packer").startup(function()
     "nvim-telescope/telescope.nvim",
     requires = {
       { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
+      "jvgrootveld/telescope-zoxide",
     },
   })
 
@@ -112,7 +108,7 @@ return require("packer").startup(function()
   use("ThePrimeagen/refactoring.nvim")
   use("p00f/nvim-ts-rainbow")
 
-  -- DESIGN:
+  -- VISUALS:
   use({
     "navarasu/onedark.nvim",
     config = function()
@@ -146,8 +142,6 @@ return require("packer").startup(function()
   -- DEBUGGING:
   use("folke/trouble.nvim")
   -- use "mfussenegger/nvim-dap"
-
-  -- DEV:
   use({
     "iamcco/markdown-preview.nvim",
     run = "cd app && yarn install",
@@ -160,9 +154,6 @@ return require("packer").startup(function()
     requires = { "tpope/vim-rhubarb", "junegunn/gv.vim" },
   })
   use("f-person/git-blame.nvim")
-
-  -- FORMAT:
-  use("jose-elias-alvarez/null-ls.nvim")
 
   -- MOVEMENT:
   use("machakann/vim-sandwich")

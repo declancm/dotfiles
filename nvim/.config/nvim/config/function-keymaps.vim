@@ -58,6 +58,7 @@ nnoremap <silent> <M-p> <Cmd>call <SID>GlobalPaste("p")<CR>a
 nnoremap <silent> <M-P> <Cmd>call <SID>GlobalPaste("P")<CR>a
 inoremap <silent> <M-p> <Esc><Cmd>call <SID>GlobalPaste("p")<CR>a
 inoremap <silent> <M-P> <Esc><Cmd>call <SID>GlobalPaste("P")<CR>a
+nnoremap <silent> op o<Esc><Cmd>call <SID>GlobalPaste("p")<CR>
 
 function! s:GlobalPaste(pasteMode)
     if getreg('*') != ""

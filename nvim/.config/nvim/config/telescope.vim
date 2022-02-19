@@ -8,3 +8,6 @@ nnoremap <leader>fh <cmd>Telescope help_tags<CR>
 " nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<CR>
 " nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<CR>
 " nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<CR>
+
+" Telescope Zoxide
+nnoremap <leader>z <cmd>Telescope zoxide list<CR>

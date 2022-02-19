@@ -5,24 +5,25 @@ vim.g.coq_settings = {
 }
 
 -- LSP_CONFIG:
+
 local lsp = require("lspconfig")
 
-lsp.bashls.setup({})
+lsp.bashls.setup({}) -- npm i -g bash-language-server
 
-lsp.clangd.setup({})
+lsp.clangd.setup({}) -- sudo apt-get install clangd-12
 -- TO USE clangd FOR A C++ PROJECT, ADD THIS TO CMakeLists.txt:
 -- set(CMAKE_EXPORT_COMPILE_COMMANDS ON CACHE INTERNAL "")
 
 lsp.cmake.setup({}) -- pip3 install cmake-language-server
 
-require("lspconfig").powershell_es.setup({
-  bundle_path = "~/lsp/PowerShell/PowerShellEditorServices",
-  shell = "powershell.exe",
-})
+vim.cmd('let g:powershell_es_path = expand("$HOME/lsp/PowerShellEditorServices")')
+lsp.powershell_es.setup({
+  bundle_path = vim.g.powershell_es_path,
+}) -- https://github.com/PowerShell/PowerShellEditorServices/releases
 
-lsp.pyright.setup({})
+lsp.pyright.setup({}) -- pip3 install pyright
 
-lsp.vimls.setup({})
+lsp.vimls.setup({}) -- npm install -g vim-language-server
 
 -- LSP_KEYMAPS:
 local opts = { noremap = true, silent = true }
