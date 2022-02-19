@@ -11,33 +11,35 @@
 
 " CINNAMON-SCROLL:
 
-" let g:cinnamon_extras = 1
-
 let g:cinnamon_no_defaults = 1
 
-" " Paragraph movements
+" previous/next cursor position
+nnoremap <silent> <C-o> <Cmd>Cinnamon <C-o> 0 0 3 <CR>
+nnoremap <silent> <C-i> <Cmd>Cinnamon <C-i> 0 0 3 <CR>
+
+" paragraph movements
 nnoremap <silent> { <Cmd>Cinnamon { 0 <CR>
 nnoremap <silent> } <Cmd>Cinnamon } 0 <CR>
-xnoremap <silent> { <Cmd>call VisualParagraph('up')<CR>
-xnoremap <silent> } <Cmd>call VisualParagraph('down')<CR>
+xnoremap <silent> { <Cmd>call VParagraphUp()<CR>
+xnoremap <silent> } <Cmd>call VParagraphDown()<CR>
 
-function! VisualParagraph(direction)
-    if a:direction == 'up'
-        silent exec "normal! k" | silent execute "Cinnamon { 0"
-        if line(".") != 1 || len(getline(".")) == 0 | silent exec "normal! j" | endif
-    else
-        silent exec "normal! j" | silent execute "Cinnamon } 0"
-        if line(".") != line("$") || len(getline(".")) == 0 | silent exec "normal! k" | endif
-    end
+function! VParagraphUp()
+    silent exec "norm! k" | silent exec "Cinnamon { 0"
+    if line(".") != 1 || len(getline(".")) == 0 | silent exec "norm! j" | endif
 endfunction
 
-" Half-window movements
+function! VParagraphDown()
+    silent exec "norm! j" | silent exec "Cinnamon } 0"
+    if line(".") != line("$") || len(getline(".")) == 0 | silent exec "norm! k" | endif
+endfunction
+
+" half-window movements
 nnoremap <silent> <C-u> <Cmd>Cinnamon <C-u> <CR>
 nnoremap <silent> <C-d> <Cmd>Cinnamon <C-d> <CR>
 inoremap <silent> <C-u> <Cmd>Cinnamon <C-u> <CR>
 inoremap <silent> <C-d> <Cmd>Cinnamon <C-d> <CR>
 
-" Page movements
+" page movements
 nnoremap <silent> <C-b> <Cmd>Cinnamon <C-b> <CR>
 nnoremap <silent> <C-f> <Cmd>Cinnamon <C-f> <CR>
 inoremap <silent> <C-b> <Cmd>Cinnamon <C-b> <CR>
@@ -47,8 +49,10 @@ nnoremap <silent> <PageDown> <Cmd>Cinnamon <C-f> <CR>
 inoremap <silent> <PageUp> <Cmd>Cinnamon <C-b> <CR>
 inoremap <silent> <PageDown> <Cmd>Cinnamon <C-f> <CR>
 
-" start and end of file movements
-nnoremap <silent> gg <Cmd>Cinnamon gg 0 0 2 <CR>
-nnoremap <silent> G <Cmd>Cinnamon G 0 0 2 <CR>
-xnoremap <silent> gg <Cmd>Cinnamon gg 0 0 2 <CR>
-xnoremap <silent> G <Cmd>Cinnamon G 0 0 2 <CR>
+let g:cinnamon_extras = 1
+
+" " start and end of file movements
+" nnoremap <silent> gg <Cmd>Cinnamon gg 0 0 3 <CR>
+" nnoremap <silent> G <Cmd>Cinnamon G 0 0 3 <CR>
+" xnoremap <silent> gg <Cmd>Cinnamon gg 0 0 3 <CR>
+" xnoremap <silent> G <Cmd>Cinnamon G 0 0 3 <CR>
