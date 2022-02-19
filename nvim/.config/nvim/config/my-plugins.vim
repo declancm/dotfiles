@@ -13,10 +13,6 @@
 
 let g:cinnamon_no_defaults = 1
 
-" previous/next cursor position
-nnoremap <silent> <C-o> <Cmd>Cinnamon <C-o> 0 0 3 <CR>
-nnoremap <silent> <C-i> <Cmd>Cinnamon <C-i> 0 0 3 <CR>
-
 " paragraph movements
 nnoremap <silent> { <Cmd>Cinnamon { 0 <CR>
 nnoremap <silent> } <Cmd>Cinnamon } 0 <CR>
@@ -49,10 +45,14 @@ nnoremap <silent> <PageDown> <Cmd>Cinnamon <C-f> <CR>
 inoremap <silent> <PageUp> <Cmd>Cinnamon <C-b> <CR>
 inoremap <silent> <PageDown> <Cmd>Cinnamon <C-f> <CR>
 
-let g:cinnamon_extras = 1
+" let g:cinnamon_extras = 1
 
-" " start and end of file movements
-" nnoremap <silent> gg <Cmd>Cinnamon gg 0 0 3 <CR>
-" nnoremap <silent> G <Cmd>Cinnamon G 0 0 3 <CR>
-" xnoremap <silent> gg <Cmd>Cinnamon gg 0 0 3 <CR>
-" xnoremap <silent> G <Cmd>Cinnamon G 0 0 3 <CR>
+" previous/next cursor position
+nnoremap <silent> <C-o> <Cmd>Cinnamon <C-o> 0 0 3 <CR>
+nnoremap <silent> <C-i> <Cmd>Cinnamon <C-i> 0 0 3 <CR>
+
+" start and end of file movements
+nnoremap <silent> gg <Cmd>Cinnamon gg 0 0 3 <CR>
+nnoremap <silent> G <Cmd>Cinnamon G 0 0 3 <CR>
+xnoremap <silent> gg <Cmd>Cinnamon gg 0 0 3 <CR>
+xnoremap <silent> G <Cmd>Cinnamon G 0 0 3 <CR>
