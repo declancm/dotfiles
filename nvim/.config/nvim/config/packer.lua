@@ -68,7 +68,7 @@ return require("packer").startup(function()
   -- MY_PLUGINS:
   use({
     "declancm/cinnamon-scroll",
-    -- requires = "tpope/vim-repeat",
+    requires = "tpope/vim-repeat",
   })
   use("declancm/vim2vscode")
   use("declancm/git-scripts-vim")
@@ -155,7 +155,7 @@ return require("packer").startup(function()
   use("airblade/vim-gitgutter")
   use({
     "tpope/vim-fugitive",
-    requires = { "tpope/vim-rhubarb", "junegunn/gv.vim" },
+    requires = { "tpope/vim-rhubarb", "junegunn/gv.vim", "tpope/git-bump" },
   })
   use("f-person/git-blame.nvim")
 

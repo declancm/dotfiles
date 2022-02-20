@@ -1,19 +1,9 @@
 require("telescope").setup({
   defaults = {
-    -- Default configuration for telescope goes here:
-    -- config_key = value,
     mappings = {
       i = {
-        -- map actions.which_key to <C-h> (default: <C-/>)
-        -- actions.which_key shows the mappings for your picker,
-        -- e.g. git_{create, delete, ...}_branch for the git_branches picker
-        -- ["<C-h>"] = "which_key"
-
         -- so <C-BS> works in telescope
         ["<C-H>"] = function()
-          vim.cmd([[normal! cB]])
-        end,
-        ["<M-BS>"] = function()
           vim.cmd([[normal! cB]])
         end,
       },
@@ -25,26 +15,12 @@ require("telescope").setup({
       -- hidden = true,
       file_ignore_patterns = { "^.git/" },
     },
-    -- Default configuration for builtin pickers goes here:
-    -- picker_name = {
-    --   picker_config_key = value,
-    --   ...
-    -- }
-    -- Now the picker_config_key will be applied every time you call this
-    -- builtin picker
   },
   extensions = {
-    -- Your extension configuration goes here:
-    -- extension_name = {
-    --   extension_config_key = value,
-    -- }
-    -- please take a look at the readme of the extension you want to configure
-
-    --fzy_native = {
-    --        override_generic_sorter = false,
-    --        override_file_sorter = true,
-    --    }
-
+    -- fzy_native = {
+    --   override_generic_sorter = false,
+    --   override_file_sorter = true,
+    -- },
     fzf = {
       fuzzy = true, -- false will only do exact matching
       override_generic_sorter = false, -- override the generic sorter
@@ -57,3 +33,15 @@ require("telescope").setup({
 --require('telescope').load_extension('fzy_native')
 require("telescope").load_extension("fzf")
 require("telescope").load_extension("zoxide")
+
+-- KEYMAPS:
+local opts = { noremap = true, silent = true }
+
+-- Telescope keymaps.
+vim.api.nvim_set_keymap("n", "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<CR>", opts)
+vim.api.nvim_set_keymap("n", "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<CR>", opts)
+vim.api.nvim_set_keymap("n", "<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<CR>", opts)
+vim.api.nvim_set_keymap("n", "<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<CR>", opts)
+
+-- Telescope Zoxide keymaps.
+vim.api.nvim_set_keymap("n", "<leader>z", "<cmd>Telescope zoxide list<CR>", opts)

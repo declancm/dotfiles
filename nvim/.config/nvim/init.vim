@@ -15,16 +15,12 @@ source $HOME/.config/nvim/config/packer.lua
 source $HOME/.config/nvim/config/autocmd.vim
 
 " PLUGIN_CONFIGS:
-" source $HOME/.config/nvim/config/lspconfig.lua
-source $HOME/.config/nvim/config/coq.lua
+source $HOME/.config/nvim/config/lspconfig.lua
 source $HOME/.config/nvim/config/gitblame.vim
 source $HOME/.config/nvim/config/treesitter.lua
 source $HOME/.config/nvim/config/telescope.lua
-source $HOME/.config/nvim/config/telescope.vim
 source $HOME/.config/nvim/config/refactoring.lua
 source $HOME/.config/nvim/config/lspsaga.lua
-" source $HOME/.config/nvim/config/cmp.lua
-" source $HOME/.config/nvim/config/coc.vim
 source $HOME/.config/nvim/config/trouble.lua
 source $HOME/.config/nvim/config/lualine.lua
 source $HOME/.config/nvim/config/kommentary.lua
@@ -39,7 +35,7 @@ source $HOME/.config/nvim/config/my-plugins.vim
 " POST_PLUGIN_CONFIGS:
 source $HOME/.config/nvim/config/keymaps.vim
 source $HOME/.config/nvim/config/function-keymaps.vim
-source $HOME/.config/nvim/config/plugin-keymaps.vim
+source $HOME/.config/nvim/config/plugin-keymaps.lua
 
 " OPTIONS:
 set iskeyword-=_ " add underscore as word delimiter
