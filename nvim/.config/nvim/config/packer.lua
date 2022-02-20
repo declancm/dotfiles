@@ -157,7 +157,6 @@ return require("packer").startup(function()
     "tpope/vim-fugitive",
     requires = { "tpope/vim-rhubarb", "junegunn/gv.vim", "tpope/git-bump" },
   })
-  use("f-person/git-blame.nvim")
 
   -- MOVEMENT:
   use("machakann/vim-sandwich")

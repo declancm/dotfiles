@@ -16,7 +16,6 @@ source $HOME/.config/nvim/config/autocmd.vim
 
 " PLUGIN_CONFIGS:
 source $HOME/.config/nvim/config/lspconfig.lua
-source $HOME/.config/nvim/config/gitblame.vim
 source $HOME/.config/nvim/config/treesitter.lua
 source $HOME/.config/nvim/config/telescope.lua
 source $HOME/.config/nvim/config/refactoring.lua
