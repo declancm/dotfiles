@@ -1,9 +1,10 @@
 vim.opt.syntax = "on"
 
 -- PRE_PLUGIN_COMMANDS:
-vim.g.mapleader = "<BS>"
+-- vim.g.mapleader = "<BS>"
+vim.cmd([[let mapleader = "\<BS>"]])
 vim.opt.background = "dark"
-vim.opt.completeopt = "menuone,noinsert,noselect"
+vim.opt.completeopt = { "menuone", "noinsert", "noselect" }
 
 vim.g.python3_host_prog = "/bin/python3"
 vim.g.python_host_prog = "/bin/python2"
@@ -35,7 +36,6 @@ vim.opt.iskeyword = vim.opt.iskeyword - "_"
 vim.opt.backspace = "indent,eol,start,nostop"
 vim.opt.relativenumber = true
 vim.opt.nu = true
--- vim.opt.nohlsearch = true
 vim.opt.hlsearch = false
 vim.opt.hidden = true
 vim.opt.errorbells = false
@@ -46,12 +46,12 @@ vim.opt.wrap = false
 vim.opt.smartcase = true
 vim.opt.swapfile = false
 vim.opt.backup = false
--- vim.opt.undodir = "$HOME/.vim/undodir"
 vim.opt.undodir = vim.fn.stdpath("config") .. "/undodir"
 vim.opt.undofile = true
 vim.opt.incsearch = true
 vim.opt.termguicolors = true
 vim.opt.scrolloff = 8
+-- vim.opt.scrolloff = 999
 vim.opt.showmode = true
 vim.opt.signcolumn = "yes"
 vim.opt.textwidth = 0
@@ -66,14 +66,18 @@ vim.opt.pastetoggle = "<F9>"
 vim.opt.timeoutlen = 500
 vim.opt.mouse = "nvi"
 
--- " for the :find command
--- set path+=**
--- set wildmode=longest,list,full
--- set wildmenu
--- set wildignore+=*.pyc
--- set wildignore+=*_build/*
--- set wildignore+=**/coverage/*
--- set wildignore+=**/node_modules/*
--- set wildignore+=**/android/*
--- set wildignore+=**/ios/*
--- set wildignore+=**/.git/*
+-- for the :find command
+vim.opt.path = vim.opt.path + "**"
+vim.opt.wildmode = { "longest", "list", "full" }
+vim.opt.wildmenu = true
+vim.opt.wildignore = {
+  "*.pyc",
+  "*_build/*",
+  "**/coverage/*",
+  "**/node_modules/*",
+  "**/android/*",
+  "**/ios/*",
+  "**/.git/*",
+}
+-- vim.opt.wildignore = vim.opt.wildignore
+--   + { "*.pyc", "*_build/*", "**/coverage/*", "**/node_modules/*", "**/android/*", "**/ios/*", "**/.git/*" }
