@@ -5,14 +5,13 @@ local opts = { noremap = true, silent = true }
 vim.api.nvim_set_keymap("n", "<leader>n", "<Cmd>call NotesToggle()<CR>", opts)
 
 vim.cmd([[
-let g:notes_full_path = expand("~/notes/notes.txt")
-let g:notes_directory = expand("~/notes")
+let $NOTES_FULL_PATH = expand("~/notes/notes.txt")
+let $NOTES_DIR = expand("~/notes")
 
 function! NotesToggle()
     let l:currentDir = getcwd(0)
-    " if l:currentDir ==# $HOME . '/notes'
-    if l:currentDir ==# g:notes_directory
-        if &modified || b:notes_modified == 1
+    if l:currentDir ==# $NOTES_DIR
+        if &modified || exists("b:notes_modified") && b:notes_modified == 1
             " commit and push when file has been modified
             silent execute("w")
             echom "Your changes to " . bufname("%") . " are being committed."
@@ -26,19 +25,17 @@ function! NotesToggle()
             silent execute("w | e# | lcd -")
         endif
     else
-        silent execute("lcd " . g:notes_directory)
+        silent execute("lcd $NOTES_DIR")
         silent execute("!git pull -q $(git remote) $(git rev-parse --abbrev-ref HEAD)")
         if v:shell_error
           echom "Error: The git pull failed."
         endif
-        silent execute("edit " . g:notes_full_path)
+        silent execute("edit $NOTES_FULL_PATH")
     endif
 endfunction
 
-" autocmd BufEnter ~/notes/notes.txt let b:notes_modified = 0
-" autocmd BufWritePre ~/notes/notes.txt if &modified | let b:notes_modified = 1 | endif
-exec "autocmd BufEnter " . g:notes_full_path . " let b:notes_modified = 0"
-exec "autocmd BufWritePre " . g:notes_full_path . " if &modified | let b:notes_modified = 1 | endif"
+autocmd BufEnter $NOTES_FULL_PATH let b:notes_modified = 0
+autocmd BufWritePre $NOTES_FULL_PATH if &modified | let b:notes_modified = 1 | endif
 ]])
 
 -- Delete start of word (works with wordmotion).
