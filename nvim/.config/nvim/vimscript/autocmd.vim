@@ -10,7 +10,7 @@ augroup END
 
 augroup HighlightYank
     autocmd!
-    autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 200})
+    autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 150})
 augroup END
 
 autocmd TextYankPost * call system('echo '.shellescape(join(v:event.regcontents, "\<CR>")).' |  clip.exe')

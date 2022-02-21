@@ -15,13 +15,13 @@ require("configs.packer")
 
 -- PLUGIN_CONFIGS:
 require("configs.lsp")
-require("configs.treesitter")
-require("configs.telescope")
-require("configs.refactoring")
 require("configs.trouble")
-require("configs.kommentary")
-require("configs.toggleterm")
 require("configs.null-ls")
+require("configs.treesitter")
+require("configs.refactoring")
+require("configs.telescope")
+require("configs.toggleterm")
+require("configs.kommentary")
 require("configs.design")
 require("configs.my-plugins")
 

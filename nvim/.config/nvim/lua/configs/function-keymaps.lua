@@ -96,14 +96,14 @@ endfunction
 ]])
 
 -- Window movement.
-vim.api.nvim_set_keymap("n", "<leader>h", '<Cmd>call WindowMovement("h")<CR>', opts)
-vim.api.nvim_set_keymap("n", "<leader>j", '<Cmd>call WindowMovement("j")<CR>', opts)
 vim.api.nvim_set_keymap("n", "<leader>k", '<Cmd>call WindowMovement("k")<CR>', opts)
+vim.api.nvim_set_keymap("n", "<leader>j", '<Cmd>call WindowMovement("j")<CR>', opts)
+vim.api.nvim_set_keymap("n", "<leader>h", '<Cmd>call WindowMovement("h")<CR>', opts)
 vim.api.nvim_set_keymap("n", "<leader>l", '<Cmd>call WindowMovement("l")<CR>', opts)
-vim.api.nvim_set_keymap("n", "<leader><Left>", '<Cmd>call WindowMovement("h")<CR>', opts)
-vim.api.nvim_set_keymap("n", "<leader><Right>", '<Cmd>call WindowMovement("j")<CR>', opts)
 vim.api.nvim_set_keymap("n", "<leader><Up>", '<Cmd>call WindowMovement("k")<CR>', opts)
-vim.api.nvim_set_keymap("n", "<leader><Down>", '<Cmd>call WindowMovement("l")<CR>', opts)
+vim.api.nvim_set_keymap("n", "<leader><Down>", '<Cmd>call WindowMovement("j")<CR>', opts)
+vim.api.nvim_set_keymap("n", "<leader><Left>", '<Cmd>call WindowMovement("h")<CR>', opts)
+vim.api.nvim_set_keymap("n", "<leader><Right>", '<Cmd>call WindowMovement("l")<CR>', opts)
 
 vim.cmd([[
 function WindowMovement(key)
