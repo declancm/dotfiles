@@ -29,10 +29,10 @@ inoremap . .<c-g>u
 inoremap ! !<c-g>u
 inoremap ? ?<c-g>u
 " moving text
-vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
-inoremap <C-j> <esc>:m .+1<CR>==a
+vnoremap J :m '>+1<CR>gv=gv
 inoremap <C-k> <esc>:m .-2<CR>==a
+inoremap <C-j> <esc>:m .+1<CR>==a
 nnoremap <leader>k :m .-2<CR>==
 nnoremap <leader>j :m .+1CR>==
 vnoremap <S-up> :m '<-2<CR>gv=gv

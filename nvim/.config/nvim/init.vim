@@ -19,20 +19,18 @@ source $HOME/.config/nvim/config/lspconfig.lua
 source $HOME/.config/nvim/config/treesitter.lua
 source $HOME/.config/nvim/config/telescope.lua
 source $HOME/.config/nvim/config/refactoring.lua
-source $HOME/.config/nvim/config/lspsaga.lua
 source $HOME/.config/nvim/config/trouble.lua
 source $HOME/.config/nvim/config/lualine.lua
 source $HOME/.config/nvim/config/kommentary.lua
 source $HOME/.config/nvim/config/toggleterm.lua
 source $HOME/.config/nvim/config/null-ls.lua
-source $HOME/.config/nvim/config/design.vim
-source $HOME/.config/nvim/config/lspcolors.lua
+source $HOME/.config/nvim/config/design.lua
 
 " source $HOME/.config/nvim/config/scroll.vim
 source $HOME/.config/nvim/config/my-plugins.vim
 
 " POST_PLUGIN_CONFIGS:
-source $HOME/.config/nvim/config/keymaps.vim
+source $HOME/.config/nvim/config/keymaps.lua
 source $HOME/.config/nvim/config/function-keymaps.vim
 source $HOME/.config/nvim/config/plugin-keymaps.lua
 

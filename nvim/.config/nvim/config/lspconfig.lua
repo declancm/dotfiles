@@ -42,3 +42,14 @@ vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts
 vim.api.nvim_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
 vim.api.nvim_set_keymap("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 vim.api.nvim_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+
+-- LSP_SAGA_CONFIG:
+local saga = require("lspsaga")
+
+saga.init_lsp_saga({
+  error_sign = "▶",
+  warn_sign = "▶",
+  hint_sign = "▶",
+  infor_sign = "▶",
+  border_style = "round",
+})

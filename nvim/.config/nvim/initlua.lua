@@ -12,27 +12,23 @@ vim.g.python_host_prog = "/bin/python2"
 require("config.packer")
 
 -- PRE_PLUGIN_CONFIGS:
-vim.cmd("source $HOME/.config/nvim/config/autocmd.vim")
+vim.cmd([[source $HOME/.config/nvim/config/autocmd.vim]])
 
 require("config.lspconfig")
-vim.cmd("source $HOME/.config/nvim/config/gitblame.vim")
 require("config.treesitter")
 require("config.telescope")
-vim.cmd("source $HOME/.config/nvim/config/telescope.vim")
 require("config.refactoring")
-require("config.lspsaga")
 require("config.trouble")
 require("config.lualine")
 require("config.kommentary")
 require("config.toggleterm")
 require("config.null-ls")
-vim.cmd("source $HOME/.config/nvim/config/design.vim")
-require("config.lspcolors")
+require("config.design")
 
 -- POST_PLUGIN_CONFIGS:
-vim.cmd("source $HOME/.config/nvim/config/keymaps.vim")
-vim.cmd("source $HOME/.config/nvim/config/function-keymaps.vim")
-vim.cmd("source $HOME/.config/nvim/config/plugin-keymaps.vim")
+require("config.keymaps")
+vim.cmd([[source $HOME/.config/nvim/config/function-keymaps.vim]])
+require("config.plugin-keymaps")
 
 -- OPTIONS:
 vim.opt.iskeyword = vim.opt.iskeyword - "_"
