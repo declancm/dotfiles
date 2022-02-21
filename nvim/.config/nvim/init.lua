@@ -1,17 +1,16 @@
 vim.opt.syntax = "on"
 
--- PRE_PLUGIN_COMMANDS:
-vim.cmd([[let mapleader = "\<BS>"]])
-vim.opt.background = "dark"
-vim.opt.completeopt = { "menuone", "noinsert", "noselect" }
-
+-- Python.
 vim.g.python3_host_prog = "/bin/python3"
 vim.g.python_host_prog = "/bin/python2"
+
+-- Mapping the <leader> key for all keymaps.
+vim.cmd([[let mapleader = "\<BS>"]])
 
 -- Autocommands.
 vim.cmd([[source $HOME/.config/nvim/vimscript/autocmd.vim]])
 
--- PACKER:
+-- Packer.
 require("configs.packer")
 
 -- PLUGIN_CONFIGS:
@@ -67,7 +66,7 @@ vim.opt.pastetoggle = "<F9>"
 vim.opt.timeoutlen = 500
 vim.opt.mouse = "nvi"
 
--- for the :find command
+-- The ':find' command.
 vim.opt.path = vim.opt.path + "**"
 vim.opt.wildmode = { "longest", "list", "full" }
 vim.opt.wildmenu = true

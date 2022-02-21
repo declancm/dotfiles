@@ -1,3 +1,4 @@
+vim.opt.background = "dark"
 vim.opt.colorcolumn = "80"
 
 -- ONEDARK:
