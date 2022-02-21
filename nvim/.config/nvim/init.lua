@@ -1,7 +1,6 @@
 vim.opt.syntax = "on"
 
 -- PRE_PLUGIN_COMMANDS:
--- vim.g.mapleader = "<BS>"
 vim.cmd([[let mapleader = "\<BS>"]])
 vim.opt.background = "dark"
 vim.opt.completeopt = { "menuone", "noinsert", "noselect" }
@@ -9,29 +8,28 @@ vim.opt.completeopt = { "menuone", "noinsert", "noselect" }
 vim.g.python3_host_prog = "/bin/python3"
 vim.g.python_host_prog = "/bin/python2"
 
--- PACKER:
-require("config.packer")
-
--- PRE_PLUGIN_CONFIGS:
+-- Autocommands.
 vim.cmd([[source $HOME/.config/nvim/vimscript/autocmd.vim]])
 
-require("config.lspconfig")
-require("config.treesitter")
-require("config.telescope")
-require("config.refactoring")
-require("config.trouble")
-require("config.lualine")
-require("config.kommentary")
-require("config.toggleterm")
-require("config.null-ls")
-require("config.design")
+-- PACKER:
+require("configs.packer")
 
-vim.cmd([[source $HOME/.config/nvim/vimscript/my-plugins.vim]])
+-- PLUGIN_CONFIGS:
+require("configs.lsp")
+require("configs.treesitter")
+require("configs.telescope")
+require("configs.refactoring")
+require("configs.trouble")
+require("configs.kommentary")
+require("configs.toggleterm")
+require("configs.null-ls")
+require("configs.design")
+require("configs.my-plugins")
 
--- POST_PLUGIN_CONFIGS:
-require("config.keymaps")
-vim.cmd([[source $HOME/.config/nvim/vimscript/function-keymaps.vim]])
-require("config.plugin-keymaps")
+-- KEYMAPS:
+require("configs.keymaps")
+require("configs.function-keymaps")
+require("configs.plugin-keymaps")
 
 -- OPTIONS:
 vim.opt.iskeyword = vim.opt.iskeyword - "_"
@@ -82,5 +80,3 @@ vim.opt.wildignore = {
   "**/ios/*",
   "**/.git/*",
 }
--- vim.opt.wildignore = vim.opt.wildignore
---   + { "*.pyc", "*_build/*", "**/coverage/*", "**/node_modules/*", "**/android/*", "**/ios/*", "**/.git/*" }

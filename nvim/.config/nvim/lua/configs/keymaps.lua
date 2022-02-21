@@ -53,7 +53,7 @@ vim.api.nvim_set_keymap("v", "<C-Down>", ":m '>+1<CR>gv=gv", opts)
 vim.api.nvim_set_keymap("i", "<C-Up>", "<Esc>:m .-2<CR>==a", opts)
 vim.api.nvim_set_keymap("i", "<C-Down>", "<Esc>:m .+1<CR>==a", opts)
 vim.api.nvim_set_keymap("n", "<C-Up>", ":m .-2<CR>==", opts)
-vim.api.nvim_set_keymap("n", "<C-Down>", ":m .-2<CR>==", opts)
+vim.api.nvim_set_keymap("n", "<C-Down>", ":m .+1<CR>==", opts)
 
 -- replace a word then press '.' to change next occurence
 vim.api.nvim_set_keymap("n", "cn", '*``"_cgn', { noremap = true })
