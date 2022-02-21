@@ -4,6 +4,10 @@ local opts = { noremap = true, silent = true }
 
 -- GIT-SCRIPTS-VIM:
 
+vim.g.gitscripts_no_defaults = 1
+
+vim.api.nvim_set_keymap("n", "<leader>gc", "<Cmd>lua AsyncCommit(vim.fn.getcwd())<CR>", opts)
+
 -- CINNAMON-SCROLL:
 
 vim.g.cinnamon_repeat = 0
