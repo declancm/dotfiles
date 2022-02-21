@@ -89,5 +89,5 @@ vim.api.nvim_set_keymap("v", "<leader>d", '"*ygv"_d', { noremap = true })
 vim.api.nvim_set_keymap("c", "<C-H>", "<C-w>", { noremap = true })
 
 -- Remap arrow keys to ignore completion window.
-vim.api.nvim_set_keymap("i", "<Up>", '<Esc>:silent exec "normal! " .v:count1 . "k"<CR>a', opts)
-vim.api.nvim_set_keymap("i", "<Down>", '<Esc>:silent exec "normal! " . v:count1 . "j"<CR>a', opts)
+vim.api.nvim_set_keymap("i", "<Up>", "<Esc>:normal! k<CR>a", opts)
+vim.api.nvim_set_keymap("i", "<Down>", "<Esc>:normal! j<CR>a", opts)
