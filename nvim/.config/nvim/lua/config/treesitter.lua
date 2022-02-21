@@ -4,7 +4,7 @@ require("nvim-treesitter.configs").setup({
     enable = true,
     disable = {},
     -- use treesitter with 'syntax on'
-    additional_vim_regex_highlighting = true,
+    -- additional_vim_regex_highlighting = true,
   },
   rainbow = {
     enable = true,

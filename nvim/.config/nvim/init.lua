@@ -13,7 +13,7 @@ vim.g.python_host_prog = "/bin/python2"
 require("config.packer")
 
 -- PRE_PLUGIN_CONFIGS:
-vim.cmd([[source $HOME/.config/nvim/config/autocmd.vim]])
+vim.cmd([[source $HOME/.config/nvim/vimscript/autocmd.vim]])
 
 require("config.lspconfig")
 require("config.treesitter")
@@ -26,14 +26,16 @@ require("config.toggleterm")
 require("config.null-ls")
 require("config.design")
 
+vim.cmd([[source $HOME/.config/nvim/vimscript/my-plugins.vim]])
+
 -- POST_PLUGIN_CONFIGS:
 require("config.keymaps")
-vim.cmd([[source $HOME/.config/nvim/config/function-keymaps.vim]])
+vim.cmd([[source $HOME/.config/nvim/vimscript/function-keymaps.vim]])
 require("config.plugin-keymaps")
 
 -- OPTIONS:
 vim.opt.iskeyword = vim.opt.iskeyword - "_"
-vim.opt.backspace = "indent,eol,start,nostop"
+vim.opt.backspace = { "indent", "eol", "start", "nostop" }
 vim.opt.relativenumber = true
 vim.opt.nu = true
 vim.opt.hlsearch = false
@@ -41,7 +43,8 @@ vim.opt.hidden = true
 vim.opt.errorbells = false
 vim.opt.expandtab = true
 vim.opt.autoindent = true
-vim.opt.smartindent = true -- or vim.opt.cindent = true
+vim.opt.smartindent = true
+-- vim.opt.cindent = true
 vim.opt.wrap = false
 vim.opt.smartcase = true
 vim.opt.swapfile = false

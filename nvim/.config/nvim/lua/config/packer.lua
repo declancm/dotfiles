@@ -31,14 +31,6 @@ return require("packer").startup(function()
     requires = { "ms-jpq/coq.artifacts", branch = "artifacts" },
   })
 
-  -- MY_PLUGINS:
-  use({
-    "declancm/cinnamon-scroll",
-    requires = "tpope/vim-repeat",
-  })
-  use("declancm/vim2vscode")
-  use("declancm/git-scripts-vim")
-
   -- TELESCOPE:
   use({
     "nvim-telescope/telescope.nvim",
@@ -60,14 +52,6 @@ return require("packer").startup(function()
         ["options.close_on_open"] = true,
       }
       vim.api.nvim_set_var("chadtree_settings", chadtree_settings)
-    end,
-  })
-
-  -- COMMENTS:
-  use({
-    "b3nj5m1n/kommentary",
-    config = function()
-      vim.g.kommentary_create_default_mappings = false
     end,
   })
 
@@ -135,4 +119,18 @@ return require("packer").startup(function()
   use("szw/vim-maximizer")
   use("tpope/vim-obsession")
   use("akinsho/toggleterm.nvim")
+  use({
+    "b3nj5m1n/kommentary",
+    config = function()
+      vim.g.kommentary_create_default_mappings = false
+    end,
+  })
+
+  -- MY_PLUGINS:
+  use({
+    "declancm/cinnamon-scroll",
+    requires = "tpope/vim-repeat",
+  })
+  use("declancm/vim2vscode")
+  use("declancm/git-scripts-vim")
 end)
