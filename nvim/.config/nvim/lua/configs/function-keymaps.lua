@@ -1,6 +1,22 @@
 local opts = { noremap = true, silent = true }
 
--- Open notes (todo.txt) from anywhere and return. Automatically git pull when
+-- Asynchronous git commit. Requires plenary.
+function AsyncCommit(directory)
+  local job = require("plenary.job")
+  job
+    :new({
+      command = os.getenv("GITSCRIPTS_LOCATION") .. "/commit-silent.sh",
+      cwd = directory,
+      on_exit = function(j, exit_code)
+        if exit_code ~= 0 then
+          print("Error: The git commit failed.")
+        end
+      end,
+    })
+    :start()
+end
+
+-- Open notes (notes.txt) from anywhere and return. Automatically git pull when
 -- opening and then git commit and push when closing.
 vim.api.nvim_set_keymap("n", "<leader>n", "<Cmd>call NotesToggle()<CR>", opts)
 
@@ -15,10 +31,11 @@ function! NotesToggle()
             " commit and push when file has been modified
             silent execute("w")
             echom "Your changes to " . bufname("%") . " are being committed."
-            silent execute("!source ~/git-scripts/commit-silent.sh")
-            if v:shell_error
-              echom "Error: The git commit failed."
-            endif
+            lua AsyncCommit(os.getenv("NOTES_DIR"))
+            " silent execute("!source ~/git-scripts/commit-silent.sh")
+            " if v:shell_error
+            "   echom "Error: The git commit failed."
+            " endif
             silent execute("e# | lcd -")
         else
             " only return when nothing has been modified
