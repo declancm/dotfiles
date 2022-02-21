@@ -11,7 +11,11 @@ function! NotesToggle()
         if &modified || b:notes_modified == 1
             " commit and push when file has been modified
             silent execute("w")
-            execute("!source ~/git-scripts/commit-silent.sh")
+            echom "Your changes to notes.txt are being committed."
+            silent execute("!source ~/git-scripts/commit-silent.sh")
+            if v:shell_error
+              echom "Error: The git commit failed."
+            endif
             silent execute("e# | lcd -")
         else
             " only return when nothing has been modified
@@ -19,7 +23,10 @@ function! NotesToggle()
         endif
     else
         silent execute("lcd ~/notes")
-        execute("!git pull -q $(git remote) $(git rev-parse --abbrev-ref HEAD)")
+        silent execute("!git pull -q $(git remote) $(git rev-parse --abbrev-ref HEAD)")
+        if v:shell_error
+          echom "Error: The git pull failed."
+        endif
         silent execute("edit ~/notes/notes.txt")
     endif
 endfunction
