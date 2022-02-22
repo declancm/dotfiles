@@ -44,4 +44,4 @@ vim.api.nvim_set_keymap("n", "<leader>fb", "<cmd>lua require('telescope.builtin'
 vim.api.nvim_set_keymap("n", "<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<CR>", opts)
 
 -- Telescope Zoxide keymaps.
-vim.api.nvim_set_keymap("n", "<leader>z", "<cmd>Telescope zoxide list<CR>", opts)
+vim.api.nvim_set_keymap("n", "<leader>fz", "<cmd>Telescope zoxide list<CR>", opts)

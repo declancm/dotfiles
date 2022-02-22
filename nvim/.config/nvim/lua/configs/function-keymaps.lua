@@ -120,14 +120,14 @@ vim.api.nvim_set_keymap("n", "<leader><Right>", '<Cmd>call WindowMovement("l")<C
 vim.cmd([[
 function WindowMovement(key)
     let l:currentWin = winnr()
-    silent execute("wincmd " . a:key)
+    silent exec "wincmd " . a:key
     if (l:currentWin == winnr())
         if (match(a:key,'[jk]'))
             wincmd v
         else
             wincmd s
         endif
-        silent execute("wincmd ".a:key)
+        silent exec "wincmd ".a:key
     endif
 endfunction
 ]])
@@ -140,5 +140,28 @@ function! BufferDelete()
     let l:cursorPos = getcurpos()
     silent execute("wa | %bdelete | normal! \<C-^>")
     silent execute("call cursor(l:cursorPos[1], l:cursorPos[2])")
+endfunction
+]])
+
+-- Maximize current buffer.
+vim.api.nvim_set_keymap("n", "<leader>z", "<Cmd>call MaximizeWindow()<CR>", opts)
+vim.api.nvim_set_keymap("x", "<leader>z", "<Cmd>call MaximizeWindow()<CR>", opts)
+
+vim.cmd([[
+function! MaximizeWindow()
+    if (!exists("b:maxWindowStatus") || b:maxWindowStatus == 0 )
+        let b:winPositions = winrestcmd()
+        silent exec "resize"
+        silent exec "vertical resize"
+        let b:winPositionsNew = winrestcmd()
+        if b:winPositions == b:winPositionsNew
+            let b:maxWindowStatus = 0
+            return
+        endif
+        let b:maxWindowStatus = 1
+    else
+        silent exec b:winPositions
+        let b:maxWindowStatus = 0
+    endif
 endfunction
 ]])

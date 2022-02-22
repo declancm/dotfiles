@@ -8,6 +8,7 @@ local opts = { noremap = true, silent = true }
 
 -- Asynchronous git commit. Requires plenary.
 function AsyncGitCommit(directory)
+  directory = directory or vim.fn.getcwd()
   scriptsLocation = os.getenv("GITSCRIPTS_LOCATION")
   local job = require("plenary.job")
   job
@@ -25,6 +26,7 @@ end
 
 -- Asynchronous git pull. Requires plenary.
 function AsyncGitPull(directory)
+  directory = directory or vim.fn.getcwd()
   scriptsLocation = os.getenv("GITSCRIPTS_LOCATION")
   local job = require("plenary.job")
   job

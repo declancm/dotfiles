@@ -60,7 +60,6 @@ return require("packer").startup(function()
   -- use("nvim-treesitter/playground")
   use("ThePrimeagen/refactoring.nvim")
   use("p00f/nvim-ts-rainbow")
-  -- use({ "simrat39/symbols-outline.nvim" })
 
   -- VISUALS:
   use({
@@ -116,7 +115,6 @@ return require("packer").startup(function()
 
   -- MISCELLANEOUS:
   use("mbbill/undotree")
-  use("szw/vim-maximizer")
   use("tpope/vim-obsession")
   use("akinsho/toggleterm.nvim")
   use({
