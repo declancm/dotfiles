@@ -20,16 +20,14 @@ return require("packer").startup(function()
   use("kyazdani42/nvim-web-devicons")
 
   -- LSP:
-  use("jose-elias-alvarez/null-ls.nvim")
-  use("tami5/lspsaga.nvim")
-  use("folke/lsp-colors.nvim")
-
-  -- COQ_COMPLETION:
   use({
     "ms-jpq/coq_nvim",
     branch = "coq",
     requires = { "ms-jpq/coq.artifacts", branch = "artifacts" },
   })
+  use("jose-elias-alvarez/null-ls.nvim")
+  use("tami5/lspsaga.nvim")
+  use("folke/lsp-colors.nvim")
 
   -- TELESCOPE:
   use({
@@ -88,7 +86,19 @@ return require("packer").startup(function()
   use("tpope/vim-abolish")
 
   -- MISCELLANEOUS:
-  use({ "ms-jpq/chadtree", branch = "chad", run = "python3 -m chadtree deps" })
+  use({
+    "ms-jpq/chadtree",
+    branch = "chad",
+    run = "python3 -m chadtree deps",
+    config = function()
+      local chadtree_settings = {
+        ["theme.text_colour_set"] = "solarized_light",
+        ["options.session"] = false,
+        ["options.close_on_open"] = true,
+      }
+      vim.api.nvim_set_var("chadtree_settings", chadtree_settings)
+    end,
+  })
   use("mbbill/undotree")
   use("tpope/vim-obsession")
   use("akinsho/toggleterm.nvim")

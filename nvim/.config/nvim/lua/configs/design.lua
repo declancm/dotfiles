@@ -34,14 +34,6 @@ vim.cmd([[highlight CursorLineNr guifg=white]])
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "number"
 
--- CHADTREE:
-local chadtree_settings = {
-  ["theme.text_colour_set"] = "solarized_light",
-  ["options.session"] = false,
-  ["options.close_on_open"] = true,
-}
-vim.api.nvim_set_var("chadtree_settings", chadtree_settings)
-
 -- BULLETS:
 vim.g.bullets_enabled_file_types = { "markdown", "text" }
 vim.g.bullets_enable_in_empty_buffers = 0
