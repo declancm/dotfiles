@@ -8,10 +8,11 @@ local opts = { noremap = true, silent = true }
 
 -- Asynchronous git commit. Requires plenary.
 function AsyncGitCommit(directory)
+  scriptsLocation = os.getenv("GITSCRIPTS_LOCATION")
   local job = require("plenary.job")
   job
     :new({
-      command = os.getenv("GITSCRIPTS_LOCATION") .. "/commit-silent.sh",
+      command = scriptsLocation .. "/commit-silent.sh",
       cwd = directory,
       on_exit = function(j, exit_code)
         if exit_code ~= 0 then
@@ -24,10 +25,11 @@ end
 
 -- Asynchronous git pull. Requires plenary.
 function AsyncGitPull(directory)
+  scriptsLocation = os.getenv("GITSCRIPTS_LOCATION")
   local job = require("plenary.job")
   job
     :new({
-      command = os.getenv("GITSCRIPTS_LOCATION") .. "/pull-silent.sh",
+      command = scriptsLocation .. "/pull-silent.sh",
       cwd = directory,
       on_exit = function(j, exit_code)
         if exit_code ~= 0 then

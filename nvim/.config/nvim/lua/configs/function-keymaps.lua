@@ -17,7 +17,7 @@ function! NotesToggle()
             echom "Your changes to " . bufname("%") . " are being committed."
             lua AsyncGitCommit(os.getenv("NOTES_DIR"))
             " silent execute("!source ~/git-scripts/commit-silent.sh")
-            " if v:shell_error
+            " if v:shell_error != 0
             "   echom "Error: The git commit failed."
             " endif
             silent execute("e# | lcd -")
@@ -29,7 +29,7 @@ function! NotesToggle()
         silent execute("lcd $NOTES_DIR")
         lua AsyncGitPull(os.getenv("NOTES_DIR"))
         " silent execute("!git pull -q $(git remote) $(git rev-parse --abbrev-ref HEAD)")
-        " if v:shell_error
+        " if v:shell_error != 0
         "   echom "Error: The git pull failed."
         " endif
         silent execute("edit $NOTES_FULL_PATH")
