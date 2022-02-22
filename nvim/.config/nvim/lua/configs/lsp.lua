@@ -1,12 +1,12 @@
 -- COQ_CONFIG:
 vim.g.coq_settings = {
-  ["auto_start"] = "shut-up",
-  ["keymap.jump_to_mark"] = "<C-F>",
+  ['auto_start'] = 'shut-up',
+  ['keymap.jump_to_mark'] = '<C-F>',
 }
 
 -- LSP_CONFIG:
 
-local lsp = require("lspconfig")
+local lsp = require 'lspconfig'
 
 -- Installing the Language Servers
 
@@ -18,16 +18,16 @@ local lsp = require("lspconfig")
 -- pyright:       pip3 install pyright
 -- vimls:         npm install -g vim-language-server
 
-vim.cmd('let g:powershell_es_path = expand("$HOME/lsp/PowerShellEditorServices")')
+vim.cmd 'let g:powershell_es_path = expand("$HOME/lsp/PowerShellEditorServices")'
 
-lsp.bashls.setup({})
-lsp.clangd.setup({})
-lsp.cmake.setup({})
-lsp.powershell_es.setup({
+lsp.bashls.setup {}
+lsp.clangd.setup {}
+lsp.cmake.setup {}
+lsp.powershell_es.setup {
   bundle_path = vim.g.powershell_es_path,
-})
-lsp.pyright.setup({})
-lsp.vimls.setup({})
+}
+lsp.pyright.setup {}
+lsp.vimls.setup {}
 
 -- Notes
 
@@ -37,19 +37,19 @@ lsp.vimls.setup({})
 -- LSP_KEYMAPS:
 local opts = { noremap = true, silent = true }
 
-vim.api.nvim_set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-vim.api.nvim_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-vim.api.nvim_set_keymap("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
-vim.api.nvim_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+vim.api.nvim_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+vim.api.nvim_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+vim.api.nvim_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
 
 -- LSP_SAGA_CONFIG:
-local saga = require("lspsaga")
+local saga = require 'lspsaga'
 
-saga.init_lsp_saga({
-  error_sign = "▶",
-  warn_sign = "▶",
-  hint_sign = "▶",
-  infor_sign = "▶",
-  border_style = "round",
-})
+saga.init_lsp_saga {
+  error_sign = '▶',
+  warn_sign = '▶',
+  hint_sign = '▶',
+  infor_sign = '▶',
+  border_style = 'round',
+}
