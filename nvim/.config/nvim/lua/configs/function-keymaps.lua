@@ -17,26 +17,25 @@ function! NotesToggle()
             echom "Your changes to " . bufname("%") . " are being committed."
             lua AsyncGitCommit(os.getenv("NOTES_DIR"))
             " silent execute("!source ~/git-scripts/commit-silent.sh")
-            " if v:shell_error != 0
-            "   echom "Error: The git commit failed."
-            " endif
+            " if v:shell_error != 0 | echom "Error: The git commit failed." | endif
             silent execute("e# | lcd -")
         else
             " Only return when nothing has been modified.
             silent execute("w | e# | lcd -")
         endif
+        set nolbr nobri nowrap cc=80
     else
         silent execute("lcd $NOTES_DIR")
         lua AsyncGitPull(os.getenv("NOTES_DIR"))
         " silent execute("!git pull -q $(git remote) $(git rev-parse --abbrev-ref HEAD)")
-        " if v:shell_error != 0
-        "   echom "Error: The git pull failed."
-        " endif
+        " if v:shell_error != 0 | echom "Error: The git pull failed." | endif
         silent execute("edit $NOTES_FULL_PATH")
+        set wrap lbr bri cc=0
+        let &showbreak=repeat(' ',6)
     endif
 endfunction
 
-" Able to check if modified even after saving.
+" Check if modified every time the buffer is saved.
 autocmd BufEnter $NOTES_FULL_PATH let b:notes_modified = 0
 autocmd BufWritePre $NOTES_FULL_PATH if &modified | let b:notes_modified = 1 | endif
 ]])
