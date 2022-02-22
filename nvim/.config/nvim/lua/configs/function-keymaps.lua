@@ -1,21 +1,5 @@
 local opts = { noremap = true, silent = true }
 
--- Asynchronous git commit. Requires plenary.
-function AsyncCommit(directory)
-  local job = require("plenary.job")
-  job
-    :new({
-      command = os.getenv("GITSCRIPTS_LOCATION") .. "/commit-silent.sh",
-      cwd = directory,
-      on_exit = function(j, exit_code)
-        if exit_code ~= 0 then
-          print("Error: The git commit failed.")
-        end
-      end,
-    })
-    :start()
-end
-
 -- Open notes (notes.txt) from anywhere and return. Automatically git pull when
 -- opening and then git commit and push when closing.
 vim.api.nvim_set_keymap("n", "<leader>n", "<Cmd>call NotesToggle()<CR>", opts)
@@ -28,29 +12,31 @@ function! NotesToggle()
     let l:currentDir = getcwd(0)
     if l:currentDir ==# $NOTES_DIR
         if &modified || exists("b:notes_modified") && b:notes_modified == 1
-            " commit and push when file has been modified
+            " Commit and push when file has been modified.
             silent execute("w")
             echom "Your changes to " . bufname("%") . " are being committed."
-            lua AsyncCommit(os.getenv("NOTES_DIR"))
+            lua AsyncGitCommit(os.getenv("NOTES_DIR"))
             " silent execute("!source ~/git-scripts/commit-silent.sh")
             " if v:shell_error
             "   echom "Error: The git commit failed."
             " endif
             silent execute("e# | lcd -")
         else
-            " only return when nothing has been modified
+            " Only return when nothing has been modified.
             silent execute("w | e# | lcd -")
         endif
     else
         silent execute("lcd $NOTES_DIR")
-        silent execute("!git pull -q $(git remote) $(git rev-parse --abbrev-ref HEAD)")
-        if v:shell_error
-          echom "Error: The git pull failed."
-        endif
+        lua AsyncGitPull(os.getenv("NOTES_DIR"))
+        " silent execute("!git pull -q $(git remote) $(git rev-parse --abbrev-ref HEAD)")
+        " if v:shell_error
+        "   echom "Error: The git pull failed."
+        " endif
         silent execute("edit $NOTES_FULL_PATH")
     endif
 endfunction
 
+" Able to check if modified even after saving.
 autocmd BufEnter $NOTES_FULL_PATH let b:notes_modified = 0
 autocmd BufWritePre $NOTES_FULL_PATH if &modified | let b:notes_modified = 1 | endif
 ]])

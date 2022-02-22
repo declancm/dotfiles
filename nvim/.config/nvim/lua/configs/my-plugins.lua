@@ -4,10 +4,10 @@ local opts = { noremap = true, silent = true }
 
 -- GIT-SCRIPTS-VIM:
 
-vim.g.gitscripts_no_defaults = 1
+-- vim.g.gitscripts_no_defaults = 1
 
 -- Asynchronous git commit. Requires plenary.
-function AsyncCommit(directory)
+function AsyncGitCommit(directory)
   local job = require("plenary.job")
   job
     :new({
@@ -22,7 +22,23 @@ function AsyncCommit(directory)
     :start()
 end
 
-vim.api.nvim_set_keymap("n", "<leader>gc", "<Cmd>lua AsyncCommit(vim.fn.getcwd())<CR>", opts)
+-- Asynchronous git pull. Requires plenary.
+function AsyncGitPull(directory)
+  local job = require("plenary.job")
+  job
+    :new({
+      command = os.getenv("GITSCRIPTS_LOCATION") .. "/pull-silent.sh",
+      cwd = directory,
+      on_exit = function(j, exit_code)
+        if exit_code ~= 0 then
+          print("Error: The git pull failed.")
+        end
+      end,
+    })
+    :start()
+end
+
+-- vim.api.nvim_set_keymap("n", "<leader>gc", "<Cmd>lua AsyncCommit(vim.fn.getcwd())<CR>", opts)
 
 -- CINNAMON-SCROLL:
 
