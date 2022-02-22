@@ -143,7 +143,7 @@ function! BufferDelete()
 endfunction
 ]])
 
--- Maximize current buffer.
+-- Maximize the current window.
 vim.api.nvim_set_keymap("n", "<leader>z", "<Cmd>call MaximizeWindow()<CR>", opts)
 vim.api.nvim_set_keymap("x", "<leader>z", "<Cmd>call MaximizeWindow()<CR>", opts)
 

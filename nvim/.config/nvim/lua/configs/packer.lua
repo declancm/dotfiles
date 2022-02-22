@@ -40,21 +40,6 @@ return require("packer").startup(function()
     },
   })
 
-  -- FILE_TREE:
-  use({
-    "ms-jpq/chadtree",
-    branch = "chad",
-    run = "python3 -m chadtree deps",
-    config = function()
-      local chadtree_settings = {
-        ["theme.text_colour_set"] = "solarized_light",
-        ["options.session"] = false,
-        ["options.close_on_open"] = true,
-      }
-      vim.api.nvim_set_var("chadtree_settings", chadtree_settings)
-    end,
-  })
-
   -- TREESITTER:
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
   -- use("nvim-treesitter/playground")
@@ -62,18 +47,7 @@ return require("packer").startup(function()
   use("p00f/nvim-ts-rainbow")
 
   -- VISUALS:
-  use({
-    "navarasu/onedark.nvim",
-    config = function()
-      require("onedark").setup({
-        style = "darker",
-        transparent = true,
-        code_style = {
-          comments = "none",
-        },
-      })
-    end,
-  })
+  use("navarasu/onedark.nvim")
   use({
     "folke/tokyonight.nvim",
     requires = {
@@ -114,6 +88,7 @@ return require("packer").startup(function()
   use("tpope/vim-abolish")
 
   -- MISCELLANEOUS:
+  use({ "ms-jpq/chadtree", branch = "chad", run = "python3 -m chadtree deps" })
   use("mbbill/undotree")
   use("tpope/vim-obsession")
   use("akinsho/toggleterm.nvim")

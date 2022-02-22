@@ -2,6 +2,13 @@ vim.opt.background = "dark"
 vim.opt.colorcolumn = "80"
 
 -- ONEDARK:
+-- require("onedark").setup({
+--   style = "darker",
+--   transparent = true,
+--   code_style = {
+--     comments = "none",
+--   },
+-- })
 -- vim.cmd([[colorscheme onedark]])
 -- vim.cmd([[highlight ColorColumn ctermbg=0 guibg=#31353f]])
 
@@ -26,6 +33,14 @@ vim.cmd([[highlight ColorColumn ctermbg=0 guibg=#1f2335]])
 vim.cmd([[highlight CursorLineNr guifg=white]])
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "number"
+
+-- CHADTREE:
+local chadtree_settings = {
+  ["theme.text_colour_set"] = "solarized_light",
+  ["options.session"] = false,
+  ["options.close_on_open"] = true,
+}
+vim.api.nvim_set_var("chadtree_settings", chadtree_settings)
 
 -- BULLETS:
 vim.g.bullets_enabled_file_types = { "markdown", "text" }
