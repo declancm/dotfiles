@@ -21,14 +21,14 @@ require 'configs.treesitter'
 require 'configs.refactoring'
 require 'configs.telescope'
 require 'configs.toggleterm'
-require 'configs.kommentary'
+require 'configs.insert'
 require 'configs.design'
 require 'configs.my-plugins'
 
 -- KEYMAPS:
+require 'configs.plugin-keymaps'
 require 'configs.keymaps'
 require 'configs.function-keymaps'
-require 'configs.plugin-keymaps'
 
 -- OPTIONS:
 vim.opt.iskeyword = vim.opt.iskeyword - '_'
@@ -71,12 +71,12 @@ vim.opt.path = vim.opt.path + '**'
 vim.opt.wildmode = { 'longest', 'list', 'full' }
 vim.opt.wildmenu = true
 vim.opt.wildignore = vim.opt.wildignore
-  + {
-    '*.pyc',
-    '*_build/*',
-    '**/coverage/*',
-    '**/node_modules/*',
-    '**/android/*',
-    '**/ios/*',
-    '**/.git/*',
-  }
+	+ {
+		'*.pyc',
+		'*_build/*',
+		'**/coverage/*',
+		'**/node_modules/*',
+		'**/android/*',
+		'**/ios/*',
+		'**/.git/*',
+	}

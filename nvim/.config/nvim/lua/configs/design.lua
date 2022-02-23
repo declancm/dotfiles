@@ -1,32 +1,36 @@
 vim.opt.background = 'dark'
 vim.opt.colorcolumn = '80'
 
--- ONEDARK:
--- require("onedark").setup({
---   style = "darker",
---   transparent = true,
---   code_style = {
---     comments = "none",
---   },
--- })
--- vim.cmd([[colorscheme onedark]])
--- vim.cmd([[highlight ColorColumn ctermbg=0 guibg=#31353f]])
+-- THEME:
+-- local theme = 'onedark'
+local theme = 'tokyonight'
 
--- TOKYONIGHT:
+-- TOKYONIGHT_CONFIG:
 vim.g.tokyonight_style = 'storm'
 vim.g.tokyonight_transparent = true
 vim.g.tokyonight_italic_comments = false
-vim.cmd [[colorscheme tokyonight]]
-vim.cmd [[highlight ColorColumn ctermbg=0 guibg=#1f2335]]
+if theme == 'tokyonight' then
+  vim.cmd [[colorscheme tokyonight]]
+  vim.cmd [[highlight ColorColumn ctermbg=0 guibg=#1f2335]]
+end
+
+-- ONEDARK_CONFIG:
+require('onedark').setup {
+  style = 'deep',
+  transparent = true,
+  code_style = {
+    comments = 'none',
+  },
+}
+if theme == 'onedark' then
+  vim.cmd [[colorscheme onedark]]
+  vim.cmd [[highlight ColorColumn ctermbg=0 guibg=#31353f]]
+end
 
 -- highlight the line number
 vim.cmd [[highlight CursorLineNr guifg=white]]
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = 'number'
-
--- BULLETS:
-vim.g.bullets_enabled_file_types = { 'markdown', 'text' }
-vim.g.bullets_enable_in_empty_buffers = 0
 
 -- QUICKSCOPE:
 vim.g.qs_highlight_on_keys = { 'f', 'F', 't', 'T' }
@@ -44,7 +48,7 @@ require('lsp-colors').setup {
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'tokyonight', --onedark, tokyonight
+    theme = theme, --onedark, tokyonight
     component_separators = { left = '', right = '' },
     section_separators = { left = '', right = '' },
     disabled_filetypes = {},

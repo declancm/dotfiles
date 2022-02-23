@@ -41,21 +41,18 @@ return require('packer').startup(function()
   -- TREESITTER:
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'ThePrimeagen/refactoring.nvim'
-  use 'p00f/nvim-ts-rainbow'
+  -- use 'p00f/nvim-ts-rainbow'
 
   -- VISUALS:
+  use 'folke/tokyonight.nvim'
   use 'navarasu/onedark.nvim'
   use {
-    'folke/tokyonight.nvim',
-    requires = {
-      'folke/todo-comments.nvim',
-      config = function()
-        require('todo-comments').setup()
-      end,
-    },
+    'folke/todo-comments.nvim',
+    config = function()
+      require('todo-comments').setup()
+    end,
   }
   use 'hoob3rt/lualine.nvim'
-  use 'dkarter/bullets.vim'
   use {
     'norcalli/nvim-colorizer.lua',
     config = function()
@@ -90,11 +87,19 @@ return require('packer').startup(function()
     requires = { 'tpope/vim-rhubarb', 'junegunn/gv.vim', 'tpope/git-bump' },
   }
 
+  -- INSERT:
+  use 'dkarter/bullets.vim'
+  use {
+    'b3nj5m1n/kommentary',
+    config = function()
+      vim.g.kommentary_create_default_mappings = false
+    end,
+  }
+
   -- MOVEMENT:
   use 'machakann/vim-sandwich'
   use 'unblevable/quick-scope'
   use 'chaoren/vim-wordmotion'
-  use 'tpope/vim-abolish'
 
   -- MISCELLANEOUS:
   use {
@@ -113,12 +118,7 @@ return require('packer').startup(function()
   use 'mbbill/undotree'
   use 'tpope/vim-obsession'
   use 'akinsho/toggleterm.nvim'
-  use {
-    'b3nj5m1n/kommentary',
-    config = function()
-      vim.g.kommentary_create_default_mappings = false
-    end,
-  }
+  use 'tpope/vim-abolish'
 
   -- MY_PLUGINS:
   use {

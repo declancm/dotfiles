@@ -13,25 +13,25 @@ function! NotesToggle()
     if l:currentDir ==# $NOTES_DIR
         if &modified || exists("b:notes_modified") && b:notes_modified == 1
             " Commit and push when file has been modified.
-            silent execute("w")
+            silent exec "w"
             echom "Your changes to " . bufname("%") . " are being committed."
             " Asynchronous git commit.
             lua AsyncGitCommit(os.getenv("NOTES_DIR"))
             " silent execute("!source ~/git-scripts/commit-silent.sh")
             " if v:shell_error != 0 | echom "Error: The git commit failed." | endif
-            silent execute("e# | lcd -")
+            silent exec "e# | lcd -"
         else
             " Only return when nothing has been modified.
-            silent execute("w | e# | lcd -")
+            silent exec "w | e# | lcd -"
         endif
         set nolbr nobri nowrap cc=80
     else
-        silent execute("lcd $NOTES_DIR")
+        silent exec "lcd $NOTES_DIR"
         " Asynchronous git pull.
         lua AsyncGitPull(os.getenv("NOTES_DIR"))
         " silent execute("!git pull -q $(git remote) $(git rev-parse --abbrev-ref HEAD)")
         " if v:shell_error != 0 | echom "Error: The git pull failed." | endif
-        silent execute("edit $NOTES_FULL_PATH")
+        silent exec "edit $NOTES_FULL_PATH"
         set wrap lbr bri cc=0
         let &showbreak=repeat(' ',6)
     endif
@@ -54,7 +54,7 @@ function! DeleteStartWord(backKey)
     else
         normal b
         let l:cursorNew = getcurpos()
-        silent execute("call cursor(l:cursorPos[1], l:cursorPos[2])")
+        silent exec "call cursor(l:cursorPos[1], l:cursorPos[2])"
         if l:cursorPos[1] - l:cursorNew[1] != 0
             normal d0i
         else
@@ -90,9 +90,9 @@ function! GlobalPaste(pasteMode)
     if getreg('*') != ""
         let l:pasteType = getregtype('*')
         if l:pasteType ==# 'V'
-            silent execute("normal! \"*" . a:pasteMode . "`[v`]=`]$")
+            silent exec "normal! \"*" . a:pasteMode . "`[v`]=`]$"
         else
-            silent execute("normal! \"*" . a:pasteMode)
+            silent exec "normal! \"*" . a:pasteMode
         endif
     endif
 endfunction
@@ -104,7 +104,7 @@ vim.api.nvim_set_keymap('n', '<leader>Y', '<Cmd>call AppendYank("yg_")<CR>', opt
 
 vim.cmd [[
 function! AppendYank(yankMode)
-    silent execute("normal! \"0" . a:yankMode)
+    silent exec "normal! \"0" . a:yankMode
     call setreg('*', getreg('*') . getreg('0'), getregtype('*'))
 endfunction
 ]]
@@ -125,9 +125,9 @@ function! WindowMovement(key)
     silent exec "wincmd " . a:key
     if (l:currentWin == winnr())
         if (match(a:key,'[jk]'))
-            wincmd v
+          wincmd v
         else
-            wincmd s
+          wincmd s
         endif
         silent exec "wincmd ".a:key
     endif
@@ -140,8 +140,8 @@ vim.api.nvim_set_keymap('n', '<leader>bd', '<Cmd>call BufferDelete()<CR>', opts)
 vim.cmd [[
 function! BufferDelete()
     let l:cursorPos = getcurpos()
-    silent execute("wa | %bdelete | normal! \<C-^>")
-    silent execute("call cursor(l:cursorPos[1], l:cursorPos[2])")
+    silent exec "wa | %bdelete | normal! \<C-^>"
+    silent exec "call cursor(l:cursorPos[1], l:cursorPos[2])"
 endfunction
 ]]
 
@@ -151,20 +151,20 @@ vim.api.nvim_set_keymap('x', '<leader>z', '<Cmd>call MaximizeWindow()<CR>', opts
 
 vim.cmd [[
 function! MaximizeWindow()
-    if (!exists("b:maxWindowStatus") || b:maxWindowStatus == 0)
+    if (!exists("b:maxWinStatus") || b:maxWinStatus == 0)
         let b:winPositions = winrestcmd()
         silent exec "resize | vertical resize"
         let b:winPositionsNew = winrestcmd()
         if b:winPositions == b:winPositionsNew
-            let b:maxWindowStatus = 0
+            let b:maxWinStatus = 0
             return
         endif
-        let b:maxWindowStatus = 1
+        let b:maxWinStatus = 1
     elseif (exists("b:winPositions"))
         silent exec b:winPositions
-        let b:maxWindowStatus = 0
+        let b:maxWinStatus = 0
     else
-        let b:maxWindowStatus = 0
+        let b:maxWinStatus = 0
     endif
 endfunction
 ]]

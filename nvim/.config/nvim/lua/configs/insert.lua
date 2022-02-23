@@ -1,3 +1,8 @@
+-- BULLETS:
+vim.g.bullets_enabled_file_types = { 'markdown', 'text' }
+vim.g.bullets_enable_in_empty_buffers = 0
+
+-- KOMMENTARY:
 -- Set <C-/> keymaps.
 vim.api.nvim_set_keymap('i', '<C-_>', '<Esc><Plug>kommentary_line_default', {})
 vim.api.nvim_set_keymap('n', '<C-_>', '<Plug>kommentary_line_default', {})
