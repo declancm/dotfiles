@@ -57,11 +57,17 @@ vim.api.nvim_set_keymap('x', '}', '<Cmd>call VParagraphDown()<CR>', opts)
 
 vim.cmd [[
 function! VParagraphUp()
-    silent exec "norm! k" | silent exec "Cinnamon { 0"
+    if line(".") != 1 && line(".") != line("$")
+        silent exec "norm! k"
+    endif
+    silent exec "Cinnamon { 0"
     if line(".") != 1 || len(getline(".")) == 0 | silent exec "norm! j" | endif
 endfunction
 function! VParagraphDown()
-    silent exec "norm! j" | silent exec "Cinnamon } 0"
+    if line(".") != 1 && line(".") != line("$")
+        silent exec "norm! j"
+    endif
+    silent exec "Cinnamon } 0"
     if line(".") != line("$") || len(getline(".")) == 0 | silent exec "norm! k" | endif
 endfunction
 ]]

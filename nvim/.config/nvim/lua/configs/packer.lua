@@ -120,6 +120,5 @@ return require('packer').startup(function()
     requires = 'tpope/vim-repeat',
   }
   use '~/Git/vim2vscode'
-  -- use '~/Git/git-scripts-vim'
   use '~/Git/git-scripts.nvim'
 end)
