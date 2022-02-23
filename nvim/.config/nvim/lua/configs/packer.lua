@@ -50,7 +50,7 @@ return require('packer').startup(function()
     requires = {
       'folke/todo-comments.nvim',
       config = function()
-        require('todo-comments').setup {}
+        require('todo-comments').setup()
       end,
     },
   }
