@@ -14,6 +14,10 @@ end
 return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
 
+  -- DEPENDENCIES:
+  use 'nvim-lua/plenary.nvim'
+  use 'kyazdani42/nvim-web-devicons'
+
   -- LSP:
   use 'neovim/nvim-lspconfig'
   use {
@@ -29,19 +33,14 @@ return require('packer').startup(function()
   use {
     'nvim-telescope/telescope.nvim',
     requires = {
-      'nvim-lua/plenary.nvim',
       { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
-      'kyazdani42/nvim-web-devicons',
       'jvgrootveld/telescope-zoxide',
     },
   }
 
   -- TREESITTER:
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-  use {
-    'ThePrimeagen/refactoring.nvim',
-    requires = { 'nvim-lua/plenary.nvim', 'nvim-treesitter/nvim-treesitter' },
-  }
+  use 'ThePrimeagen/refactoring.nvim'
   use 'p00f/nvim-ts-rainbow'
 
   -- VISUALS:
@@ -55,7 +54,7 @@ return require('packer').startup(function()
       end,
     },
   }
-  use { 'hoob3rt/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
+  use 'hoob3rt/lualine.nvim'
   use 'dkarter/bullets.vim'
   use {
     'norcalli/nvim-colorizer.lua',
@@ -75,7 +74,6 @@ return require('packer').startup(function()
   -- GIT:
   use {
     'lewis6991/gitsigns.nvim',
-    requires = 'nvim-lua/plenary.nvim',
     tag = 'release',
     config = function()
       require('gitsigns').setup()
@@ -123,8 +121,5 @@ return require('packer').startup(function()
   }
   use '~/Git/vim2vscode'
   use '~/Git/git-scripts-vim'
-  -- use {
-  --   '~/Git/git-scripts-nvim',
-  --   requires = 'nvim-lua/plenary.nvim',
-  -- }
+  -- use '~/Git/git-scripts-nvim'
 end)
