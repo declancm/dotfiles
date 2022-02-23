@@ -38,7 +38,10 @@ return require('packer').startup(function()
 
   -- TREESITTER:
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-  use { 'ThePrimeagen/refactoring.nvim', requires = 'nvim-lua/plenary.nvim' }
+  use {
+    'ThePrimeagen/refactoring.nvim',
+    requires = { 'nvim-lua/plenary.nvim', 'nvim-treesitter/nvim-treesitter' },
+  }
   use 'p00f/nvim-ts-rainbow'
 
   -- VISUALS:
