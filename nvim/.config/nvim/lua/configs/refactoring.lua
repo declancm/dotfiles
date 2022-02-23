@@ -1,3 +1,5 @@
+require('refactoring').setup {}
+
 -- Refactoring operations:
 -- Remaps for each of the four debug operations currently offered by the plugin
 vim.api.nvim_set_keymap(

@@ -30,9 +30,10 @@ require('telescope').setup {
     },
   },
 }
---require('telescope').load_extension('fzy_native')
+-- require('telescope').load_extension 'fzy_native'
 require('telescope').load_extension 'fzf'
 require('telescope').load_extension 'zoxide'
+require('telescope').load_extension 'refactoring'
 
 -- KEYMAPS:
 local opts = { noremap = true, silent = true }
@@ -43,5 +44,13 @@ vim.api.nvim_set_keymap('n', '<leader>fg', "<Cmd>lua require('telescope.builtin'
 vim.api.nvim_set_keymap('n', '<leader>fb', "<Cmd>lua require('telescope.builtin').buffers()<CR>", opts)
 vim.api.nvim_set_keymap('n', '<leader>fh', "<Cmd>lua require('telescope.builtin').help_tags()<CR>", opts)
 
--- Telescope Zoxide keymaps.
+-- Telescope zoxide keymaps.
 vim.api.nvim_set_keymap('n', '<leader>fz', '<Cmd>Telescope zoxide list<CR>', opts)
+
+-- Telescope refactoring keymaps.
+vim.api.nvim_set_keymap(
+  'v',
+  '<leader>fr',
+  "<Esc><Cmd>lua require('telescope').extensions.refactoring.refactors()<CR>",
+  { noremap = true }
+)

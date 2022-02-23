@@ -6,43 +6,44 @@ local opts = { noremap = true, silent = true }
 
 -- vim.g.gitscripts_no_defaults = 1
 
--- Asynchronous git commit. Requires plenary.
-function AsyncGitCommit(directory)
-	directory = directory or vim.fn.getcwd()
-	scriptsLocation = os.getenv 'GITSCRIPTS_LOCATION'
-	local job = require 'plenary.job'
-	job
-		:new({
-			command = scriptsLocation .. '/commit-silent.sh',
-			cwd = directory,
-			on_exit = function(j, exit_code)
-				if exit_code ~= 0 then
-					print 'Error: The git commit failed.'
-				end
-			end,
-		})
-		:start()
-end
+-- -- Asynchronous git commit. Requires plenary.
+-- function AsyncGitCommit(directory)
+--   directory = directory or vim.fn.getcwd()
+--   scriptsLocation = os.getenv 'GITSCRIPTS_LOCATION'
+--   local job = require 'plenary.job'
+--   job
+--     :new({
+--       command = scriptsLocation .. '/commit-silent.sh',
+--       cwd = directory,
+--       on_exit = function(j, exit_code)
+--         if exit_code ~= 0 then
+--           print 'Error: The git commit failed.'
+--         end
+--       end,
+--     })
+--     :start()
+-- end
 
--- Asynchronous git pull. Requires plenary.
-function AsyncGitPull(directory)
-	directory = directory or vim.fn.getcwd()
-	scriptsLocation = os.getenv 'GITSCRIPTS_LOCATION'
-	local job = require 'plenary.job'
-	job
-		:new({
-			command = scriptsLocation .. '/pull-silent.sh',
-			cwd = directory,
-			on_exit = function(j, exit_code)
-				if exit_code ~= 0 then
-					print 'Error: The git pull failed.'
-				end
-			end,
-		})
-		:start()
-end
+-- -- Asynchronous git pull. Requires plenary.
+-- function AsyncGitPull(directory)
+--   directory = directory or vim.fn.getcwd()
+--   scriptsLocation = os.getenv 'GITSCRIPTS_LOCATION'
+--   local job = require 'plenary.job'
+--   job
+--     :new({
+--       command = scriptsLocation .. '/pull-silent.sh',
+--       cwd = directory,
+--       on_exit = function(j, exit_code)
+--         if exit_code ~= 0 then
+--           print 'Error: The git pull failed.'
+--         end
+--       end,
+--     })
+--     :start()
+-- end
 
--- vim.api.nvim_set_keymap("n", "<leader>gc", "<Cmd>lua AsyncCommit(vim.fn.getcwd())<CR>", opts)
+vim.api.nvim_set_keymap('n', '<leader>gc', '<Cmd>lua AsyncGitCommit(vim.fn.getcwd())<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>gc', '<Cmd>lua AsyncGitPull(vim.fn.getcwd())<CR>', opts)
 
 -- CINNAMON-SCROLL:
 

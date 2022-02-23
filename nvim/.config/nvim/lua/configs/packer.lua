@@ -1,15 +1,10 @@
+-- stylua: ignore start
 local fn = vim.fn
 local install_path = fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system {
-    'git',
-    'clone',
-    '--depth',
-    '1',
-    'https://github.com/wbthomason/packer.nvim',
-    install_path,
-  }
+  packer_bootstrap = fn.system { 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path, }
 end
+-- stylua: ignore end
 
 return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
@@ -41,7 +36,6 @@ return require('packer').startup(function()
   -- TREESITTER:
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'ThePrimeagen/refactoring.nvim'
-  -- use 'p00f/nvim-ts-rainbow'
 
   -- VISUALS:
   use 'folke/tokyonight.nvim'
@@ -126,6 +120,6 @@ return require('packer').startup(function()
     requires = 'tpope/vim-repeat',
   }
   use '~/Git/vim2vscode'
-  use '~/Git/git-scripts-vim'
-  -- use '~/Git/git-scripts-nvim'
+  -- use '~/Git/git-scripts-vim'
+  use '~/Git/git-scripts.nvim'
 end)

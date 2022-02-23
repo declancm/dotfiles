@@ -22,7 +22,7 @@ require 'configs.refactoring'
 require 'configs.telescope'
 require 'configs.toggleterm'
 require 'configs.insert'
-require 'configs.design'
+require 'configs.visuals'
 require 'configs.my-plugins'
 
 -- KEYMAPS:
@@ -71,12 +71,12 @@ vim.opt.path = vim.opt.path + '**'
 vim.opt.wildmode = { 'longest', 'list', 'full' }
 vim.opt.wildmenu = true
 vim.opt.wildignore = vim.opt.wildignore
-	+ {
-		'*.pyc',
-		'*_build/*',
-		'**/coverage/*',
-		'**/node_modules/*',
-		'**/android/*',
-		'**/ios/*',
-		'**/.git/*',
-	}
+  + {
+    '*.pyc',
+    '*_build/*',
+    '**/coverage/*',
+    '**/node_modules/*',
+    '**/android/*',
+    '**/ios/*',
+    '**/.git/*',
+  }

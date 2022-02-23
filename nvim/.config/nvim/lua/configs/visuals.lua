@@ -1,9 +1,9 @@
-vim.opt.background = 'dark'
-vim.opt.colorcolumn = '80'
-
 -- THEME:
 -- local theme = 'onedark'
 local theme = 'tokyonight'
+
+vim.opt.background = 'dark'
+vim.opt.colorcolumn = '80'
 
 -- TOKYONIGHT_CONFIG:
 vim.g.tokyonight_style = 'storm'
@@ -35,14 +35,6 @@ vim.opt.cursorlineopt = 'number'
 -- QUICKSCOPE:
 vim.g.qs_highlight_on_keys = { 'f', 'F', 't', 'T' }
 vim.g.qs_max_chars = 160
-
--- LSP_COLORS:
-require('lsp-colors').setup {
-  Error = '#db4b4b',
-  Warning = '#e0af68',
-  Information = '#0db9d7',
-  Hint = '#10B981',
-}
 
 -- LUALINE:
 require('lualine').setup {
