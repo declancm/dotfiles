@@ -42,8 +42,8 @@ local opts = { noremap = true, silent = true }
 --     :start()
 -- end
 
-vim.api.nvim_set_keymap('n', '<leader>gc', '<Cmd>lua AsyncGitCommit(vim.fn.getcwd())<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>gc', '<Cmd>lua AsyncGitPull(vim.fn.getcwd())<CR>', opts)
+-- vim.api.nvim_set_keymap('n', '<leader>gc', '<Cmd>lua AsyncGitCommit(vim.fn.getcwd())<CR>', opts)
+-- vim.api.nvim_set_keymap('n', '<leader>gc', '<Cmd>lua AsyncGitPull(vim.fn.getcwd())<CR>', opts)
 
 -- CINNAMON-SCROLL:
 
