@@ -76,7 +76,13 @@ return require('packer').startup(function()
     'lewis6991/gitsigns.nvim',
     tag = 'release',
     config = function()
-      require('gitsigns').setup()
+      require('gitsigns').setup {
+        signs = {
+          add = { text = '+' },
+          change = { text = '~' },
+          changedelete = { hl = 'GitSignsDelete', numhl = 'GitSignsDeleteNr', linehl = 'GitSignsDeleteLn' },
+        },
+      }
     end,
   }
   use {

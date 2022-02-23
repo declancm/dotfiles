@@ -19,16 +19,6 @@ vim.g.tokyonight_italic_comments = false
 vim.cmd [[colorscheme tokyonight]]
 vim.cmd [[highlight ColorColumn ctermbg=0 guibg=#1f2335]]
 
--- vim.cmd([[highlight Normal guibg=none]])
-
--- -- cursor modes
--- vim.cmd([[
---   if &term =~ '^xterm'
---     let &t_EI .= "\<Esc>[0 q"
---     let &t_SI .= "\<Esc>[5 q"
---   endif
--- ]])
-
 -- highlight the line number
 vim.cmd [[highlight CursorLineNr guifg=white]]
 vim.opt.cursorline = true

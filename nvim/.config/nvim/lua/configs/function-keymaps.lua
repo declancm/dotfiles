@@ -153,8 +153,7 @@ vim.cmd [[
 function! MaximizeWindow()
     if (!exists("b:maxWindowStatus") || b:maxWindowStatus == 0)
         let b:winPositions = winrestcmd()
-        silent exec "resize"
-        silent exec "vertical resize"
+        silent exec "resize | vertical resize"
         let b:winPositionsNew = winrestcmd()
         if b:winPositions == b:winPositionsNew
             let b:maxWindowStatus = 0
