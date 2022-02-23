@@ -15,6 +15,7 @@ function! NotesToggle()
             " Commit and push when file has been modified.
             silent execute("w")
             echom "Your changes to " . bufname("%") . " are being committed."
+            " Asynchronous git commit.
             lua AsyncGitCommit(os.getenv("NOTES_DIR"))
             " silent execute("!source ~/git-scripts/commit-silent.sh")
             " if v:shell_error != 0 | echom "Error: The git commit failed." | endif
@@ -26,6 +27,7 @@ function! NotesToggle()
         set nolbr nobri nowrap cc=80
     else
         silent execute("lcd $NOTES_DIR")
+        " Asynchronous git pull.
         lua AsyncGitPull(os.getenv("NOTES_DIR"))
         " silent execute("!git pull -q $(git remote) $(git rev-parse --abbrev-ref HEAD)")
         " if v:shell_error != 0 | echom "Error: The git pull failed." | endif

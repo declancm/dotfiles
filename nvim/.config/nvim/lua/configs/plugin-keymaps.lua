@@ -22,3 +22,6 @@ vim.api.nvim_set_keymap('i', '<C-k>', '<Cmd>Lspsaga signature_help<CR>', opts)
 vim.api.nvim_set_keymap('n', 'gh', '<Cmd>Lspsaga lsp_finder<CR>', opts)
 -- vim.api.nvim_set_keymap('n', '<C->', '<Cmd>Lspsaga open_floaterm<CR>', opts)
 -- vim.api.nvim_set_keymap('t', '<C->', '<Cmd>Lspsaga open_floaterm<CR>', opts)
+
+-- treesitter playground
+vim.api.nvim_set_keymap('n', '<leader>tsp', '<Cmd>TSPlaygroundToggle<CR>', opts)

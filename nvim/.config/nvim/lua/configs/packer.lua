@@ -14,12 +14,8 @@ end
 return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
 
-  -- DEPENDENCIES:
-  use 'neovim/nvim-lspconfig'
-  use 'nvim-lua/plenary.nvim'
-  use 'kyazdani42/nvim-web-devicons'
-
   -- LSP:
+  use 'neovim/nvim-lspconfig'
   use {
     'ms-jpq/coq_nvim',
     branch = 'coq',
@@ -33,15 +29,16 @@ return require('packer').startup(function()
   use {
     'nvim-telescope/telescope.nvim',
     requires = {
+      'nvim-lua/plenary.nvim',
       { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+      'kyazdani42/nvim-web-devicons',
       'jvgrootveld/telescope-zoxide',
     },
   }
 
   -- TREESITTER:
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-  use 'nvim-treesitter/playground'
-  use 'ThePrimeagen/refactoring.nvim'
+  use { 'ThePrimeagen/refactoring.nvim', requires = 'nvim-lua/plenary.nvim' }
   use 'p00f/nvim-ts-rainbow'
 
   -- VISUALS:
@@ -55,7 +52,7 @@ return require('packer').startup(function()
       end,
     },
   }
-  use 'hoob3rt/lualine.nvim'
+  use { 'hoob3rt/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
   use 'dkarter/bullets.vim'
   use {
     'norcalli/nvim-colorizer.lua',
@@ -73,10 +70,9 @@ return require('packer').startup(function()
   }
 
   -- GIT:
-  -- use("airblade/vim-gitgutter")
   use {
     'lewis6991/gitsigns.nvim',
-    requires = { 'nvim-lua/plenary.nvim' },
+    requires = 'nvim-lua/plenary.nvim',
     tag = 'release',
     config = function()
       require('gitsigns').setup()
@@ -119,9 +115,13 @@ return require('packer').startup(function()
 
   -- MY_PLUGINS:
   use {
-    'declancm/cinnamon-scroll',
+    '~/Git/cinnamon-scroll',
     requires = 'tpope/vim-repeat',
   }
-  use 'declancm/vim2vscode'
-  use 'declancm/git-scripts-vim'
+  use '~/Git/vim2vscode'
+  use '~/Git/git-scripts-vim'
+  -- use {
+  --   '~/Git/git-scripts-nvim',
+  --   requires = 'nvim-lua/plenary.nvim',
+  -- }
 end)
