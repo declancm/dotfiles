@@ -122,6 +122,6 @@ return require('packer').startup(function()
   }
   use 'declancm/vim2vscode'
   -- use '~/Git/vim2vscode'
-  use 'declancm/git-scripts.nvim'
-  -- use '~/Git/git-scripts.nvim'
+  -- use 'declancm/git-scripts.nvim'
+  use '~/Git/git-scripts.nvim'
 end)

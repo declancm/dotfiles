@@ -13,27 +13,46 @@ function extract() {
     cp -a "$1"/. .
     rm -r "$1"
 }
-function cf() {
-    # check if .clang-format already exists
-    if [ -e "./.clang-format" ]
+# function cf() {
+#     # check if .clang-format already exists
+#     if [ -e "./.clang-format" ]
+#     then
+#         printf "A .clang-format file already exists.\n"
+#     else
+#         if [ -z "$1" ]
+#         then
+#             default="Microsoft"
+#             cfConfigPath="$HOME/.config/nvim/.clang-format"
+#             if [ -e "$cfConfigPath" ]
+#             then
+#                 cp $cfConfigPath ./.clang-format
+#                 if [ $? -eq 0 ]; then; printf "The default .clang-format file was copied.\n"; fi
+#             else
+#                 clang-format -style=$default -dump-config > .clang-format
+#                 if [ $? -eq 0 ]; then; printf "Created a .clang-format file using $default style.\n"; fi
+#             fi
+#         else
+#             clang-format -style=$1 -dump-config > .clang-format
+#             if [ $? -eq 0 ]; then; printf "Created a .clang-format file using $1 style.\n"; fi
+#         fi
+#     fi
+# }
+
+function format() {
+    if [ -z "$1" ]
     then
-        printf "A .clang-format file already exists.\n"
+        printf "Select from one of the following as an input:\ncpp, lua\n"
     else
-        if [ -z "$1" ]
+        if [ "$1" = "cpp" ]
         then
-            default="Microsoft"
-            cfConfigPath="$HOME/.config/nvim/.clang-format"
-            if [ -e "$cfConfigPath" ]
-            then
-                cp $cfConfigPath ./.clang-format
-                if [ $? -eq 0 ]; then; printf "The default .clang-format file was copied.\n"; fi
-            else
-                clang-format -style=$default -dump-config > .clang-format
-                if [ $? -eq 0 ]; then; printf "Created a .clang-format file using $default style.\n"; fi
-            fi
+            configPath="$HOME/.config/nvim/formatters/.clang-format"
+            cp $configPath ./.clang-format
+        elif [ "$1" = "lua" ]
+        then
+            configPath="$HOME/.config/nvim/formatters/.stylua.toml"
+            cp $configPath ./.stylua.toml
         else
-            clang-format -style=$1 -dump-config > .clang-format
-            if [ $? -eq 0 ]; then; printf "Created a .clang-format file using $1 style.\n"; fi
+            printf "Not a valid input.\n"
         fi
     fi
 }
