@@ -73,9 +73,9 @@ return require('packer').startup(function()
   use 'dkarter/bullets.vim'
   use {
     'b3nj5m1n/kommentary',
-    config = function()
-      vim.g.kommentary_create_default_mappings = false
-    end,
+    -- config = function()
+    --   vim.g.kommentary_create_default_mappings = false
+    -- end,
   }
 
   -- MOVEMENT:
