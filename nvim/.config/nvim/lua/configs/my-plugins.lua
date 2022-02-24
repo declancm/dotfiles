@@ -4,7 +4,7 @@ local opts = { noremap = true, silent = true }
 
 -- GIT-SCRIPTS-VIM:
 
-vim.g.commit_on_save = 1
+-- vim.g.commit_on_save = 1
 
 -- vim.g.gitscripts_no_defaults = 1
 
