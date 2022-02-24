@@ -116,12 +116,10 @@ return require('packer').startup(function()
 
   -- MY_PLUGINS:
   use {
-    'declancm/cinnamon-scroll',
-    -- '~/Git/cinnamon-scroll',
+    '~/Git/cinnamon-scroll',
     requires = 'tpope/vim-repeat',
   }
-  use 'declancm/vim2vscode'
-  -- use '~/Git/vim2vscode'
-  -- use 'declancm/git-scripts.nvim'
+
+  use '~/Git/vim2vscode'
   use '~/Git/git-scripts.nvim'
 end)
