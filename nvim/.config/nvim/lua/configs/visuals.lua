@@ -1,6 +1,6 @@
 -- THEME:
--- local theme = 'onedark'
 local theme = 'tokyonight'
+-- local theme = 'onedark'
 
 vim.opt.background = 'dark'
 vim.opt.colorcolumn = '80'
@@ -16,7 +16,7 @@ end
 
 -- ONEDARK_CONFIG:
 require('onedark').setup {
-  style = 'deep',
+  style = 'dark',
   transparent = true,
   code_style = {
     comments = 'none',
@@ -69,10 +69,11 @@ require('lualine').setup {
   extensions = { 'fugitive' },
 }
 
--- CHADTREE:
-local chadtree_settings = {
-  ['theme.text_colour_set'] = 'solarized_light',
-  ['options.session'] = false,
-  ['options.close_on_open'] = true,
+-- GITSIGNS:
+require('gitsigns').setup {
+  signs = {
+    add = { text = '+' },
+    change = { text = '~' },
+    changedelete = { hl = 'GitSignsDelete', numhl = 'GitSignsDeleteNr', linehl = 'GitSignsDeleteLn' },
+  },
 }
-vim.api.nvim_set_var('chadtree_settings', chadtree_settings)

@@ -53,21 +53,11 @@ return require('packer').startup(function()
   use 'folke/tokyonight.nvim'
   use 'navarasu/onedark.nvim'
   use 'hoob3rt/lualine.nvim'
-  use {
-    'ms-jpq/chadtree',
-    branch = 'chad',
-    run = 'python3 -m chadtree deps',
-  }
+  use { 'lewis6991/gitsigns.nvim', tag = 'release' }
   use {
     'folke/todo-comments.nvim',
     config = function()
-      require('todo-comments').setup()
-    end,
-  }
-  use {
-    'norcalli/nvim-colorizer.lua',
-    config = function()
-      require('colorizer').setup()
+      require('todo-comments').setup { signs = false }
     end,
   }
 
@@ -76,19 +66,6 @@ return require('packer').startup(function()
   use 'b3nj5m1n/kommentary'
 
   -- GIT:
-  use {
-    'lewis6991/gitsigns.nvim',
-    tag = 'release',
-    config = function()
-      require('gitsigns').setup {
-        signs = {
-          add = { text = '+' },
-          change = { text = '~' },
-          changedelete = { hl = 'GitSignsDelete', numhl = 'GitSignsDeleteNr', linehl = 'GitSignsDeleteLn' },
-        },
-      }
-    end,
-  }
   use {
     'tpope/vim-fugitive',
     requires = { 'tpope/vim-rhubarb', 'junegunn/gv.vim', 'tpope/git-bump' },
@@ -106,6 +83,19 @@ return require('packer').startup(function()
   use 'chaoren/vim-wordmotion'
 
   -- MISCELLANEOUS:
+  use {
+    'ms-jpq/chadtree',
+    branch = 'chad',
+    run = 'python3 -m chadtree deps',
+    config = function()
+      local chadtree_settings = {
+        ['theme.text_colour_set'] = 'solarized_light',
+        ['options.session'] = false,
+        ['options.close_on_open'] = true,
+      }
+      vim.api.nvim_set_var('chadtree_settings', chadtree_settings)
+    end,
+  }
   use 'tpope/vim-abolish'
   use 'tpope/vim-obsession'
 
