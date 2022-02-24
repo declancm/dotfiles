@@ -52,23 +52,23 @@ return require('packer').startup(function()
   -- VISUALS:
   use 'folke/tokyonight.nvim'
   use 'navarasu/onedark.nvim'
+  use 'hoob3rt/lualine.nvim'
+  use {
+    'ms-jpq/chadtree',
+    branch = 'chad',
+    run = 'python3 -m chadtree deps',
+  }
   use {
     'folke/todo-comments.nvim',
     config = function()
       require('todo-comments').setup()
     end,
   }
-  use 'hoob3rt/lualine.nvim'
   use {
     'norcalli/nvim-colorizer.lua',
     config = function()
       require('colorizer').setup()
     end,
-  }
-  use {
-    'ms-jpq/chadtree',
-    branch = 'chad',
-    run = 'python3 -m chadtree deps',
   }
 
   -- INSERT:
