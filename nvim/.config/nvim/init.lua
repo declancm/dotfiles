@@ -18,9 +18,9 @@ require 'configs.lsp'
 require 'configs.debugging'
 require 'configs.telescope'
 require 'configs.treesitter'
-require 'configs.terminal'
+require 'configs.term'
 require 'configs.visuals'
-require 'configs.insert'
+require 'configs.faster'
 require 'configs.my-plugins'
 
 -- KEYMAPS:

@@ -46,7 +46,7 @@ return require('packer').startup(function()
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'ThePrimeagen/refactoring.nvim'
 
-  -- TERMINAL:
+  -- TERM:
   use 'akinsho/toggleterm.nvim'
 
   -- VISUALS:
@@ -61,17 +61,7 @@ return require('packer').startup(function()
     end,
   }
 
-  -- INSERT:
-  use 'dkarter/bullets.vim'
-  use 'b3nj5m1n/kommentary'
-
-  -- GIT:
-  use {
-    'tpope/vim-fugitive',
-    requires = { 'tpope/vim-rhubarb', 'junegunn/gv.vim', 'tpope/git-bump' },
-  }
-
-  -- MOVEMENT:
+  -- FASTER:
   use 'machakann/vim-sandwich'
   use {
     'unblevable/quick-scope',
@@ -81,6 +71,15 @@ return require('packer').startup(function()
     end,
   }
   use 'chaoren/vim-wordmotion'
+  use 'dkarter/bullets.vim'
+  use 'b3nj5m1n/kommentary'
+  use 'tpope/vim-abolish'
+
+  -- GIT:
+  use {
+    'tpope/vim-fugitive',
+    requires = { 'tpope/vim-rhubarb', 'junegunn/gv.vim', 'tpope/git-bump' },
+  }
 
   -- MISCELLANEOUS:
   use {
@@ -96,7 +95,6 @@ return require('packer').startup(function()
       vim.api.nvim_set_var('chadtree_settings', chadtree_settings)
     end,
   }
-  use 'tpope/vim-abolish'
   use 'tpope/vim-obsession'
 
   -- MY_PLUGINS:
