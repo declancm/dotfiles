@@ -32,6 +32,15 @@ vim.cmd [[highlight CursorLineNr guifg=white]]
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = 'number'
 
+-- GITSIGNS:
+require('gitsigns').setup {
+  signs = {
+    add = { text = '+' },
+    change = { text = '~' },
+    changedelete = { hl = 'GitSignsDelete', numhl = 'GitSignsDeleteNr', linehl = 'GitSignsDeleteLn' },
+  },
+}
+
 -- QUICKSCOPE:
 vim.g.qs_highlight_on_keys = { 'f', 'F', 't', 'T' }
 vim.g.qs_max_chars = 160

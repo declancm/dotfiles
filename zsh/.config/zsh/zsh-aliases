@@ -13,52 +13,30 @@ function extract() {
     cp -a "$1"/. .
     rm -r "$1"
 }
-# function cf() {
-#     # check if .clang-format already exists
-#     if [ -e "./.clang-format" ]
-#     then
-#         printf "A .clang-format file already exists.\n"
-#     else
-#         if [ -z "$1" ]
-#         then
-#             default="Microsoft"
-#             cfConfigPath="$HOME/.config/nvim/.clang-format"
-#             if [ -e "$cfConfigPath" ]
-#             then
-#                 cp $cfConfigPath ./.clang-format
-#                 if [ $? -eq 0 ]; then; printf "The default .clang-format file was copied.\n"; fi
-#             else
-#                 clang-format -style=$default -dump-config > .clang-format
-#                 if [ $? -eq 0 ]; then; printf "Created a .clang-format file using $default style.\n"; fi
-#             fi
-#         else
-#             clang-format -style=$1 -dump-config > .clang-format
-#             if [ $? -eq 0 ]; then; printf "Created a .clang-format file using $1 style.\n"; fi
-#         fi
-#     fi
-# }
 
 function format() {
-    if [ -z "$1" ]
-    then
-        printf "Select from one of the following as an input:\ncpp, lua\n"
+    if [ -z "$1" ]; then
+        printf "Use one of the following languages as an argument:\ncpp, lua\n"
     else
-        if [ "$1" = "cpp" ]
-        then
-            configPath="$HOME/.config/nvim/formatters/.clang-format"
-            cp $configPath ./.clang-format
-        elif [ "$1" = "lua" ]
-        then
-            configPath="$HOME/.config/nvim/formatters/.stylua.toml"
-            cp $configPath ./.stylua.toml
+        if [ "$1" = "cpp" ]; then; formatter='.clang-format'
+        elif [ "$1" = "lua" ]; then; formatter='.stylua.toml'
         else
-            printf "Not a valid input.\n"
+            printf "Not a valid argument.\n"
+            return
+        fi
+        if ! [ -e "./$formatter" ]; then
+            configPath="$HOME/.config/nvim/formatters/$formatter"
+            cp $configPath ./$formatter
+            printf "The formatter config file '$formatter' was created.\n"
+            return
+        else
+            printf "Error: The formatter config file '$formatter' already exists here.\n"
+            return
         fi
     fi
 }
 
 # tmux in 256 colors
-# alias tmux='TERM=xterm-256color tmux'
 alias tmux='tmux -2'
 
 # tree to ignore files

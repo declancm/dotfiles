@@ -63,19 +63,7 @@ return require('packer').startup(function()
   }
 
   -- GIT:
-  use {
-    'lewis6991/gitsigns.nvim',
-    tag = 'release',
-    config = function()
-      require('gitsigns').setup {
-        signs = {
-          add = { text = '+' },
-          change = { text = '~' },
-          changedelete = { hl = 'GitSignsDelete', numhl = 'GitSignsDeleteNr', linehl = 'GitSignsDeleteLn' },
-        },
-      }
-    end,
-  }
+  use { 'lewis6991/gitsigns.nvim', tag = 'release' }
   use {
     'tpope/vim-fugitive',
     requires = { 'tpope/vim-rhubarb', 'junegunn/gv.vim', 'tpope/git-bump' },
@@ -119,7 +107,6 @@ return require('packer').startup(function()
     '~/Git/cinnamon-scroll',
     requires = 'tpope/vim-repeat',
   }
-
   use '~/Git/vim2vscode'
   use '~/Git/git-scripts.nvim'
 end)
