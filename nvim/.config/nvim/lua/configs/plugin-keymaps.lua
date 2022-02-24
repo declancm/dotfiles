@@ -2,6 +2,7 @@ local opts = { noremap = true, silent = true }
 
 -- undotree
 vim.api.nvim_set_keymap('n', '<F5>', '<Cmd>UndotreeToggle<CR><Cmd>wincmd p<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>u', '<Cmd>UndotreeToggle<CR><Cmd>wincmd p<CR>', opts)
 
 -- chadtree
 vim.api.nvim_set_keymap('n', '<leader>e', '<Cmd>CHADopen<CR>', opts)
@@ -16,7 +17,7 @@ vim.api.nvim_set_keymap('n', '<leader>mds', '<Cmd>MarkdownPreviewStop<CR>', opts
 vim.api.nvim_set_keymap('n', '<leader>tt', '<Cmd>TroubleToggle<CR>', opts)
 
 -- todo
-vim.api.nvim_set_keymap('n', '<leader>tdt', '<Cmd>TodoTrouble<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>tt', '<Cmd>TodoTrouble<CR>', opts)
 
 -- lspsaga
 vim.api.nvim_set_keymap('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<CR>', opts)

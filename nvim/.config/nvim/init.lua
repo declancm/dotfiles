@@ -15,14 +15,12 @@ require 'configs.packer'
 
 -- PLUGIN_CONFIGS:
 require 'configs.lsp'
-require 'configs.trouble'
-require 'configs.null-ls'
-require 'configs.treesitter'
-require 'configs.refactoring'
+require 'configs.debugging'
 require 'configs.telescope'
-require 'configs.toggleterm'
-require 'configs.insert'
+require 'configs.treesitter'
+require 'configs.terminal'
 require 'configs.visuals'
+require 'configs.insert'
 require 'configs.my-plugins'
 
 -- KEYMAPS:

@@ -24,6 +24,15 @@ return require('packer').startup(function()
   use 'tami5/lspsaga.nvim'
   use 'folke/lsp-colors.nvim'
 
+  -- DEBUGGING:
+  use 'folke/trouble.nvim'
+  use 'mfussenegger/nvim-dap'
+  use 'mbbill/undotree'
+  use {
+    'iamcco/markdown-preview.nvim',
+    run = 'cd app && yarn install',
+  }
+
   -- TELESCOPE:
   use {
     'nvim-telescope/telescope.nvim',
@@ -36,6 +45,9 @@ return require('packer').startup(function()
   -- TREESITTER:
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'ThePrimeagen/refactoring.nvim'
+
+  -- TERMINAL:
+  use 'akinsho/toggleterm.nvim'
 
   -- VISUALS:
   use 'folke/tokyonight.nvim'
@@ -53,54 +65,49 @@ return require('packer').startup(function()
       require('colorizer').setup()
     end,
   }
-
-  -- DEBUGGING:
-  use 'folke/trouble.nvim'
-  use 'mfussenegger/nvim-dap'
   use {
-    'iamcco/markdown-preview.nvim',
-    run = 'cd app && yarn install',
+    'ms-jpq/chadtree',
+    branch = 'chad',
+    run = 'python3 -m chadtree deps',
   }
 
+  -- INSERT:
+  use 'dkarter/bullets.vim'
+  use 'b3nj5m1n/kommentary'
+
   -- GIT:
-  use { 'lewis6991/gitsigns.nvim', tag = 'release' }
+  use {
+    'lewis6991/gitsigns.nvim',
+    tag = 'release',
+    config = function()
+      require('gitsigns').setup {
+        signs = {
+          add = { text = '+' },
+          change = { text = '~' },
+          changedelete = { hl = 'GitSignsDelete', numhl = 'GitSignsDeleteNr', linehl = 'GitSignsDeleteLn' },
+        },
+      }
+    end,
+  }
   use {
     'tpope/vim-fugitive',
     requires = { 'tpope/vim-rhubarb', 'junegunn/gv.vim', 'tpope/git-bump' },
   }
 
-  -- INSERT:
-  use 'dkarter/bullets.vim'
-  use {
-    'b3nj5m1n/kommentary',
-    -- config = function()
-    --   vim.g.kommentary_create_default_mappings = false
-    -- end,
-  }
-
   -- MOVEMENT:
   use 'machakann/vim-sandwich'
-  use 'unblevable/quick-scope'
+  use {
+    'unblevable/quick-scope',
+    config = function()
+      vim.g.qs_highlight_on_keys = { 'f', 'F', 't', 'T' }
+      vim.g.qs_max_chars = 160
+    end,
+  }
   use 'chaoren/vim-wordmotion'
 
   -- MISCELLANEOUS:
-  use {
-    'ms-jpq/chadtree',
-    branch = 'chad',
-    run = 'python3 -m chadtree deps',
-    config = function()
-      local chadtree_settings = {
-        ['theme.text_colour_set'] = 'solarized_light',
-        ['options.session'] = false,
-        ['options.close_on_open'] = true,
-      }
-      vim.api.nvim_set_var('chadtree_settings', chadtree_settings)
-    end,
-  }
-  use 'mbbill/undotree'
-  use 'tpope/vim-obsession'
-  use 'akinsho/toggleterm.nvim'
   use 'tpope/vim-abolish'
+  use 'tpope/vim-obsession'
 
   -- MY_PLUGINS:
   use {

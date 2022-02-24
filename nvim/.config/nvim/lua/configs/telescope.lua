@@ -1,3 +1,4 @@
+-- TELESCOPE:
 require('telescope').setup {
   defaults = {
     mappings = {
