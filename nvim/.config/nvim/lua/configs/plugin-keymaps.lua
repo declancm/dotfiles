@@ -15,6 +15,9 @@ vim.api.nvim_set_keymap('n', '<leader>mds', '<Cmd>MarkdownPreviewStop<CR>', opts
 -- trouble
 vim.api.nvim_set_keymap('n', '<leader>tt', '<Cmd>TroubleToggle<CR>', opts)
 
+-- todo
+vim.api.nvim_set_keymap('n', '<leader>tdt', '<Cmd>TodoTrouble<CR>', opts)
+
 -- lspsaga
 vim.api.nvim_set_keymap('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<CR>', opts)
 vim.api.nvim_set_keymap('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
