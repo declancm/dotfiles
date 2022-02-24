@@ -6,8 +6,6 @@ local opts = { noremap = true, silent = true }
 
 -- vim.g.commit_on_save = 1
 
--- vim.g.gitscripts_no_defaults = 1
-
 -- CINNAMON-SCROLL:
 
 vim.g.cinnamon_repeat = 0
