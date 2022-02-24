@@ -77,3 +77,7 @@ require('gitsigns').setup {
     changedelete = { hl = 'GitSignsDelete', numhl = 'GitSignsDeleteNr', linehl = 'GitSignsDeleteLn' },
   },
 }
+
+-- TODO-COMMENTS:
+vim.api.nvim_set_keymap('n', '<leader>tdt', '<Cmd>TodoTrouble<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>ft', '<Cmd>TodoTelescope<CR>', { noremap = true, silent = true })

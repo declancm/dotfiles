@@ -1,3 +1,5 @@
+local opts = { noremap = true, silent = true }
+
 -- COQ_CONFIG:
 vim.g.coq_settings = {
   ['auto_start'] = 'shut-up',
@@ -5,7 +7,6 @@ vim.g.coq_settings = {
 }
 
 -- LSP_CONFIG:
-
 local lsp = require 'lspconfig'
 
 -- Installing the Language Servers
@@ -35,8 +36,6 @@ lsp.vimls.setup {}
 --               set(CMAKE_EXPORT_COMPILE_COMMANDS ON CACHE INTERNAL "")
 
 -- LSP_KEYMAPS:
-local opts = { noremap = true, silent = true }
-
 vim.api.nvim_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
 vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
 vim.api.nvim_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
@@ -76,7 +75,7 @@ require('null-ls').setup {
 -- format on command
 vim.cmd 'command! Format :lua vim.lsp.buf.formatting_sync()'
 
--- LSP_SAGA_CONFIG:
+-- LSPSAGA:
 local saga = require 'lspsaga'
 
 saga.init_lsp_saga {
@@ -86,6 +85,14 @@ saga.init_lsp_saga {
   infor_sign = '▶',
   border_style = 'round',
 }
+
+-- LSPSAGA_KEYMAPS:
+vim.api.nvim_set_keymap('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<CR>', opts)
+vim.api.nvim_set_keymap('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
+vim.api.nvim_set_keymap('i', '<C-k>', '<Cmd>Lspsaga signature_help<CR>', opts)
+vim.api.nvim_set_keymap('n', 'gh', '<Cmd>Lspsaga lsp_finder<CR>', opts)
+-- vim.api.nvim_set_keymap('n', '<C->', '<Cmd>Lspsaga open_floaterm<CR>', opts)
+-- vim.api.nvim_set_keymap('t', '<C->', '<Cmd>Lspsaga open_floaterm<CR>', opts)
 
 -- LSP_COLORS:
 require('lsp-colors').setup {

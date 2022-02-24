@@ -15,18 +15,17 @@ require 'configs.packer'
 
 -- PLUGIN_CONFIGS:
 require 'configs.lsp'
-require 'configs.debugging'
 require 'configs.telescope'
 require 'configs.treesitter'
-require 'configs.term'
+require 'configs.dev'
 require 'configs.visuals'
 require 'configs.faster'
+require 'configs.misc'
 require 'configs.my-plugins'
 
 -- KEYMAPS:
-require 'configs.plugin-keymaps'
 require 'configs.keymaps'
-require 'configs.function-keymaps'
+require 'configs.functions'
 
 -- OPTIONS:
 vim.opt.iskeyword = vim.opt.iskeyword - '_'

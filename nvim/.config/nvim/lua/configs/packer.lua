@@ -24,13 +24,18 @@ return require('packer').startup(function()
   use 'tami5/lspsaga.nvim'
   use 'folke/lsp-colors.nvim'
 
-  -- DEBUGGING:
+  -- DEV:
   use 'folke/trouble.nvim'
-  use 'mfussenegger/nvim-dap'
   use 'mbbill/undotree'
+  use 'mfussenegger/nvim-dap'
   use {
     'iamcco/markdown-preview.nvim',
     run = 'cd app && yarn install',
+  }
+  use 'akinsho/toggleterm.nvim'
+  use {
+    'tpope/vim-fugitive',
+    requires = { 'tpope/vim-rhubarb', 'junegunn/gv.vim', 'tpope/git-bump' },
   }
 
   -- TELESCOPE:
@@ -45,9 +50,6 @@ return require('packer').startup(function()
   -- TREESITTER:
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'ThePrimeagen/refactoring.nvim'
-
-  -- TERM:
-  use 'akinsho/toggleterm.nvim'
 
   -- VISUALS:
   use 'folke/tokyonight.nvim'
@@ -75,25 +77,11 @@ return require('packer').startup(function()
   use 'b3nj5m1n/kommentary'
   use 'tpope/vim-abolish'
 
-  -- GIT:
-  use {
-    'tpope/vim-fugitive',
-    requires = { 'tpope/vim-rhubarb', 'junegunn/gv.vim', 'tpope/git-bump' },
-  }
-
-  -- MISCELLANEOUS:
+  -- MISC:
   use {
     'ms-jpq/chadtree',
     branch = 'chad',
     run = 'python3 -m chadtree deps',
-    config = function()
-      local chadtree_settings = {
-        ['theme.text_colour_set'] = 'solarized_light',
-        ['options.session'] = false,
-        ['options.close_on_open'] = true,
-      }
-      vim.api.nvim_set_var('chadtree_settings', chadtree_settings)
-    end,
   }
   use 'tpope/vim-obsession'
 
