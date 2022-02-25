@@ -1,8 +1,7 @@
 -- stylua: ignore start
-local fn = vim.fn
-local install_path = fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
-if fn.empty(fn.glob(install_path)) > 0 then
-  packer_bootstrap = fn.system { 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path, }
+local packer_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
+if vim.fn.empty(vim.fn.glob(packer_path)) > 0 then
+  packer_bootstrap = vim.fn.system { 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', packer_path, }
 end
 -- stylua: ignore end
 
@@ -75,6 +74,9 @@ return require('packer').startup(function()
 
   -- MY_PLUGINS:
   use { '~/Git/cinnamon-scroll', requires = 'tpope/vim-repeat' }
+  -- use { 'declancm/cinnamon-scroll', requires = 'tpope/vim-repeat' }
   use '~/Git/vim2vscode'
+  -- use 'declancm/vim2vscode'
   use '~/Git/git-scripts.nvim'
+  -- use 'declancm/git-scripts.nvim'
 end)

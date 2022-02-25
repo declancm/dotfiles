@@ -88,18 +88,11 @@ require('gitsigns').setup {
 }
 
 -- TODO-COMMENTS:
-vim.api.nvim_set_keymap(
-  'n',
-  '<leader>tdt',
-  '<Cmd>TodoTrouble<CR>',
-  { noremap = true, silent = true }
-)
-vim.api.nvim_set_keymap(
-  'n',
-  '<leader>ft',
-  '<Cmd>TodoTelescope<CR>',
-  { noremap = true, silent = true }
-)
+local opts = { noremap = true, silent = true }
+local set_keymap = vim.api.nvim_set_keymap
+
+set_keymap('n', '<leader>tdt', '<Cmd>TodoTrouble<CR>', opts)
+set_keymap('n', '<leader>ft', '<Cmd>TodoTelescope<CR>', opts)
 
 -- COLORIZER:
 require('colorizer').setup()

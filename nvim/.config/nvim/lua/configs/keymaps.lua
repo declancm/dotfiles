@@ -17,8 +17,10 @@ set_keymap(
 -- Creating windows.
 set_keymap('n', '<leader>v', '<C-w>v', opts)
 set_keymap('n', '<leader>s', '<C-w>s', opts)
+
 -- Tmux-like previous window switch.
 set_keymap('n', '<leader>;', '<Cmd>wincmd p<CR>', opts)
+
 -- Resize windows.
 set_keymap('n', '<S-Up>', '<Cmd>resize +5<CR>', opts)
 set_keymap('n', '<S-Down>', '<Cmd>resize -5<CR>', opts)
@@ -48,6 +50,7 @@ set_keymap('i', '<C-k>', '<Esc>:m .-2<CR>==a', opts)
 set_keymap('i', '<C-j>', '<Esc>:m .+1<CR>==a', opts)
 set_keymap('n', '<leader>k', ':m .-2<CR>==', opts)
 set_keymap('n', '<leader>j', ':m .+1<CR>==', opts)
+
 -- Moving text with arrows.
 set_keymap('v', '<C-Up>', ":m '<-2<CR>gv=gv", opts)
 set_keymap('v', '<C-Down>', ":m '>+1<CR>gv=gv", opts)
@@ -83,8 +86,7 @@ set_keymap('v', 'c', '"_c', { noremap = true })
 -- Cut is now leader d.
 set_keymap('n', '<leader>d', '"*d', { noremap = true })
 set_keymap('n', '<leader>D', '"*d', { noremap = true })
-set_keymap('v', '<leader>d', '"*ygv"_d', { noremap = true })
--- set_keymap("v", "<leader>d", '"*d', { noremap = true })
+set_keymap('v', '<leader>d', '"*d', { noremap = true })
 
 -- Delete start of word for command line with ctrl-backspace.
 set_keymap('c', '<C-H>', '<C-w>', { noremap = true })
