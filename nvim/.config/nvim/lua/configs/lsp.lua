@@ -24,9 +24,7 @@ vim.cmd 'let g:powershell_es_path = expand("$HOME/lsp/PowerShellEditorServices")
 lsp.bashls.setup {}
 lsp.clangd.setup {}
 lsp.cmake.setup {}
-lsp.powershell_es.setup {
-  bundle_path = vim.g.powershell_es_path,
-}
+lsp.powershell_es.setup { bundle_path = vim.g.powershell_es_path }
 lsp.pyright.setup {}
 lsp.vimls.setup {}
 
@@ -35,7 +33,7 @@ lsp.vimls.setup {}
 -- clangd:       To use clangd for a cpp project, add this to the CMakeLists.txt:
 --               set(CMAKE_EXPORT_COMPILE_COMMANDS ON CACHE INTERNAL "")
 
--- LSP_KEYMAPS:
+-- Keymaps
 vim.api.nvim_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
 vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
 vim.api.nvim_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
@@ -72,13 +70,11 @@ require('null-ls').setup {
   end,
 }
 
--- format on command
+-- Format on command 'Format'.
 vim.cmd 'command! Format :lua vim.lsp.buf.formatting_sync()'
 
 -- LSPSAGA:
-local saga = require 'lspsaga'
-
-saga.init_lsp_saga {
+require('lspsaga').init_lsp_saga {
   error_sign = '▶',
   warn_sign = '▶',
   hint_sign = '▶',
@@ -86,7 +82,7 @@ saga.init_lsp_saga {
   border_style = 'round',
 }
 
--- LSPSAGA_KEYMAPS:
+-- Keymaps
 vim.api.nvim_set_keymap('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<CR>', opts)
 vim.api.nvim_set_keymap('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
 vim.api.nvim_set_keymap('i', '<C-k>', '<Cmd>Lspsaga signature_help<CR>', opts)

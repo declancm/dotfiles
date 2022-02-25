@@ -18,10 +18,6 @@ require('telescope').setup {
     },
   },
   extensions = {
-    -- fzy_native = {
-    --   override_generic_sorter = false,
-    --   override_file_sorter = true,
-    -- },
     fzf = {
       fuzzy = true, -- false will only do exact matching
       override_generic_sorter = false, -- override the generic sorter
@@ -31,27 +27,47 @@ require('telescope').setup {
     },
   },
 }
--- require('telescope').load_extension 'fzy_native'
 require('telescope').load_extension 'fzf'
 require('telescope').load_extension 'zoxide'
 require('telescope').load_extension 'refactoring'
 
 -- KEYMAPS:
 local opts = { noremap = true, silent = true }
+local set_keymap = vim.api.nvim_set_keymap
 
 -- Telescope keymaps.
-vim.api.nvim_set_keymap('n', '<leader>ff', "<Cmd>lua require('telescope.builtin').find_files()<CR>", opts)
-vim.api.nvim_set_keymap('n', '<leader>fg', "<Cmd>lua require('telescope.builtin').live_grep()<CR>", opts)
-vim.api.nvim_set_keymap('n', '<leader>fb', "<Cmd>lua require('telescope.builtin').buffers()<CR>", opts)
-vim.api.nvim_set_keymap('n', '<leader>fh', "<Cmd>lua require('telescope.builtin').help_tags()<CR>", opts)
+set_keymap(
+  'n',
+  '<leader>ff',
+  "<Cmd>lua require('telescope.builtin').find_files()<CR>",
+  opts
+)
+set_keymap(
+  'n',
+  '<leader>fg',
+  "<Cmd>lua require('telescope.builtin').live_grep()<CR>",
+  opts
+)
+set_keymap(
+  'n',
+  '<leader>fb',
+  "<Cmd>lua require('telescope.builtin').buffers()<CR>",
+  opts
+)
+set_keymap(
+  'n',
+  '<leader>fh',
+  "<Cmd>lua require('telescope.builtin').help_tags()<CR>",
+  opts
+)
 
 -- Telescope zoxide keymaps.
-vim.api.nvim_set_keymap('n', '<leader>fz', '<Cmd>Telescope zoxide list<CR>', opts)
+set_keymap('n', '<leader>fz', '<Cmd>Telescope zoxide list<CR>', opts)
 
 -- Telescope refactoring keymaps.
-vim.api.nvim_set_keymap(
+set_keymap(
   'v',
   '<leader>fr',
   "<Esc><Cmd>lua require('telescope').extensions.refactoring.refactors()<CR>",
-  { noremap = true }
+  opts
 )

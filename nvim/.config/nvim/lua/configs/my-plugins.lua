@@ -1,4 +1,5 @@
 local opts = { noremap = true, silent = true }
+local set_keymap = vim.api.nvim_set_keymap
 
 -- VIM2VSCODE:
 
@@ -12,10 +13,10 @@ local opts = { noremap = true, silent = true }
 vim.g.cinnamon_repeat = 0
 vim.g.cinnamon_no_defaults = 1
 
-vim.api.nvim_set_keymap('n', '{', '<Cmd>Cinnamon { 0 <CR>', opts)
-vim.api.nvim_set_keymap('n', '}', '<Cmd>Cinnamon } 0 <CR>', opts)
-vim.api.nvim_set_keymap('x', '{', '<Cmd>call VParagraphUp()<CR>', opts)
-vim.api.nvim_set_keymap('x', '}', '<Cmd>call VParagraphDown()<CR>', opts)
+set_keymap('n', '{', '<Cmd>Cinnamon { 0 <CR>', opts)
+set_keymap('n', '}', '<Cmd>Cinnamon } 0 <CR>', opts)
+set_keymap('x', '{', '<Cmd>call VParagraphUp()<CR>', opts)
+set_keymap('x', '}', '<Cmd>call VParagraphDown()<CR>', opts)
 
 vim.cmd [[
 function! VParagraphUp()
@@ -34,24 +35,24 @@ function! VParagraphDown()
 endfunction
 ]]
 
-vim.api.nvim_set_keymap('n', '<C-u>', '<Cmd>Cinnamon <C-u> <CR>', opts)
-vim.api.nvim_set_keymap('n', '<C-d>', '<Cmd>Cinnamon <C-d> <CR>', opts)
-vim.api.nvim_set_keymap('i', '<C-u>', '<Cmd>Cinnamon <C-u> <CR>', opts)
-vim.api.nvim_set_keymap('i', '<C-d>', '<Cmd>Cinnamon <C-d> <CR>', opts)
+set_keymap('n', '<C-u>', '<Cmd>Cinnamon <C-u> <CR>', opts)
+set_keymap('n', '<C-d>', '<Cmd>Cinnamon <C-d> <CR>', opts)
+set_keymap('i', '<C-u>', '<Cmd>Cinnamon <C-u> <CR>', opts)
+set_keymap('i', '<C-d>', '<Cmd>Cinnamon <C-d> <CR>', opts)
 
-vim.api.nvim_set_keymap('n', '<C-b>', '<Cmd>Cinnamon <C-b> 1 1 <CR>', opts)
-vim.api.nvim_set_keymap('n', '<C-f>', '<Cmd>Cinnamon <C-f> 1 1 <CR>', opts)
-vim.api.nvim_set_keymap('i', '<C-b>', '<Cmd>Cinnamon <C-b> 1 1 <CR>', opts)
-vim.api.nvim_set_keymap('i', '<C-f>', '<Cmd>Cinnamon <C-f> 1 1 <CR>', opts)
-vim.api.nvim_set_keymap('n', '<PageUp>', '<Cmd>Cinnamon <C-b> 1 1 <CR>', opts)
-vim.api.nvim_set_keymap('n', '<PageDown>', '<Cmd>Cinnamon <C-f> 1 1 <CR>', opts)
-vim.api.nvim_set_keymap('i', '<PageUp>', '<Cmd>Cinnamon <C-b> 1 1 <CR>', opts)
-vim.api.nvim_set_keymap('i', '<PageDown>', '<Cmd>Cinnamon <C-f> 1 1 <CR>', opts)
+set_keymap('n', '<C-b>', '<Cmd>Cinnamon <C-b> 1 1 <CR>', opts)
+set_keymap('n', '<C-f>', '<Cmd>Cinnamon <C-f> 1 1 <CR>', opts)
+set_keymap('i', '<C-b>', '<Cmd>Cinnamon <C-b> 1 1 <CR>', opts)
+set_keymap('i', '<C-f>', '<Cmd>Cinnamon <C-f> 1 1 <CR>', opts)
+set_keymap('n', '<PageUp>', '<Cmd>Cinnamon <C-b> 1 1 <CR>', opts)
+set_keymap('n', '<PageDown>', '<Cmd>Cinnamon <C-f> 1 1 <CR>', opts)
+set_keymap('i', '<PageUp>', '<Cmd>Cinnamon <C-b> 1 1 <CR>', opts)
+set_keymap('i', '<PageDown>', '<Cmd>Cinnamon <C-f> 1 1 <CR>', opts)
 
-vim.api.nvim_set_keymap('n', '<C-o>', '<Cmd>Cinnamon <C-o> 0 0 3 <CR>', opts)
-vim.api.nvim_set_keymap('n', '<C-i>', '<Cmd>Cinnamon <C-i> 0 0 3 <CR>', opts)
+set_keymap('n', '<C-o>', '<Cmd>Cinnamon <C-o> 0 0 3 <CR>', opts)
+set_keymap('n', '<C-i>', '<Cmd>Cinnamon <C-i> 0 0 3 <CR>', opts)
 
--- vim.api.nvim_set_keymap('n', 'gg', '<Cmd>Cinnamon gg 0 0 3 <CR>', opts)
--- vim.api.nvim_set_keymap('n', 'G', '<Cmd>Cinnamon G 0 0 3 <CR>', opts)
--- vim.api.nvim_set_keymap('n', 'gg', '<Cmd>Cinnamon gg 0 0 3 <CR>', opts)
--- vim.api.nvim_set_keymap('n', 'G', '<Cmd>Cinnamon G 0 0 3 <CR>', opts)
+-- set_keymap('n', 'gg', '<Cmd>Cinnamon gg 0 0 3 <CR>', opts)
+-- set_keymap('n', 'G', '<Cmd>Cinnamon G 0 0 3 <CR>', opts)
+-- set_keymap('n', 'gg', '<Cmd>Cinnamon gg 0 0 3 <CR>', opts)
+-- set_keymap('n', 'G', '<Cmd>Cinnamon G 0 0 3 <CR>', opts)

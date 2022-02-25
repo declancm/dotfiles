@@ -1,29 +1,26 @@
 local opts = { noremap = true, silent = true }
+local set_keymap = vim.api.nvim_set_keymap
+local buf_set_keymap = vim.api.nvim_buf_set_keymap
 
 -- UNDOTREE:
-vim.api.nvim_set_keymap('n', '<F5>', '<Cmd>UndotreeToggle<CR><Cmd>wincmd p<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>u', '<Cmd>UndotreeToggle<CR><Cmd>wincmd p<CR>', opts)
+set_keymap('n', '<F5>', '<Cmd>UndotreeToggle<CR><Cmd>wincmd p<CR>', opts)
+set_keymap('n', '<leader>u', '<Cmd>UndotreeToggle<CR><Cmd>wincmd p<CR>', opts)
 
 -- TROUBLE:
 require('trouble').setup {}
 
-vim.api.nvim_set_keymap('n', '<leader>tt', '<Cmd>TroubleToggle<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>xx', '<cmd>Trouble<cr>', { silent = true, noremap = true })
-vim.api.nvim_set_keymap(
+set_keymap('n', '<leader>tt', '<Cmd>TroubleToggle<CR>', opts)
+set_keymap('n', '<leader>xx', '<cmd>Trouble<cr>', opts)
+set_keymap(
   'n',
   '<leader>xw',
   '<cmd>Trouble lsp_workspace_diagnostics<cr>',
-  { silent = true, noremap = true }
+  opts
 )
-vim.api.nvim_set_keymap(
-  'n',
-  '<leader>xd',
-  '<cmd>Trouble lsp_document_diagnostics<cr>',
-  { silent = true, noremap = true }
-)
-vim.api.nvim_set_keymap('n', '<leader>xl', '<cmd>Trouble loclist<cr>', { silent = true, noremap = true })
-vim.api.nvim_set_keymap('n', '<leader>xq', '<cmd>Trouble quickfix<cr>', { silent = true, noremap = true })
-vim.api.nvim_set_keymap('n', 'gR', '<cmd>Trouble lsp_references<cr>', { silent = true, noremap = true })
+set_keymap('n', '<leader>xd', '<cmd>Trouble lsp_document_diagnostics<cr>', opts)
+set_keymap('n', '<leader>xl', '<cmd>Trouble loclist<cr>', opts)
+set_keymap('n', '<leader>xq', '<cmd>Trouble quickfix<cr>', opts)
+set_keymap('n', 'gR', '<cmd>Trouble lsp_references<cr>', opts)
 
 -- TOGGLETERM:
 local status_ok, toggleterm = pcall(require, 'toggleterm')
@@ -55,14 +52,14 @@ toggleterm.setup {
 }
 
 function _G.set_terminal_keymaps()
-  vim.api.nvim_buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
-  vim.api.nvim_buf_set_keymap(0, 't', 'jk', [[<C-\><C-n>]], opts)
-  vim.api.nvim_buf_set_keymap(0, 't', '<C-h>', [[<C-\><C-n><C-W>h]], opts)
-  vim.api.nvim_buf_set_keymap(0, 't', '<C-j>', [[<C-\><C-n><C-W>j]], opts)
-  vim.api.nvim_buf_set_keymap(0, 't', '<C-k>', [[<C-\><C-n><C-W>k]], opts)
-  vim.api.nvim_buf_set_keymap(0, 't', '<C-l>', [[<C-\><C-n><C-W>l]], opts)
+  buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
+  buf_set_keymap(0, 't', 'jk', [[<C-\><C-n>]], opts)
+  buf_set_keymap(0, 't', '<C-h>', [[<C-\><C-n><C-W>h]], opts)
+  buf_set_keymap(0, 't', '<C-j>', [[<C-\><C-n><C-W>j]], opts)
+  buf_set_keymap(0, 't', '<C-k>', [[<C-\><C-n><C-W>k]], opts)
+  buf_set_keymap(0, 't', '<C-l>', [[<C-\><C-n><C-W>l]], opts)
   -- delete previous word
-  vim.api.nvim_buf_set_keymap(0, 't', '<C-H>', [[<esc>vBc]], opts)
+  buf_set_keymap(0, 't', '<C-H>', [[<esc>vBc]], opts)
 end
 
 vim.cmd 'autocmd! TermOpen term://* lua set_terminal_keymaps()'
@@ -99,5 +96,5 @@ function _PYTHON_TOGGLE()
 end
 
 -- MARKDOWN-PREVIEW:
-vim.api.nvim_set_keymap('n', '<leader>mdp', '<Cmd>MarkdownPreview<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>mds', '<Cmd>MarkdownPreviewStop<CR>', opts)
+set_keymap('n', '<leader>mdp', '<Cmd>MarkdownPreview<CR>', opts)
+set_keymap('n', '<leader>mds', '<Cmd>MarkdownPreviewStop<CR>', opts)

@@ -1,8 +1,9 @@
 local opts = { noremap = true, silent = true }
+local set_keymap = vim.api.nvim_set_keymap
 
 -- Open notes (notes.txt) from anywhere and return. Automatically git pull when
 -- opening and then git commit and push when closing.
-vim.api.nvim_set_keymap('n', '<leader>n', '<Cmd>call NotesToggle()<CR>', opts)
+set_keymap('n', '<leader>n', '<Cmd>call NotesToggle()<CR>', opts)
 
 vim.cmd [[
 let $NOTES_FULL_PATH = expand("~/notes/notes.txt")
@@ -39,8 +40,8 @@ autocmd BufWritePre $NOTES_FULL_PATH if &modified | let b:notes_modified = 1 | e
 ]]
 
 -- Delete start of word (works with wordmotion).
-vim.api.nvim_set_keymap('i', '<C-H>', '<Cmd>call DeleteStartWord("b")<CR>', opts)
-vim.api.nvim_set_keymap('i', '<M-BS>', '<Cmd>call DeleteStartWord("B")<CR>', opts)
+set_keymap('i', '<C-H>', '<Cmd>call DeleteStartWord("b")<CR>', opts)
+set_keymap('i', '<M-BS>', '<Cmd>call DeleteStartWord("B")<CR>', opts)
 
 vim.cmd [[
 function! DeleteStartWord(backKey)
@@ -61,8 +62,8 @@ endfunction
 ]]
 
 -- Delete end of word (works with wordmotion).
-vim.api.nvim_set_keymap('i', '<C-Del>', '<Cmd>call DeleteEndWord("e")<CR>', opts)
-vim.api.nvim_set_keymap('i', '<M-Del>', '<Cmd>call DeleteEndWord("E")<CR>', opts)
+set_keymap('i', '<C-Del>', '<Cmd>call DeleteEndWord("e")<CR>', opts)
+set_keymap('i', '<M-Del>', '<Cmd>call DeleteEndWord("E")<CR>', opts)
 
 vim.cmd [[
 function! DeleteEndWord(endKey)
@@ -71,15 +72,15 @@ endfunction
 ]]
 
 -- Paste from global clipboard and auto format indent.
-vim.api.nvim_set_keymap('n', 'p', '<Cmd>call GlobalPaste("p")<CR>', opts)
-vim.api.nvim_set_keymap('n', 'P', '<Cmd>call GlobalPaste("P")<CR>', opts)
-vim.api.nvim_set_keymap('n', 'gp', '<Cmd>call GlobalPaste("gp")<CR>', opts)
-vim.api.nvim_set_keymap('n', 'gP', '<Cmd>call GlobalPaste("gP")<CR>', opts)
-vim.api.nvim_set_keymap('n', '<M-p>', '<Cmd>call GlobalPaste("p")<CR>a', opts)
-vim.api.nvim_set_keymap('n', '<M-P>', '<Cmd>call GlobalPaste("P")<CR>a', opts)
-vim.api.nvim_set_keymap('i', '<M-p>', '<Esc><Cmd>call GlobalPaste("p")<CR>a', opts)
-vim.api.nvim_set_keymap('i', '<M-P>', '<Esc><Cmd>call GlobalPaste("P")<CR>a', opts)
-vim.api.nvim_set_keymap('n', 'op', 'o<Esc><Cmd>call GlobalPaste("p")<CR>', opts)
+set_keymap('n', 'p', '<Cmd>call GlobalPaste("p")<CR>', opts)
+set_keymap('n', 'P', '<Cmd>call GlobalPaste("P")<CR>', opts)
+set_keymap('n', 'gp', '<Cmd>call GlobalPaste("gp")<CR>', opts)
+set_keymap('n', 'gP', '<Cmd>call GlobalPaste("gP")<CR>', opts)
+set_keymap('n', '<M-p>', '<Cmd>call GlobalPaste("p")<CR>a', opts)
+set_keymap('n', '<M-P>', '<Cmd>call GlobalPaste("P")<CR>a', opts)
+set_keymap('i', '<M-p>', '<Esc><Cmd>call GlobalPaste("p")<CR>a', opts)
+set_keymap('i', '<M-P>', '<Esc><Cmd>call GlobalPaste("P")<CR>a', opts)
+set_keymap('n', 'op', 'o<Esc><Cmd>call GlobalPaste("p")<CR>', opts)
 
 vim.cmd [[
 function! GlobalPaste(pasteMode)
@@ -95,8 +96,8 @@ endfunction
 ]]
 
 -- Append yank.
-vim.api.nvim_set_keymap('v', '<leader>y', '<Cmd>call AppendYank("y")<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>Y', '<Cmd>call AppendYank("yg_")<CR>', opts)
+set_keymap('v', '<leader>y', '<Cmd>call AppendYank("y")<CR>', opts)
+set_keymap('n', '<leader>Y', '<Cmd>call AppendYank("yg_")<CR>', opts)
 
 vim.cmd [[
 function! AppendYank(yankMode)
@@ -106,14 +107,14 @@ endfunction
 ]]
 
 -- Window movement.
-vim.api.nvim_set_keymap('n', '<leader>k', '<Cmd>call WindowMovement("k")<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>j', '<Cmd>call WindowMovement("j")<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>h', '<Cmd>call WindowMovement("h")<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>l', '<Cmd>call WindowMovement("l")<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader><Up>', '<Cmd>call WindowMovement("k")<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader><Down>', '<Cmd>call WindowMovement("j")<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader><Left>', '<Cmd>call WindowMovement("h")<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader><Right>', '<Cmd>call WindowMovement("l")<CR>', opts)
+set_keymap('n', '<leader>k', '<Cmd>call WindowMovement("k")<CR>', opts)
+set_keymap('n', '<leader>j', '<Cmd>call WindowMovement("j")<CR>', opts)
+set_keymap('n', '<leader>h', '<Cmd>call WindowMovement("h")<CR>', opts)
+set_keymap('n', '<leader>l', '<Cmd>call WindowMovement("l")<CR>', opts)
+set_keymap('n', '<leader><Up>', '<Cmd>call WindowMovement("k")<CR>', opts)
+set_keymap('n', '<leader><Down>', '<Cmd>call WindowMovement("j")<CR>', opts)
+set_keymap('n', '<leader><Left>', '<Cmd>call WindowMovement("h")<CR>', opts)
+set_keymap('n', '<leader><Right>', '<Cmd>call WindowMovement("l")<CR>', opts)
 
 vim.cmd [[
 function! WindowMovement(key)
@@ -131,7 +132,7 @@ endfunction
 ]]
 
 -- Close other buffers.
-vim.api.nvim_set_keymap('n', '<leader>bd', '<Cmd>call BufferDelete()<CR>', opts)
+set_keymap('n', '<leader>bd', '<Cmd>call BufferDelete()<CR>', opts)
 
 vim.cmd [[
 function! BufferDelete()
@@ -142,8 +143,8 @@ endfunction
 ]]
 
 -- Maximize the current window.
-vim.api.nvim_set_keymap('n', '<leader>z', '<Cmd>call MaximizeWindow()<CR>', opts)
-vim.api.nvim_set_keymap('x', '<leader>z', '<Cmd>call MaximizeWindow()<CR>', opts)
+set_keymap('n', '<leader>z', '<Cmd>call MaximizeWindow()<CR>', opts)
+set_keymap('x', '<leader>z', '<Cmd>call MaximizeWindow()<CR>', opts)
 
 vim.cmd [[
 function! MaximizeWindow()

@@ -28,10 +28,7 @@ return require('packer').startup(function()
   use 'folke/trouble.nvim'
   use 'mbbill/undotree'
   use 'mfussenegger/nvim-dap'
-  use {
-    'iamcco/markdown-preview.nvim',
-    run = 'cd app && yarn install',
-  }
+  use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install' }
   use 'akinsho/toggleterm.nvim'
   use {
     'tpope/vim-fugitive',
@@ -62,34 +59,22 @@ return require('packer').startup(function()
       require('todo-comments').setup { signs = false }
     end,
   }
+  use 'norcalli/nvim-colorizer.lua'
 
   -- FASTER:
   use 'machakann/vim-sandwich'
-  use {
-    'unblevable/quick-scope',
-    config = function()
-      vim.g.qs_highlight_on_keys = { 'f', 'F', 't', 'T' }
-      vim.g.qs_max_chars = 160
-    end,
-  }
+  use 'unblevable/quick-scope'
   use 'chaoren/vim-wordmotion'
   use 'dkarter/bullets.vim'
   use 'b3nj5m1n/kommentary'
   use 'tpope/vim-abolish'
 
   -- MISC:
-  use {
-    'ms-jpq/chadtree',
-    branch = 'chad',
-    run = 'python3 -m chadtree deps',
-  }
+  use { 'ms-jpq/chadtree', branch = 'chad', run = 'python3 -m chadtree deps' }
   use 'tpope/vim-obsession'
 
   -- MY_PLUGINS:
-  use {
-    '~/Git/cinnamon-scroll',
-    requires = 'tpope/vim-repeat',
-  }
+  use { '~/Git/cinnamon-scroll', requires = 'tpope/vim-repeat' }
   use '~/Git/vim2vscode'
   use '~/Git/git-scripts.nvim'
 end)

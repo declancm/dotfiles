@@ -49,7 +49,12 @@ require('lualine').setup {
       {
         'diagnostics',
         sources = { 'nvim_diagnostic' },
-        symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' },
+        symbols = {
+          error = ' ',
+          warn = ' ',
+          info = ' ',
+          hint = ' ',
+        },
       },
       'encoding',
       'filetype',
@@ -74,10 +79,27 @@ require('gitsigns').setup {
   signs = {
     add = { text = '+' },
     change = { text = '~' },
-    changedelete = { hl = 'GitSignsDelete', numhl = 'GitSignsDeleteNr', linehl = 'GitSignsDeleteLn' },
+    changedelete = {
+      hl = 'GitSignsDelete',
+      numhl = 'GitSignsDeleteNr',
+      linehl = 'GitSignsDeleteLn',
+    },
   },
 }
 
 -- TODO-COMMENTS:
-vim.api.nvim_set_keymap('n', '<leader>tdt', '<Cmd>TodoTrouble<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>ft', '<Cmd>TodoTelescope<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap(
+  'n',
+  '<leader>tdt',
+  '<Cmd>TodoTrouble<CR>',
+  { noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+  'n',
+  '<leader>ft',
+  '<Cmd>TodoTelescope<CR>',
+  { noremap = true, silent = true }
+)
+
+-- COLORIZER:
+require('colorizer').setup()
