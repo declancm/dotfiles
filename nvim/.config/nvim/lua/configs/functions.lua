@@ -6,18 +6,18 @@ local set_keymap = vim.api.nvim_set_keymap
 set_keymap('n', '<leader>n', '<Cmd>call NotesToggle()<CR>', opts)
 
 vim.cmd [[
-let $NOTES_FULL_PATH = expand("~/notes/notes.txt")
-let $NOTES_DIR = expand("~/notes")
+let g:notes_dir = expand("~/notes")
+let g:notes_full_path = expand("~/notes/notes.txt")
 
 function! NotesToggle()
+    " Check if current directory is the notes directory.
     let l:currentDir = getcwd(0)
-    if l:currentDir ==# $NOTES_DIR
-        if &modified || exists("b:notes_modified") && b:notes_modified == 1
+    if l:currentDir ==# g:notes_dir
+        if exists("b:notes_modified") && b:notes_modified == 1
             " Commit and push when file has been modified.
             silent exec "w"
             echom "Your changes to " . bufname("%") . " are being committed."
-            " Asynchronous git commit.
-            lua require("git-scripts").async_commit(os.getenv("NOTES_DIR"))
+            lua require("git-scripts").async_commit('',vim.g.notes_dir)
             silent exec "e# | lcd -"
         else
             " Only return when nothing has been modified.
@@ -25,18 +25,17 @@ function! NotesToggle()
         endif
         set nolbr nobri nowrap cc=80
     else
-        silent exec "lcd $NOTES_DIR"
-        " Asynchronous git pull.
-        lua require("git-scripts").async_pull(os.getenv("NOTES_DIR"))
-        silent exec "edit $NOTES_FULL_PATH"
+        silent exec "lcd " . g:notes_dir
+        lua require("git-scripts").async_pull('',vim.g.notes_dir)
+        silent exec "edit " . g:notes_full_path
         set wrap lbr bri cc=0
         let &showbreak=repeat(' ',6)
     endif
 endfunction
 
 " Check if modified every time the buffer is saved.
-autocmd BufEnter $NOTES_FULL_PATH let b:notes_modified = 0
-autocmd BufWritePre $NOTES_FULL_PATH if &modified | let b:notes_modified = 1 | endif
+exec "autocmd BufEnter " . g:notes_full_path . " let b:notes_modified = 0"
+exec "autocmd BufWritePre " . g:notes_full_path . " if &modified | let b:notes_modified = 1 | endif"
 ]]
 
 -- Delete start of word (works with wordmotion).
@@ -122,9 +121,9 @@ function! WindowMovement(key)
     silent exec "wincmd " . a:key
     if (l:currentWin == winnr())
         if (match(a:key,'[jk]'))
-          wincmd v
+            wincmd v
         else
-          wincmd s
+            wincmd s
         endif
         silent exec "wincmd ".a:key
     endif

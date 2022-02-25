@@ -31,7 +31,7 @@ return require('packer').startup(function()
   use 'akinsho/toggleterm.nvim'
   use {
     'tpope/vim-fugitive',
-    requires = { 'tpope/vim-rhubarb', 'junegunn/gv.vim', 'tpope/git-bump' },
+    requires = { 'tpope/git-bump', 'junegunn/gv.vim' },
   }
 
   -- TELESCOPE:
