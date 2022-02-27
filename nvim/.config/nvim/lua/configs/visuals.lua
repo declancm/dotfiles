@@ -85,10 +85,13 @@ require('gitsigns').setup {
       linehl = 'GitSignsDeleteLn',
     },
   },
+  sign_priority = 10,
 }
 
 -- TODO-COMMENTS:
-require('todo-comments').setup {}
+require('todo-comments').setup {
+  -- signs = false,
+}
 
 local opts = { noremap = true, silent = true }
 local set_keymap = vim.api.nvim_set_keymap
