@@ -44,8 +44,3 @@ set_keymap('n', '<PageDown>', '<Cmd>Cinnamon <C-f> 1 1 <CR>', opts)
 
 set_keymap('n', '<C-o>', '<Cmd>Cinnamon <C-o> 0 0 3 <CR>', opts)
 set_keymap('n', '<C-i>', '<Cmd>Cinnamon <C-i> 0 0 3 <CR>', opts)
-
--- set_keymap('n', 'gg', '<Cmd>Cinnamon gg 0 0 3 <CR>', opts)
--- set_keymap('n', 'G', '<Cmd>Cinnamon G 0 0 3 <CR>', opts)
--- set_keymap('n', 'gg', '<Cmd>Cinnamon gg 0 0 3 <CR>', opts)
--- set_keymap('n', 'G', '<Cmd>Cinnamon G 0 0 3 <CR>', opts)

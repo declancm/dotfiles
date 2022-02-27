@@ -27,7 +27,6 @@ return require('packer').startup(function()
   use 'mbbill/undotree'
   -- use 'mfussenegger/nvim-dap'
   use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install' }
-  -- use 'akinsho/toggleterm.nvim'
   use {
     'tpope/vim-fugitive',
     requires = { 'tpope/git-bump', 'junegunn/gv.vim' },
