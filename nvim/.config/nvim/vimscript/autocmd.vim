@@ -26,6 +26,11 @@ augroup writing_buffer
     autocmd BufWritePre * :call TrimWhitespace()
 augroup END
 
+augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost ~/.config/nvim/lua/plugins.lua source $MYVIMRC | PackerCompile
+augroup end
+
 " automatically set the tab size
 function! s:TabSize()
     if &ft == 'html' | setlocal shiftwidth=2 tabstop=2 softtabstop=2

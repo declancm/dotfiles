@@ -60,7 +60,7 @@ return require('packer').startup(function()
   }
   use 'norcalli/nvim-colorizer.lua'
 
-  -- FASTER:
+  -- SPEED:
   use 'machakann/vim-sandwich'
   use 'unblevable/quick-scope'
   use 'chaoren/vim-wordmotion'
@@ -71,6 +71,7 @@ return require('packer').startup(function()
   -- MISC:
   use { 'ms-jpq/chadtree', branch = 'chad', run = 'python3 -m chadtree deps' }
   use 'tpope/vim-obsession'
+  use 'tpope/vim-capslock'
 
   -- MY_PLUGINS:
   use { '~/Git/cinnamon-scroll', requires = 'tpope/vim-repeat' }

@@ -11,7 +11,7 @@ vim.cmd [[let mapleader = "\<BS>"]]
 vim.cmd [[source $HOME/.config/nvim/vimscript/autocmd.vim]]
 
 -- Packer.
-require 'configs.packer'
+require 'plugins'
 
 -- PLUGIN_CONFIGS:
 require 'configs.lsp'
@@ -19,7 +19,7 @@ require 'configs.telescope'
 require 'configs.treesitter'
 require 'configs.dev'
 require 'configs.visuals'
-require 'configs.faster'
+require 'configs.speed'
 require 'configs.misc'
 require 'configs.my-plugins'
 
