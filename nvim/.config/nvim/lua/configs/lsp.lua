@@ -103,15 +103,15 @@ set_keymap('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<CR>', opts)
 set_keymap('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
 set_keymap('i', '<C-k>', '<Cmd>Lspsaga signature_help<CR>', opts)
 set_keymap('n', 'gh', '<Cmd>Lspsaga lsp_finder<CR>', opts)
-set_keymap(
-  'n',
-  '<C-\\>',
-  "<Cmd>lua require('lspsaga.floaterm').open_float_terminal()<CR>",
-  opts
-)
-set_keymap(
-  't',
-  '<C-\\>',
-  "<C-\\><C-n><Cmd>lua require('lspsaga.floaterm').close_float_terminal()<CR>",
-  opts
-)
+-- set_keymap(
+--   'n',
+--   '<C-\\>',
+--   "<Cmd>lua require('lspsaga.floaterm').open_float_terminal()<CR>",
+--   opts
+-- )
+-- set_keymap(
+--   't',
+--   '<C-\\>',
+--   "<C-\\><C-n><Cmd>lua require('lspsaga.floaterm').close_float_terminal()<CR>",
+--   opts
+-- )

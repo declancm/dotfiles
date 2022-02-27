@@ -28,37 +28,35 @@ require 'configs.keymaps'
 require 'configs.functions'
 
 -- OPTIONS:
-vim.opt.iskeyword = vim.opt.iskeyword - '_'
-vim.opt.backspace = { 'indent', 'eol', 'start', 'nostop' }
-vim.opt.relativenumber = true
-vim.opt.nu = true
-vim.opt.hlsearch = false
-vim.opt.hidden = true
-vim.opt.errorbells = false
-vim.opt.expandtab = true
-vim.opt.autoindent = true
-vim.opt.smartindent = true
--- vim.opt.cindent = true
-vim.opt.wrap = false
-vim.opt.smartcase = true
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undodir = vim.fn.stdpath 'config' .. '/undodir'
 vim.opt.undofile = true
-vim.opt.incsearch = true
+vim.opt.hidden = true
 vim.opt.termguicolors = true
-vim.opt.scrolloff = 8
+vim.opt.relativenumber = true
+vim.opt.nu = true
+vim.opt.signcolumn = 'auto:1-2'
 vim.opt.showmode = true
-vim.opt.signcolumn = 'auto:2'
-vim.opt.textwidth = 0
-vim.opt.wrapmargin = 0
+-- vim.opt.errorbells = false
 vim.opt.cmdheight = 2
+vim.opt.incsearch = true
+vim.opt.hlsearch = false
+vim.opt.smartcase = true
+vim.opt.wrap = false
+-- vim.opt.textwidth = 0
+-- vim.opt.wrapmargin = 0
+vim.opt.expandtab = true
+vim.opt.autoindent = true
+vim.opt.smartindent = true -- vim.opt.cindent = true
+vim.opt.scrolloff = 8
+vim.opt.iskeyword = vim.opt.iskeyword - '_'
+vim.opt.backspace = { 'indent', 'eol', 'start', 'nostop' }
 vim.opt.updatetime = 100
 vim.opt.shortmess = vim.opt.shortmess + 'ac'
-vim.opt.modifiable = true
+-- vim.opt.modifiable = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
-vim.opt.pastetoggle = '<F9>'
 vim.opt.timeoutlen = 500
 vim.opt.mouse = 'a'
 

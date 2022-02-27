@@ -1,7 +1,6 @@
 local opts = { noremap = true, silent = true }
 local set_keymap = vim.api.nvim_set_keymap
 
-set_keymap('v', '<leader>P', '"*P`[v`]', opts)
 -- Improve the <Home> key.
 set_keymap('', '<Home>', 'zH^', opts)
 set_keymap('i', '<Home>', '<Esc>zHI', opts)
@@ -69,6 +68,7 @@ set_keymap('v', 'y', '"*y', opts)
 
 -- Paste from global clipboard and highlight.
 set_keymap('n', '<leader>p', '"*p`[v`]', opts)
+set_keymap('n', '<leader>P', '"*P`[v`]', opts)
 
 -- Highlight after indenting.
 set_keymap('v', '>', '>gv', opts)
