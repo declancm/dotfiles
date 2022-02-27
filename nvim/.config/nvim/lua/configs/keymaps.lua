@@ -90,7 +90,3 @@ set_keymap('v', '<leader>d', '"*d', { noremap = true })
 
 -- Delete start of word for command line with ctrl-backspace.
 set_keymap('c', '<C-H>', '<C-w>', { noremap = true })
-
--- Remap arrow keys to ignore completion window.
-set_keymap('i', '<Up>', '<Esc>:normal! k<CR>a', opts)
-set_keymap('i', '<Down>', '<Esc>:normal! j<CR>a', opts)

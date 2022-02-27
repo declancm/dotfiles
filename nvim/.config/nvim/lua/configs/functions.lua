@@ -26,7 +26,7 @@ function! NotesToggle()
         set nolbr nobri nowrap cc=80
     else
         silent exec "lcd " . g:notes_dir
-        lua require("git-scripts").async_pull('',vim.g.notes_dir)
+        lua require("git-scripts").async_pull(vim.g.notes_dir)
         silent exec "edit " . g:notes_full_path
         set wrap lbr bri cc=0
         let &showbreak=repeat(' ',6)

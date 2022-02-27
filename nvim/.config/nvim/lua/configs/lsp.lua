@@ -1,15 +1,32 @@
 local opts = { noremap = true, silent = true }
+local set_keymap = vim.api.nvim_set_keymap
 
 -- COQ_CONFIG:
 vim.g.coq_settings = {
   ['auto_start'] = 'shut-up',
-  ['keymap.jump_to_mark'] = '<C-F>',
+  ['keymap.recommended'] = false,
+  ['keymap.jump_to_mark'] = '<C-n>',
+  ['display.preview.border'] = 'solid',
 }
+
+vim.cmd [[
+" COQ keymaps.
+inoremap <silent><expr> <Esc>   pumvisible() ? "\<C-e><Esc>" : "\<Esc>"
+inoremap <silent><expr> <C-c>   pumvisible() ? "\<C-e><C-c>" : "\<C-c>"
+inoremap <silent><expr> <BS>    pumvisible() ? "\<C-e><BS>"  : "\<BS>"
+inoremap <silent><expr> <CR>    pumvisible() ? (complete_info().selected == -1 ? "\<C-e><CR>" : "\<C-y>") : "\<CR>"
+inoremap <silent><expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <silent><expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<BS>"
+
+" Ignore popup window.
+inoremap <silent><expr> <Up>    pumvisible() ? "\<C-e>\<Up>" : "\<Up>"
+inoremap <silent><expr> <Down>  pumvisible() ? "\<C-e>\<Down>" : "\<Down>"
+]]
 
 -- LSP_CONFIG:
 local lsp = require 'lspconfig'
 
--- Installing the Language Servers
+-- INSTALLATION
 
 -- bashls:        npm i -g bash-language-server
 -- clangd:        sudo apt-get install clangd-12
@@ -28,17 +45,17 @@ lsp.powershell_es.setup { bundle_path = vim.g.powershell_es_path }
 lsp.pyright.setup {}
 lsp.vimls.setup {}
 
--- Notes
+-- NOTES
 
 -- clangd:       To use clangd for a cpp project, add this to the CMakeLists.txt:
 --               set(CMAKE_EXPORT_COMPILE_COMMANDS ON CACHE INTERNAL "")
 
--- Keymaps
-vim.api.nvim_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-vim.api.nvim_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-vim.api.nvim_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+-- LSP keymaps
+set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
 
 -- NULL-LS:
 require('null-ls').setup {
@@ -82,13 +99,13 @@ require('lspsaga').init_lsp_saga {
   border_style = 'round',
 }
 
--- Keymaps
-vim.api.nvim_set_keymap('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<CR>', opts)
-vim.api.nvim_set_keymap('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
-vim.api.nvim_set_keymap('i', '<C-k>', '<Cmd>Lspsaga signature_help<CR>', opts)
-vim.api.nvim_set_keymap('n', 'gh', '<Cmd>Lspsaga lsp_finder<CR>', opts)
--- vim.api.nvim_set_keymap('n', '<C->', '<Cmd>Lspsaga open_floaterm<CR>', opts)
--- vim.api.nvim_set_keymap('t', '<C->', '<Cmd>Lspsaga open_floaterm<CR>', opts)
+-- lspsaga keymaps
+set_keymap('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<CR>', opts)
+set_keymap('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
+set_keymap('i', '<C-k>', '<Cmd>Lspsaga signature_help<CR>', opts)
+set_keymap('n', 'gh', '<Cmd>Lspsaga lsp_finder<CR>', opts)
+-- set_keymap('n', '<C-\>', '<Cmd>Lspsaga open_floaterm<CR>', opts)
+-- set_keymap('t', '<C-\>', '<Cmd>Lspsaga open_floaterm<CR>', opts)
 
 -- LSP_COLORS:
 require('lsp-colors').setup {

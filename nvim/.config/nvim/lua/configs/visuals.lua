@@ -36,7 +36,7 @@ vim.opt.cursorlineopt = 'number'
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = theme, --onedark, tokyonight
+    theme = theme,
     component_separators = { left = '', right = '' },
     section_separators = { left = '', right = '' },
     disabled_filetypes = {},

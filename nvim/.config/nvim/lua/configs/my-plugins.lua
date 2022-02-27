@@ -31,19 +31,15 @@ function! VParagraphDown()
 endfunction
 ]]
 
-set_keymap('n', '<C-u>', '<Cmd>Cinnamon <C-u> <CR>', opts)
-set_keymap('n', '<C-d>', '<Cmd>Cinnamon <C-d> <CR>', opts)
+set_keymap('', '<C-u>', '<Cmd>Cinnamon <C-u> <CR>', opts)
+set_keymap('', '<C-d>', '<Cmd>Cinnamon <C-d> <CR>', opts)
 set_keymap('i', '<C-u>', '<Cmd>Cinnamon <C-u> <CR>', opts)
 set_keymap('i', '<C-d>', '<Cmd>Cinnamon <C-d> <CR>', opts)
 
 set_keymap('n', '<C-b>', '<Cmd>Cinnamon <C-b> 1 1 <CR>', opts)
 set_keymap('n', '<C-f>', '<Cmd>Cinnamon <C-f> 1 1 <CR>', opts)
-set_keymap('i', '<C-b>', '<Cmd>Cinnamon <C-b> 1 1 <CR>', opts)
-set_keymap('i', '<C-f>', '<Cmd>Cinnamon <C-f> 1 1 <CR>', opts)
 set_keymap('n', '<PageUp>', '<Cmd>Cinnamon <C-b> 1 1 <CR>', opts)
 set_keymap('n', '<PageDown>', '<Cmd>Cinnamon <C-f> 1 1 <CR>', opts)
-set_keymap('i', '<PageUp>', '<Cmd>Cinnamon <C-b> 1 1 <CR>', opts)
-set_keymap('i', '<PageDown>', '<Cmd>Cinnamon <C-f> 1 1 <CR>', opts)
 
 set_keymap('n', '<C-o>', '<Cmd>Cinnamon <C-o> 0 0 3 <CR>', opts)
 set_keymap('n', '<C-i>', '<Cmd>Cinnamon <C-i> 0 0 3 <CR>', opts)
