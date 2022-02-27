@@ -3,12 +3,28 @@ local set_keymap = vim.api.nvim_set_keymap
 local buf_set_keymap = vim.api.nvim_buf_set_keymap
 
 -- Native terminal.
-vim.cmd [[autocmd TermOpen * startinsert]]
-vim.cmd [[autocmd BufEnter * if &buftype=='terminal' | startinsert | endif]]
 set_keymap('t', '<C-^>', '<C-\\><C-N><C-^>', opts)
 set_keymap('t', '<C-O>', '<C-\\><C-N><C-O>', opts)
-set_keymap('n', '<C-\\>', '`T', opts)
-set_keymap('t', '<C-\\>', '<C-\\><C-N>mT<C-^>', opts)
+set_keymap('n', '<C-\\>', '<Cmd>call ToggleTerminal()<CR>', opts)
+set_keymap('t', '<C-\\>', '<Cmd>call ToggleTerminal()<CR>', opts)
+
+vim.cmd [[
+autocmd TermOpen * startinsert
+autocmd BufEnter * if &buftype == "terminal" | startinsert | endif
+
+function! ToggleTerminal()
+    if &buftype == "terminal"
+        let g:term_bufnr = bufnr()
+        silent exec "call feedkeys(\"\<C-^>\")"
+    else
+        if !exists("g:term_bufnr") || bufname(g:term_bufnr) == ""
+            silent exec "term"
+        else
+            silent exec "buffer " . g:term_bufnr
+        endif
+    endif
+endfunction
+]]
 
 -- UNDOTREE:
 set_keymap('n', '<F5>', '<Cmd>UndotreeToggle<CR><Cmd>wincmd p<CR>', opts)
