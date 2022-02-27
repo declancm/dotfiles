@@ -79,7 +79,6 @@ require('null-ls').setup {
       augroup LspFormatting
       autocmd! * <buffer>
       autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
-      " convert tabs to spaces
       autocmd BufWritePre <buffer> retab
       augroup END
       ]]
@@ -96,7 +95,7 @@ require('lspsaga').init_lsp_saga {
   warn_sign = '▶',
   hint_sign = '▶',
   infor_sign = '▶',
-  border_style = 'round',
+  border_style = 'none',
 }
 
 -- lspsaga keymaps
@@ -104,13 +103,15 @@ set_keymap('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<CR>', opts)
 set_keymap('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
 set_keymap('i', '<C-k>', '<Cmd>Lspsaga signature_help<CR>', opts)
 set_keymap('n', 'gh', '<Cmd>Lspsaga lsp_finder<CR>', opts)
--- set_keymap('n', '<C-\>', '<Cmd>Lspsaga open_floaterm<CR>', opts)
--- set_keymap('t', '<C-\>', '<Cmd>Lspsaga open_floaterm<CR>', opts)
-
--- LSP_COLORS:
-require('lsp-colors').setup {
-  Error = '#db4b4b',
-  Warning = '#e0af68',
-  Information = '#0db9d7',
-  Hint = '#10B981',
-}
+set_keymap(
+  'n',
+  '<C-\\>',
+  "<Cmd>lua require('lspsaga.floaterm').open_float_terminal()<CR>",
+  opts
+)
+set_keymap(
+  't',
+  '<C-\\>',
+  "<C-\\><C-n><Cmd>lua require('lspsaga.floaterm').close_float_terminal()<CR>",
+  opts
+)

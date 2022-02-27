@@ -50,7 +50,7 @@ vim.opt.termguicolors = true
 vim.opt.scrolloff = 8
 -- vim.opt.scrolloff = 999
 vim.opt.showmode = true
-vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = 'auto:5'
 vim.opt.textwidth = 0
 vim.opt.wrapmargin = 0
 vim.opt.cmdheight = 2
@@ -61,7 +61,7 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.pastetoggle = '<F9>'
 vim.opt.timeoutlen = 500
-vim.opt.mouse = 'nvi'
+vim.opt.mouse = 'a'
 
 -- The ':find' command.
 vim.opt.path = vim.opt.path + '**'

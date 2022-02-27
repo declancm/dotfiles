@@ -1,28 +1,28 @@
 -- THEME:
-local theme = 'tokyonight'
--- local theme = 'onedark'
+-- local theme = 'tokyonight'
+local theme = 'onedark'
 
 vim.opt.background = 'dark'
 vim.opt.colorcolumn = '80'
 
 -- TOKYONIGHT_CONFIG:
-vim.g.tokyonight_style = 'storm'
-vim.g.tokyonight_transparent = true
-vim.g.tokyonight_italic_comments = false
 if theme == 'tokyonight' then
+  vim.g.tokyonight_style = 'storm'
+  vim.g.tokyonight_transparent = true
+  vim.g.tokyonight_italic_comments = false
   vim.cmd [[colorscheme tokyonight]]
   vim.cmd [[highlight ColorColumn ctermbg=0 guibg=#1f2335]]
 end
 
 -- ONEDARK_CONFIG:
-require('onedark').setup {
-  style = 'dark',
-  transparent = true,
-  code_style = {
-    comments = 'none',
-  },
-}
 if theme == 'onedark' then
+  require('onedark').setup {
+    style = 'dark',
+    transparent = true,
+    code_style = {
+      comments = 'none',
+    },
+  }
   vim.cmd [[colorscheme onedark]]
   vim.cmd [[highlight ColorColumn ctermbg=0 guibg=#31353f]]
 end
@@ -88,6 +88,8 @@ require('gitsigns').setup {
 }
 
 -- TODO-COMMENTS:
+require('todo-comments').setup {}
+
 local opts = { noremap = true, silent = true }
 local set_keymap = vim.api.nvim_set_keymap
 

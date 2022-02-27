@@ -1,10 +1,10 @@
 local opts = { noremap = true, silent = true }
 local set_keymap = vim.api.nvim_set_keymap
 
-set_keymap('v', '<leader>P', '"*P`[v`]', { noremap = true })
+set_keymap('v', '<leader>P', '"*P`[v`]', opts)
 -- Improve the <Home> key.
-set_keymap('', '<Home>', 'zH^', { noremap = true })
-set_keymap('i', '<Home>', '<Esc>zHI', { noremap = true })
+set_keymap('', '<Home>', 'zH^', opts)
+set_keymap('i', '<Home>', '<Esc>zHI', opts)
 
 -- Source config file.
 set_keymap(
@@ -28,20 +28,20 @@ set_keymap('n', '<S-Right>', '<Cmd>vertical resize +5<CR>', opts)
 set_keymap('n', '<S-Left>', '<Cmd>vertical resize -5<CR>', opts)
 
 -- Y works like D and C.
-set_keymap('n', 'Y', '"*yg_', { noremap = true })
+set_keymap('n', 'Y', '"*yg_', opts)
 
 -- Stay centered during word search.
-set_keymap('n', 'n', 'nzzzv', { noremap = true })
-set_keymap('n', 'N', 'Nzzzv', { noremap = true })
+set_keymap('n', 'n', 'nzzzv', opts)
+set_keymap('n', 'N', 'Nzzzv', opts)
 
 -- Don't move during J.
 set_keymap('n', 'J', 'mzJ`z:delmarks z<CR>', opts)
 
 -- Adding more undo break points.
-set_keymap('i', ',', ',<C-g>u', { noremap = true })
-set_keymap('i', '.', '.<C-g>u', { noremap = true })
-set_keymap('i', '!', '!<C-g>u', { noremap = true })
-set_keymap('i', '?', '?<C-g>u', { noremap = true })
+set_keymap('i', ',', ',<C-g>u', opts)
+set_keymap('i', '.', '.<C-g>u', opts)
+set_keymap('i', '!', '!<C-g>u', opts)
+set_keymap('i', '?', '?<C-g>u', opts)
 
 -- Moving text.
 set_keymap('v', 'K', ":m '<-2<CR>gv=gv", opts)
@@ -60,33 +60,33 @@ set_keymap('n', '<C-Up>', ':m .-2<CR>==', opts)
 set_keymap('n', '<C-Down>', ':m .+1<CR>==', opts)
 
 -- Replace a word then press '.' to change next occurence.
-set_keymap('n', 'cn', '*``"_cgn', { noremap = true })
-set_keymap('n', 'cN', '*``"_cgN', { noremap = true })
+set_keymap('n', 'cn', '*``"_cgn', opts)
+set_keymap('n', 'cN', '*``"_cgN', opts)
 
 -- Yank to global clipboard.
-set_keymap('n', 'y', '"*y', { noremap = true })
-set_keymap('v', 'y', '"*y', { noremap = true })
+set_keymap('n', 'y', '"*y', opts)
+set_keymap('v', 'y', '"*y', opts)
 
 -- Paste from global clipboard and highlight.
-set_keymap('n', '<leader>p', '"*p`[v`]', { noremap = true })
+set_keymap('n', '<leader>p', '"*p`[v`]', opts)
 
 -- Highlight after indenting.
-set_keymap('v', '>', '>gv', { noremap = true })
-set_keymap('v', '<', '<gv', { noremap = true })
+set_keymap('v', '>', '>gv', opts)
+set_keymap('v', '<', '<gv', opts)
 
 -- c, d and x are now delete without yanking.
-set_keymap('n', 'x', '"_x', { noremap = true })
-set_keymap('n', 'd', '"_d', { noremap = true })
-set_keymap('n', 'D', '"_D', { noremap = true })
-set_keymap('v', 'd', '"_d', { noremap = true })
-set_keymap('n', 'c', '"_c', { noremap = true })
-set_keymap('n', 'C', '"_C', { noremap = true })
-set_keymap('v', 'c', '"_c', { noremap = true })
+set_keymap('n', 'x', '"_x', opts)
+set_keymap('n', 'd', '"_d', opts)
+set_keymap('n', 'D', '"_D', opts)
+set_keymap('v', 'd', '"_d', opts)
+set_keymap('n', 'c', '"_c', opts)
+set_keymap('n', 'C', '"_C', opts)
+set_keymap('v', 'c', '"_c', opts)
 
 -- Cut is now leader d.
-set_keymap('n', '<leader>d', '"*d', { noremap = true })
-set_keymap('n', '<leader>D', '"*d', { noremap = true })
-set_keymap('v', '<leader>d', '"*d', { noremap = true })
+set_keymap('n', '<leader>d', '"*d', opts)
+set_keymap('n', '<leader>D', '"*d', opts)
+set_keymap('v', '<leader>d', '"*d', opts)
 
 -- Delete start of word for command line with ctrl-backspace.
-set_keymap('c', '<C-H>', '<C-w>', { noremap = true })
+set_keymap('c', '<C-H>', '<C-w>', opts)

@@ -21,14 +21,13 @@ return require('packer').startup(function()
   }
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'tami5/lspsaga.nvim'
-  use 'folke/lsp-colors.nvim'
 
   -- DEV:
   use 'folke/trouble.nvim'
   use 'mbbill/undotree'
-  use 'mfussenegger/nvim-dap'
+  -- use 'mfussenegger/nvim-dap'
   use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install' }
-  use 'akinsho/toggleterm.nvim'
+  -- use 'akinsho/toggleterm.nvim'
   use {
     'tpope/vim-fugitive',
     requires = { 'tpope/git-bump', 'junegunn/gv.vim' },
@@ -52,12 +51,7 @@ return require('packer').startup(function()
   use 'navarasu/onedark.nvim'
   use 'hoob3rt/lualine.nvim'
   use { 'lewis6991/gitsigns.nvim', tag = 'release' }
-  use {
-    'folke/todo-comments.nvim',
-    config = function()
-      require('todo-comments').setup { signs = false }
-    end,
-  }
+  use 'folke/todo-comments.nvim'
   use 'norcalli/nvim-colorizer.lua'
 
   -- SPEED:

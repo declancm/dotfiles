@@ -1,18 +1,9 @@
 #!/bin/sh
 
-# functions
-function mcd() {
-    mkdir -p "$1"
-    cd "$1"
-}
-function tvim() {
-    touch "$1"
-    nvim "$1"
-}
-function extract() {
-    cp -a "$1"/. .
-    rm -r "$1"
-}
+# FUNCTIONS:
+function mcd() { mkdir -p "$1"; cd "$1" }
+function tvim() { touch "$1"; nvim "$1" }
+function extract() { cp -a "$1"/. .; rm -r "$1" }
 
 function format() {
     if [ -z "$1" ]; then
@@ -21,21 +12,22 @@ function format() {
         if [ "$1" = "cpp" ]; then; formatter='.clang-format'
         elif [ "$1" = "lua" ]; then; formatter='.stylua.toml'
         else
-            printf "Not a valid argument.\n"
-            return
+            printf "Error: Not a valid argument.\n"
+            exit 1
         fi
         if ! [ -e "./$formatter" ]; then
             configPath="$HOME/.config/nvim/formatters/$formatter"
             cp $configPath ./$formatter
             printf "The formatter config file '$formatter' was created.\n"
-            return
         else
             printf "Error: The formatter config file '$formatter' already exists here.\n"
-            return
+            exit 1
         fi
+        exit 0
     fi
 }
 
+# ALIASES:
 # tmux in 256 colors
 alias tmux='tmux -2'
 
@@ -54,8 +46,6 @@ alias ls='ls -a --color=auto'
 alias rtmux='tmux source-file ~/.tmux.conf'
 alias aptdate='sudo apt update; sudo apt -y upgrade; sudo apt-get -y update'
 alias git clone='git clone --recursive'
-# alias j='z'
-# alias f='zi'
 alias g='lazygit'
 alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
 alias nvimrc='nvim ~/.config/nvim/'
@@ -64,16 +54,12 @@ alias nvimrc='nvim ~/.config/nvim/'
 alias tp='trash-put'
 alias tl='trash-list'
 
-# alias lvim='nvim -u ~/.local/share/lunarvim/lvim/init.lua --cmd "set runtimepath+=~/.local/share/lunarvim/lvim"'
-
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
 # confirm before overwriting something
-#alias cp="cp -i"
-#alias mv='mv -i'
 #alias rm='rm -i'
 
 # easier to read disk

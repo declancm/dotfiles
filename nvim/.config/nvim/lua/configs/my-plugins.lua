@@ -12,6 +12,7 @@ local set_keymap = vim.api.nvim_set_keymap
 
 vim.g.cinnamon_repeat = 0
 vim.g.cinnamon_no_defaults = 1
+-- vim.g.cinnamon_extras = 1
 
 set_keymap('n', '{', '<Cmd>Cinnamon { 0 <CR>', opts)
 set_keymap('n', '}', '<Cmd>Cinnamon } 0 <CR>', opts)
