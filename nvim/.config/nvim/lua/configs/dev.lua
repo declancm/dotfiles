@@ -15,20 +15,23 @@ vim.cmd [[autocmd BufEnter * if &buftype == "terminal" | startinsert | endif]]
 function ToggleTerminal()
   if vim.bo.buftype == 'terminal' then
     vim.g.term_bufnr = vim.fn.bufnr()
+    MaximizeWindow()
     if vim.g.term_prev == nil or vim.fn.bufname(vim.g.term_prev) == '' then
       vim.cmd 'call feedkeys("\\<C-\\>\\<C-N>\\<C-^>", "n")'
     else
-      vim.cmd('keepalt buffer' .. vim.g.term_prev)
+      vim.cmd('keepalt buffer ' .. vim.g.term_prev)
     end
   else
     vim.g.term_prev = vim.fn.bufnr()
     if vim.g.term_bufnr == nil or vim.fn.bufname(vim.g.term_bufnr) == '' then
       vim.cmd 'keepalt term'
     else
-      vim.cmd('keepalt buffer' .. vim.g.term_bufnr)
+      vim.cmd('keepalt buffer ' .. vim.g.term_bufnr)
     end
     vim.opt_local.relativenumber = false
     vim.opt_local.number = false
+    vim.opt_local.signcolumn = 'no'
+    MaximizeWindow()
   end
 end
 

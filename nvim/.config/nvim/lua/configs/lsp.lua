@@ -6,6 +6,7 @@ vim.g.coq_settings = {
   ['auto_start'] = 'shut-up',
   ['keymap.recommended'] = false,
   ['keymap.jump_to_mark'] = '<C-n>',
+  ['display.ghost_text.enabled'] = false,
   ['display.preview.border'] = 'solid',
 }
 

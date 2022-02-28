@@ -142,25 +142,21 @@ endfunction
 ]]
 
 -- Maximize the current window.
-set_keymap('n', '<leader>z', '<Cmd>call MaximizeWindow()<CR>', opts)
-set_keymap('x', '<leader>z', '<Cmd>call MaximizeWindow()<CR>', opts)
+set_keymap('n', '<leader>z', '<Cmd>lua MaximizeWindow()<CR>', opts)
+set_keymap('x', '<leader>z', '<Cmd>lua MaximizeWindow()<CR>', opts)
 
-vim.cmd [[
-function! MaximizeWindow()
-    if (!exists("b:maxWinStatus") || b:maxWinStatus == 0)
-        let b:winPositions = winrestcmd()
-        silent exec "resize | vertical resize"
-        let b:winPositionsNew = winrestcmd()
-        if b:winPositions == b:winPositionsNew
-            let b:maxWinStatus = 0
-            return
-        endif
-        let b:maxWinStatus = 1
-    elseif (exists("b:winPositions"))
-        silent exec b:winPositions
-        let b:maxWinStatus = 0
-    else
-        let b:maxWinStatus = 0
-    endif
-endfunction
-]]
+function MaximizeWindow()
+  if vim.b.maxWinStatus == nil or vim.b.maxWinStatus == 0 then
+    vim.b.winPositions = vim.fn.winrestcmd()
+    vim.cmd 'resize | vertical resize'
+    vim.b.winPositionsNew = vim.fn.winrestcmd()
+    if vim.b.winPositions == vim.b.winPositionsNew then
+      vim.b.maxWinStatus = 0
+      return
+    end
+    vim.b.maxWinStatus = 1
+  else
+    vim.b.maxWinStatus = 0
+    vim.cmd 'silent exec b:winPositions'
+  end
+end
