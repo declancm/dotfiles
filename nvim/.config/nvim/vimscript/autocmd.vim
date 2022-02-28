@@ -1,65 +1,51 @@
-" syntax highlighting plugin for json with c-style comments setup
-autocmd BufRead,BufNewFile *.mycjson set filetype=jsonc
-
-" quickscope colors selection (needs to be before 'colorscheme')
 augroup qs_colors
     autocmd!
     autocmd ColorScheme * highlight QuickScopePrimary guifg='#F1FA8C' gui=underline ctermfg=155 cterm=underline
     autocmd ColorScheme * highlight QuickScopeSecondary guifg='#FF5555' gui=underline ctermfg=81 cterm=underline
 augroup END
 
-augroup HighlightYank
+augroup highlight_yank
     autocmd!
     autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 150})
 augroup END
 
 autocmd TextYankPost * call system('echo '.shellescape(join(v:event.regcontents, "\<CR>")).' |  clip.exe')
 
-fun! TrimWhitespace()
+augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source $MYVIMRC | PackerCompile
+augroup end
+
+function! TrimWhitespace()
     let l:save = winsaveview()
     keeppatterns %s/\s\+$//e
     call winrestview(l:save)
-endfun
+endfunction
 
-augroup writing_buffer
+function! ClangFormat()
+    let l:filePath = fnamemodify(bufname(), ":p")
+    silent execute("!clang-format -i -style=file " . l:filePath)
+    silent execute("e")
+endfunction
+
+augroup format_on_save
     autocmd!
     autocmd BufWritePre * :call TrimWhitespace()
+    autocmd BufWritePost *.h,*.hpp,*.c,*.cpp call ClangFormat()
 augroup END
 
-augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost /.config/nvim/lua/plugins.lua source $MYVIMRC | PackerCompile
-augroup end
-
-" automatically set the tab size
-function! s:TabSize()
+function! SetTabSize()
     let l:fts = ['html','javascript','json','lua','markdown','ps1']
     if index(l:fts, &ft) >= 0 | setlocal shiftwidth=2 tabstop=2 softtabstop=2
     else | setlocal shiftwidth=4 tabstop=4 softtabstop=4 | endif
 endfunction
 
-" use clang_format on save
-function! s:FormatOnSave()
-    let l:fullPath = fnamemodify(bufname(), ":p")
-    silent execute("!clang-format -i -style=file " . l:fullPath)
-    " let l:cfConfig = "'{ BasedOnStyle: Google, UseTab: Never, IndentWidth: 4, TabWidth: 4, BreakBeforeBraces: Attach, AllowShortBlocksOnASingleLine: true, AllowShortIfStatementsOnASingleLine: true, IndentCaseLabels: false, ColumnLimit: 0, AccessModifierOffset: -4, DerivePointerAlignment: false, PointerAlignment: Left }'"
-    " silent execute("!clang-format -i -style=" . l:cfConfig . " " . l:fullPath)
-    silent execute("e")
-endfunction
-
-augroup post_writing_buffer
+augroup setting_options
     autocmd!
-    autocmd BufWritePost *.h,*.hpp,*.c,*.cpp call <SID>FormatOnSave()
-    autocmd BufWritePost * :call <SID>TabSize()
+    autocmd BufEnter * :call SetTabSize() | set fo-=cro | set scl=auto:1-2
 augroup END
 
-augroup entering_buffer
-    autocmd!
-    autocmd BufEnter * :call <SID>TabSize()
-    autocmd FileType * set formatoptions-=cro | set signcolumn=yes
-augroup END
-
-" chadtree auto opens when opening a directory with nvim
+" Open chadtree when opening nvim at a directory.
 augroup chadtree_on_directory
     autocmd!
     autocmd StdinReadPre * let s:std_in=1

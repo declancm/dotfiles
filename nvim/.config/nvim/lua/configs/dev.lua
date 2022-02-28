@@ -5,6 +5,7 @@ local buf_set_keymap = vim.api.nvim_buf_set_keymap
 -- Native terminal.
 set_keymap('t', '<C-^>', '<C-\\><C-N><C-^>', opts)
 set_keymap('t', '<C-O>', '<C-\\><C-N><C-O>', opts)
+set_keymap('t', '<F3>', '<C-\\><C-N>', opts)
 set_keymap('n', '<C-\\>', '<Cmd>call ToggleTerminal()<CR>', opts)
 set_keymap('t', '<C-\\>', '<Cmd>call ToggleTerminal()<CR>', opts)
 

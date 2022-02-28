@@ -21,6 +21,7 @@ return require('packer').startup(function()
   }
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'tami5/lspsaga.nvim'
+  use 'folke/lsp-colors.nvim'
 
   -- DEV:
   use 'folke/trouble.nvim'
@@ -48,6 +49,7 @@ return require('packer').startup(function()
   -- VISUALS:
   use 'folke/tokyonight.nvim'
   use 'navarasu/onedark.nvim'
+  use 'ellisonleao/gruvbox.nvim'
   use 'hoob3rt/lualine.nvim'
   use { 'lewis6991/gitsigns.nvim', tag = 'release' }
   use 'folke/todo-comments.nvim'

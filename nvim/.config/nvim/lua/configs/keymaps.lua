@@ -9,7 +9,7 @@ set_keymap('i', '<Home>', '<Esc>zHI', opts)
 set_keymap(
   'n',
   '<leader>sc',
-  ':wa<CR>:source $MYVIMRC<CR>:echom "Your config file was sourced."<CR>',
+  ':wa<CR>:source $MYVIMRC<CR>:PackerCompile<CR>:echom "Your config file was sourced."<CR>',
   opts
 )
 

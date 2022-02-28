@@ -1,11 +1,14 @@
+-- TODO: fix the issue with gruvbox and init.lua
+
 -- THEME:
 -- local theme = 'tokyonight'
 local theme = 'onedark'
+-- local theme = 'gruvbox'
 
 vim.opt.background = 'dark'
 vim.opt.colorcolumn = '80'
 
--- TOKYONIGHT_CONFIG:
+-- TOKYONIGHT:
 if theme == 'tokyonight' then
   vim.g.tokyonight_style = 'storm'
   vim.g.tokyonight_transparent = true
@@ -14,7 +17,7 @@ if theme == 'tokyonight' then
   vim.cmd [[highlight ColorColumn ctermbg=0 guibg=#1f2335]]
 end
 
--- ONEDARK_CONFIG:
+-- ONEDARK:
 if theme == 'onedark' then
   require('onedark').setup {
     style = 'dark',
@@ -25,6 +28,14 @@ if theme == 'onedark' then
   }
   vim.cmd [[colorscheme onedark]]
   vim.cmd [[highlight ColorColumn ctermbg=0 guibg=#31353f]]
+end
+
+-- GRUVBOX:
+if theme == 'gruvbox' then
+  vim.g.gruvbox_transparent_bg = 1
+  vim.g.gruvbox_italicize_comments = 0
+  vim.cmd [[colorscheme gruvbox]]
+  vim.cmd [[highlight ColorColumn ctermbg=0 guibg=#3c3836]]
 end
 
 -- highlight the line number
@@ -85,7 +96,7 @@ require('gitsigns').setup {
       linehl = 'GitSignsDeleteLn',
     },
   },
-  sign_priority = 10,
+  -- sign_priority = 10,
 }
 
 -- TODO-COMMENTS:
