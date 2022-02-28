@@ -5,10 +5,10 @@ vim.g.python3_host_prog = '/bin/python3'
 vim.g.python_host_prog = '/bin/python2'
 
 -- Mapping the <leader> key for all keymaps.
-vim.cmd [[let mapleader = "\<BS>"]]
+vim.cmd 'let mapleader = "\\<BS>"'
 
 -- Autocommands.
-vim.cmd [[source $HOME/.config/nvim/vimscript/autocmd.vim]]
+vim.cmd 'source $HOME/.config/nvim/vimscript/autocmd.vim'
 
 -- Packer.
 require 'plugins'

@@ -1,4 +1,5 @@
--- TODO: fix the issue with gruvbox and init.lua
+-- FIX: fix the issue with gruvbox and init.lua.
+-- TODO: add option to cycle backgrounds in windows terminal. Use background image which cycles?
 
 -- THEME:
 -- local theme = 'tokyonight'
@@ -101,7 +102,7 @@ require('gitsigns').setup {
 
 -- TODO-COMMENTS:
 require('todo-comments').setup {
-  -- signs = false,
+  signs = false,
 }
 
 local opts = { noremap = true, silent = true }

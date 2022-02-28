@@ -1,16 +1,16 @@
 local opts = { noremap = true, silent = true }
 local set_keymap = vim.api.nvim_set_keymap
-local buf_set_keymap = vim.api.nvim_buf_set_keymap
+local buf_keymap = vim.api.nvim_buf_set_keymap
 
--- Native terminal.
+-- TERMINAL:
 set_keymap('t', '<C-^>', '<C-\\><C-N><C-^>', opts)
 set_keymap('t', '<C-O>', '<C-\\><C-N><C-O>', opts)
 set_keymap('t', '<F3>', '<C-\\><C-N>', opts)
 set_keymap('n', '<C-\\>', '<Cmd>lua ToggleTerminal()<CR>', opts)
 set_keymap('t', '<C-\\>', '<Cmd>lua ToggleTerminal()<CR>', opts)
 
-vim.cmd [[autocmd TermOpen * startinsert]]
-vim.cmd [[autocmd BufEnter * if &buftype == "terminal" | startinsert | endif]]
+vim.cmd 'autocmd TermOpen * startinsert'
+vim.cmd "autocmd BufEnter * if &buftype == 'terminal' | startinsert | endif"
 
 function ToggleTerminal()
   if vim.bo.buftype == 'terminal' then
@@ -36,7 +36,6 @@ function ToggleTerminal()
 end
 
 -- UNDOTREE:
-set_keymap('n', '<F5>', '<Cmd>UndotreeToggle<CR><Cmd>wincmd p<CR>', opts)
 set_keymap('n', '<leader>u', '<Cmd>UndotreeToggle<CR><Cmd>wincmd p<CR>', opts)
 
 -- TROUBLE:
@@ -56,5 +55,9 @@ set_keymap('n', '<leader>xq', '<cmd>Trouble quickfix<cr>', opts)
 set_keymap('n', 'gR', '<cmd>Trouble lsp_references<cr>', opts)
 
 -- MARKDOWN-PREVIEW:
-set_keymap('n', '<leader>mdp', '<Cmd>MarkdownPreview<CR>', opts)
-set_keymap('n', '<leader>mds', '<Cmd>MarkdownPreviewStop<CR>', opts)
+vim.cmd 'autocmd FileType markdown lua MarkdownPreview()'
+
+function MarkdownPreview()
+  buf_keymap(0, 'n', '<leader>md', '<Cmd>MarkdownPreview<CR>', opts)
+  buf_keymap(0, 'n', '<leader>mds', '<Cmd>MarkdownPreviewStop<CR>', opts)
+end

@@ -13,7 +13,7 @@ autocmd TextYankPost * call system('echo '.shellescape(join(v:event.regcontents,
 
 augroup packer_user_config
     autocmd!
-    autocmd BufWritePost plugins.lua source $MYVIMRC | PackerCompile
+    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
 augroup end
 
 function! TrimWhitespace()
@@ -23,8 +23,8 @@ function! TrimWhitespace()
 endfunction
 
 function! ClangFormat()
-    let l:filePath = fnamemodify(bufname(), ":p")
-    silent execute("!clang-format -i -style=file " . l:filePath)
+    let l:path = fnamemodify(bufname(), ":p")
+    silent execute("!clang-format -i -style=file " . l:path)
     silent execute("e")
 endfunction
 
