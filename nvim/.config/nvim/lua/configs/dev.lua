@@ -6,26 +6,31 @@ local buf_set_keymap = vim.api.nvim_buf_set_keymap
 set_keymap('t', '<C-^>', '<C-\\><C-N><C-^>', opts)
 set_keymap('t', '<C-O>', '<C-\\><C-N><C-O>', opts)
 set_keymap('t', '<F3>', '<C-\\><C-N>', opts)
-set_keymap('n', '<C-\\>', '<Cmd>call ToggleTerminal()<CR>', opts)
-set_keymap('t', '<C-\\>', '<Cmd>call ToggleTerminal()<CR>', opts)
+set_keymap('n', '<C-\\>', '<Cmd>lua ToggleTerminal()<CR>', opts)
+set_keymap('t', '<C-\\>', '<Cmd>lua ToggleTerminal()<CR>', opts)
 
-vim.cmd [[
-autocmd TermOpen * startinsert
-autocmd BufEnter * if &buftype == "terminal" | startinsert | endif
+vim.cmd [[autocmd TermOpen * startinsert]]
+vim.cmd [[autocmd BufEnter * if &buftype == "terminal" | startinsert | endif]]
 
-function! ToggleTerminal()
-    if &buftype == "terminal"
-        let g:term_bufnr = bufnr()
-        silent exec "call feedkeys(\"\<C-^>\")"
+function ToggleTerminal()
+  if vim.bo.buftype == 'terminal' then
+    vim.g.term_bufnr = vim.fn.bufnr()
+    if vim.g.term_prev == nil or vim.fn.bufname(vim.g.term_prev) == '' then
+      vim.cmd 'call feedkeys("\\<C-\\>\\<C-N>\\<C-^>", "n")'
     else
-        if !exists("g:term_bufnr") || bufname(g:term_bufnr) == ""
-            silent exec "term"
-        else
-            silent exec "buffer " . g:term_bufnr
-        endif
-    endif
-endfunction
-]]
+      vim.cmd('keepalt buffer' .. vim.g.term_prev)
+    end
+  else
+    vim.g.term_prev = vim.fn.bufnr()
+    if vim.g.term_bufnr == nil or vim.fn.bufname(vim.g.term_bufnr) == '' then
+      vim.cmd 'keepalt term'
+    else
+      vim.cmd('keepalt buffer' .. vim.g.term_bufnr)
+    end
+    vim.opt_local.relativenumber = false
+    vim.opt_local.number = false
+  end
+end
 
 -- UNDOTREE:
 set_keymap('n', '<F5>', '<Cmd>UndotreeToggle<CR><Cmd>wincmd p<CR>', opts)
