@@ -5,14 +5,6 @@ local set_keymap = vim.api.nvim_set_keymap
 set_keymap('', '<Home>', 'zH^', opts)
 set_keymap('i', '<Home>', '<Esc>zHI', opts)
 
--- Source config file.
-set_keymap(
-  'n',
-  '<leader>sc',
-  ':wa<CR>:source $MYVIMRC<CR>:PackerCompile<CR>:echom "Your config file was sourced."<CR>',
-  opts
-)
-
 -- Creating windows.
 set_keymap('n', '<leader>v', '<C-w>v', opts)
 set_keymap('n', '<leader>s', '<C-w>s', opts)

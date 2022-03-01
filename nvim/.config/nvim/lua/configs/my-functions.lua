@@ -21,7 +21,7 @@ function MaximizeWindow()
   end
 end
 
--- TERMINAL:
+-- NATIVE_TERMINAL:
 set_keymap('t', '<C-^>', '<C-\\><C-N><C-^>', opts)
 set_keymap('t', '<C-O>', '<C-\\><C-N><C-O>', opts)
 set_keymap('t', '<F3>', '<C-\\><C-N>', opts)
@@ -90,6 +90,14 @@ exec "autocmd BufEnter " . g:notes_full_path . " let b:notes_modified = 0"
 exec "autocmd BufWritePre " . g:notes_full_path . " if &modified | let b:notes_modified = 1 | endif"
 ]]
 
+-- SOURCE_CONFIG:
+set_keymap('n', '<leader>sc', '<Cmd>lua SourceConfig()<CR>', opts)
+
+function SourceConfig()
+  vim.cmd "silent exec 'wa | source $MYVIMRC | PackerCompile'"
+  print 'Your config file has been sourced.'
+end
+
 -- CTRL-BS:
 set_keymap('i', '<C-H>', '<Cmd>call DeleteStartWord("b")<CR>', opts)
 set_keymap('i', '<M-BS>', '<Cmd>call DeleteStartWord("B")<CR>', opts)
@@ -122,7 +130,7 @@ function! DeleteEndWord(endKey)
 endfunction
 ]]
 
--- BETTER_PASTE:
+-- IMPROVED_PASTE:
 set_keymap('n', 'p', '<Cmd>call GlobalPaste("p")<CR>', opts)
 set_keymap('n', 'P', '<Cmd>call GlobalPaste("P")<CR>', opts)
 set_keymap('n', 'gp', '<Cmd>call GlobalPaste("gp")<CR>', opts)

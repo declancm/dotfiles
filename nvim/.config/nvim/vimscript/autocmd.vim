@@ -42,7 +42,7 @@ endfunction
 
 augroup setting_options
     autocmd!
-    autocmd BufEnter * :call SetTabSize() | set fo-=cro | set scl=auto:1-2
+    autocmd BufEnter * :call SetTabSize() | set fo-=cro | set scl=yes:1
 augroup END
 
 " Open chadtree when opening nvim at a directory.

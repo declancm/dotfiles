@@ -1,3 +1,6 @@
+" This is a collection of my neovim functions written in vimscript before they\
+" had been converted to lua, which are vim friendly.
+
 function! MaximizeWindow()
     if (!exists("b:maxWinStatus") || b:maxWinStatus == 0)
         let b:winPositions = winrestcmd()

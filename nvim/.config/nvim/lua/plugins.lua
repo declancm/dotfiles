@@ -49,7 +49,7 @@ return require('packer').startup(function()
   -- VISUALS:
   use 'folke/tokyonight.nvim'
   use 'navarasu/onedark.nvim'
-  use 'ellisonleao/gruvbox.nvim'
+  use 'luisiacc/gruvbox-baby'
   use 'hoob3rt/lualine.nvim'
   use { 'lewis6991/gitsigns.nvim', tag = 'release' }
   use 'folke/todo-comments.nvim'

@@ -1,10 +1,10 @@
-vim.opt.syntax = 'on'
-
 -- Starting Python.
 vim.g.python3_host_prog = '/bin/python3'
 vim.g.python_host_prog = '/bin/python2'
 
--- Mapping the <leader> key for all keymaps.
+-- PRE-PLUGIN_OPTIONS:
+vim.opt.syntax = 'on'
+vim.opt.termguicolors = true
 vim.cmd 'let mapleader = "\\<BS>"'
 
 -- Autocommands.
@@ -25,7 +25,7 @@ require 'configs.my-plugins'
 
 -- KEYMAPS:
 require 'configs.keymaps'
-require 'configs.functions'
+require 'configs.my-functions'
 
 -- OPTIONS:
 vim.opt.swapfile = false
@@ -33,9 +33,9 @@ vim.opt.backup = false
 vim.opt.undodir = vim.fn.stdpath 'config' .. '/undodir'
 vim.opt.undofile = true
 vim.opt.hidden = true
-vim.opt.termguicolors = true
 vim.opt.relativenumber = true
 vim.opt.number = true
+-- vim.opt.signcolumn = 'auto:1-2'
 vim.opt.showmode = true
 -- vim.opt.errorbells = false
 vim.opt.cmdheight = 2
