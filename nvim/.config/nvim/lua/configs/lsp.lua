@@ -1,5 +1,3 @@
--- TODO: change the hover window to have a border or not be transparent in lsp diagnostics.
-
 local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
@@ -162,7 +160,7 @@ require('null-ls').setup {
     require('null-ls').builtins.formatting.prettier,
     require('null-ls').builtins.formatting.stylua,
   },
-  -- automatically format on save
+  -- Format on save.
   on_attach = function(client)
     if client.resolved_capabilities.document_formatting then
       vim.cmd [[
