@@ -1,6 +1,6 @@
 {
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": 
+    "actions":
     [
         {
             "command": "unbound",
@@ -11,7 +11,7 @@
             "keys": "ctrl+shift+v"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "copy",
                 "singleLine": false
@@ -26,7 +26,7 @@
             "keys": "ctrl+shift+f"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "splitPane",
                 "split": "auto",
@@ -39,13 +39,13 @@
     "copyOnSelect": false,
     "defaultProfile": "{2c4de342-38b7-51cf-b940-2309a097f518}",
     "focusFollowMouse": true,
-    "profiles": 
+    "profiles":
     {
-        "defaults": 
+        "defaults":
         {
             "startingDirectory": "%USERPROFILE%"
         },
-        "list": 
+        "list":
         [
             {
                 "backgroundImage": "C:\\Users\\decla\\Pictures\\GokuBlack.jpg",
@@ -53,7 +53,7 @@
                 "bellStyle": "none",
                 "colorScheme": "One Half Dark",
                 "commandline": "powershell.exe",
-                "font": 
+                "font":
                 {
                     "size": 14
                 },
@@ -75,7 +75,7 @@
                 "bellStyle": "none",
                 "colorScheme": "gruvbox",
                 "cursorShape": "filledBox",
-                "font": 
+                "font":
                 {
                     "face": "Hack NF",
                     "size": 12
@@ -99,7 +99,7 @@
                 "backgroundImage": "C:\\Users\\decla\\Pictures\\GokuRose.jpg",
                 "backgroundImageOpacity": 0.14999999999999999,
                 "bellStyle": "none",
-                "font": 
+                "font":
                 {
                     "face": "Hack NF",
                     "size": 12
@@ -111,7 +111,7 @@
             }
         ]
     },
-    "schemes": 
+    "schemes":
     [
         {
             "background": "#0C0C0C",
@@ -357,7 +357,7 @@
             "brightYellow": "#E0AF68",
             "cursorColor": "#FFFFFF",
             "cyan": "#7DCFFF",
-            "foreground": "#FFFFFF",
+            "foreground": "#C0CAF5",
             "green": "#9ECE6A",
             "name": "tokyonight",
             "purple": "#9D7CD8",

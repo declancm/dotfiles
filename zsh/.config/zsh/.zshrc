@@ -76,9 +76,11 @@ bindkey "^[[3;5~" kill-word
 
 # Change zsh-autosuggestions appearance:
 # onedark
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#808080"
+# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#808080"
 # tokyonight
-# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#565f89"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#565f89"
+# gruvbox
+# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#665C54"
 
 # FZF
 # TODO update for mac
@@ -119,3 +121,5 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 # fnm
 export PATH=/home/declancm/.local/bin:$PATH
 eval "`fnm env`"
+
+alias luamake=/home/declancm/.dotfiles/nvim/.config/nvim/lsp/lua-language-server/3rd/luamake/luamake

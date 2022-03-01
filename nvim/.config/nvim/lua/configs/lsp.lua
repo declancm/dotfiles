@@ -1,7 +1,8 @@
 local opts = { noremap = true, silent = true }
-local set_keymap = vim.api.nvim_set_keymap
+local keymap = vim.api.nvim_set_keymap
 
--- COQ_CONFIG:
+-- COQ:
+
 vim.g.coq_settings = {
   ['auto_start'] = 'shut-up',
   ['keymap.recommended'] = false,
@@ -24,91 +25,161 @@ inoremap <silent><expr> <Up>    pumvisible() ? "\<C-e>\<Up>" : "\<Up>"
 inoremap <silent><expr> <Down>  pumvisible() ? "\<C-e>\<Down>" : "\<Down>"
 ]]
 
--- LSP_CONFIG:
+-- LSPCONFIG:
+
 local lsp = require 'lspconfig'
+local coq = require 'coq'
 
 -- INSTALLATION
 
--- bashls:        npm i -g bash-language-server
--- clangd:        sudo apt-get install clangd-12
--- cmake:         pip3 install cmake-language-server
--- powershell_es: https://github.com/PowerShell/PowerShellEditorServices/releases
---                Extract the zip file to '~/lsp/PowerShellEditorServices'
--- pyright:       pip3 install pyright
--- vimls:         npm install -g vim-language-server
+-- bashls:          npm i -g bash-language-server
+-- clangd:          sudo apt-get install clangd-12
+-- cmake:           pip3 install cmake-language-server
+-- powershell_es:   https://github.com/PowerShell/PowerShellEditorServices/releases
+--                  Extract the zip file to '~/lsp/PowerShellEditorServices'
+-- pyright:         pip3 install pyright
+-- sumneko_lua:     https://github.com/sumneko/lua-language-server/wiki/Build-and-Run
+-- vimls:           npm install -g vim-language-server
 
 vim.cmd 'let g:powershell_es_path = expand("$HOME/lsp/PowerShellEditorServices")'
 
-lsp.bashls.setup {}
-lsp.clangd.setup {}
-lsp.cmake.setup {}
-lsp.powershell_es.setup { bundle_path = vim.g.powershell_es_path }
-lsp.pyright.setup {}
-lsp.vimls.setup {}
+lsp.bashls.setup(coq.lsp_ensure_capabilities {})
+lsp.clangd.setup(coq.lsp_ensure_capabilities {})
+lsp.cmake.setup(coq.lsp_ensure_capabilities {})
+lsp.powershell_es.setup(coq.lsp_ensure_capabilities {
+  bundle_path = vim.g.powershell_es_path,
+})
+lsp.pyright.setup(coq.lsp_ensure_capabilities {})
+lsp.sumneko_lua.setup(coq.lsp_ensure_capabilities {
+  settings = { Lua = { diagnostics = { globals = { 'vim' } } } },
+})
+lsp.vimls.setup(coq.lsp_ensure_capabilities {})
 
 -- NOTES
 
--- clangd:       To use clangd for a cpp project, add this to the CMakeLists.txt:
---               set(CMAKE_EXPORT_COMPILE_COMMANDS ON CACHE INTERNAL "")
+-- clangd:          To use clangd for a cpp project, add this to the CMakeLists.txt:
+--                  set(CMAKE_EXPORT_COMPILE_COMMANDS ON CACHE INTERNAL "")
 
--- LSP keymaps
-set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+-- LSP dianostic keymaps.
+keymap('n', '<leader>e', '<Cmd>lua vim.diagnostic.open_float()<CR>', opts)
+keymap('n', '[d', '<Cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+keymap('n', ']d', '<Cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+keymap('n', '<leader>q', '<Cmd>lua vim.diagnostic.setloclist()<CR>', opts)
+
+-- LSP buffer keymaps.
+keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
+keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+keymap('n', 'gi', '<Cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+keymap('n', '<C-k>', '<Cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+-- keymap('n', '<leader>wa', '<Cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
+-- keymap('n', '<leader>wr', '<Cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
+-- keymap('n', '<leader>wl', '<Cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+keymap('n', '<leader>D', '<Cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+keymap('n', '<leader>rn', '<Cmd>lua vim.lsp.buf.rename()<CR>', opts)
+keymap('n', '<leader>ca', '<Cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+keymap('n', 'gr', '<Cmd>lua vim.lsp.buf.references()<CR>', opts)
+-- keymap('n', '<leader>f', '<Cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+
+-- LSPCONFIG-UI:
+
+-- Setting dianostic symbols.
+local signs = { Error = '▶ ', Warn = '▶ ', Hint = '▶ ', Info = '▶ ' }
+for type, icon in pairs(signs) do
+  local hl = 'DiagnosticSign' .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
+
+-- Symbol before diagnostics
+vim.diagnostic.config { virtual_text = { prefix = '•' } }
+
+-- Floating window border outline.
+local border = {
+  { '╭', 'FloatBorder' },
+  { '─', 'FloatBorder' },
+  { '╮', 'FloatBorder' },
+  { '│', 'FloatBorder' },
+  { '╯', 'FloatBorder' },
+  { '─', 'FloatBorder' },
+  { '╰', 'FloatBorder' },
+  { '│', 'FloatBorder' },
+}
+
+local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+function vim.lsp.util.open_floating_preview(contents, syntax, options, ...)
+  options = options or {}
+  options.border = options.border or border
+  return orig_util_open_floating_preview(contents, syntax, opts, ...)
+end
+
+-- Open definition in a split window.
+local function goto_definition(split_cmd)
+  local util = vim.lsp.util
+  local log = require 'vim.lsp.log'
+  local api = vim.api
+  local handler = function(_, result, ctx)
+    if result == nil or vim.tbl_isempty(result) then
+      local _ = log.info() and log.info(ctx.method, 'No location found')
+      return nil
+    end
+    if split_cmd then
+      vim.cmd(split_cmd)
+    end
+    if vim.tbl_islist(result) then
+      util.jump_to_location(result[1])
+      if #result > 1 then
+        util.set_qflist(util.locations_to_items(result))
+        api.nvim_command 'copen'
+        api.nvim_command 'wincmd p'
+      end
+    else
+      util.jump_to_location(result)
+    end
+  end
+  return handler
+end
+
+vim.lsp.handlers['textDocument/definition'] = goto_definition 'split'
 
 -- NULL-LS:
+
+-- INSTALLATION
+
+-- black:           pip3 install black
+-- clang_format:    sudo apt install clang-format
+-- cmake_format:    pip3 install cmakelang
+-- prettier:        npm install --save-dev --save-exact prettier
+-- stylua:          cargo install stylua
+
 require('null-ls').setup {
   debug = false,
   sources = {
     require('null-ls').builtins.formatting.black,
-    -- pip3 install black
     -- require('null-ls').builtins.formatting.clang_format,
-    -- sudo apt install clang-format
     -- require('null-ls').builtins.formatting.cmake_format,
-    -- pip3 install cmakelang
     require('null-ls').builtins.formatting.prettier,
-    -- npm install --save-dev --save-exact prettier
     require('null-ls').builtins.formatting.stylua,
-    -- cargo install stylua
   },
   -- automatically format on save
   on_attach = function(client)
     if client.resolved_capabilities.document_formatting then
       vim.cmd [[
       augroup LspFormatting
-      autocmd! * <buffer>
-      autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
-      autocmd BufWritePre <buffer> retab
+        autocmd! * <buffer>
+        autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
+        autocmd BufWritePre <buffer> retab
       augroup END
       ]]
     end
   end,
 }
 
+-- NOTES
+
+-- clang_format:    Currently not able to be run simultaneously with clangd
+--                  language server.
+-- cmake_format:    Currently not able to be run simultaneously with cmake
+--                  language server.
+
 -- Format on command 'Format'.
 vim.cmd 'command! Format :lua vim.lsp.buf.formatting_sync()'
-
--- LSPSAGA:
-require('lspsaga').init_lsp_saga {
-  error_sign = '▶',
-  warn_sign = '▶',
-  hint_sign = '▶',
-  infor_sign = '▶',
-  border_style = 'none',
-}
-
--- lspsaga keymaps
-set_keymap('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<CR>', opts)
-set_keymap('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
-set_keymap('i', '<C-k>', '<Cmd>Lspsaga signature_help<CR>', opts)
-set_keymap('n', 'gh', '<Cmd>Lspsaga lsp_finder<CR>', opts)
-
--- LSPCOLORS:
-require('lsp-colors').setup {
-  Error = '#db4b4b',
-  Warning = '#e0af68',
-  Information = '#0db9d7',
-  Hint = '#10B981',
-}

@@ -38,10 +38,6 @@ if theme == 'gruvbox' then
   vim.cmd [[highlight ColorColumn ctermbg=0 guibg=#3c3836]]
 end
 
--- Transparent background.
-vim.cmd [[highlight Normal ctermbg=NONE guibg=NONE]]
-vim.cmd [[highlight SignColumn ctermbg=NONE guibg=NONE]]
-
 -- Highlight the line number.
 vim.cmd [[highlight CursorLineNr guifg=white]]
 vim.opt.cursorline = true
@@ -109,10 +105,10 @@ require('todo-comments').setup {
 }
 
 local opts = { noremap = true, silent = true }
-local set_keymap = vim.api.nvim_set_keymap
+local keymap = vim.api.nvim_set_keymap
 
-set_keymap('n', '<leader>tdt', '<Cmd>TodoTrouble<CR>', opts)
-set_keymap('n', '<leader>ft', '<Cmd>TodoTelescope<CR>', opts)
+keymap('n', '<leader>tdt', '<Cmd>TodoTrouble<CR>', opts)
+keymap('n', '<leader>ft', '<Cmd>TodoTelescope<CR>', opts)
 
 -- COLORIZER:
 require('colorizer').setup()

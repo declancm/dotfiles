@@ -32,28 +32,28 @@ require('telescope').load_extension 'refactoring'
 
 -- KEYMAPS:
 local opts = { noremap = true, silent = true }
-local set_keymap = vim.api.nvim_set_keymap
+local keymap = vim.api.nvim_set_keymap
 
 -- Telescope keymaps.
-set_keymap(
+keymap(
   'n',
   '<leader>ff',
   "<Cmd>lua require('telescope.builtin').find_files()<CR>",
   opts
 )
-set_keymap(
+keymap(
   'n',
   '<leader>fg',
   "<Cmd>lua require('telescope.builtin').live_grep()<CR>",
   opts
 )
-set_keymap(
+keymap(
   'n',
   '<leader>fb',
   "<Cmd>lua require('telescope.builtin').buffers()<CR>",
   opts
 )
-set_keymap(
+keymap(
   'n',
   '<leader>fh',
   "<Cmd>lua require('telescope.builtin').help_tags()<CR>",
@@ -61,10 +61,10 @@ set_keymap(
 )
 
 -- Telescope zoxide keymaps.
-set_keymap('n', '<leader>fz', '<Cmd>Telescope zoxide list<CR>', opts)
+keymap('n', '<leader>fz', '<Cmd>Telescope zoxide list<CR>', opts)
 
 -- Telescope refactoring keymaps.
-set_keymap(
+keymap(
   'v',
   '<leader>fr',
   "<Esc><Cmd>lua require('telescope').extensions.refactoring.refactors()<CR>",

@@ -1,11 +1,11 @@
 -- stylua: ignore start
 local packer_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
 if vim.fn.empty(vim.fn.glob(packer_path)) > 0 then
-  packer_bootstrap = vim.fn.system { 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', packer_path, }
+  PackerBootstrap = vim.fn.system { 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', packer_path, }
 end
 -- stylua: ignore end
 
-return require('packer').startup(function()
+return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- DEPENDENCIES:
@@ -14,14 +14,12 @@ return require('packer').startup(function()
 
   -- LSP:
   use 'neovim/nvim-lspconfig'
+  use 'jose-elias-alvarez/null-ls.nvim'
   use {
     'ms-jpq/coq_nvim',
     branch = 'coq',
-    requires = { 'ms-jpq/coq.artifacts', branch = 'artifacts' },
+    requires = { { 'ms-jpq/coq.artifacts', branch = 'artifacts' } },
   }
-  use 'jose-elias-alvarez/null-ls.nvim'
-  use 'tami5/lspsaga.nvim'
-  use 'folke/lsp-colors.nvim'
 
   -- DEV:
   use 'folke/trouble.nvim'
@@ -75,4 +73,8 @@ return require('packer').startup(function()
   -- use 'declancm/vim2vscode'
   use '~/Git/git-scripts.nvim'
   -- use 'declancm/git-scripts.nvim'
+
+  if PackerBootstrap then
+    require('packer').sync()
+  end
 end)
