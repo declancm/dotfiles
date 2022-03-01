@@ -1,15 +1,18 @@
-local opts = { noremap = true, silent = true }
+-- local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
 -- QUICKSCOPE:
+
 vim.g.qs_highlight_on_keys = { 'f', 'F', 't', 'T' }
 vim.g.qs_max_chars = 160
 
 -- BULLETS:
+
 vim.g.bullets_enabled_file_types = { 'markdown', 'text' }
 vim.g.bullets_enable_in_empty_buffers = 0
 
 -- KOMMENTARY:
+
 vim.g.kommentary_create_default_mappings = false
 
 -- Set <C-/> keymaps.

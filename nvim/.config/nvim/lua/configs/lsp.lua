@@ -1,3 +1,5 @@
+-- TODO: change the hover window to have a border or not be transparent in lsp diagnostics.
+
 local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
@@ -109,7 +111,7 @@ local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
 function vim.lsp.util.open_floating_preview(contents, syntax, options, ...)
   options = options or {}
   options.border = options.border or border
-  return orig_util_open_floating_preview(contents, syntax, opts, ...)
+  return orig_util_open_floating_preview(contents, syntax, options, ...)
 end
 
 -- Open definition in a split window.

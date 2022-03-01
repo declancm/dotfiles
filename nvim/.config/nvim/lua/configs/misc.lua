@@ -1,4 +1,5 @@
 -- CHADTREE:
+
 local chadtree_settings = {
   ['theme.text_colour_set'] = 'solarized_light',
   ['options.session'] = false,

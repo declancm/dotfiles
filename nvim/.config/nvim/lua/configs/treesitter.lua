@@ -1,4 +1,5 @@
 -- TREESITTER:
+
 require('nvim-treesitter.configs').setup {
   ensure_installed = 'maintained',
   highlight = {
@@ -10,6 +11,7 @@ require('nvim-treesitter.configs').setup {
 }
 
 -- REFACTORING:
+
 require('refactoring').setup {}
 
 -- Refactoring operations:

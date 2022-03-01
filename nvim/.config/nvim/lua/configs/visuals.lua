@@ -1,6 +1,7 @@
 -- TODO: add option to cycle backgrounds in windows terminal. Use background image which cycles?
 
 -- THEME:
+
 local theme = 'tokyonight'
 -- local theme = 'onedark'
 -- local theme = 'gruvbox'
@@ -9,6 +10,7 @@ vim.opt.background = 'dark'
 vim.opt.colorcolumn = '80'
 
 -- TOKYONIGHT:
+
 if theme == 'tokyonight' then
   vim.g.tokyonight_style = 'storm'
   vim.g.tokyonight_transparent = true
@@ -20,6 +22,7 @@ if theme == 'tokyonight' then
 end
 
 -- ONEDARK:
+
 if theme == 'onedark' then
   require('onedark').setup {
     style = 'dark',
@@ -31,6 +34,7 @@ if theme == 'onedark' then
 end
 
 -- GRUVBOX:
+
 if theme == 'gruvbox' then
   vim.g.gruvbox_baby_transparent_mode = 1
   vim.g.gruvbox_baby_comment_style = 'NONE'
@@ -44,6 +48,7 @@ vim.opt.cursorline = true
 vim.opt.cursorlineopt = 'number'
 
 -- LUALINE:
+
 require('lualine').setup {
   options = {
     icons_enabled = true,
@@ -86,6 +91,7 @@ require('lualine').setup {
 }
 
 -- GITSIGNS:
+
 require('gitsigns').setup {
   signs = {
     add = { text = '+' },
@@ -100,6 +106,7 @@ require('gitsigns').setup {
 }
 
 -- TODO-COMMENTS:
+
 require('todo-comments').setup {
   -- signs = false,
 }
@@ -111,4 +118,5 @@ keymap('n', '<leader>tdt', '<Cmd>TodoTrouble<CR>', opts)
 keymap('n', '<leader>ft', '<Cmd>TodoTelescope<CR>', opts)
 
 -- COLORIZER:
+
 require('colorizer').setup()

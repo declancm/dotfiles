@@ -1,4 +1,5 @@
 -- TELESCOPE:
+
 require('telescope').setup {
   defaults = {
     mappings = {
@@ -31,6 +32,7 @@ require('telescope').load_extension 'zoxide'
 require('telescope').load_extension 'refactoring'
 
 -- KEYMAPS:
+
 local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 

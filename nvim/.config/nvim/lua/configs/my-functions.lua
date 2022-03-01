@@ -2,6 +2,7 @@ local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
 -- MAXIMIZE_WINDOW:
+
 keymap('n', '<leader>z', '<Cmd>lua MaximizeWindow()<CR>', opts)
 keymap('x', '<leader>z', '<Cmd>lua MaximizeWindow()<CR>', opts)
 
@@ -22,6 +23,7 @@ function MaximizeWindow()
 end
 
 -- NATIVE_TERMINAL:
+
 keymap('t', '<C-^>', '<C-\\><C-N><C-^>', opts)
 keymap('t', '<C-O>', '<C-\\><C-N><C-O>', opts)
 keymap('t', '<F3>', '<C-\\><C-N>', opts)
@@ -55,6 +57,7 @@ function ToggleTerminal()
 end
 
 -- NOTES:
+
 keymap('n', '<leader>n', '<Cmd>call NotesToggle()<CR>', opts)
 
 vim.cmd [[
@@ -91,6 +94,7 @@ exec "autocmd BufWritePre " . g:notes_full_path . " if &modified | let b:notes_m
 ]]
 
 -- SOURCE_CONFIG:
+
 keymap('n', '<leader>sc', '<Cmd>lua SourceConfig()<CR>', opts)
 
 function SourceConfig()
@@ -99,6 +103,7 @@ function SourceConfig()
 end
 
 -- CTRL-BS: (Works with wordmotion.)
+
 keymap('i', '<C-H>', '<Cmd>call DeleteStartWord("b")<CR>', opts)
 keymap('i', '<M-BS>', '<Cmd>call DeleteStartWord("B")<CR>', opts)
 
@@ -121,6 +126,7 @@ endfunction
 ]]
 
 -- CTRL-DEL: (Works with wordmotion.)
+
 keymap('i', '<C-Del>', '<Cmd>call DeleteEndWord("e")<CR>', opts)
 keymap('i', '<M-Del>', '<Cmd>call DeleteEndWord("E")<CR>', opts)
 
@@ -131,6 +137,7 @@ endfunction
 ]]
 
 -- IMPROVED_PASTE:
+
 keymap('n', 'p', '<Cmd>call GlobalPaste("p")<CR>', opts)
 keymap('n', 'P', '<Cmd>call GlobalPaste("P")<CR>', opts)
 keymap('n', 'gp', '<Cmd>call GlobalPaste("gp")<CR>', opts)
@@ -155,6 +162,7 @@ endfunction
 ]]
 
 -- APPEND_YANK:
+
 keymap('v', '<leader>y', '<Cmd>call AppendYank("y")<CR>', opts)
 keymap('n', '<leader>Y', '<Cmd>call AppendYank("yg_")<CR>', opts)
 
@@ -166,6 +174,7 @@ endfunction
 ]]
 
 -- WINDOW_MOVEMENT:
+
 keymap('n', '<leader>k', '<Cmd>call WindowMovement("k")<CR>', opts)
 keymap('n', '<leader>j', '<Cmd>call WindowMovement("j")<CR>', opts)
 keymap('n', '<leader>h', '<Cmd>call WindowMovement("h")<CR>', opts)
@@ -191,6 +200,7 @@ endfunction
 ]]
 
 -- CLEAR_BUFFERS:
+
 keymap('n', '<leader>bd', '<Cmd>call BufferDelete()<CR>', opts)
 
 vim.cmd [[

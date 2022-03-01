@@ -9,10 +9,12 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- DEPENDENCIES:
+
   use 'nvim-lua/plenary.nvim'
   use 'kyazdani42/nvim-web-devicons'
 
   -- LSP:
+
   use 'neovim/nvim-lspconfig'
   use 'jose-elias-alvarez/null-ls.nvim'
   use {
@@ -22,6 +24,7 @@ return require('packer').startup(function(use)
   }
 
   -- DEV:
+
   use 'folke/trouble.nvim'
   use 'mbbill/undotree'
   -- use 'mfussenegger/nvim-dap'
@@ -32,6 +35,7 @@ return require('packer').startup(function(use)
   }
 
   -- TELESCOPE:
+
   use {
     'nvim-telescope/telescope.nvim',
     requires = {
@@ -41,10 +45,12 @@ return require('packer').startup(function(use)
   }
 
   -- TREESITTER:
+
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'ThePrimeagen/refactoring.nvim'
 
   -- VISUALS:
+
   use 'folke/tokyonight.nvim'
   use 'navarasu/onedark.nvim'
   use 'luisiacc/gruvbox-baby'
@@ -54,6 +60,7 @@ return require('packer').startup(function(use)
   use 'norcalli/nvim-colorizer.lua'
 
   -- SPEED:
+
   use 'machakann/vim-sandwich'
   use 'unblevable/quick-scope'
   use 'chaoren/vim-wordmotion'
@@ -62,11 +69,13 @@ return require('packer').startup(function(use)
   use 'tpope/vim-abolish'
 
   -- MISC:
+
   use { 'ms-jpq/chadtree', branch = 'chad', run = 'python3 -m chadtree deps' }
   use 'tpope/vim-obsession'
   use 'tpope/vim-capslock'
 
   -- MY_PLUGINS:
+
   use { '~/Git/cinnamon-scroll', requires = 'tpope/vim-repeat' }
   -- use { 'declancm/cinnamon-scroll', requires = 'tpope/vim-repeat' }
   use '~/Git/vim2vscode'
