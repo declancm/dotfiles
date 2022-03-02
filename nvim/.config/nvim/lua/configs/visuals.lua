@@ -1,5 +1,3 @@
--- TODO: add option to cycle backgrounds in windows terminal. Use background image which cycles?
-
 -- THEME:
 
 local theme = 'tokyonight'

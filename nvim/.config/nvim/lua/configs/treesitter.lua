@@ -5,7 +5,7 @@ require('nvim-treesitter.configs').setup {
   highlight = {
     enable = true,
     disable = {},
-    -- use treesitter with 'syntax on'
+    -- Use treesitter with 'syntax on'.
     -- additional_vim_regex_highlighting = true,
   },
 }

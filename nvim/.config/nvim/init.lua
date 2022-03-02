@@ -17,7 +17,7 @@ require 'plugins'
 require 'configs.lsp'
 require 'configs.telescope'
 require 'configs.treesitter'
-require 'configs.dev'
+-- require 'configs.debugging'
 require 'configs.visuals'
 require 'configs.speed'
 require 'configs.misc'
@@ -35,7 +35,6 @@ vim.opt.undofile = true
 vim.opt.hidden = true
 vim.opt.relativenumber = true
 vim.opt.number = true
--- vim.opt.signcolumn = 'auto:1-2'
 vim.opt.showmode = true
 -- vim.opt.errorbells = false
 vim.opt.cmdheight = 2
@@ -47,7 +46,8 @@ vim.opt.wrap = false
 -- vim.opt.wrapmargin = 0
 vim.opt.expandtab = true
 vim.opt.autoindent = true
-vim.opt.smartindent = true -- vim.opt.cindent = true
+-- vim.opt.smartindent = true
+vim.opt.cindent = true
 vim.opt.scrolloff = 8
 vim.opt.iskeyword = vim.opt.iskeyword - '_'
 vim.opt.backspace = { 'indent', 'eol', 'start', 'nostop' }

@@ -35,11 +35,11 @@ local coq = require 'coq'
 -- cmake:           pip3 install cmake-language-server
 -- powershell_es:   https://github.com/PowerShell/PowerShellEditorServices/releases
 --                  Extract the zip file to '~/lsp/PowerShellEditorServices'.
---                  (Set 'bundle_path' to PowerShellEditorServices root directory.)
+--                  (Set 'bundle_path' to PowerShellEditorServices root directory)
 -- pyright:         pip3 install pyright
 -- sumneko_lua:     https://github.com/sumneko/lua-language-server/wiki/Build-and-Run
 --                  Clone to '~/lsp/lua-language-server'.
---                  (Make sure '/lua-language-server/bin' is added to path.)
+--                  (Make sure '/lua-language-server/bin' is added to path)
 -- vimls:           npm install -g vim-language-server
 
 vim.cmd 'let g:powershell_es_path = expand("$HOME/lsp/PowerShellEditorServices")'
@@ -70,7 +70,7 @@ keymap('n', '<leader>q', '<Cmd>lua vim.diagnostic.setloclist()<CR>', opts)
 -- LSP buffer keymaps.
 keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
 keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-keymap('n', 'gtd', '<Cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+keymap('n', 'gt', '<Cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
 keymap('n', 'gr', '<Cmd>lua vim.lsp.buf.references()<CR>', opts)
 keymap('n', 'gi', '<Cmd>lua vim.lsp.buf.implementation()<CR>', opts)
 keymap('n', 'H', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
@@ -159,6 +159,12 @@ vim.lsp.handlers['textDocument/definition'] = goto_definition 'split'
 
 -- NULL-LS:
 
+function LspFormat()
+  vim.lsp.buf.formatting_sync()
+  -- Fix tabs after formatting.
+  vim.cmd 'retab'
+end
+
 -- INSTALLATION
 
 -- black:           pip3 install black
@@ -166,6 +172,7 @@ vim.lsp.handlers['textDocument/definition'] = goto_definition 'split'
 -- cmake_format:    pip3 install cmakelang
 -- prettier:        npm install --save-dev --save-exact prettier
 -- stylua:          cargo install stylua
+--                  (Make sure '~/.cargo/bin' is added to path)
 
 require('null-ls').setup {
   debug = false,
@@ -176,24 +183,20 @@ require('null-ls').setup {
     require('null-ls').builtins.formatting.prettier,
     require('null-ls').builtins.formatting.stylua,
   },
-  -- Format on save.
   on_attach = function(client)
     if client.resolved_capabilities.document_formatting then
+      -- Format on save.
       vim.cmd [[
       augroup LspFormatting
         autocmd! * <buffer>
         autocmd BufWritePre <buffer> lua LspFormat()
       augroup END
       ]]
+      -- Format on command 'Format'.
+      vim.cmd 'command! Format lua LspFormat()'
     end
   end,
 }
-
-function LspFormat()
-  vim.lsp.buf.formatting_sync()
-  -- Fix tabs after formatting.
-  vim.cmd 'retab'
-end
 
 -- NOTES
 
@@ -201,6 +204,3 @@ end
 --                  language server.
 -- cmake_format:    Currently not able to be run simultaneously with cmake
 --                  language server.
-
--- Format on command 'Format'.
-vim.cmd 'command! Format :lua vim.lsp.buf.formatting_sync()'

@@ -36,36 +36,28 @@ require('telescope').load_extension 'refactoring'
 local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
--- Telescope keymaps.
-keymap(
-  'n',
-  '<leader>ff',
-  "<Cmd>lua require('telescope.builtin').find_files()<CR>",
-  opts
-)
-keymap(
-  'n',
-  '<leader>fg',
-  "<Cmd>lua require('telescope.builtin').live_grep()<CR>",
-  opts
-)
-keymap(
-  'n',
-  '<leader>fb',
-  "<Cmd>lua require('telescope.builtin').buffers()<CR>",
-  opts
-)
-keymap(
-  'n',
-  '<leader>fh',
-  "<Cmd>lua require('telescope.builtin').help_tags()<CR>",
-  opts
-)
+local builtin = "<Cmd>lua require('telescope.builtin')"
 
--- Telescope zoxide keymaps.
+keymap('n', '<leader>ff', builtin .. '.find_files()<CR>', opts)
+keymap('n', '<leader>fg', builtin .. '.live_grep()<CR>', opts)
+keymap('n', '<leader>fb', builtin .. '.buffers()<CR>', opts)
+keymap('n', '<leader>fh', builtin .. '.help_tags()<CR>', opts)
+keymap('n', '<leader>fp', builtin .. '.builtin()<CR>', opts)
+keymap('n', '<leader>fc', builtin .. '.command_history()<CR>', opts)
+keymap('n', '<leader>fq', builtin .. '.quickfix()<CR>', opts)
+
+-- Lsp keymaps.
+keymap('n', '<leader>fd', builtin .. '.diagnostics()<CR>', opts)
+keymap('n', '<leader>fr', builtin .. '.lsp_references()<CR>', opts)
+keymap('n', '<leader>fi', builtin .. '.lsp_implementations()<CR>', opts)
+keymap('n', '<leader>fa', builtin .. '.lsp_code_actions()<CR>', opts)
+
+-- PLUGIN_KEYMAPS:
+
+-- Zoxide.
 keymap('n', '<leader>fz', '<Cmd>Telescope zoxide list<CR>', opts)
 
--- Telescope refactoring keymaps.
+-- Refactoring.
 keymap(
   'v',
   '<leader>fr',

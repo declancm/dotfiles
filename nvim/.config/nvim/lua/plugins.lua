@@ -23,17 +23,6 @@ return require('packer').startup(function(use)
     requires = { { 'ms-jpq/coq.artifacts', branch = 'artifacts' } },
   }
 
-  -- DEV:
-
-  use 'mbbill/undotree'
-  use 'folke/trouble.nvim'
-  -- use 'mfussenegger/nvim-dap'
-  use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install' }
-  use {
-    'tpope/vim-fugitive',
-    requires = { 'tpope/git-bump', 'junegunn/gv.vim' },
-  }
-
   -- TELESCOPE:
 
   use {
@@ -49,11 +38,15 @@ return require('packer').startup(function(use)
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'ThePrimeagen/refactoring.nvim'
 
+  -- DEBUGGING:
+
+  -- use 'mfussenegger/nvim-dap'
+
   -- VISUALS:
 
   use 'folke/tokyonight.nvim'
-  use 'navarasu/onedark.nvim'
-  use 'luisiacc/gruvbox-baby'
+  -- use 'navarasu/onedark.nvim'
+  -- use 'luisiacc/gruvbox-baby'
   use 'hoob3rt/lualine.nvim'
   use { 'lewis6991/gitsigns.nvim', tag = 'release' }
   use 'folke/todo-comments.nvim'
@@ -73,6 +66,12 @@ return require('packer').startup(function(use)
   use { 'ms-jpq/chadtree', branch = 'chad', run = 'python3 -m chadtree deps' }
   use 'tpope/vim-obsession'
   use 'tpope/vim-capslock'
+  use 'mbbill/undotree'
+  use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install' }
+  use {
+    'tpope/vim-fugitive',
+    requires = { 'tpope/git-bump', 'junegunn/gv.vim' },
+  }
 
   -- MY_PLUGINS:
 
