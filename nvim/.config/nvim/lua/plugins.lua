@@ -52,26 +52,26 @@ return require('packer').startup(function(use)
   use 'folke/todo-comments.nvim'
   use 'norcalli/nvim-colorizer.lua'
 
-  -- SPEED:
+  -- EFFICIENCY:
 
-  use 'machakann/vim-sandwich'
   use 'unblevable/quick-scope'
-  use 'chaoren/vim-wordmotion'
-  use 'dkarter/bullets.vim'
+  use 'machakann/vim-sandwich'
   use 'b3nj5m1n/kommentary'
+  use 'dkarter/bullets.vim'
   use 'arthurxavierx/vim-caser'
 
   -- MISC:
 
-  use { 'ms-jpq/chadtree', branch = 'chad', run = 'python3 -m chadtree deps' }
-  use 'tpope/vim-obsession'
-  use 'tpope/vim-capslock'
+  use 'chaoren/vim-wordmotion'
   use 'mbbill/undotree'
+  use { 'ms-jpq/chadtree', branch = 'chad', run = 'python3 -m chadtree deps' }
   use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install' }
   use {
     'tpope/vim-fugitive',
     requires = { 'tpope/git-bump', 'junegunn/gv.vim' },
   }
+  use 'tpope/vim-obsession'
+  use 'tpope/vim-capslock'
 
   -- MY_PLUGINS:
 

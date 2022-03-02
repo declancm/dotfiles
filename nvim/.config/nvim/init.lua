@@ -19,7 +19,7 @@ require 'configs.telescope'
 require 'configs.treesitter'
 -- require 'configs.debugging'
 require 'configs.visuals'
-require 'configs.speed'
+require 'configs.efficiency'
 require 'configs.misc'
 require 'configs.my-plugins'
 
