@@ -11,5 +11,5 @@ local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
 keymap('n', '<leader>ct', '<Cmd>CHADopen<CR>', opts)
-keymap('n', '<leader>ctl', '<Cmd>CHADopen<CR> --version-ctl<CR>', opts)
-keymap('n', '<leader>qf', '<Cmd>call setqflist([])<CR>', opts)
+keymap('n', '<leader>cl', '<Cmd>CHADopen --version-ctl<CR>', opts)
+keymap('n', '<leader>cq', '<Cmd>call setqflist([])<CR>', opts)

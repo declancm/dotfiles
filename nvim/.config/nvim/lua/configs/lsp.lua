@@ -12,7 +12,6 @@ vim.g.coq_settings = {
 }
 
 vim.cmd [[
-" COQ keymaps.
 inoremap <silent><expr> <Esc>   pumvisible() ? "\<C-e><Esc>" : "\<Esc>"
 inoremap <silent><expr> <C-c>   pumvisible() ? "\<C-e><C-c>" : "\<C-c>"
 inoremap <silent><expr> <BS>    pumvisible() ? "\<C-e><BS>"  : "\<BS>"
@@ -72,13 +71,28 @@ keymap('n', '<leader>q', '<Cmd>lua vim.diagnostic.setloclist()<CR>', opts)
 -- LSP buffer keymaps.
 keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
 keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+keymap('n', 'H', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
 keymap('n', 'gi', '<Cmd>lua vim.lsp.buf.implementation()<CR>', opts)
 keymap('n', '<C-k>', '<Cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
--- keymap('n', '<leader>wa', '<Cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
--- keymap('n', '<leader>wr', '<Cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
--- keymap('n', '<leader>wl', '<Cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
-keymap('n', '<leader>D', '<Cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+keymap(
+  'n',
+  '<leader>wa',
+  '<Cmd>lua vim.lsp.buf.add_workspace_folder()<CR>',
+  opts
+)
+keymap(
+  'n',
+  '<leader>wr',
+  '<Cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>',
+  opts
+)
+keymap(
+  'n',
+  '<leader>wl',
+  '<Cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>',
+  opts
+)
+keymap('n', '<leader>td', '<Cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
 keymap('n', '<leader>rn', '<Cmd>lua vim.lsp.buf.rename()<CR>', opts)
 keymap('n', '<leader>ca', '<Cmd>lua vim.lsp.buf.code_action()<CR>', opts)
 keymap('n', 'gr', '<Cmd>lua vim.lsp.buf.references()<CR>', opts)
@@ -143,12 +157,6 @@ local function goto_definition(split_cmd)
 end
 
 vim.lsp.handlers['textDocument/definition'] = goto_definition 'split'
-
--- Hover doc at current line.
--- vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
-
--- Hover doc at cursor position.
-vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false, scope='cursor'})]]
 
 -- NULL-LS:
 

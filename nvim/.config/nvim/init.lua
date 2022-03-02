@@ -2,7 +2,7 @@
 vim.g.python3_host_prog = '/bin/python3'
 vim.g.python_host_prog = '/bin/python2'
 
--- PRE-PLUGIN_OPTIONS:
+-- PRE-CONFIG_OPTIONS:
 vim.opt.syntax = 'on'
 vim.opt.termguicolors = true
 vim.cmd 'let mapleader = "\\<BS>"'
