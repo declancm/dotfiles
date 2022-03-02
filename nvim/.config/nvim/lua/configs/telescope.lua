@@ -4,12 +4,14 @@ require('telescope').setup {
   defaults = {
     mappings = {
       i = {
-        -- <C-BS> in telescope.
+        -- Delete the start of the word.
         ['<C-H>'] = function()
-          vim.cmd [[normal! cB]]
+          vim.cmd 'normal! cB'
         end,
       },
     },
+    prompt_prefix = '🔍 ',
+    selection_caret = '▶ ',
   },
   pickers = {
     find_files = {

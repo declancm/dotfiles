@@ -59,6 +59,19 @@ vim.opt.splitright = true
 vim.opt.timeoutlen = 500
 vim.opt.mouse = 'a'
 
+-- Unmapping the arrow keys for practice.
+local keymap = vim.api.nvim_set_keymap
+
+keymap('', '<Up>', '<Nul>', {})
+keymap('', '<Down>', '<Nul>', {})
+keymap('', '<Left>', '<Nul>', {})
+keymap('', '<Right>', '<Nul>', {})
+keymap('i', '<Up>', '<Nul>', {})
+keymap('i', '<Down>', '<Nul>', {})
+keymap('i', '<Left>', '<Nul>', {})
+keymap('i', '<Right>', '<Nul>', {})
+
+-- TODO: sort out the following options.
 -- The ':find' command.
 vim.opt.path = vim.opt.path + '**'
 vim.opt.wildmode = { 'longest', 'list', 'full' }

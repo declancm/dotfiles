@@ -14,70 +14,23 @@ require('nvim-treesitter.configs').setup {
 
 require('refactoring').setup {}
 
+local keymap = vim.api.nvim_set_keymap
+
 -- Refactoring operations:
--- Remaps for each of the four debug operations currently offered by the plugin
-vim.api.nvim_set_keymap(
-  'v',
-  '<Leader>re',
-  [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function')<CR>]],
-  { noremap = true, silent = true, expr = false }
-)
-vim.api.nvim_set_keymap(
-  'v',
-  '<Leader>rf',
-  [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function To File')<CR>]],
-  { noremap = true, silent = true, expr = false }
-)
-vim.api.nvim_set_keymap(
-  'v',
-  '<Leader>rv',
-  [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Variable')<CR>]],
-  { noremap = true, silent = true, expr = false }
-)
-vim.api.nvim_set_keymap(
-  'v',
-  '<Leader>ri',
-  [[ <Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]],
-  { noremap = true, silent = true, expr = false }
-)
+
+local opts = { noremap = true, silent = true, expr = false }
+local refactor = " <Esc><Cmd>lua require('refactoring').refactor"
+
+keymap('v', '<Leader>re', refactor .. "('Extract Function')<CR>", opts)
+keymap('v', '<Leader>rf', refactor .. "('Extract Function To File')<CR>", opts)
+keymap('v', '<Leader>rv', refactor .. "('Extract Variable')<CR>", opts)
+keymap('v', '<Leader>ri', refactor .. "('Inline Variable')<CR>", opts)
 
 -- Debug operations:
--- You can also use below = true here to to change the position of the printf
--- statement (or set two remaps for either one). This remap must be made in normal mode.
-vim.api.nvim_set_keymap(
-  'n',
-  '<Leader>rp',
-  ":lua require('refactoring').debug.printf({below = false})<CR>",
-  { noremap = true }
-)
 
--- Print var: this remap should be made in visual mode
-vim.api.nvim_set_keymap(
-  'v',
-  '<Leader>rv',
-  ":lua require('refactoring').debug.print_var({})<CR>",
-  { noremap = true }
-)
+opts = { noremap = true }
+local debug = ":lua require('refactoring').debug"
 
--- Cleanup function: this remap should be made in normal mode
-vim.api.nvim_set_keymap(
-  'n',
-  '<Leader>rc',
-  ":lua require('refactoring').debug.cleanup({})<CR>",
-  { noremap = true }
-)
-
--- activating prompts:
--- require('refactoring').setup({
---     -- prompt for return type
---     prompt_func_return_type = {
---         go = true,
---     },
---     -- prompt for function parameters
---     prompt_func_param_type = {
---         go = true,
---         cpp = true,
---         c = true,
---         java = true,
---     },
--- })
+keymap('n', '<Leader>rp', debug .. '.printf({below = false})<CR>', opts)
+keymap('v', '<Leader>rv', debug .. '.print_var({})<CR>', opts)
+keymap('n', '<Leader>rc', debug .. '.cleanup({})<CR>', opts)

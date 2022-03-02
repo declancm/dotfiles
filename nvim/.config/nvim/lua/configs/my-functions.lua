@@ -24,8 +24,8 @@ end
 
 -- NATIVE_TERMINAL:
 
-keymap('t', '<C-^>', '<C-\\><C-N><C-^>', opts)
-keymap('t', '<C-O>', '<C-\\><C-N><C-O>', opts)
+-- keymap('t', '<C-^>', '<C-\\><C-N><C-^>', opts)
+-- keymap('t', '<C-O>', '<C-\\><C-N><C-O>', opts)
 keymap('t', '<F3>', '<C-\\><C-N>', opts)
 keymap('n', '<C-\\>', '<Cmd>lua ToggleTerminal()<CR>', opts)
 keymap('t', '<C-\\>', '<Cmd>lua ToggleTerminal()<CR>', opts)

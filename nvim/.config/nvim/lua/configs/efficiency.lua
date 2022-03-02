@@ -3,6 +3,14 @@ local keymap = vim.api.nvim_set_keymap
 
 -- QUICKSCOPE:
 
+vim.cmd [[
+augroup qs_colors
+autocmd!
+autocmd ColorScheme * highlight QuickScopePrimary guifg='#F1FA8C' gui=underline ctermfg=155 cterm=underline
+autocmd ColorScheme * highlight QuickScopeSecondary guifg='#FF5555' gui=underline ctermfg=81 cterm=underline
+augroup END
+]]
+
 vim.g.qs_highlight_on_keys = { 'f', 'F', 't', 'T' }
 vim.g.qs_max_chars = 160
 
