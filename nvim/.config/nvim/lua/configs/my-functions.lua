@@ -45,7 +45,7 @@ function ToggleTerminal()
   else
     vim.g.term_prev = vim.fn.bufnr()
     if vim.g.term_bufnr == nil or vim.fn.bufname(vim.g.term_bufnr) == '' then
-      vim.cmd 'keepalt term'
+      vim.cmd 'keepalt terminal'
     else
       vim.cmd('keepalt buffer ' .. vim.g.term_bufnr)
     end

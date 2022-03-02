@@ -11,7 +11,7 @@ keymap('n', '<leader>u', '<Cmd>UndotreeToggle<CR><Cmd>wincmd p<CR>', opts)
 require('trouble').setup {}
 
 keymap('n', '<leader>tt', '<Cmd>TroubleToggle<CR>', opts)
-keymap('n', '<leader>xx', '<cmd>Trouble<cr>', opts)
+-- keymap('n', '<leader>xx', '<cmd>Trouble<cr>', opts)
 keymap('n', '<leader>xw', '<cmd>Trouble lsp_workspace_diagnostics<cr>', opts)
 keymap('n', '<leader>xd', '<cmd>Trouble lsp_document_diagnostics<cr>', opts)
 keymap('n', '<leader>xl', '<cmd>Trouble loclist<cr>', opts)

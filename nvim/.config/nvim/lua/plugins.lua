@@ -25,8 +25,8 @@ return require('packer').startup(function(use)
 
   -- DEV:
 
-  use 'folke/trouble.nvim'
   use 'mbbill/undotree'
+  use 'folke/trouble.nvim'
   -- use 'mfussenegger/nvim-dap'
   use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install' }
   use {

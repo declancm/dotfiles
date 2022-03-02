@@ -36,9 +36,12 @@ local coq = require 'coq'
 -- clangd:          sudo apt-get install clangd-12
 -- cmake:           pip3 install cmake-language-server
 -- powershell_es:   https://github.com/PowerShell/PowerShellEditorServices/releases
---                  Extract the zip file to '~/lsp/PowerShellEditorServices'
+--                  Extract the zip file to '~/lsp/PowerShellEditorServices'.
+--                  (Set 'bundle_path' to PowerShellEditorServices root directory.)
 -- pyright:         pip3 install pyright
 -- sumneko_lua:     https://github.com/sumneko/lua-language-server/wiki/Build-and-Run
+--                  Clone to '~/lsp/lua-language-server'.
+--                  (Make sure '/lua-language-server/bin' is added to path.)
 -- vimls:           npm install -g vim-language-server
 
 vim.cmd 'let g:powershell_es_path = expand("$HOME/lsp/PowerShellEditorServices")'
@@ -141,6 +144,12 @@ end
 
 vim.lsp.handlers['textDocument/definition'] = goto_definition 'split'
 
+-- Hover doc at current line.
+-- vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
+
+-- Hover doc at cursor position.
+vim.cmd [[autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false, scope='cursor'})]]
+
 -- NULL-LS:
 
 -- INSTALLATION
@@ -166,13 +175,18 @@ require('null-ls').setup {
       vim.cmd [[
       augroup LspFormatting
         autocmd! * <buffer>
-        autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
-        autocmd BufWritePre <buffer> retab
+        autocmd BufWritePre <buffer> lua LspFormat()
       augroup END
       ]]
     end
   end,
 }
+
+function LspFormat()
+  vim.lsp.buf.formatting_sync()
+  -- Fix tabs after formatting.
+  vim.cmd 'retab'
+end
 
 -- NOTES
 
