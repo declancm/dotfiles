@@ -66,7 +66,7 @@ return require('packer').startup(function(use)
   use 'chaoren/vim-wordmotion'
   use 'dkarter/bullets.vim'
   use 'b3nj5m1n/kommentary'
-  use 'tpope/vim-abolish'
+  use 'arthurxavierx/vim-caser'
 
   -- MISC:
 

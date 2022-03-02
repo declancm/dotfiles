@@ -25,7 +25,6 @@ inoremap <silent><expr> <Down>  pumvisible() ? "\<C-e>\<Down>" : "\<Down>"
 ]]
 
 -- LSPCONFIG:
-
 local lsp = require 'lspconfig'
 local coq = require 'coq'
 
