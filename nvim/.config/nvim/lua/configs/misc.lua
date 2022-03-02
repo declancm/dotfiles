@@ -3,7 +3,7 @@ local keymap = vim.api.nvim_set_keymap
 
 -- UNDOTREE:
 
-keymap('n', '<leader>u', '<Cmd>UndotreeToggle<CR><Cmd>wincmd p<CR>', opts)
+keymap('n', '<Leader>u', '<Cmd>UndotreeToggle<CR><Cmd>wincmd p<CR>', opts)
 
 -- CHADTREE:
 
@@ -14,11 +14,11 @@ local chadtree_settings = {
 }
 vim.api.nvim_set_var('chadtree_settings', chadtree_settings)
 
-keymap('n', '<leader>ct', '<Cmd>CHADopen<CR>', opts)
-keymap('n', '<leader>cl', '<Cmd>CHADopen --version-ctl<CR>', opts)
-keymap('n', '<leader>cq', '<Cmd>call setqflist([])<CR>', opts)
+keymap('n', '<Leader>ct', '<Cmd>CHADopen<CR>', opts)
+keymap('n', '<Leader>cl', '<Cmd>CHADopen --version-ctl<CR>', opts)
+keymap('n', '<Leader>cq', '<Cmd>call setqflist([])<CR>', opts)
 
 -- MARKDOWN-PREVIEW:
 
-keymap('n', '<leader>md', '<Cmd>MarkdownPreview<CR>', opts)
-keymap('n', '<leader>ms', '<Cmd>MarkdownPreviewStop<CR>', opts)
+keymap('n', '<Leader>md', '<Cmd>MarkdownPreview<CR>', opts)
+keymap('n', '<Leader>ms', '<Cmd>MarkdownPreviewStop<CR>', opts)

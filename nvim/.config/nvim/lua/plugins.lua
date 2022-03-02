@@ -1,9 +1,9 @@
--- stylua: ignore start
-local packer_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
-if vim.fn.empty(vim.fn.glob(packer_path)) > 0 then
-  PackerBootstrap = vim.fn.system { 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', packer_path, }
+local path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
+if vim.fn.empty(vim.fn.glob(path)) > 0 then
+  local remote = 'https://github.com/wbthomason/packer.nvim'
+  local command = { 'git', 'clone', '--depth', '1', remote, path }
+  PackerBootstrap = vim.fn.system(command)
 end
--- stylua: ignore end
 
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'

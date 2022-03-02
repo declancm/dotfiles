@@ -62,10 +62,10 @@ lsp.vimls.setup(coq.lsp_ensure_capabilities {})
 --                  set(CMAKE_EXPORT_COMPILE_COMMANDS ON CACHE INTERNAL "")
 
 -- LSP dianostic keymaps.
-keymap('n', '<leader>e', '<Cmd>lua vim.diagnostic.open_float()<CR>', opts)
+keymap('n', '<Leader>e', '<Cmd>lua vim.diagnostic.open_float()<CR>', opts)
 keymap('n', '[d', '<Cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 keymap('n', ']d', '<Cmd>lua vim.diagnostic.goto_next()<CR>', opts)
-keymap('n', '<leader>q', '<Cmd>lua vim.diagnostic.setloclist()<CR>', opts)
+keymap('n', '<Leader>q', '<Cmd>lua vim.diagnostic.setloclist()<CR>', opts)
 
 -- LSP buffer keymaps.
 keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
@@ -75,27 +75,27 @@ keymap('n', 'gr', '<Cmd>lua vim.lsp.buf.references()<CR>', opts)
 keymap('n', 'gi', '<Cmd>lua vim.lsp.buf.implementation()<CR>', opts)
 keymap('n', 'H', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
 keymap('n', '<C-h>', '<Cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-keymap('n', '<leader>rn', '<Cmd>lua vim.lsp.buf.rename()<CR>', opts)
-keymap('n', '<leader>ca', '<Cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+keymap('n', '<Leader>rn', '<Cmd>lua vim.lsp.buf.rename()<CR>', opts)
+keymap('n', '<Leader>ca', '<Cmd>lua vim.lsp.buf.code_action()<CR>', opts)
 keymap(
   'n',
-  '<leader>wa',
+  '<Leader>wa',
   '<Cmd>lua vim.lsp.buf.add_workspace_folder()<CR>',
   opts
 )
 keymap(
   'n',
-  '<leader>wr',
+  '<Leader>wr',
   '<Cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>',
   opts
 )
 keymap(
   'n',
-  '<leader>wl',
+  '<Leader>wl',
   '<Cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>',
   opts
 )
--- keymap('n', '<leader>f', '<Cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+-- keymap('n', '<Leader>f', '<Cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 
 -- LSPCONFIG-UI:
 
@@ -128,7 +128,7 @@ function vim.lsp.util.open_floating_preview(contents, syntax, options, ...)
   return orig_util_open_floating_preview(contents, syntax, options, ...)
 end
 
--- Open definition in a split window.
+-- Open definition in a new window.
 local function goto_definition(split_cmd)
   local util = vim.lsp.util
   local log = require 'vim.lsp.log'
@@ -154,8 +154,7 @@ local function goto_definition(split_cmd)
   end
   return handler
 end
-
-vim.lsp.handlers['textDocument/definition'] = goto_definition 'split'
+vim.lsp.handlers['textDocument/definition'] = goto_definition 'vertical split'
 
 -- NULL-LS:
 

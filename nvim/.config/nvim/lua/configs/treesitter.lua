@@ -46,7 +46,7 @@ vim.api.nvim_set_keymap(
 -- statement (or set two remaps for either one). This remap must be made in normal mode.
 vim.api.nvim_set_keymap(
   'n',
-  '<leader>rp',
+  '<Leader>rp',
   ":lua require('refactoring').debug.printf({below = false})<CR>",
   { noremap = true }
 )
@@ -54,7 +54,7 @@ vim.api.nvim_set_keymap(
 -- Print var: this remap should be made in visual mode
 vim.api.nvim_set_keymap(
   'v',
-  '<leader>rv',
+  '<Leader>rv',
   ":lua require('refactoring').debug.print_var({})<CR>",
   { noremap = true }
 )
@@ -62,7 +62,7 @@ vim.api.nvim_set_keymap(
 -- Cleanup function: this remap should be made in normal mode
 vim.api.nvim_set_keymap(
   'n',
-  '<leader>rc',
+  '<Leader>rc',
   ":lua require('refactoring').debug.cleanup({})<CR>",
   { noremap = true }
 )

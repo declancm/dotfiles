@@ -101,6 +101,7 @@ require('gitsigns').setup {
     },
   },
   -- sign_priority = 10,
+  keymaps = {},
 }
 
 -- TODO-COMMENTS:
@@ -112,8 +113,8 @@ require('todo-comments').setup {
 local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
-keymap('n', '<leader>tdt', '<Cmd>TodoTrouble<CR>', opts)
-keymap('n', '<leader>ft', '<Cmd>TodoTelescope<CR>', opts)
+keymap('n', '<Leader>tdt', '<Cmd>TodoTrouble<CR>', opts)
+keymap('n', '<Leader>ft', '<Cmd>TodoTelescope<CR>', opts)
 
 -- COLORIZER:
 

@@ -3,8 +3,8 @@ local keymap = vim.api.nvim_set_keymap
 
 -- MAXIMIZE_WINDOW:
 
-keymap('n', '<leader>z', '<Cmd>lua MaximizeWindow()<CR>', opts)
-keymap('x', '<leader>z', '<Cmd>lua MaximizeWindow()<CR>', opts)
+keymap('n', '<Leader>z', '<Cmd>lua MaximizeWindow()<CR>', opts)
+keymap('x', '<Leader>z', '<Cmd>lua MaximizeWindow()<CR>', opts)
 
 function MaximizeWindow()
   if vim.b.maxWinStatus == nil or vim.b.maxWinStatus == 0 then
@@ -58,7 +58,7 @@ end
 
 -- NOTES:
 
-keymap('n', '<leader>n', '<Cmd>call NotesToggle()<CR>', opts)
+keymap('n', '<Leader>n', '<Cmd>call NotesToggle()<CR>', opts)
 
 vim.cmd [[
 let g:notes_dir = expand("~/notes")
@@ -95,14 +95,14 @@ exec "autocmd BufWritePre " . g:notes_full_path . " if &modified | let b:notes_m
 
 -- SOURCE_CONFIG:
 
-keymap('n', '<leader>sc', '<Cmd>lua SourceConfig()<CR>', opts)
+keymap('n', '<Leader>sc', '<Cmd>lua SourceConfig()<CR>', opts)
 
 function SourceConfig()
   vim.cmd "silent exec 'wa | source $MYVIMRC | PackerCompile'"
   print 'Your config file has been sourced.'
 end
 
--- CTRL-BS: (Works with wordmotion.)
+-- CTRL-BS: (works with wordmotion)
 
 keymap('i', '<C-H>', '<Cmd>call DeleteStartWord("b")<CR>', opts)
 keymap('i', '<M-BS>', '<Cmd>call DeleteStartWord("B")<CR>', opts)
@@ -125,7 +125,7 @@ function! DeleteStartWord(backKey)
 endfunction
 ]]
 
--- CTRL-DEL: (Works with wordmotion.)
+-- CTRL-DEL: (works with wordmotion)
 
 keymap('i', '<C-Del>', '<Cmd>call DeleteEndWord("e")<CR>', opts)
 keymap('i', '<M-Del>', '<Cmd>call DeleteEndWord("E")<CR>', opts)
@@ -163,8 +163,8 @@ endfunction
 
 -- APPEND_YANK:
 
-keymap('v', '<leader>y', '<Cmd>call AppendYank("y")<CR>', opts)
-keymap('n', '<leader>Y', '<Cmd>call AppendYank("yg_")<CR>', opts)
+keymap('v', '<Leader>y', '<Cmd>call AppendYank("y")<CR>', opts)
+keymap('n', '<Leader>Y', '<Cmd>call AppendYank("yg_")<CR>', opts)
 
 vim.cmd [[
 function! AppendYank(yankMode)
@@ -175,14 +175,14 @@ endfunction
 
 -- WINDOW_MOVEMENT:
 
-keymap('n', '<leader>k', '<Cmd>call WindowMovement("k")<CR>', opts)
-keymap('n', '<leader>j', '<Cmd>call WindowMovement("j")<CR>', opts)
-keymap('n', '<leader>h', '<Cmd>call WindowMovement("h")<CR>', opts)
-keymap('n', '<leader>l', '<Cmd>call WindowMovement("l")<CR>', opts)
-keymap('n', '<leader><Up>', '<Cmd>call WindowMovement("k")<CR>', opts)
-keymap('n', '<leader><Down>', '<Cmd>call WindowMovement("j")<CR>', opts)
-keymap('n', '<leader><Left>', '<Cmd>call WindowMovement("h")<CR>', opts)
-keymap('n', '<leader><Right>', '<Cmd>call WindowMovement("l")<CR>', opts)
+keymap('n', '<Leader>k', '<Cmd>call WindowMovement("k")<CR>', opts)
+keymap('n', '<Leader>j', '<Cmd>call WindowMovement("j")<CR>', opts)
+keymap('n', '<Leader>h', '<Cmd>call WindowMovement("h")<CR>', opts)
+keymap('n', '<Leader>l', '<Cmd>call WindowMovement("l")<CR>', opts)
+keymap('n', '<Leader><Up>', '<Cmd>call WindowMovement("k")<CR>', opts)
+keymap('n', '<Leader><Down>', '<Cmd>call WindowMovement("j")<CR>', opts)
+keymap('n', '<Leader><Left>', '<Cmd>call WindowMovement("h")<CR>', opts)
+keymap('n', '<Leader><Right>', '<Cmd>call WindowMovement("l")<CR>', opts)
 
 vim.cmd [[
 function! WindowMovement(key)
@@ -199,9 +199,30 @@ function! WindowMovement(key)
 endfunction
 ]]
 
+-- CLOSE_OTHER_WINDOW:
+
+keymap('n', 'ql', "<Cmd>lua CloseOtherWindow('l')<CR>", opts)
+keymap('n', 'qh', "<Cmd>lua CloseOtherWindow('h')<CR>", opts)
+keymap('n', 'qk', "<Cmd>lua CloseOtherWindow('k')<CR>", opts)
+keymap('n', 'qj', "<Cmd>lua CloseOtherWindow('j')<CR>", opts)
+keymap('n', 'q<Right>', "<Cmd>lua CloseOtherWindow('l')<CR>", opts)
+keymap('n', 'q<Left>', "<Cmd>lua CloseOtherWindow('h')<CR>", opts)
+keymap('n', 'q<Up>', "<Cmd>lua CloseOtherWindow('k')<CR>", opts)
+keymap('n', 'q<Down>', "<Cmd>lua CloseOtherWindow('j')<CR>", opts)
+
+function CloseOtherWindow(direction)
+  local buf1 = vim.fn.winnr()
+  vim.cmd('wincmd ' .. direction)
+  local buf2 = vim.fn.winnr()
+  if buf1 == buf2 then
+    return
+  end
+  vim.cmd 'wq!'
+end
+
 -- CLEAR_BUFFERS:
 
-keymap('n', '<leader>bd', '<Cmd>call BufferDelete()<CR>', opts)
+keymap('n', '<Leader>bd', '<Cmd>call BufferDelete()<CR>', opts)
 
 vim.cmd [[
 function! BufferDelete()

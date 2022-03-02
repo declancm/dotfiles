@@ -6,11 +6,11 @@ keymap('', '<Home>', 'zH^', opts)
 keymap('i', '<Home>', '<Esc>zHI', opts)
 
 -- Creating windows.
-keymap('n', '<leader>v', '<C-w>v', opts)
-keymap('n', '<leader>s', '<C-w>s', opts)
+keymap('n', '<Leader>v', '<C-w>v', opts)
+keymap('n', '<Leader>s', '<C-w>s', opts)
 
 -- Tmux-like previous window switch.
-keymap('n', '<leader>;', '<Cmd>wincmd p<CR>', opts)
+keymap('n', '<Leader>;', '<Cmd>wincmd p<CR>', opts)
 
 -- Resize windows.
 keymap('n', '<S-Up>', '<Cmd>resize +5<CR>', opts)
@@ -39,8 +39,8 @@ keymap('v', 'K', ":m '<-2<CR>gv=gv", opts)
 keymap('v', 'J', ":m '>+1<CR>gv=gv", opts)
 keymap('i', '<C-k>', '<Esc>:m .-2<CR>==a', opts)
 keymap('i', '<C-j>', '<Esc>:m .+1<CR>==a', opts)
-keymap('n', '<leader>k', ':m .-2<CR>==', opts)
-keymap('n', '<leader>j', ':m .+1<CR>==', opts)
+keymap('n', '<Leader>k', ':m .-2<CR>==', opts)
+keymap('n', '<Leader>j', ':m .+1<CR>==', opts)
 
 -- Moving text with arrows.
 keymap('v', '<C-Up>', ":m '<-2<CR>gv=gv", opts)
@@ -59,8 +59,8 @@ keymap('n', 'y', '"*y', opts)
 keymap('v', 'y', '"*y', opts)
 
 -- Paste from global clipboard and highlight.
-keymap('n', '<leader>p', '"*p`[v`]', opts)
-keymap('n', '<leader>P', '"*P`[v`]', opts)
+keymap('n', '<Leader>p', '"*p`[v`]', opts)
+keymap('n', '<Leader>P', '"*P`[v`]', opts)
 
 -- Highlight after indenting.
 keymap('v', '>', '>gv', opts)
@@ -75,10 +75,10 @@ keymap('n', 'c', '"_c', opts)
 keymap('n', 'C', '"_C', opts)
 keymap('v', 'c', '"_c', opts)
 
--- Cut is now leader d.
-keymap('n', '<leader>d', '"*d', opts)
-keymap('n', '<leader>D', '"*d', opts)
-keymap('v', '<leader>d', '"*d', opts)
+-- Cut is now Leader d.
+keymap('n', '<Leader>d', '"*d', opts)
+keymap('n', '<Leader>D', '"*d', opts)
+keymap('v', '<Leader>d', '"*d', opts)
 
 -- Delete start of word for command line with ctrl-backspace.
 keymap('c', '<C-H>', '<C-w>', { noremap = true })
