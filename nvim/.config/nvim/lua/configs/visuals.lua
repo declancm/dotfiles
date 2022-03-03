@@ -13,7 +13,7 @@ if theme == 'tokyonight' then
   vim.g.tokyonight_style = 'storm'
   vim.g.tokyonight_transparent = true
   vim.g.tokyonight_transparent_sidebar = true
-  vim.g.tokyonight_italic_comments = false
+  -- vim.g.tokyonight_italic_comments = false
   vim.g.tokyonight_colors = { bg_float = 'NONE' }
   vim.cmd [[colorscheme tokyonight]]
   vim.cmd [[highlight ColorColumn ctermbg=0 guibg=#1f2335]]
@@ -26,7 +26,7 @@ if theme == 'onedark' then
   require('onedark').setup {
     style = 'dark',
     transparent = true,
-    code_style = { comments = 'none' },
+    -- code_style = { comments = 'none' },
   }
   vim.cmd [[colorscheme onedark]]
   vim.cmd [[highlight ColorColumn ctermbg=0 guibg=#31353f]]
@@ -37,7 +37,7 @@ end
 
 if theme == 'gruvbox' then
   vim.g.gruvbox_baby_transparent_mode = 1
-  vim.g.gruvbox_baby_comment_style = 'NONE'
+  -- vim.g.gruvbox_baby_comment_style = 'NONE'
   vim.cmd [[colorscheme gruvbox-baby]]
   vim.cmd [[highlight ColorColumn ctermbg=0 guibg=#3c3836]]
   vim.cmd [[highlight LineNr guifg=#458588]]

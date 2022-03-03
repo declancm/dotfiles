@@ -212,6 +212,7 @@ function CloseOtherWindow(direction)
   local buf1 = vim.fn.winnr()
   vim.cmd('wincmd ' .. direction)
   local buf2 = vim.fn.winnr()
+  print('CloseOtherWindow buf2:', vim.inspect(buf2)) -- __AUTO_GENERATED_PRINT_VAR__
   if buf1 == buf2 then
     return
   end

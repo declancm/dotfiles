@@ -1,5 +1,7 @@
 -- TELESCOPE:
 
+local actions = require 'telescope.actions'
+
 require('telescope').setup {
   defaults = {
     layout_config = {
@@ -13,9 +15,19 @@ require('telescope').setup {
         ['<C-H>'] = function()
           vim.cmd 'normal! cB'
         end,
+        ['<Tab>'] = actions.move_selection_next,
+        ['<S-Tab>'] = actions.move_selection_previous,
+        ['<C-n>'] = actions.toggle_selection + actions.move_selection_worse,
+        ['<C-p>'] = actions.toggle_selection + actions.move_selection_better,
+      },
+      n = {
+        ['<Tab>'] = actions.move_selection_next,
+        ['<S-Tab>'] = actions.move_selection_previous,
+        ['<C-n>'] = actions.toggle_selection + actions.move_selection_worse,
+        ['<C-p>'] = actions.toggle_selection + actions.move_selection_better,
       },
     },
-    prompt_prefix = '🔍 ',
+    prompt_prefix = '🔭 ',
     selection_caret = '▶ ',
   },
   pickers = {
@@ -71,9 +83,3 @@ keymap(
   "<Esc><Cmd>lua require('telescope').extensions.refactoring.refactors()<CR>",
   opts
 )
--- keymap(
---   'n',
---   '<Leader>fr',
---   "<Esc><Cmd>lua require('telescope').extensions.refactoring.refactors()<CR>",
---   opts
--- )
