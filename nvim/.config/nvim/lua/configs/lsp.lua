@@ -106,7 +106,7 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
--- Symbol before diagnostics
+-- Symbol before diagnostics.
 vim.diagnostic.config { virtual_text = { prefix = '•' } }
 
 -- Floating window border outline.

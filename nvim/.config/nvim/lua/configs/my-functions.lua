@@ -24,9 +24,7 @@ end
 
 -- NATIVE_TERMINAL:
 
--- keymap('t', '<C-^>', '<C-\\><C-N><C-^>', opts)
--- keymap('t', '<C-O>', '<C-\\><C-N><C-O>', opts)
-keymap('t', '<F3>', '<C-\\><C-N>', opts)
+keymap('t', '<C-N>', '<C-\\><C-N>', opts)
 keymap('n', '<C-\\>', '<Cmd>lua ToggleTerminal()<CR>', opts)
 keymap('t', '<C-\\>', '<Cmd>lua ToggleTerminal()<CR>', opts)
 
@@ -222,10 +220,10 @@ end
 
 -- CLEAR_BUFFERS:
 
-keymap('n', '<Leader>bd', '<Cmd>call BufferDelete()<CR>', opts)
+keymap('n', '<Leader>bd', '<Cmd>call ClearBuffers()<CR>', opts)
 
 vim.cmd [[
-function! BufferDelete()
+function! ClearBuffers()
     let l:cursorPos = getcurpos()
     silent exec "wa | %bdelete | normal! \<C-^>"
     silent exec "call cursor(l:cursorPos[1], l:cursorPos[2])"

@@ -58,10 +58,10 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.timeoutlen = 500
 vim.opt.mouse = 'a'
+vim.opt.path = vim.opt.path + '**'
 
 -- Unmapping the arrow keys for practice.
 local keymap = vim.api.nvim_set_keymap
-
 keymap('', '<Up>', '<Nul>', {})
 keymap('', '<Down>', '<Nul>', {})
 keymap('', '<Left>', '<Nul>', {})
@@ -70,19 +70,3 @@ keymap('i', '<Up>', '<Nul>', {})
 keymap('i', '<Down>', '<Nul>', {})
 keymap('i', '<Left>', '<Nul>', {})
 keymap('i', '<Right>', '<Nul>', {})
-
--- TODO: sort out the following options.
--- The ':find' command.
-vim.opt.path = vim.opt.path + '**'
-vim.opt.wildmode = { 'longest', 'list', 'full' }
-vim.opt.wildmenu = true
-vim.opt.wildignore = vim.opt.wildignore
-  + {
-    '*.pyc',
-    '*_build/*',
-    '**/coverage/*',
-    '**/node_modules/*',
-    '**/android/*',
-    '**/ios/*',
-    '**/.git/*',
-  }

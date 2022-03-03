@@ -1,8 +1,8 @@
 -- THEME:
 
-local theme = 'tokyonight'
+-- local theme = 'tokyonight'
 -- local theme = 'onedark'
--- local theme = 'gruvbox'
+local theme = 'gruvbox'
 
 vim.opt.background = 'dark'
 vim.opt.colorcolumn = '80'
