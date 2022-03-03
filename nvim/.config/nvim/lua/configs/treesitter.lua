@@ -12,6 +12,8 @@ require('nvim-treesitter.configs').setup {
 
 -- REFACTORING:
 
+-- TODO: update the keymap nomenclature to be more understandable.
+
 require('refactoring').setup {}
 
 local keymap = vim.api.nvim_set_keymap

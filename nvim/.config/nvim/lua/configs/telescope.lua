@@ -7,7 +7,7 @@ require('telescope').setup {
     layout_config = {
       horizontal = { prompt_position = 'top' },
     },
-    -- List results starting at the top.
+    -- List results starting from the top.
     sorting_strategy = 'ascending',
     mappings = {
       i = {
@@ -65,7 +65,7 @@ keymap('n', '<Leader>fp', builtin .. '.builtin()<CR>', opts)
 keymap('n', '<Leader>fc', builtin .. '.command_history()<CR>', opts)
 keymap('n', '<Leader>fq', builtin .. '.quickfix()<CR>', opts)
 
--- Lsp keymaps.
+-- LSP keymaps.
 keymap('n', '<Leader>fd', builtin .. '.diagnostics()<CR>', opts)
 keymap('n', '<Leader>fr', builtin .. '.lsp_references()<CR>', opts)
 keymap('n', '<Leader>fi', builtin .. '.lsp_implementations()<CR>', opts)

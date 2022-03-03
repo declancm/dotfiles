@@ -9,9 +9,6 @@ keymap('i', '<Home>', '<Esc>zHI', opts)
 keymap('n', '<Leader>v', '<C-w>v', opts)
 keymap('n', '<Leader>s', '<C-w>s', opts)
 
--- Tmux-like previous window switch.
-keymap('n', '<Leader>;', '<Cmd>wincmd p<CR>', opts)
-
 -- Resize windows.
 keymap('n', '<S-Up>', '<Cmd>resize +5<CR>', opts)
 keymap('n', '<S-Down>', '<Cmd>resize -5<CR>', opts)
@@ -35,12 +32,12 @@ keymap('i', '!', '!<C-g>u', opts)
 keymap('i', '?', '?<C-g>u', opts)
 
 -- Moving text.
-keymap('v', 'K', ":m '<-2<CR>gv=gv", opts)
-keymap('v', 'J', ":m '>+1<CR>gv=gv", opts)
-keymap('i', '<C-k>', '<Esc>:m .-2<CR>==a', opts)
-keymap('i', '<C-j>', '<Esc>:m .+1<CR>==a', opts)
-keymap('n', '<Leader>k', ':m .-2<CR>==', opts)
-keymap('n', '<Leader>j', ':m .+1<CR>==', opts)
+-- keymap('v', 'K', ":m '<-2<CR>gv=gv", opts)
+-- keymap('v', 'J', ":m '>+1<CR>gv=gv", opts)
+-- keymap('i', '<C-k>', '<Esc>:m .-2<CR>==a', opts)
+-- keymap('i', '<C-j>', '<Esc>:m .+1<CR>==a', opts)
+-- keymap('n', '<Leader>k', ':m .-2<CR>==', opts)
+-- keymap('n', '<Leader>j', ':m .+1<CR>==', opts)
 
 -- Moving text with arrows.
 keymap('v', '<C-Up>', ":m '<-2<CR>gv=gv", opts)

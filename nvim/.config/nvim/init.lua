@@ -59,14 +59,15 @@ vim.opt.splitright = true
 vim.opt.timeoutlen = 500
 vim.opt.mouse = 'a'
 vim.opt.path = vim.opt.path + '**'
+vim.opt.textwidth = 80
 
 -- Unmapping the arrow keys for practice.
 local keymap = vim.api.nvim_set_keymap
-keymap('', '<Up>', '<Nul>', {})
-keymap('', '<Down>', '<Nul>', {})
-keymap('', '<Left>', '<Nul>', {})
-keymap('', '<Right>', '<Nul>', {})
-keymap('i', '<Up>', '<Nul>', {})
-keymap('i', '<Down>', '<Nul>', {})
-keymap('i', '<Left>', '<Nul>', {})
-keymap('i', '<Right>', '<Nul>', {})
+keymap('', '<Up>', '<Nul>', { noremap = true })
+keymap('', '<Down>', '<Nul>', { noremap = true })
+keymap('', '<Left>', '<Nul>', { noremap = true })
+keymap('', '<Right>', '<Nul>', { noremap = true })
+keymap('i', '<Up>', '<Nul>', { noremap = true })
+keymap('i', '<Down>', '<Nul>', { noremap = true })
+keymap('i', '<Left>', '<Nul>', { noremap = true })
+keymap('i', '<Right>', '<Nul>', { noremap = true })

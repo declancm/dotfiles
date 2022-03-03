@@ -76,12 +76,14 @@ function! NotesToggle()
             " Only return when nothing has been modified.
             silent exec "w | e# | lcd -"
         endif
-        set nolbr nobri nowrap cc=80
+        " set nolbr nobri nowrap cc=80
+        set fo-=t
     else
         silent exec "lcd " . g:notes_dir
         lua require("git-scripts").async_pull(vim.g.notes_dir)
         silent exec "edit " . g:notes_full_path
-        set wrap lbr bri cc=0
+        " set wrap lbr bri cc=0
+        set fo+=t
         let &showbreak=repeat(' ',6)
     endif
 endfunction
@@ -109,15 +111,15 @@ vim.cmd [[
 function! DeleteStartWord(backKey)
     let l:cursorPos = getcurpos()
     if l:cursorPos[2] < 3
-        call feedkeys("\<BS>")
+        call feedkeys("\<BS>", 'n')
     else
-        normal b
+        normal! b
         let l:cursorNew = getcurpos()
         silent exec "call cursor(l:cursorPos[1], l:cursorPos[2])"
         if l:cursorPos[1] - l:cursorNew[1] != 0
-            normal d0i
+            normal! d0i
         else
-            call feedkeys("\<Space>\<Esc>v" . a:backKey . "c")
+            call feedkeys("\<Space>\<Esc>v" . a:backKey . "c", 'n')
         endif
     endif
 endfunction
@@ -130,7 +132,7 @@ keymap('i', '<M-Del>', '<Cmd>call DeleteEndWord("E")<CR>', opts)
 
 vim.cmd [[
 function! DeleteEndWord(endKey)
-    call feedkeys("\<Space>\<Esc>v" . a:endKey . "c")
+    call feedkeys("\<Space>\<Esc>v" . a:endKey . "c", 'n')
 endfunction
 ]]
 
@@ -197,6 +199,20 @@ function! WindowMovement(key)
 endfunction
 ]]
 
+-- PREVIOUS_WINDOW: (nvim and tmux)
+
+keymap('n', '<Leader>;', '<Cmd>lua PreviousWindow()<CR>', opts)
+
+function PreviousWindow()
+  local win1 = vim.fn.winnr()
+  vim.cmd 'wincmd p'
+  local win2 = vim.fn.winnr()
+  if win1 == win2 then
+    -- If no previous nvim window, switch to previous tmux pane.
+    os.execute 'tmux select-pane -l'
+  end
+end
+
 -- CLOSE_OTHER_WINDOW:
 
 keymap('n', 'ql', "<Cmd>lua CloseOtherWindow('l')<CR>", opts)
@@ -209,14 +225,13 @@ keymap('n', 'q<Up>', "<Cmd>lua CloseOtherWindow('k')<CR>", opts)
 keymap('n', 'q<Down>', "<Cmd>lua CloseOtherWindow('j')<CR>", opts)
 
 function CloseOtherWindow(direction)
-  local buf1 = vim.fn.winnr()
+  local win1 = vim.fn.winnr()
   vim.cmd('wincmd ' .. direction)
-  local buf2 = vim.fn.winnr()
-  print('CloseOtherWindow buf2:', vim.inspect(buf2)) -- __AUTO_GENERATED_PRINT_VAR__
-  if buf1 == buf2 then
+  local win2 = vim.fn.winnr()
+  if win1 == win2 then
     return
   end
-  vim.cmd 'wq!'
+  vim.cmd [[exec &modifiable ? 'wq' : 'q']]
 end
 
 -- CLEAR_BUFFERS:
@@ -229,4 +244,15 @@ function! ClearBuffers()
     silent exec "wa | %bdelete | normal! \<C-^>"
     silent exec "call cursor(l:cursorPos[1], l:cursorPos[2])"
 endfunction
+]]
+
+-- MATCHES: (get the number of matches for a pattern)
+vim.cmd [[
+function! GetMatches(pattern)
+  let l:cursorPos = getcurpos()
+  exec '%s/\<' . a:pattern . '\>//gn'
+  call cursor(l:cursorPos[1], l:cursorPos[2])
+endfunction
+
+command! -nargs=1 Matches call GetMatches(<q-args>)
 ]]
