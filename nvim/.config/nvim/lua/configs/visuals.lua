@@ -17,6 +17,7 @@ if theme == 'tokyonight' then
   vim.g.tokyonight_colors = { bg_float = 'NONE' }
   vim.cmd [[colorscheme tokyonight]]
   vim.cmd [[highlight ColorColumn ctermbg=0 guibg=#1f2335]]
+  vim.cmd [[highlight LineNr guifg=#3D59A1]]
 end
 
 -- ONEDARK:
@@ -29,6 +30,7 @@ if theme == 'onedark' then
   }
   vim.cmd [[colorscheme onedark]]
   vim.cmd [[highlight ColorColumn ctermbg=0 guibg=#31353f]]
+  vim.cmd [[highlight LineNr guifg=#61AFEF]]
 end
 
 -- GRUVBOX:
@@ -38,6 +40,7 @@ if theme == 'gruvbox' then
   vim.g.gruvbox_baby_comment_style = 'NONE'
   vim.cmd [[colorscheme gruvbox-baby]]
   vim.cmd [[highlight ColorColumn ctermbg=0 guibg=#3c3836]]
+  vim.cmd [[highlight LineNr guifg=#458588]]
 end
 
 -- Highlight the line number.

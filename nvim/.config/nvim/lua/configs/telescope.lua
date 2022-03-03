@@ -2,6 +2,11 @@
 
 require('telescope').setup {
   defaults = {
+    layout_config = {
+      horizontal = { prompt_position = 'top' },
+    },
+    -- List results starting at the top.
+    sorting_strategy = 'ascending',
     mappings = {
       i = {
         -- Delete the start of the word.
@@ -66,3 +71,9 @@ keymap(
   "<Esc><Cmd>lua require('telescope').extensions.refactoring.refactors()<CR>",
   opts
 )
+-- keymap(
+--   'n',
+--   '<Leader>fr',
+--   "<Esc><Cmd>lua require('telescope').extensions.refactoring.refactors()<CR>",
+--   opts
+-- )
