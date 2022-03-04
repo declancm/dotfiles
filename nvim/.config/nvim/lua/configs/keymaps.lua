@@ -7,7 +7,7 @@ keymap('i', '<Home>', '<Esc>zHI', opts)
 
 -- Creating windows.
 keymap('n', '<Leader>v', '<C-w>v', opts)
-keymap('n', '<Leader>s', '<C-w>s', opts)
+keymap('n', '<Leader>nv', '<C-w>s', opts)
 
 -- Resize windows.
 keymap('n', '<S-Up>', '<Cmd>resize +5<CR>', opts)
@@ -18,9 +18,9 @@ keymap('n', '<S-Left>', '<Cmd>vertical resize -5<CR>', opts)
 -- Y works like D and C.
 keymap('n', 'Y', '"*yg_', opts)
 
--- Stay centered during word search.
-keymap('n', 'n', 'nzzzv', opts)
-keymap('n', 'N', 'Nzzzv', opts)
+-- -- Stay centered during word search.
+-- keymap('n', 'n', 'nzzzv', opts)
+-- keymap('n', 'N', 'Nzzzv', opts)
 
 -- Don't move during J.
 keymap('n', 'J', 'mzJ`z:delmarks z<CR>', opts)

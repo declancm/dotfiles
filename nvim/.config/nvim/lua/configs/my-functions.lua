@@ -62,7 +62,7 @@ end
 
 -- Toggle your notes file and keep it synced with the github remote.
 
-keymap('n', '<Leader>n', '<Cmd>call NotesToggle()<CR>', opts)
+keymap('n', '<Leader>nt', '<Cmd>call NotesToggle()<CR>', opts)
 
 vim.cmd [[
 let g:notes_dir = expand("~/notes")

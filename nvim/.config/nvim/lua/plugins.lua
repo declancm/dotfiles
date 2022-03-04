@@ -22,6 +22,9 @@ return require('packer').startup(function(use)
     branch = 'coq',
     requires = { { 'ms-jpq/coq.artifacts', branch = 'artifacts' } },
   }
+  -- use 'tami5/lspsaga.nvim'
+  -- use 'folke/trouble.nvim
+  -- use 'folke/lsp-colors.nvim'
 
   -- TELESCOPE:
 
@@ -59,6 +62,7 @@ return require('packer').startup(function(use)
   use 'b3nj5m1n/kommentary'
   use 'dkarter/bullets.vim'
   use 'arthurxavierx/vim-caser'
+  -- use 'justinmk/vim-sneak'
 
   -- MISC:
 
@@ -75,8 +79,8 @@ return require('packer').startup(function(use)
 
   -- MY_PLUGINS:
 
-  use { '~/Git/cinnamon-scroll', requires = 'tpope/vim-repeat' }
-  -- use { 'declancm/cinnamon-scroll', requires = 'tpope/vim-repeat' }
+  use '~/Git/vim-cinnamon'
+  -- use 'declancm/vim-cinnamon'
   use '~/Git/vim2vscode'
   -- use 'declancm/vim2vscode'
   use '~/Git/git-scripts.nvim'
