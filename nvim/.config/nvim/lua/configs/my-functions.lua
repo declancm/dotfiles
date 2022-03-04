@@ -317,7 +317,7 @@ function FindSameIndent(direction)
     if indent ~= wantedIndent then
       indentChanged = true
     elseif indent == wantedIndent and indentChanged == true then
-      vim.cmd('normal! ' .. lineNum .. 'G')
+      vim.cmd('normal ' .. lineNum .. 'G')
       return
     end
     if lineNum <= 0 or lineNum >= vim.fn.line '$' then

@@ -15,6 +15,9 @@ vim.g.cinnamon_centered = 1
 -- vim.g.cinnamon_no_defaults = 1
 
 -- vim.g.cinnamon_extras = 1
+keymap('n', 'gg', '<Cmd>Cinnamon gg 0 1 3 <CR>', opts)
+keymap('n', 'G', '<Cmd>Cinnamon G 0 1 3 <CR>', opts)
+keymap('n', 'G', '<Cmd>Cinnamon G 0 1 3 <CR>', opts)
 
 keymap('n', '<C-o>', '<Cmd>Cinnamon <C-o> 1 0 3 <CR>', opts)
 keymap('n', '<C-i>', '<Cmd>Cinnamon <C-i> 1 0 3 <CR>', opts)
