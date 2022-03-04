@@ -23,8 +23,8 @@ function! TrimWhitespace()
 endfunction
 
 function! ClangFormat()
-    let l:path = fnamemodify(bufname(), ":p")
-    silent execute("!clang-format -i -style=file " . l:path)
+    let l:file = fnamemodify(bufname(), ":p")
+    silent execute("!clang-format -i -style=file " . l:file)
     silent execute("e")
 endfunction
 
@@ -44,6 +44,7 @@ augroup setting_options
     autocmd!
     " autocmd BufEnter * :call SetTabSize() | set fo-=cro | set scl=yes:1
     autocmd BufEnter * :call SetTabSize() | set fo-=t fo-=r fo-=o scl=yes:1
+    autocmd BufWritePost * :call SetTabSize() | set fo-=t fo-=r fo-=o scl=yes:1
 augroup END
 
 " Open chadtree when opening nvim at a directory.

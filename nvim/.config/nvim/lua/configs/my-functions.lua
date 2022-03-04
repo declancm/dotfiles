@@ -3,6 +3,8 @@ local keymap = vim.api.nvim_set_keymap
 
 -- MAXIMIZE_WINDOW:
 
+-- Toggle maximizing the current window.
+
 keymap('n', '<Leader>z', '<Cmd>lua MaximizeWindow()<CR>', opts)
 keymap('x', '<Leader>z', '<Cmd>lua MaximizeWindow()<CR>', opts)
 
@@ -23,6 +25,8 @@ function MaximizeWindow()
 end
 
 -- NATIVE_TERMINAL:
+
+-- Toggle the native terminal.
 
 keymap('t', '<C-N>', '<C-\\><C-N>', opts)
 keymap('n', '<C-\\>', '<Cmd>lua ToggleTerminal()<CR>', opts)
@@ -55,6 +59,8 @@ function ToggleTerminal()
 end
 
 -- NOTES:
+
+-- Toggle your notes file and keep it synced with the github remote.
 
 keymap('n', '<Leader>n', '<Cmd>call NotesToggle()<CR>', opts)
 
@@ -104,6 +110,11 @@ end
 
 -- CTRL-BS: (works with wordmotion)
 
+-- Delete the start of the word.
+-- If at the start of the line, will delete all the whitespace.
+-- Works with plugins that change what a word is such as wordmotion (recognizes
+-- camelCase etc. as separate words).
+
 keymap('i', '<C-H>', '<Cmd>call DeleteStartWord("b")<CR>', opts)
 keymap('i', '<M-BS>', '<Cmd>call DeleteStartWord("B")<CR>', opts)
 
@@ -125,7 +136,11 @@ function! DeleteStartWord(backKey)
 endfunction
 ]]
 
--- CTRL-DEL: (works with wordmotion)
+-- CTRL-DEL:
+
+-- Delete the end of the word.
+-- Works with plugins that change what a word is such as wordmotion (recognizes
+-- camelCase etc. as separate words).
 
 keymap('i', '<C-Del>', '<Cmd>call DeleteEndWord("e")<CR>', opts)
 keymap('i', '<M-Del>', '<Cmd>call DeleteEndWord("E")<CR>', opts)
@@ -137,6 +152,9 @@ endfunction
 ]]
 
 -- IMPROVED_PASTE:
+
+-- Paste from the global register '*'.
+-- If pasting a visual line selection of text, perform automatic indentation.
 
 keymap('n', 'p', '<Cmd>call GlobalPaste("p")<CR>', opts)
 keymap('n', 'P', '<Cmd>call GlobalPaste("P")<CR>', opts)
@@ -163,6 +181,9 @@ endfunction
 
 -- APPEND_YANK:
 
+-- Yank to the default register.
+-- Append to the '*' register using the same type as the '*' register.
+
 keymap('v', '<Leader>y', '<Cmd>call AppendYank("y")<CR>', opts)
 keymap('n', '<Leader>Y', '<Cmd>call AppendYank("yg_")<CR>', opts)
 
@@ -174,6 +195,9 @@ endfunction
 ]]
 
 -- WINDOW_MOVEMENT:
+
+-- Switch to window in the direction selected.
+-- If no window exists in that direction, create one.
 
 keymap('n', '<Leader>k', '<Cmd>call WindowMovement("k")<CR>', opts)
 keymap('n', '<Leader>j', '<Cmd>call WindowMovement("j")<CR>', opts)
@@ -199,7 +223,10 @@ function! WindowMovement(key)
 endfunction
 ]]
 
--- PREVIOUS_WINDOW: (nvim and tmux)
+-- PREVIOUS_WINDOW:
+
+-- Switch to previous vim window.
+-- If no previous vim window exists, switch to last tmux pane.
 
 keymap('n', '<Leader>;', '<Cmd>lua PreviousWindow()<CR>', opts)
 
@@ -208,12 +235,13 @@ function PreviousWindow()
   vim.cmd 'wincmd p'
   local win2 = vim.fn.winnr()
   if win1 == win2 then
-    -- If no previous nvim window, switch to previous tmux pane.
     os.execute 'tmux select-pane -l'
   end
 end
 
 -- CLOSE_OTHER_WINDOW:
+
+-- Save and close the window in the direction selected.
 
 keymap('n', 'ql', "<Cmd>lua CloseOtherWindow('l')<CR>", opts)
 keymap('n', 'qh', "<Cmd>lua CloseOtherWindow('h')<CR>", opts)
@@ -236,6 +264,8 @@ end
 
 -- CLEAR_BUFFERS:
 
+-- Close all buffers but the current.
+
 keymap('n', '<Leader>bd', '<Cmd>call ClearBuffers()<CR>', opts)
 
 vim.cmd [[
@@ -246,13 +276,25 @@ function! ClearBuffers()
 endfunction
 ]]
 
--- MATCHES: (get the number of matches for a pattern)
-vim.cmd [[
-function! GetMatches(pattern)
-  let l:cursorPos = getcurpos()
-  exec '%s/\<' . a:pattern . '\>//gn'
-  call cursor(l:cursorPos[1], l:cursorPos[2])
-endfunction
+-- SEARCH:
 
-command! -nargs=1 Matches call GetMatches(<q-args>)
+-- Enter pattern to get a count for total matches in file.
+-- Prepend a ' (single quotation mark) to the pattern for an exact match.
+-- Use 'n' to go to the next match or 'N' to go to the previous.
+
+keymap('n', '<Leader>/', '<Cmd>call Search()<CR>', opts)
+
+vim.cmd [[
+function! Search()
+  let l:pattern = input("Enter the search pattern: ")
+  echo "\n"
+  if l:pattern[0] == "'"
+    " Perform exclusive match.
+    let l:pattern = trim(l:pattern, "'", 1)
+    let l:pattern = "\\<" . l:pattern . "\\>"
+  endif
+  exec "%s/" . l:pattern . "//gn"
+  silent exec "normal! /" . l:pattern
+  let @/ = l:pattern
+endfunction
 ]]
