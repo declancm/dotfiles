@@ -12,24 +12,26 @@ require('nvim-treesitter.configs').setup {
 
 -- REFACTORING:
 
--- TODO: update the keymap nomenclature to be more understandable.
-
 require('refactoring').setup {}
 
 local keymap = vim.api.nvim_set_keymap
 
 -- Keymaps for refactoring operations.
-local opts = { noremap = true, silent = true, expr = false }
-local refactor = " <Esc><Cmd>lua require('refactoring').refactor"
 
-keymap('v', '<Leader>re', refactor .. "('Extract Function')<CR>", opts)
-keymap('v', '<Leader>rf', refactor .. "('Extract Function To File')<CR>", opts)
-keymap('v', '<Leader>rev', refactor .. "('Extract Variable')<CR>", opts)
-keymap('v', '<Leader>ri', refactor .. "('Inline Variable')<CR>", opts)
-keymap('n', '<Leader>ri', refactor .. "('Inline Variable')<CR>", opts)
+-- NOTE: Use the telescope extension for these commands (visual mode: <Leader>fr).
+
+-- local opts = { noremap = true, silent = true, expr = false }
+-- local refactor = " <Esc><Cmd>lua require('refactoring').refactor"
+
+-- keymap('v', '<Leader>re', refactor .. "('Extract Function')<CR>", opts)
+-- keymap('v', '<Leader>rf', refactor .. "('Extract Function To File')<CR>", opts)
+-- keymap('v', '<Leader>rev', refactor .. "('Extract Variable')<CR>", opts)
+-- keymap('v', '<Leader>ri', refactor .. "('Inline Variable')<CR>", opts)
+-- keymap('n', '<Leader>ri', refactor .. "('Inline Variable')<CR>", opts)
 
 -- Keymaps for debug operations.
-opts = { noremap = true }
+
+local opts = { noremap = true }
 local debug = ":lua require('refactoring').debug"
 
 keymap('n', '<Leader>rp', debug .. '.printf({below = false})<CR>', opts)

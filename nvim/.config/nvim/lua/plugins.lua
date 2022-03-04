@@ -62,7 +62,6 @@ return require('packer').startup(function(use)
   use 'b3nj5m1n/kommentary'
   use 'dkarter/bullets.vim'
   use 'arthurxavierx/vim-caser'
-  -- use 'justinmk/vim-sneak'
 
   -- MISC:
 

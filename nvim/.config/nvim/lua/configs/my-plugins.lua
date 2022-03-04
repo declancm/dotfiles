@@ -10,14 +10,16 @@ local keymap = vim.api.nvim_set_keymap
 
 -- CINNAMON-SCROLL:
 
+vim.g.cinnamon_centered = 1
+
 -- vim.g.cinnamon_no_defaults = 1
 
 -- vim.g.cinnamon_extras = 1
 
-keymap('n', '<C-o>', '<Cmd>Cinnamon <C-o> 0 0 3 <CR>', opts)
-keymap('n', '<C-i>', '<Cmd>Cinnamon <C-i> 0 0 3 <CR>', opts)
+keymap('n', '<C-o>', '<Cmd>Cinnamon <C-o> 1 0 3 <CR>', opts)
+keymap('n', '<C-i>', '<Cmd>Cinnamon <C-i> 1 0 3 <CR>', opts)
 
-keymap('n', 'n', '<Cmd>Cinnamon n 0 0 3 <CR>', opts)
-keymap('n', 'N', '<Cmd>Cinnamon N 0 0 3 <CR>', opts)
-keymap('n', '*', '<Cmd>Cinnamon * 0 0 3 <CR>', opts)
-keymap('n', '#', '<Cmd>Cinnamon # 0 0 3 <CR>', opts)
+keymap('n', 'n', '<Cmd>Cinnamon n 1 0 3 <CR>zv', opts)
+keymap('n', 'N', '<Cmd>Cinnamon N 1 0 3 <CR>zv', opts)
+keymap('n', '*', '<Cmd>Cinnamon * 1 0 3 <CR>zv', opts)
+keymap('n', '#', '<Cmd>Cinnamon # 1 0 3 <CR>zv', opts)

@@ -57,19 +57,24 @@ local keymap = vim.api.nvim_set_keymap
 
 local builtin = "<Cmd>lua require('telescope.builtin')"
 
+-- File pickers.
 keymap('n', '<Leader>ff', builtin .. '.find_files()<CR>', opts)
 keymap('n', '<Leader>fg', builtin .. '.live_grep()<CR>', opts)
+
+-- Vim pickers.
 keymap('n', '<Leader>fb', builtin .. '.buffers()<CR>', opts)
 keymap('n', '<Leader>fh', builtin .. '.help_tags()<CR>', opts)
-keymap('n', '<Leader>fp', builtin .. '.builtin()<CR>', opts)
 keymap('n', '<Leader>fc', builtin .. '.command_history()<CR>', opts)
 keymap('n', '<Leader>fq', builtin .. '.quickfix()<CR>', opts)
 
--- LSP keymaps.
+-- LSP pickers.
 keymap('n', '<Leader>fd', builtin .. '.diagnostics()<CR>', opts)
 keymap('n', '<Leader>fr', builtin .. '.lsp_references()<CR>', opts)
 keymap('n', '<Leader>fi', builtin .. '.lsp_implementations()<CR>', opts)
 keymap('n', '<Leader>fa', builtin .. '.lsp_code_actions()<CR>', opts)
+
+-- List pickers.
+keymap('n', '<Leader>fp', builtin .. '.builtin()<CR>', opts)
 
 -- PLUGIN_KEYMAPS:
 

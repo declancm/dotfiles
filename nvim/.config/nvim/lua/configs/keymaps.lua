@@ -22,6 +22,9 @@ keymap('n', 'Y', '"*yg_', opts)
 -- keymap('n', 'n', 'nzzzv', opts)
 -- keymap('n', 'N', 'Nzzzv', opts)
 
+-- ZZ but for all windows.
+keymap('n', '<Leader>ZZ', '<Cmd>wqall<CR>', opts)
+
 -- Don't move during J.
 keymap('n', 'J', 'mzJ`z:delmarks z<CR>', opts)
 
