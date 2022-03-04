@@ -1,6 +1,9 @@
 local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
+-- Source config file.
+keymap('n', '<Leader>sc', '<Cmd>wa | source $MYVIMRC | PackerCompile<CR>', opts)
+
 -- Improve the <Home> key.
 keymap('', '<Home>', 'zH^', opts)
 keymap('i', '<Home>', '<Esc>zHI', opts)

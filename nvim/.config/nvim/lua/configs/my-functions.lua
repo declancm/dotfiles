@@ -99,15 +99,6 @@ exec "autocmd BufEnter " . g:notes_full_path . " let b:notes_modified = 0"
 exec "autocmd BufWritePre " . g:notes_full_path . " if &modified | let b:notes_modified = 1 | endif"
 ]]
 
--- SOURCE_CONFIG:
-
-keymap('n', '<Leader>sc', '<Cmd>lua SourceConfig()<CR>', opts)
-
-function SourceConfig()
-  vim.cmd "silent exec 'wa | source $MYVIMRC | PackerCompile'"
-  print 'Your config file has been sourced.'
-end
-
 -- CTRL-BS: (works with wordmotion)
 
 -- Delete the start of the word.
@@ -289,7 +280,6 @@ function! Search()
   let l:pattern = input("Enter the search pattern: ")
   echo "\n"
   if l:pattern[0] == "'"
-    " Perform exclusive match.
     let l:pattern = trim(l:pattern, "'", 1)
     let l:pattern = "\\<" . l:pattern . "\\>"
   endif
@@ -298,3 +288,38 @@ function! Search()
   let @/ = l:pattern
 endfunction
 ]]
+
+-- INDENT_MOVEMENT:
+
+-- Jump to the next line with the same indent size.
+-- Will only find a match after the indent has changed, stopping it from jumping
+-- just one line at a time.
+
+keymap('n', '<Leader>iu', "<Cmd>lua FindSameIndent('Up')<CR>", opts)
+keymap('n', '<Leader>id', "<Cmd>lua FindSameIndent('Down')<CR>", opts)
+keymap('x', '<Leader>iu', "<Cmd>lua FindSameIndent('Up')<CR>", opts)
+keymap('x', '<Leader>id', "<Cmd>lua FindSameIndent('Down')<CR>", opts)
+
+function FindSameIndent(direction)
+  local indentChanged = false
+  local originalLineNum = vim.fn.getcurpos()[2]
+  local wantedIndent = vim.fn.indent(originalLineNum)
+  local lineNum = originalLineNum
+  while lineNum ~= 0 and lineNum ~= vim.fn.line '$' do
+    if direction == 'Up' then
+      lineNum = lineNum - 1
+    elseif direction == 'Down' then
+      lineNum = lineNum + 1
+    else
+      print 'Not a valid argument'
+      return
+    end
+    local indent = vim.fn.indent(lineNum)
+    if indent ~= wantedIndent then
+      indentChanged = true
+    elseif indent == wantedIndent and indentChanged == true then
+      vim.cmd('normal! ' .. lineNum .. 'G')
+      return
+    end
+  end
+end
