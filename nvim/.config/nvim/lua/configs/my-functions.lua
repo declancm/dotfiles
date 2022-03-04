@@ -305,13 +305,12 @@ function FindSameIndent(direction)
   local originalLineNum = vim.fn.getcurpos()[2]
   local wantedIndent = vim.fn.indent(originalLineNum)
   local lineNum = originalLineNum
-  while lineNum ~= 0 and lineNum ~= vim.fn.line '$' do
+  while true do
     if direction == 'Up' then
       lineNum = lineNum - 1
     elseif direction == 'Down' then
       lineNum = lineNum + 1
     else
-      print 'Not a valid argument'
       return
     end
     local indent = vim.fn.indent(lineNum)
@@ -319,6 +318,9 @@ function FindSameIndent(direction)
       indentChanged = true
     elseif indent == wantedIndent and indentChanged == true then
       vim.cmd('normal! ' .. lineNum .. 'G')
+      return
+    end
+    if lineNum <= 0 or lineNum >= vim.fn.line '$' then
       return
     end
   end
