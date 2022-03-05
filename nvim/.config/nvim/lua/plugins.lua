@@ -42,6 +42,7 @@ return require('packer').startup(function(use)
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'ThePrimeagen/refactoring.nvim'
   -- use 'nvim-treesitter/nvim-treesitter-textobjects'
+  -- use 'nvim-treesitter/playground'
 
   -- DEBUGGING:
 
@@ -57,7 +58,7 @@ return require('packer').startup(function(use)
   use 'folke/todo-comments.nvim'
   use 'norcalli/nvim-colorizer.lua'
 
-  -- EFFICIENCY:
+  -- SPEED:
 
   use 'unblevable/quick-scope'
   use 'machakann/vim-sandwich'

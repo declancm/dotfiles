@@ -31,15 +31,18 @@ keymap('x', '<Leader>ci', '<Plug>kommentary_visual_increase', {})
 keymap('x', '<Leader>cd', '<Plug>kommentary_visual_decrease', {})
 
 function SavePosComment(mode)
-  local lengthBefore = vim.fn.strdisplaywidth(vim.fn.getline '.')
   local column = vim.fn.getcurpos()[3]
+  local lengthBefore = vim.fn.strdisplaywidth(vim.fn.getline '.')
   if mode == 'Line' then
     require('kommentary').toggle_comment(vim.fn.line '.', vim.fn.line '.')
   elseif mode == 'Selection' then
     require('kommentary').toggle_comment(vim.fn.line 'v', vim.fn.line '.')
   end
   local lengthAfter = vim.fn.strdisplaywidth(vim.fn.getline '.')
-  vim.fn.cursor(vim.fn.line '.', column + lengthAfter - lengthBefore)
+  -- Keep the cursor in the same position if it's in the indent.
+  if column > vim.fn.indent '.' then
+    vim.fn.cursor(vim.fn.line '.', column + lengthAfter - lengthBefore)
+  end
 end
 
 -- Configure the languages.

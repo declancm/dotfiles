@@ -54,8 +54,10 @@ keymap('n', '<C-Up>', ':m .-2<CR>==', opts)
 keymap('n', '<C-Down>', ':m .+1<CR>==', opts)
 
 -- Replace a word then press '.' to change next occurence.
-keymap('n', 'cn', '*#"_cgn', opts)
-keymap('n', 'cN', '*#"_cgN', opts)
+-- keymap('n', 'cn', '*#"_cgn', opts)
+-- keymap('n', 'cN', '*#"_cgN', opts)
+keymap('n', 'cn', '<Cmd>let @/=expand("<cword>")<CR>"_cgn', opts)
+keymap('n', 'cN', '<Cmd>let @/=expand("<cword>")<CR>"_cgN', opts)
 
 -- Yank to global clipboard.
 keymap('n', 'y', '"*y', opts)

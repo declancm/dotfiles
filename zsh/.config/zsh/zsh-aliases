@@ -27,6 +27,7 @@ function format() {
     fi
 }
 
+
 # ALIASES:
 # tmux in 256 colors
 alias tmux='tmux -2'
@@ -34,19 +35,23 @@ alias tmux='tmux -2'
 # tree to ignore files
 alias tree='rg --files | tree --fromfile'
 
-# alias commit='source ~/git-scripts/commit.sh'
+# cmake
+alias vg="valgrind --leak-check=full --show-leak-kinds=all \
+    --track-origins=yes --verbose --log-file=valgrind-out.txt "
+alias dmake='cmake -DCMAKE_BUILD_TYPE=Debug'
+
+alias commit='source ~/git-scripts/commit.sh'
 alias scommit='source ~/git-scripts/commit-silent.sh'
 alias pull='source ~/git-scripts/pull.sh'
 alias spull='source ~/git-scripts/pull-silent.sh'
 alias pyvenv='source ~/virtualenv-creator/src/Bash/pyvenv.sh'
-alias make16='make -j16'
-alias notes='nvim ~/notes/notes.txt'
+# alias make='make -j16'
 alias ll='ls -alF --color=auto'
 alias ls='ls -a --color=auto'
 alias rtmux='tmux source-file ~/.tmux.conf'
 alias aptdate='sudo apt update; sudo apt -y upgrade; sudo apt-get -y update'
 alias git clone='git clone --recursive'
-alias g='lazygit'
+# alias lg='lazygit'
 alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
 alias nvimrc='nvim ~/.config/nvim/'
 

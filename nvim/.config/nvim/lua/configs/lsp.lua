@@ -24,6 +24,14 @@ inoremap <silent><expr> <Up>    pumvisible() ? "\<C-e>\<Up>" : "\<Up>"
 inoremap <silent><expr> <Down>  pumvisible() ? "\<C-e>\<Down>" : "\<Down>"
 ]]
 
+-- Automatically compile snippets when saving.
+vim.cmd [[
+augroup coq_custom_snippets
+    autocmd!
+    autocmd BufWritePost */coq-user-snippets/*.snip COQsnips compile
+augroup end
+]]
+
 -- LSPCONFIG:
 local lsp = require 'lspconfig'
 local coq = require 'coq'

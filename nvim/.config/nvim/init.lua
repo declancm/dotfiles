@@ -19,7 +19,7 @@ require 'configs.telescope'
 require 'configs.treesitter'
 -- require 'configs.debugging'
 require 'configs.visuals'
-require 'configs.efficiency'
+require 'configs.speed'
 require 'configs.misc'
 require 'configs.my-plugins'
 
@@ -60,6 +60,7 @@ vim.opt.timeoutlen = 500
 vim.opt.mouse = 'a'
 vim.opt.path = vim.opt.path + '**'
 vim.opt.textwidth = 80
+vim.opt.pastetoggle = '<F9>'
 
 -- Unmapping the arrow keys for practice.
 local keymap = vim.api.nvim_set_keymap

@@ -23,9 +23,11 @@ function! TrimWhitespace()
 endfunction
 
 function! ClangFormat()
+    let l:savedView = winsaveview()
     let l:file = fnamemodify(bufname(), ":p")
     silent execute("!clang-format -i -style=file " . l:file)
     silent execute("e")
+    call winrestview(l:savedView)
 endfunction
 
 augroup format_on_save
