@@ -29,8 +29,8 @@ end
 -- Toggle the native terminal.
 
 keymap('t', '<C-N>', '<C-\\><C-N>', opts)
-keymap('n', '<C-\\>', '<Cmd>lua ToggleTerminal()<CR>', opts)
-keymap('t', '<C-\\>', '<Cmd>lua ToggleTerminal()<CR>', opts)
+keymap('n', '<C-Bslash>', '<Cmd>lua ToggleTerminal()<CR>', opts)
+keymap('t', '<C-Bslash>', '<Cmd>lua ToggleTerminal()<CR>', opts)
 
 vim.cmd 'autocmd TermOpen * startinsert'
 vim.cmd "autocmd BufEnter * if &buftype == 'terminal' | startinsert | endif"

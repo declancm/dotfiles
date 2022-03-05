@@ -21,7 +21,7 @@ keymap('n', '<S-Left>', '<Cmd>vertical resize -5<CR>', opts)
 -- Y works like D and C.
 keymap('n', 'Y', '"*yg_', opts)
 
--- -- Stay centered during word search.
+-- Stay centered during word search (replaced by vim-cinnamon).
 -- keymap('n', 'n', 'nzzzv', opts)
 -- keymap('n', 'N', 'Nzzzv', opts)
 
@@ -38,12 +38,12 @@ keymap('i', '!', '!<C-g>u', opts)
 keymap('i', '?', '?<C-g>u', opts)
 
 -- Moving text.
--- keymap('v', 'K', ":m '<-2<CR>gv=gv", opts)
--- keymap('v', 'J', ":m '>+1<CR>gv=gv", opts)
--- keymap('i', '<C-k>', '<Esc>:m .-2<CR>==a', opts)
--- keymap('i', '<C-j>', '<Esc>:m .+1<CR>==a', opts)
--- keymap('n', '<Leader>k', ':m .-2<CR>==', opts)
--- keymap('n', '<Leader>j', ':m .+1<CR>==', opts)
+keymap('v', '<C-k>', ":m '<-2<CR>gv=gv", opts)
+keymap('v', '<C-j>', ":m '>+1<CR>gv=gv", opts)
+keymap('i', '<C-k>', '<Esc>:m .-2<CR>==a', opts)
+keymap('i', '<C-j>', '<Esc>:m .+1<CR>==a', opts)
+keymap('n', '<C-k>', ':m .-2<CR>==', opts)
+keymap('n', '<C-j>', ':m .+1<CR>==', opts)
 
 -- Moving text with arrows.
 keymap('v', '<C-Up>', ":m '<-2<CR>gv=gv", opts)
@@ -54,8 +54,6 @@ keymap('n', '<C-Up>', ':m .-2<CR>==', opts)
 keymap('n', '<C-Down>', ':m .+1<CR>==', opts)
 
 -- Replace a word then press '.' to change next occurence.
--- keymap('n', 'cn', '*#"_cgn', opts)
--- keymap('n', 'cN', '*#"_cgN', opts)
 keymap('n', 'cn', '<Cmd>let @/=expand("<cword>")<CR>"_cgn', opts)
 keymap('n', 'cN', '<Cmd>let @/=expand("<cword>")<CR>"_cgN', opts)
 

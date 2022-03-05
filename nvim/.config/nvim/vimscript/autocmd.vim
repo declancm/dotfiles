@@ -25,8 +25,8 @@ endfunction
 function! ClangFormat()
     let l:savedView = winsaveview()
     let l:file = fnamemodify(bufname(), ":p")
-    silent execute("!clang-format -i -style=file " . l:file)
-    silent execute("e")
+    silent exec "!clang-format -i -style=file " . l:file
+    silent exec "e"
     call winrestview(l:savedView)
 endfunction
 
@@ -54,5 +54,5 @@ augroup chadtree_on_directory
     autocmd!
     autocmd StdinReadPre * let s:std_in=1
     autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
-        \ execute 'CHADopen' | execute 'cd '.argv()[0] | endif
+        \ exec 'CHADopen' | exec 'cd '.argv()[0] | endif
 augroup END
