@@ -5,7 +5,7 @@ local keymap = vim.api.nvim_set_keymap
 keymap('n', '<Leader>sc', '<Cmd>wa | source $MYVIMRC | PackerCompile<CR>', opts)
 
 -- Improve the <Home> key.
-keymap('', '<Home>', 'zH^', opts)
+keymap('', '<Home>', '^<Cmd>normal! zH<CR>', opts)
 keymap('i', '<Home>', '<Esc>zHI', opts)
 
 -- Creating windows.

@@ -276,7 +276,7 @@ endfunction
 keymap('n', '<Leader>/', '<Cmd>call Search()<CR>', opts)
 
 vim.cmd [[
-function! Search()
+function! Search(cmd = '')
   let l:pattern = input("Enter the search pattern: ")
   echo "\n"
   if l:pattern[0] == "'"
@@ -285,6 +285,7 @@ function! Search()
   endif
   exec "%s/" . l:pattern . "//gn"
   silent exec "normal! /" . l:pattern
+  silent exec "normal! n"
   let @/ = l:pattern
 endfunction
 ]]
@@ -295,16 +296,13 @@ endfunction
 -- Will only find a match after the indent has changed, stopping it from jumping
 -- just one line at a time.
 
-keymap('n', '<Leader>iu', "<Cmd>lua FindSameIndent('Up')<CR>", opts)
-keymap('n', '<Leader>id', "<Cmd>lua FindSameIndent('Down')<CR>", opts)
-keymap('x', '<Leader>iu', "<Cmd>lua FindSameIndent('Up')<CR>", opts)
-keymap('x', '<Leader>id', "<Cmd>lua FindSameIndent('Down')<CR>", opts)
+keymap('', '<Leader>iu', "<Cmd>lua FindSameIndent('Up')<CR>", opts)
+keymap('', '<Leader>id', "<Cmd>lua FindSameIndent('Down')<CR>", opts)
 
 function FindSameIndent(direction)
   local indentChanged = false
-  local originalLineNum = vim.fn.getcurpos()[2]
-  local wantedIndent = vim.fn.indent(originalLineNum)
-  local lineNum = originalLineNum
+  local lineNum = vim.fn.getcurpos()[2]
+  local wantedIndent = vim.fn.indent(lineNum)
   while true do
     if direction == 'Up' then
       lineNum = lineNum - 1

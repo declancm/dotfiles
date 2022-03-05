@@ -25,6 +25,7 @@ return require('packer').startup(function(use)
   -- use 'tami5/lspsaga.nvim'
   -- use 'folke/trouble.nvim
   -- use 'folke/lsp-colors.nvim'
+  -- use 'L3MON4D3/LuaSnip
 
   -- TELESCOPE:
 
@@ -40,6 +41,7 @@ return require('packer').startup(function(use)
 
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'ThePrimeagen/refactoring.nvim'
+  -- use 'nvim-treesitter/nvim-treesitter-textobjects'
 
   -- DEBUGGING:
 
