@@ -16,9 +16,11 @@ vim.g.bullets_enable_in_empty_buffers = 0
 vim.g.kommentary_create_default_mappings = false
 
 -- Set <C-/> keymaps.
-keymap('i', '<C-_>', '<Cmd>lua InsertComment()<CR>', opts)
-keymap('n', '<C-_>', '<Plug>kommentary_line_default', {})
-keymap('x', '<C-_>', '<Plug>kommentary_visual_default<Esc>', {})
+-- keymap('n', '<C-_>', '<Plug>kommentary_line_default', {})
+-- keymap('x', '<C-_>', '<Plug>kommentary_visual_default<Esc>', {})
+keymap('i', '<C-_>', '<Cmd>lua BetterCommentLine()<CR>', opts)
+keymap('n', '<C-_>', '<Cmd>lua BetterCommentLine()<CR>', opts)
+keymap('x', '<C-_>', '<Cmd>lua BetterCommentVisual()<CR>', opts)
 
 -- Keymaps to increase or decrease the comment depth level.
 keymap('n', '<Leader>cic', '<Plug>kommentary_line_increase', {})
@@ -28,13 +30,19 @@ keymap('n', '<Leader>cd', '<Plug>kommentary_motion_decrease', {})
 keymap('x', '<Leader>ci', '<Plug>kommentary_visual_increase', {})
 keymap('x', '<Leader>cd', '<Plug>kommentary_visual_decrease', {})
 
-function InsertComment()
+function BetterCommentLine()
   local lengthBefore = vim.fn.strdisplaywidth(vim.fn.getline '.')
-  print(lengthBefore)
   local column = vim.fn.getcurpos()[3]
   require('kommentary').toggle_comment(vim.fn.line '.', vim.fn.line '.')
   local lengthAfter = vim.fn.strdisplaywidth(vim.fn.getline '.')
-  print(lengthAfter)
+  vim.fn.cursor(vim.fn.line '.', column + lengthAfter - lengthBefore)
+end
+
+function BetterCommentVisual()
+  local lengthBefore = vim.fn.strdisplaywidth(vim.fn.getline '.')
+  local column = vim.fn.getcurpos()[3]
+  require('kommentary').toggle_comment(vim.fn.line 'v', vim.fn.line '.')
+  local lengthAfter = vim.fn.strdisplaywidth(vim.fn.getline '.')
   vim.fn.cursor(vim.fn.line '.', column + lengthAfter - lengthBefore)
 end
 
