@@ -65,8 +65,9 @@ end
 keymap('n', '<Leader>nt', '<Cmd>call NotesToggle()<CR>', opts)
 
 vim.cmd [[
-let g:notes_dir = expand("~/notes")
+" Add the file to keep synced.
 let g:notes_full_path = expand("~/notes/notes.txt")
+let g:notes_dir = expand(g:notes_full_path, ":h")
 
 function! NotesToggle()
     " Check if current directory is the notes directory.
@@ -99,7 +100,7 @@ exec "autocmd BufEnter " . g:notes_full_path . " let b:notes_modified = 0"
 exec "autocmd BufWritePre " . g:notes_full_path . " if &modified | let b:notes_modified = 1 | endif"
 ]]
 
--- CTRL-BS: (works with wordmotion)
+-- CTRL-BS:
 
 -- Delete the start of the word.
 -- If at the start of the line, will delete all the whitespace.
@@ -121,7 +122,7 @@ function! DeleteStartWord(backKey)
         if l:cursorPos[1] - l:cursorNew[1] != 0
             normal! d0i
         else
-            call feedkeys("\<Space>\<Esc>v" . a:backKey . "c", 'n')
+            call feedkeys("\<Space>\<Esc>v" . a:backKey . "c")
         endif
     endif
 endfunction
@@ -133,14 +134,12 @@ endfunction
 -- Works with plugins that change what a word is such as wordmotion (recognizes
 -- camelCase etc. as separate words).
 
-keymap('i', '<C-Del>', '<Cmd>call DeleteEndWord("e")<CR>', opts)
-keymap('i', '<M-Del>', '<Cmd>call DeleteEndWord("E")<CR>', opts)
+keymap('i', '<C-Del>', '<Cmd>lua DeleteEndWord("e")<CR>', opts)
+keymap('i', '<M-Del>', '<Cmd>lua DeleteEndWord("E")<CR>', opts)
 
-vim.cmd [[
-function! DeleteEndWord(endKey)
-    call feedkeys("\<Space>\<Esc>v" . a:endKey . "c", 'n')
-endfunction
-]]
+function DeleteEndWord(endKey)
+  vim.cmd('call feedkeys("\\<Space>\\<Esc>v' .. endKey .. 'c")')
+end
 
 -- IMPROVED_PASTE:
 
@@ -182,35 +181,6 @@ vim.cmd [[
 function! AppendYank(yankMode)
     silent exec "normal! \"0" . a:yankMode
     call setreg('*', getreg('*') . getreg('0'), getregtype('*'))
-endfunction
-]]
-
--- WINDOW_MOVEMENT:
-
--- Switch to window in the direction selected.
--- If no window exists in that direction, create one.
-
-keymap('n', '<Leader>k', '<Cmd>call WindowMovement("k")<CR>', opts)
-keymap('n', '<Leader>j', '<Cmd>call WindowMovement("j")<CR>', opts)
-keymap('n', '<Leader>h', '<Cmd>call WindowMovement("h")<CR>', opts)
-keymap('n', '<Leader>l', '<Cmd>call WindowMovement("l")<CR>', opts)
-keymap('n', '<Leader><Up>', '<Cmd>call WindowMovement("k")<CR>', opts)
-keymap('n', '<Leader><Down>', '<Cmd>call WindowMovement("j")<CR>', opts)
-keymap('n', '<Leader><Left>', '<Cmd>call WindowMovement("h")<CR>', opts)
-keymap('n', '<Leader><Right>', '<Cmd>call WindowMovement("l")<CR>', opts)
-
-vim.cmd [[
-function! WindowMovement(key)
-    let l:currentWin = winnr()
-    silent exec "wincmd " . a:key
-    if (l:currentWin == winnr())
-        if (match(a:key,'[jk]'))
-            wincmd v
-        else
-            wincmd s
-        endif
-        silent exec "wincmd ".a:key
-    endif
 endfunction
 ]]
 

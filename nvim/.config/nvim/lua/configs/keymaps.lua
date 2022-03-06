@@ -12,6 +12,16 @@ keymap('i', '<Home>', '<Esc>zHI', opts)
 keymap('n', '<Leader>v', '<C-w>v', opts)
 keymap('n', '<Leader>nv', '<C-w>s', opts)
 
+-- Window movement.
+keymap('n', '<Leader>k', '<Cmd>wincmd k<CR>', opts)
+keymap('n', '<Leader>j', '<Cmd>wincmd j<CR>', opts)
+keymap('n', '<Leader>h', '<Cmd>wincmd h<CR>', opts)
+keymap('n', '<Leader>l', '<Cmd>wincmd l<CR>', opts)
+keymap('n', '<Leader><Up>', '<Cmd>wincmd k<CR>', opts)
+keymap('n', '<Leader><Down>', '<Cmd>wincmd j<CR>', opts)
+keymap('n', '<Leader><Left>', '<Cmd>wincmd h<CR>', opts)
+keymap('n', '<Leader><Right>', '<Cmd>wincmd l<CR>', opts)
+
 -- Resize windows.
 keymap('n', '<S-Up>', '<Cmd>resize +5<CR>', opts)
 keymap('n', '<S-Down>', '<Cmd>resize -5<CR>', opts)
