@@ -57,7 +57,7 @@ zsh_add_plugin "hlissner/zsh-autopair"
 bindkey -s '^o' 'ranger^M'
 bindkey -s '^f' 'zi^M'
 bindkey -s '^s' 'ncdu^M'
-# bindkey -s '^n' 'nvim $(fzf)^M'
+bindkey -s '^n' 'nvim $(fzf)^M'
 # bindkey -s '^v' 'nvim\n'
 bindkey -s '^z' 'zi^M'
 bindkey '^[[P' delete-char
@@ -98,8 +98,6 @@ compinit
 autoload edit-command-line; zle -N edit-command-line
 # bindkey '^e' edit-command-line
 
-# TODO Remove these
-setxkbmap -option caps:escape
 xset r rate 210 40
 
 # Speedy keys
@@ -108,15 +106,7 @@ xset r rate 210 40
 # Environment variables set everywhere
 export EDITOR="nvim"
 # export TERMINAL="alacritty"
-# export BROWSER="brave"
-
-# For QT Themes
-export QT_QPA_PLATFORMTHEME=qt5ct
-
-# remap caps to escape
-# setxkbmap -option caps:escape
-# swap escape and caps
-# setxkbmap -option caps:swapescape
+export BROWSER="firefox"
 
 # fnm
 export PATH=/home/declancm/.local/bin:$PATH

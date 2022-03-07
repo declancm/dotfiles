@@ -36,21 +36,28 @@ alias tmux='tmux -2'
 alias tree='rg --files | tree --fromfile'
 
 # cmake
-alias vg="valgrind --leak-check=full --show-leak-kinds=all \
-    --track-origins=yes --verbose --log-file=valgrind-out.txt "
+alias vg="valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose --log-file=valgrind-out.txt "
 alias dmake='cmake -DCMAKE_BUILD_TYPE=Debug'
 
+# git
 alias commit='source ~/git-scripts/commit.sh'
 alias scommit='source ~/git-scripts/commit-silent.sh'
 alias pull='source ~/git-scripts/pull.sh'
 alias spull='source ~/git-scripts/pull-silent.sh'
+alias git clone='git clone --recursive'
+
+# git branches
+alias bm="git checkout master"
+alias bs="git checkout stable"
+alias bf="git checkout feature"
+alias bt="git checkout test"
+
 alias pyvenv='source ~/virtualenv-creator/src/Bash/pyvenv.sh'
 # alias make='make -j16'
 alias ll='ls -alF --color=auto'
 alias ls='ls -a --color=auto'
 alias rtmux='tmux source-file ~/.tmux.conf'
 alias aptdate='sudo apt update; sudo apt -y upgrade; sudo apt-get -y update'
-alias git clone='git clone --recursive'
 # alias lg='lazygit'
 alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
 alias nvimrc='nvim ~/.config/nvim/'
@@ -77,27 +84,3 @@ alias psmem='ps auxf | sort -nr -k 4 | head -5'
 # get top process eating cpu ##
 alias pscpu='ps auxf | sort -nr -k 3 | head -5'
 
-# git branches
-alias bm="git checkout master"
-alias bs="git checkout stable"
-alias bf="git checkout feature"
-alias bt="git checkout test"
-
-case "$(uname -s)" in
-
-Darwin)
-	# echo 'Mac OS X'
-	alias ls='ls -G'
-	;;
-
-Linux)
-	alias ls='ls --color=auto'
-	;;
-
-CYGWIN* | MINGW32* | MSYS* | MINGW*)
-	# echo 'MS Windows'
-	;;
-*)
-	# echo 'Other OS'
-	;;
-esac
