@@ -13,7 +13,7 @@ function format() {
         elif [ "$1" = "lua" ]; then; formatter='.stylua.toml'
         else
             printf "Error: Not a valid argument.\n"
-            exit 1
+            return 1
         fi
         if ! [ -e "./$formatter" ]; then
             configPath="$HOME/.config/nvim/formatters/$formatter"
@@ -21,9 +21,9 @@ function format() {
             printf "The formatter config file '$formatter' was created.\n"
         else
             printf "Error: The formatter config file '$formatter' already exists here.\n"
-            exit 1
+            return 1
         fi
-        exit 0
+        return 0
     fi
 }
 
