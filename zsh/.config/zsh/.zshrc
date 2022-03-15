@@ -1,7 +1,7 @@
 #!/bin/sh
 
 export ZDOTDIR=$HOME/.config/zsh
-HISTFILE=~/.config/nvim/.zsh_history
+HISTFILE=~/.config/zsh/.zsh_history
 setopt appendhistory
 
 # some useful options (man zshoptions)
