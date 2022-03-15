@@ -10,7 +10,9 @@ function format() {
         printf "Use one of the following languages as an argument:\ncpp, lua\n"
     else
         if [ "$1" = "cpp" ]; then; formatter='.clang-format'
+        elif [ "$1" = "js" ]; then; formatter='jsconfig.json'
         elif [ "$1" = "lua" ]; then; formatter='.stylua.toml'
+        elif [ "$1" = "ts" ]; then; formatter='tsconfig.json'
         else
             printf "Error: Not a valid argument.\n"
             return 1
