@@ -1,3 +1,6 @@
 [submodule "nvim-lua"]
 	path = nvim-lua
 	url = https://github.com/declancm/nvim-lua.git
+[submodule "nvim-clean"]
+	path = nvim-clean
+	url = https://github.com/declancm/nvim-clean
