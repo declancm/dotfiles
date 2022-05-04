@@ -7,7 +7,7 @@ function extract() { cp -a "$1"/. .; rm -r "$1" }
 
 function format() {
     if [ -z "$1" ]; then
-        printf "Use one of the following languages as an argument:\ncpp, lua\n"
+        printf "Use one of the following languages as an argument:\ncpp, js, lua, ts\n"
     else
         if [ "$1" = "cpp" ]; then; formatter='.clang-format'
         elif [ "$1" = "js" ]; then; formatter='jsconfig.json'
@@ -29,6 +29,17 @@ function format() {
     fi
 }
 
+function update() {
+    if [ "$1" = "nvim" ]; then
+        cd ~/neovim
+        git pull origin master
+        sudo rm /usr/local/bin/nvim
+        sudo rm -r /usr/local/share/nvim/
+        make CMAKE_BUILD_TYPE=Release
+        sudo make install
+        cd $OLDPWD
+    fi
+}
 
 # ALIASES:
 # tmux in 256 colors

@@ -14,6 +14,8 @@ export PATH=$HOME/lsp/lua-language-server/bin:$PATH
 
 #export PATH=$HOME/.fnm:$PATH
 #eval "$(fnm env)"
+
+# Zoxide
 eval "$(zoxide init zsh)"
 
 # FZF
