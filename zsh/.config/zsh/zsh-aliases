@@ -31,10 +31,11 @@ function format() {
 
 function update() {
     if [ "$1" = "nvim" ]; then
+        sudo rm -r -f ~/neovim
+        git clone https://github.com/neovim/neovim.git ~/neovim
         cd ~/neovim
-        git pull origin master
         sudo rm /usr/local/bin/nvim
-        sudo rm -r /usr/local/share/nvim/
+        sudo rm -r /usr/local/share/nvim
         make CMAKE_BUILD_TYPE=Release
         sudo make install
         cd $OLDPWD
