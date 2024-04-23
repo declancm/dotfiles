@@ -15,6 +15,8 @@ Requirements:
 - neovim (nightly)
   - fd
   - npm
+  - python3-venv
+  - win32yank (for WSL)
 - ripgrep
 - tmux
 - zoxide
