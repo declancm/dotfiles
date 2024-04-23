@@ -14,6 +14,7 @@ Requirements:
 - lazygit
 - neovim (nightly)
   - fd
+  - npm
 - ripgrep
 - tmux
 - zoxide
