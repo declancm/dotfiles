@@ -3,6 +3,7 @@
 
 alias vim='nvim'
 alias tmux='tmux -2'
+alias lg='lazygit'
 
 export EDITOR='nvim'
 
