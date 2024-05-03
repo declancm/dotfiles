@@ -9,6 +9,7 @@
   - fd
   - npm
   - python3-venv
+  - xsel (for non-WSL)
   - win32yank (for WSL)
 - ripgrep
 - tmux
