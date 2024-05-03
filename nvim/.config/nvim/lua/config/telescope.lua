@@ -62,7 +62,6 @@ vim.keymap.set('n', '<leader>fm', builtin.marks, {})
 vim.keymap.set('n', '<leader>fq', builtin.quickfix, {})
 vim.keymap.set('n', '<leader>fl', builtin.loclist, {})
 
--- LSP pickers.
 vim.keymap.set('n', 'gd', builtin.lsp_definitions, {})
 vim.keymap.set('n', 'gr', builtin.lsp_references, {})
 vim.keymap.set('n', 'gi', builtin.lsp_implementations, {})
