@@ -1,6 +1,6 @@
 -- Scrolling.
-vim.keymap.set('', '<c-u>', '<c-u>zz')
-vim.keymap.set('', '<c-d>', '<c-d>zz')
+vim.keymap.set({ 'n', 'x' }, '<c-u>', '<cmd>set lz<cr><c-u>zz<cmd>set nolz | redraw<cr>')
+vim.keymap.set({ 'n', 'x' }, '<c-d>', '<cmd>set lz<cr><c-d>zz<cmd>set nolz | redraw<cr>')
 
 -- Moving text.
 vim.keymap.set('x', '<c-up>', "<cmd>m '<-2<cr>gv=gv")
