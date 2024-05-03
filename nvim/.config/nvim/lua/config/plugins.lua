@@ -26,6 +26,8 @@ return {
 
   -- TELESCOPE:
 
+  'ibhagwan/fzf-lua',
+
   {
     'nvim-telescope/telescope.nvim', -- fuzzy finder
     branch = '0.1.x',
