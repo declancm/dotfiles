@@ -1,34 +1,4 @@
-# 🧼 The CLEAN Neovim Config 🧼
-
-This is my neovim nightly lua config which is full of some heat 🔥 custom
-functions, keymaps, and plugins configurations.
-
-## Requirements
-
-- Neovim (nightly 🌘)
-- fd
-- fzf
-- npm
-- python3-venv
-- ripgrep
-- stow
-- xsel (for non WSL)
-- win32yank (for WSL)
-
-## Installation
-
-```bash
-git clone https://github.com/declancm/nvim-clean.git
-cd nvim-clean && stow .
-```
-
-## VSCodeVim Config
-
-### settings.json
-
-```jsonc
-[
-    // ...
+{
     "editor.cursorBlinking": "solid",
     "editor.minimap.enabled": false,
     "editor.lineNumbers": "relative",
@@ -84,6 +54,4 @@ cd nvim-clean && stow .
             "after": ["y", "$"]
         }
     ]
-]
-```
-
+}
