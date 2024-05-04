@@ -2,17 +2,7 @@
 
 local telescope = require('telescope')
 
-telescope.setup({
-  defaults = {
-    mappings = {
-      i = {
-        ['<c-bs>'] = function() vim.api.nvim_input('<c-w>') end,
-        ['<c-h>'] = function() vim.api.nvim_input('<c-w>') end
-      }
-    }
-  }
-})
-
+telescope.setup()
 telescope.load_extension('fzf')
 
 -- KEYMAPS:

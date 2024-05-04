@@ -16,10 +16,6 @@ vim.keymap.set({ '', 'i' }, '<home>', '<cmd>normal! ^ze<cr>')
 -- Don't move during J.
 vim.keymap.set('n', 'J', 'm`J``')
 
--- Delete the start of the word with ctrl-bs.
-vim.keymap.set('!', '<c-bs>', '<c-w>')
-vim.keymap.set('!', '<c-h>', '<c-w>')
-
 -- Clear highlights on redraw.
 vim.keymap.set('n', '<c-l>', '<cmd>nohlsearch<cr><c-l>')
 
