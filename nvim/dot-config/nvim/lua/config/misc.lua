@@ -12,7 +12,7 @@ require('printf').setup({
 
 -- UNDOTREE:
 
-vim.keymap.set('n', '<leader>u', '<cmd>UndotreeShow | UndotreeFocus<cr>')
+vim.keymap.set('n', '<leader>u', '<cmd>UndotreeShow | UndotreeFocus<cr>', {})
 
 -- COMMENTS:
 
