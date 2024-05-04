@@ -19,7 +19,9 @@
 ## Installation
 
 ```bash
-sudo apt-get install stow -y
-git clone <https://github.com/declancm/.dotfiles> ~/.dotfiles
-cd ~/.dotfiles && ./install.sh
+git clone <https://github.com/declancm/dotfiles.git> ~/dotfiles
+cd ~/dotfiles && ./install.sh
 ```
+
+*Note: Requires stow v2.4.0 or newer. The latest stow version can be built using the [GNU Source Release Collection](https://www.gnu.org/software/gsrc/)*
+
