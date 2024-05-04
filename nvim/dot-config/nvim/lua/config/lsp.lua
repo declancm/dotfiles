@@ -72,34 +72,23 @@ require('mason-lspconfig').setup({
   handlers = handlers
 })
 
--- LSPCONFIG:
+-- LSP:
 
--- LSP dianostic keymaps:
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, {})
+-- Neovim v0.10 new default LSP keymaps.
+vim.keymap.set('n', 'crr', vim.lsp.buf.code_action, {})
+vim.keymap.set('x', '<c-r>r', vim.lsp.buf.code_action, {})
+vim.keymap.set('x', '<c-r><c-r>', vim.lsp.buf.code_action, {})
+vim.keymap.set('n', 'crn', vim.lsp.buf.rename, {})
+vim.keymap.set('i', '<c-s>', vim.lsp.buf.signature_help, {})
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, {})
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, {})
--- vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, {})
+vim.keymap.set('n', '<c-w>d', vim.diagnostic.open_float, {})
 
--- LSP buffer keymaps:
---[[
--- Comment out when using telescope for these vim.keymap.sets.
-vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
-vim.keymap.set('n', 'gr', vim.lsp.buf.references, {})
-vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, {})
-vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, {})
---]]
-vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, {})
-vim.keymap.set('n', 'H', vim.lsp.buf.hover, {})
-vim.keymap.set('n', '<c-h>', vim.lsp.buf.signature_help, {})
-vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {})
-vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
+-- Workspace folders.
 vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, {})
 vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, {})
 vim.keymap.set('n', '<leader>wl', function()
   print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-end, {})
-vim.keymap.set('n', '<leader>f', function()
-  vim.lsp.buf.format({ async = true })
 end, {})
 
 -- Customize the diagnostic UI.

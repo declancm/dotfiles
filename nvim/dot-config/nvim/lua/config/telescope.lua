@@ -1,13 +1,10 @@
 -- TELESCOPE:
 
 local telescope = require('telescope')
+local builtin = require('telescope.builtin')
 
 telescope.setup()
 telescope.load_extension('fzf')
-
--- KEYMAPS:
-
-local builtin = require('telescope.builtin')
 
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fh', function() builtin.find_files({ hidden = true }) end, {})
@@ -23,6 +20,4 @@ vim.keymap.set('n', '<leader>fl', builtin.loclist, {})
 
 vim.keymap.set('n', 'gd', builtin.lsp_definitions, {})
 vim.keymap.set('n', 'gr', builtin.lsp_references, {})
-vim.keymap.set('n', 'gi', builtin.lsp_implementations, {})
-vim.keymap.set('n', 'gt', builtin.lsp_type_definitions, {})
 vim.keymap.set('n', '<leader>fd', builtin.diagnostics, {})
