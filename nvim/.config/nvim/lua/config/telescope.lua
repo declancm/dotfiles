@@ -35,13 +35,6 @@ telescope.setup({
     },
     live_grep = { file_ignore_patterns = file_ignore_patterns },
     grep_string = { file_ignore_patterns = file_ignore_patterns }
-  },
-  extensions = {
-    fzf = {
-      fuzzy = true,
-      override_generic_sorter = true,
-      override_file_sorter = true
-    }
   }
 })
 
