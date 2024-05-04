@@ -1,5 +1,5 @@
-stow --adopt alacritty/
-stow --adopt bash/
-stow --adopt fonts/
-stow --adopt nvim/
-stow --adopt tmux/
+stow --dotfiles --adopt alacritty/
+stow --dotfiles --adopt bash/
+stow --dotfiles --adopt fonts/
+stow --dotfiles --adopt nvim/
+stow --dotfiles --adopt tmux/

@@ -9,9 +9,10 @@
   - fd
   - npm
   - python3-venv
-  - xsel (for non-WSL)
   - win32yank (for WSL)
+  - xsel (for non-WSL)
 - ripgrep
+- stow (v2.4.0+)
 - tmux
 - zoxide
 

@@ -1,5 +1,5 @@
-stow --delete alacritty/
-stow --delete bash/
-stow --delete fonts/
-stow --delete nvim/
-stow --delete tmux/
+stow --dotfiles --delete alacritty/
+stow --dotfiles --delete bash/
+stow --dotfiles --delete fonts/
+stow --dotfiles --delete nvim/
+stow --dotfiles --delete tmux/
