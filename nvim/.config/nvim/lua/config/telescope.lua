@@ -2,35 +2,14 @@
 
 local telescope = require('telescope')
 
-local file_ignore_patterns = { '.git/', 'tmp/', '.venv/', 'build/' }
-
 telescope.setup({
   defaults = {
-    vimgrep_arguments = {
-      'rg',
-      '--color=never',
-      '--no-heading',
-      '--with-filename',
-      '--line-number',
-      '--column',
-      '--smart-case',
-      '--hidden',
-      '--trim'
-    },
     mappings = {
       i = {
         ['<c-bs>'] = function() vim.api.nvim_input('<c-w>') end,
         ['<c-h>'] = function() vim.api.nvim_input('<c-w>') end
       }
     }
-  },
-  pickers = {
-    find_files = {
-      file_ignore_patterns = file_ignore_patterns,
-      find_command = { 'rg', '--ignore', '--follow', '--hidden', '--files' }
-    },
-    live_grep = { file_ignore_patterns = file_ignore_patterns },
-    grep_string = { file_ignore_patterns = file_ignore_patterns }
   }
 })
 
@@ -40,8 +19,9 @@ telescope.load_extension('fzf')
 
 local builtin = require('telescope.builtin')
 
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<leader>fh', function() builtin.find_files({ hidden = true }) end, {})
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fc', builtin.commands, {})
