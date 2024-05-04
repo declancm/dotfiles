@@ -12,8 +12,8 @@ cmp.setup({
   },
   window = {},
   mapping = cmp.mapping.preset.insert({
-    ['<c-b>'] = cmp.mapping.scroll_docs(-4),
-    ['<c-f>'] = cmp.mapping.scroll_docs(4),
+    ['<c-u>'] = cmp.mapping.scroll_docs(-4),
+    ['<c-d>'] = cmp.mapping.scroll_docs(4),
     ['<down>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 'c' }),
     ['<up>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 'c' }),
     ['<c-e>'] = cmp.mapping(cmp.mapping.abort(), { 'i', 'c' }),
