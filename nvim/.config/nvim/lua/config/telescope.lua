@@ -17,10 +17,6 @@ telescope.setup({
       '--hidden',
       '--trim'
     },
-    layout_config = { horizontal = { prompt_position = 'top' } },
-    sorting_strategy = 'ascending',
-    prompt_prefix = '▶ ',
-    selection_caret = '▶ ',
     mappings = {
       i = {
         ['<c-bs>'] = function() vim.api.nvim_input('<c-w>') end,
