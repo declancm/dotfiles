@@ -71,7 +71,6 @@ return {
   'tpope/vim-surround',
   'tpope/vim-fugitive',
   -- 'tpope/vim-abolish',
-  'numToStr/Comment.nvim',
   {
     'stevearc/oil.nvim',
     dependencies = 'nvim-tree/nvim-web-devicons'
