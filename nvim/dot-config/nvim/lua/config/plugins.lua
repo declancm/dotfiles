@@ -36,7 +36,8 @@ return {
       {
         'nvim-telescope/telescope-fzf-native.nvim',
         build = 'make'
-      }
+      },
+      'debugloop/telescope-undo.nvim'
     },
   },
 
@@ -73,7 +74,6 @@ return {
   'tpope/vim-surround',    -- change surrounding chars
   'tpope/vim-fugitive',    -- Git wrapper
   'tpope/vim-abolish',     -- word coercion, better substitution and better abbreviation
-  'mbbill/undotree',       -- undotree visualizer
   'numToStr/Comment.nvim', -- comments
   {
     'stevearc/oil.nvim',   -- file explorer

@@ -10,10 +10,6 @@ require('printf').setup({
   print_func = { variable = '__PRETTY_FUNCTION__' }
 })
 
--- UNDOTREE:
-
-vim.keymap.set('n', '<leader>u', '<cmd>UndotreeShow | UndotreeFocus<cr>', { desc = 'Open the undotree.' })
-
 -- COMMENTS:
 
 require('Comment').setup({
