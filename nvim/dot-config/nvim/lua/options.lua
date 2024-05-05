@@ -4,8 +4,6 @@ vim.opt.swapfile = false                                   -- Don't create swapf
 vim.opt.undofile = true                                    -- Use an undo file.
 vim.opt.relativenumber = true                              -- Use relative line numbers.
 vim.opt.number = true                                      -- Line number at cursor.
-vim.opt.showmode = false                                   -- Don't show the current mode.
-vim.opt.incsearch = true                                   -- Incremental search.
 vim.opt.ignorecase = true                                  -- Ignore case when searching.
 vim.opt.smartcase = true                                   -- Ignore ignorecase option when a capital is used.
 vim.opt.wrap = false                                       -- Disable line wrap.
@@ -23,5 +21,6 @@ vim.opt.softtabstop = 4                                    -- Inserted spaces co
 vim.opt.shiftwidth = 4                                     -- Number of spaces for each step of autoindent.
 vim.opt.sessionoptions:remove('blank')                     -- Don't save empty windows in sessions.
 vim.opt.virtualedit = 'block'                              -- Allow virtual edit in block-wise visual mode.
-vim.opt.autoread = true                                    -- Automatically read external file changes.
 vim.opt.pumheight = 8                                      -- Maximum number of items to show in auto-complete menu.
+vim.opt.showmode = false                                   -- Don't show the current mode in the command-line.
+vim.opt.ruler = false                                      -- Don't show the cursor position in the command-line.
