@@ -73,16 +73,6 @@ require('mason-lspconfig').setup({
 
 -- LSP:
 
--- Neovim v0.10 new default LSP keymaps.
-vim.keymap.set('n', 'crr', vim.lsp.buf.code_action, { desc = 'Select a code action.' })
-vim.keymap.set('x', '<c-r>r', vim.lsp.buf.code_action, { desc = 'Select a code action.' })
-vim.keymap.set('x', '<c-r><c-r>', vim.lsp.buf.code_action, { desc = 'Select a code action.' })
-vim.keymap.set('n', 'crn', vim.lsp.buf.rename, { desc = 'Rename symbol.' })
-vim.keymap.set('i', '<c-s>', vim.lsp.buf.signature_help, { desc = 'Display symbol signature info.' })
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Move to prev diagnostic.' })
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Move to next diagnostic.' })
-vim.keymap.set('n', '<c-w>d', vim.diagnostic.open_float, { desc = 'Show diagnostics.' })
-
 -- Workspace folders.
 vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, { desc = 'Add folder to workspace.' })
 vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, { desc = 'Remove folder from workspace.' })

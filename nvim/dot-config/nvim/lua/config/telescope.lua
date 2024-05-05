@@ -8,7 +8,7 @@ telescope.load_extension('fzf')
 
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Search for files.' })
 vim.keymap.set('n', '<leader>fh', function() builtin.find_files({ hidden = true }) end,
-  { desc = 'Search for files including hidden.' })
+  { desc = 'Search for hidden files.' })
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Live grep.' })
 
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'List buffers.' })
