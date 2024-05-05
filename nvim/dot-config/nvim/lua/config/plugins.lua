@@ -66,7 +66,6 @@ return {
     'lewis6991/gitsigns.nvim', -- git column icons
     tag = 'release'
   },
-  'folke/zen-mode.nvim',
 
   -- MISC:
 

@@ -32,13 +32,3 @@ require('lualine').setup {
 -- GITSIGNS:
 
 require('gitsigns').setup()
-
--- ZEN-MODE:
-
-require('zen-mode').setup({
-  plugins = {
-    tmux = { enabled = true }
-  }
-})
-
-vim.keymap.set('n', '<leader>z', require('zen-mode').toggle)
