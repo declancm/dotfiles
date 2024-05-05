@@ -5,7 +5,6 @@ local builtin = require('telescope.builtin')
 
 telescope.setup()
 telescope.load_extension('fzf')
-telescope.load_extension('undo')
 
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Search for files.' })
 vim.keymap.set('n', '<leader>fh', function() builtin.find_files({ hidden = true }) end,
@@ -23,5 +22,9 @@ vim.keymap.set('n', '<leader>fl', builtin.loclist, { desc = 'List items in the l
 vim.keymap.set('n', 'gd', builtin.lsp_definitions, { desc = 'Goto the definition of cword.' })
 vim.keymap.set('n', 'gr', builtin.lsp_references, { desc = 'List LSP references for cword.' })
 vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = 'List LSP diagnostics.' })
+
+-- TELESCOPE-UNDO:
+
+telescope.load_extension('undo')
 
 vim.keymap.set('n', '<leader>fu', telescope.extensions.undo.undo, { desc = 'Search undo tree.' })
