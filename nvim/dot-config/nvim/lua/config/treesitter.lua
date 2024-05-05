@@ -16,7 +16,6 @@ require('nvim-treesitter.configs').setup {
         ['ic'] = '@class.inner',
         ['af'] = '@function.outer',
         ['if'] = '@function.inner',
-        ['a/'] = '@comment.outer',
       },
     },
   },
