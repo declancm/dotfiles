@@ -79,6 +79,7 @@ return {
     'stevearc/oil.nvim',   -- file explorer
     dependencies = 'nvim-tree/nvim-web-devicons'
   },
+  'folke/which-key.nvim',
   {
     'declancm/printf.nvim',
     dependencies = 'nvim-treesitter/nvim-treesitter'

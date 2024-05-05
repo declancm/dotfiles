@@ -19,3 +19,7 @@ vim.keymap.set('n', '<leader>u', '<cmd>UndotreeShow | UndotreeFocus<cr>', { desc
 require('Comment').setup({
   ignore = '^$' -- Ignore blank lines.
 })
+
+-- WHICH-KEY:
+
+require('which-key').setup()
