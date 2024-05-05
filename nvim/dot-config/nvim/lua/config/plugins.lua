@@ -1,9 +1,9 @@
 return {
   -- LSP:
 
-  'neovim/nvim-lspconfig',               -- collection of lsp configurations
+  'neovim/nvim-lspconfig',
   {
-    'williamboman/mason-lspconfig.nvim', -- automatic LSP
+    'williamboman/mason-lspconfig.nvim',
     dependencies = {
       'williamboman/mason.nvim'
     }
@@ -27,7 +27,7 @@ return {
   -- TELESCOPE:
 
   {
-    'nvim-telescope/telescope.nvim', -- fuzzy finder
+    'nvim-telescope/telescope.nvim',
     branch = '0.1.x',
     dependencies = {
       'nvim-lua/plenary.nvim',
@@ -42,38 +42,38 @@ return {
   -- TREESITTER:
 
   {
-    'nvim-treesitter/nvim-treesitter', -- tree-sitter in neovim
+    'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     dependencies = {
-      'nvim-treesitter/nvim-treesitter-textobjects' -- syntax aware text-objects
+      'nvim-treesitter/nvim-treesitter-textobjects'
     }
   },
 
   -- VISUALS:
 
   {
-    'folke/tokyonight.nvim', -- colorscheme
+    'folke/tokyonight.nvim',
     lazy = false,
     priority = 1000
   },
   {
-    'hoob3rt/lualine.nvim', -- better status line
+    'hoob3rt/lualine.nvim',
     dependencies = 'nvim-tree/nvim-web-devicons'
   },
   {
-    'lewis6991/gitsigns.nvim', -- git column icons
+    'lewis6991/gitsigns.nvim',
     tag = 'release'
   },
 
   -- MISC:
 
-  -- 'chaoren/vim-wordmotion', -- camel case, snake case etc. become separate words
-  'tpope/vim-surround',    -- change surrounding chars
-  'tpope/vim-fugitive',    -- Git wrapper
-  'tpope/vim-abolish',     -- word coercion, better substitution and better abbreviation
-  'numToStr/Comment.nvim', -- comments
+  -- 'chaoren/vim-wordmotion',
+  'tpope/vim-surround',
+  'tpope/vim-fugitive',
+  -- 'tpope/vim-abolish',
+  'numToStr/Comment.nvim',
   {
-    'stevearc/oil.nvim',   -- file explorer
+    'stevearc/oil.nvim',
     dependencies = 'nvim-tree/nvim-web-devicons'
   },
   'folke/which-key.nvim',
