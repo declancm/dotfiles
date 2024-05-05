@@ -24,3 +24,4 @@ vim.opt.shiftwidth = 4                                     -- Number of spaces f
 vim.opt.sessionoptions:remove('blank')                     -- Don't save empty windows in sessions.
 vim.opt.virtualedit = 'block'                              -- Allow virtual edit in block-wise visual mode.
 vim.opt.autoread = true                                    -- Automatically read external file changes.
+vim.opt.pumheight = 8                                      -- Maximum number of items to show in auto-complete menu.
