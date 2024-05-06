@@ -21,7 +21,7 @@ require('lazy').setup({
   'neovim/nvim-lspconfig',
   {
     'williamboman/mason-lspconfig.nvim',
-    dependencies = 'williamboman/mason.nvim'
+    dependencies = { 'williamboman/mason.nvim' }
   },
 
   -- COMPLETION:
@@ -70,7 +70,7 @@ require('lazy').setup({
   },
   {
     'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons', opt = true }
+    dependencies = { { 'nvim-tree/nvim-web-devicons', opt = true } }
   },
   {
     'lewis6991/gitsigns.nvim',
@@ -84,12 +84,12 @@ require('lazy').setup({
   -- 'tpope/vim-abolish',
   {
     'stevearc/oil.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons', opt = true }
+    dependencies = { { 'nvim-tree/nvim-web-devicons', opt = true } }
   },
   'folke/which-key.nvim',
   {
     'declancm/printf.nvim',
-    dependencies = 'nvim-treesitter/nvim-treesitter'
+    dependencies = { 'nvim-treesitter/nvim-treesitter' }
   },
 }, {
   dev = {
