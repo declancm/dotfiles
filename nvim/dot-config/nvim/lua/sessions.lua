@@ -36,14 +36,7 @@ local save_session = function()
   end
 end
 
-vim.api.nvim_create_user_command('LoadSession',
-  function()
-    load_session()
-  end,
+vim.api.nvim_create_user_command('LoadSession', load_session,
   { desc = 'Load the session for the current working directory.' })
-
-vim.api.nvim_create_user_command('SaveSession',
-  function()
-    save_session()
-  end,
+vim.api.nvim_create_user_command('SaveSession', save_session,
   { desc = 'Save the session for the current working directory.' })

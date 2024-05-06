@@ -1,9 +1,5 @@
 -- Brief highlight on yank.
-vim.api.nvim_create_autocmd('TextYankPost', {
-  callback = function()
-    vim.highlight.on_yank { timeout = 150 }
-  end
-})
+vim.api.nvim_create_autocmd('TextYankPost', { callback = function() vim.highlight.on_yank() end })
 
 -- Disable relative line numbers when in command mode.
 vim.api.nvim_create_autocmd('CmdlineEnter', {
@@ -33,8 +29,4 @@ vim.api.nvim_create_autocmd('VimEnter', {
 })
 
 -- Automatically save sessions on exit.
-vim.api.nvim_create_autocmd('VimLeavePre', {
-  callback = function()
-    vim.cmd.SaveSession()
-  end
-})
+vim.api.nvim_create_autocmd('VimLeavePre', { callback = function() vim.cmd.SaveSession() end })
