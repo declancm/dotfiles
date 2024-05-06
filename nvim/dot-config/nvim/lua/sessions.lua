@@ -59,10 +59,10 @@ vim.api.nvim_create_user_command('LoadSession',
   function(opts)
     load_session()
   end,
-  {})
+  { desc = 'Load the session for the current working directory.' })
 
 vim.api.nvim_create_user_command('SaveSession',
   function(opts)
     save_session()
   end,
-  {})
+  { desc = 'Save the session for the current working directory.' })
