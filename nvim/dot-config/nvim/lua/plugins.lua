@@ -21,9 +21,7 @@ require('lazy').setup({
   'neovim/nvim-lspconfig',
   {
     'williamboman/mason-lspconfig.nvim',
-    dependencies = {
-      'williamboman/mason.nvim'
-    }
+    dependencies = 'williamboman/mason.nvim'
   },
 
   -- COMPLETION:
@@ -99,10 +97,7 @@ require('lazy').setup({
     patterns = { 'declancm' },
     fallback = true,
   },
-  install = {
-    missing = false,
-    colorscheme = { 'tokyonight', 'habamax' }
-  }
+  install = { missing = false }
 })
 
 -- PLUGIN CONFIGS:
