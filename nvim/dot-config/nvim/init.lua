@@ -3,15 +3,8 @@ vim.loader.enable()                      -- Enable the lua module loader.
 vim.g.mapleader = ' '                    -- Set the keymap leader.
 
 require('options')
-
-require('config.lazy')
-require('config.lsp')
-require('config.telescope')
-require('config.treesitter')
-require('config.visuals')
-require('config.misc')
-require('config.sessiondir')
-
+require('plugins')
 require('commands')
 require('autocmds')
 require('keymaps')
+require('sessions')
