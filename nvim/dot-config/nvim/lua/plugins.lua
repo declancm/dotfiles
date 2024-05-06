@@ -1,3 +1,5 @@
+-- PLUGIN MANAGER:
+
 -- Bootstrap
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
@@ -103,6 +105,8 @@ require('lazy').setup({
     colorscheme = { 'tokyonight', 'habamax' }
   }
 })
+
+-- PLUGIN CONFIGS:
 
 require('configs.lsp')
 require('configs.telescope')
