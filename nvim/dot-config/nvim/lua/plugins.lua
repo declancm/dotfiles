@@ -69,8 +69,8 @@ require('lazy').setup({
     priority = 1000
   },
   {
-    'hoob3rt/lualine.nvim',
-    dependencies = 'nvim-tree/nvim-web-devicons'
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons', opt = true }
   },
   {
     'lewis6991/gitsigns.nvim',
@@ -84,7 +84,7 @@ require('lazy').setup({
   -- 'tpope/vim-abolish',
   {
     'stevearc/oil.nvim',
-    dependencies = 'nvim-tree/nvim-web-devicons'
+    dependencies = { 'nvim-tree/nvim-web-devicons', opt = true }
   },
   'folke/which-key.nvim',
   {
