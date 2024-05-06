@@ -81,7 +81,6 @@ require('lazy').setup({
 
   -- MISC:
 
-  -- 'chaoren/vim-wordmotion',
   'tpope/vim-surround',
   'tpope/vim-fugitive',
   -- 'tpope/vim-abolish',
