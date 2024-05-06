@@ -1,6 +1,6 @@
 -- TOKYONIGHT:
 
-vim.cmd([[colorscheme tokyonight]])
+vim.cmd('colorscheme tokyonight')
 
 -- LUALINE:
 
@@ -9,7 +9,7 @@ require('lualine').setup {
     component_separators = { left = '│', right = '│' },
     section_separators = { left = '', right = '' },
   },
-  extensions = { 'fugitive' },
+  extensions = { 'fugitive', 'quickfix', 'oil' },
 }
 
 -- GITSIGNS:
