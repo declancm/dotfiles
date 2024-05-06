@@ -11,11 +11,11 @@ vim.keymap.set('n', '<leader>fh', function() builtin.find_files({ hidden = true 
   { desc = 'Search for hidden files.' })
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Live grep.' })
 
-vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'List buffers.' })
-vim.keymap.set('n', '<leader>fc', builtin.commands, { desc = 'List commands.' })
+vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'List open buffers.' })
+vim.keymap.set('n', '<leader>fc', builtin.commands, { desc = 'List user commands.' })
 vim.keymap.set('n', '<leader>f:', builtin.command_history, { desc = 'List command history.' })
 vim.keymap.set('n', '<leader>f/', builtin.search_history, { desc = 'List search history.' })
-vim.keymap.set('n', '<leader>fm', builtin.marks, { desc = 'List marks.' })
+vim.keymap.set('n', '<leader>fm', builtin.marks, { desc = 'List vim marks.' })
 vim.keymap.set('n', '<leader>fq', builtin.quickfix, { desc = 'List items in the quickfix list.' })
 vim.keymap.set('n', '<leader>fl', builtin.loclist, { desc = 'List items in the location list.' })
 
