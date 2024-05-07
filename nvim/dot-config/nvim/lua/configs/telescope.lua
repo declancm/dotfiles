@@ -16,8 +16,8 @@ vim.keymap.set('n', '<leader>fc', builtin.commands, { desc = 'List user commands
 vim.keymap.set('n', '<leader>f:', builtin.command_history, { desc = 'List command history.' })
 vim.keymap.set('n', '<leader>f/', builtin.search_history, { desc = 'List search history.' })
 vim.keymap.set('n', '<leader>fm', builtin.marks, { desc = 'List vim marks.' })
-vim.keymap.set('n', '<leader>fq', builtin.quickfix, { desc = 'List items in the quickfix list.' })
-vim.keymap.set('n', '<leader>fl', builtin.loclist, { desc = 'List items in the location list.' })
+vim.keymap.set('n', '<leader>fq', builtin.quickfix, { desc = 'List quickfix list items.' })
+vim.keymap.set('n', '<leader>fl', builtin.loclist, { desc = 'List location list items.' })
 
 vim.keymap.set('n', 'gd', builtin.lsp_definitions, { desc = 'Goto the definition of cword.' })
 vim.keymap.set('n', 'gr', builtin.lsp_references, { desc = 'List LSP references for cword.' })
