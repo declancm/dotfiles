@@ -3,20 +3,28 @@ local lspconfig = require('lspconfig')
 -- CMP:
 
 local cmp = require('cmp')
+local luasnip = require('luasnip')
 
 cmp.setup({
   snippet = {
     expand = function(args)
-      require('luasnip').lsp_expand(args.body)
+      luasnip.lsp_expand(args.body)
     end,
   },
   mapping = cmp.mapping.preset.insert({
     ['<c-u>'] = cmp.mapping.scroll_docs(-4),
     ['<c-d>'] = cmp.mapping.scroll_docs(4),
-    ['<down>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 'c' }),
-    ['<up>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 'c' }),
-    ['<c-e>'] = cmp.mapping(cmp.mapping.abort(), { 'i', 'c' }),
-    ['<cr>'] = cmp.mapping(cmp.mapping.confirm({ select = false }), { 'i', 'c' })
+    ['<c-y>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        if luasnip.expandable() then
+          luasnip.expand()
+        else
+          cmp.confirm({ select = true })
+        end
+      else
+        fallback()
+      end
+    end, { 'i', 's' })
   }),
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
@@ -55,6 +63,15 @@ local handlers = {
     })
   end,
 }
+
+-- LUASNIP:
+
+vim.keymap.set({ 'i', 's' }, '<tab>', function()
+  if luasnip.jumpable() then return '<plug>luasnip-jump-next' else return '<tab>' end
+end, { expr = true })
+vim.keymap.set({ 'i', 's' }, '<s-tab>', function()
+  if luasnip.jumpable() then return '<plug>luasnip-jump-prev' else return '<s-tab>' end
+end, { expr = true })
 
 -- MASON-LSPCONFIG:
 
