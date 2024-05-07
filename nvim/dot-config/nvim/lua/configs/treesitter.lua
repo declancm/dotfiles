@@ -1,7 +1,9 @@
 -- TREESITTER:
 
 require('nvim-treesitter.configs').setup {
-  ensure_installed = 'all',
+  auto_install = true,
+  ensure_installed = { 'comment' },
+  ignore_install = { 'c', 'lua', 'vim', 'vimdoc', 'query' },
   highlight = { enable = true },
   indent = { enable = true }
 }

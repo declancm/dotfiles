@@ -3,15 +3,16 @@
 ## Requirements
 
 - Alacritty
-- fzf
 - lazygit
 - neovim (nightly)
   - fd
+  - fzf
   - npm
   - python3-venv
+  - ripgrep
+  - tree-sitter-cli
   - win32yank (for WSL)
   - xsel (for non-WSL)
-- ripgrep
 - stow (v2.4.0+)
 - tmux
 - zoxide
