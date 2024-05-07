@@ -29,17 +29,15 @@ local get_session_path = function(session_dir)
   return session_dir .. session_name
 end
 
-local load_session = function()
-  local session = io.open('Session.vim', 'rb')
-  if not session then
-    session = io.open(get_session_path(get_session_dir()), 'rb')
-  end
+vim.api.nvim_create_user_command('LoadSession', function()
+  local session_path = get_session_path(get_session_dir())
+  local session = io.open('Session.vim', 'rb') or io.open(session_path, 'rb')
   if session then
     vim.cmd(session:read('*all'))
   end
-end
+end, { desc = 'Load the session for the current working directory.' })
 
-local save_session = function()
+vim.api.nvim_create_user_command('SaveSession', function()
   local session_dir = get_session_dir()
   if vim.fn.isdirectory(session_dir) == 0 then
     vim.fn.mkdir(session_dir, 'p')
@@ -50,9 +48,4 @@ local save_session = function()
   if outfile:write(infile:read('*all')) then
     os.remove('Session.vim')
   end
-end
-
-vim.api.nvim_create_user_command('LoadSession', load_session,
-  { desc = 'Load the session for the current working directory.' })
-vim.api.nvim_create_user_command('SaveSession', save_session,
-  { desc = 'Save the session for the current working directory.' })
+end, { desc = 'Save the session for the current working directory.' })
