@@ -30,3 +30,7 @@ vim.api.nvim_create_autocmd('VimEnter', {
 
 -- Automatically save sessions on exit.
 vim.api.nvim_create_autocmd('VimLeavePre', { callback = function() vim.cmd.SaveSession() end })
+
+-- Change the C comment format.
+vim.api.nvim_create_autocmd('FileType',
+  { pattern = { 'c', 'cpp' }, callback = function() vim.bo.commentstring = '// %s' end })
