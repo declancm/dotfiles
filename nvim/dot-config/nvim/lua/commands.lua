@@ -15,8 +15,8 @@ end, { desc = 'Format the current document using the attached language server cl
 -- SESSIONS:
 
 -- Store sessions like undo files.
--- g:sessiondir - the directory where the sessions will be stored
--- g:persistoptions - a list of options which will be stored in the sessions
+-- g:sessiondir - The directory where the sessions will be stored.
+-- g:persistoptions - A list of options to persist between sessions.
 
 local get_session_dir = function()
   local session_dir = vim.g.sessiondir or (vim.fn.stdpath('state') .. '/session')
