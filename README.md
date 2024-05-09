@@ -15,6 +15,7 @@
   - xsel (for non-WSL)
 - stow (v2.4.0+)
 - tmux
+  - tpm
 - zoxide
 
 ## Installation
