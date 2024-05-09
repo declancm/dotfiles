@@ -50,7 +50,7 @@ vim.api.nvim_create_user_command('SaveSession', function()
   -- Append options.
   local session = assert(io.open('Session.vim', 'ab'))
   for _, option in ipairs(vim.g.persistoptions or {}) do
-    session:write('lua vim.o.' .. option .. ' = ' .. string.format('%q', tostring(vim.o[option])), '\n')
+    session:write('lua vim.o.' .. option .. ' = ' .. string.format('%q', tostring(vim.o[option])) .. '\n')
   end
   session:close()
 
