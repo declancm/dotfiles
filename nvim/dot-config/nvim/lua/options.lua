@@ -32,5 +32,6 @@ vim.g.persistoptions = {
   'errorformat',
   'tabstop',
   'softtabstop',
-  'shiftwidth'
+  'shiftwidth',
+  'expandtab'
 }
