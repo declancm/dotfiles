@@ -27,4 +27,4 @@ vim.opt.ruler = false                                      -- Don't show the cur
 
 -- VARIABLES:
 
-vim.g.persistoptions = { 'makeprg' }
+vim.g.persistoptions = { 'makeprg', 'errorformat' }
