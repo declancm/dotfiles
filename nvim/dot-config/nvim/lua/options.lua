@@ -20,7 +20,6 @@ vim.opt.tabstop = 4                                        -- Set tab character 
 vim.opt.softtabstop = 4                                    -- Inserted spaces count per tab key press.
 vim.opt.shiftwidth = 4                                     -- Number of spaces for each step of autoindent.
 vim.opt.sessionoptions:remove('blank')                     -- Don't save empty windows in sessions.
-vim.opt.sessionoptions:append('options')                   -- Save global options in sessions.
 vim.opt.virtualedit = 'block'                              -- Allow virtual edit in block-wise visual mode.
 vim.opt.pumheight = 8                                      -- Maximum number of items to show in auto-complete menu.
 vim.opt.showmode = false                                   -- Don't show the current mode in the command-line.
