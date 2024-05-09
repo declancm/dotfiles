@@ -24,3 +24,7 @@ vim.opt.virtualedit = 'block'                              -- Allow virtual edit
 vim.opt.pumheight = 8                                      -- Maximum number of items to show in auto-complete menu.
 vim.opt.showmode = false                                   -- Don't show the current mode in the command-line.
 vim.opt.ruler = false                                      -- Don't show the cursor position in the command-line.
+
+-- VARIABLES:
+
+vim.g.persistoptions = { 'makeprg' }

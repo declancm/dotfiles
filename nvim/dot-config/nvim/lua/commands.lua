@@ -15,6 +15,8 @@ end, { desc = 'Format the current document using the attached language server cl
 -- SESSIONS:
 
 -- Store sessions like undo files.
+-- g:sessiondir - the directory where the sessions will be stored
+-- g:persistoptions - a list of options which will be stored in the sessions
 
 local get_session_dir = function()
   local session_dir = vim.g.sessiondir or (vim.fn.stdpath('state') .. '/session')
@@ -38,11 +40,21 @@ vim.api.nvim_create_user_command('LoadSession', function()
 end, { desc = 'Load the session for the current working directory.' })
 
 vim.api.nvim_create_user_command('SaveSession', function()
+  -- Create the session.
   local session_dir = get_session_dir()
   if vim.fn.isdirectory(session_dir) == 0 then
     vim.fn.mkdir(session_dir, 'p')
   end
   vim.cmd('mksession!')
+
+  -- Append options.
+  local session = assert(io.open('Session.vim', 'ab'))
+  for _, option in ipairs(vim.g.persistoptions or {}) do
+    session:write('lua vim.o.' .. option .. ' = ' .. string.format('%q', tostring(vim.o[option])), '\n')
+  end
+  session:close()
+
+  -- Move to the sessions directory.
   local infile = assert(io.open('Session.vim', 'rb'))
   local outfile = assert(io.open(get_session_path(session_dir), 'wb'))
   if outfile:write(infile:read('*all')) then
