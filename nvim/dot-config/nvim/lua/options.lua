@@ -27,6 +27,7 @@ vim.opt.ruler = false
 
 -- VARIABLES:
 
+vim.g.mapleader = ' '
 vim.g.persistoptions = {
   'makeprg',
   'errorformat',
