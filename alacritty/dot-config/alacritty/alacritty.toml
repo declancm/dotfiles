@@ -1,4 +1,4 @@
-import = [ "~/.config/alacritty/themes/themes/tokyo-night-storm.toml" ]
+import = [ "~/.config/alacritty/catppuccin-mocha.toml" ]
 
 [font]
 normal = { family = "Hack Nerd Font Mono", style = "Regular" }
