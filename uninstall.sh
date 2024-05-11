@@ -1,5 +1,3 @@
-rm ~/.config/alacritty/catppuccin-mocha.toml
-
 stow --dotfiles --delete alacritty/
 stow --dotfiles --delete bash/
 stow --dotfiles --delete fonts/
