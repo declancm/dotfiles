@@ -27,3 +27,9 @@ vim.api.nvim_create_autocmd('FileType', {
 -- WHICH-KEY:
 
 require('which-key').setup()
+
+-- MAXIMIZE:
+
+require('maximize').setup()
+
+vim.keymap.set('n', '<leader>z', require('maximize').toggle, { desc = 'Toggle maximizing the current buffer' })
