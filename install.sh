@@ -6,8 +6,8 @@ curl -LOs --create-dirs --output-dir ./fonts/dot-local/share/fonts https://githu
 curl -LOs --create-dirs --output-dir ./fonts/dot-local/share/fonts https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack/Italic/HackNerdFontMono-Italic.ttf
 curl -LOs --create-dirs --output-dir ./fonts/dot-local/share/fonts https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Hack/BoldItalic/HackNerdFontMono-BoldItalic.ttf
 
-stow --dotfiles --adopt alacritty/
-stow --dotfiles --adopt bash/
-stow --dotfiles --adopt fonts/
-stow --dotfiles --adopt nvim/
-stow --dotfiles --adopt tmux/
+~/gnu/bin/stow --dotfiles --adopt alacritty/
+~/gnu/bin/stow --dotfiles --adopt bash/
+~/gnu/bin/stow --dotfiles --adopt fonts/
+~/gnu/bin/stow --dotfiles --adopt nvim/
+~/gnu/bin/stow --dotfiles --adopt tmux/

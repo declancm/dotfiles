@@ -1,7 +1,7 @@
 #!/bin/bash
 
-stow --dotfiles --delete alacritty/
-stow --dotfiles --delete bash/
-stow --dotfiles --delete fonts/
-stow --dotfiles --delete nvim/
-stow --dotfiles --delete tmux/
+~/gnu/bin/stow --dotfiles --delete alacritty/
+~/gnu/bin/stow --dotfiles --delete bash/
+~/gnu/bin/stow --dotfiles --delete fonts/
+~/gnu/bin/stow --dotfiles --delete nvim/
+~/gnu/bin/stow --dotfiles --delete tmux/
