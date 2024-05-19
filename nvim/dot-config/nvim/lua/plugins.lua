@@ -79,7 +79,7 @@ require('lazy').setup({
 
   -- MISC:
 
-  'github/copilot.vim',
+  'github/copilot.vim', -- Need to run `:Copilot setup` after installation.
   'tpope/vim-surround',
   'tpope/vim-fugitive',
   -- 'tpope/vim-abolish',
