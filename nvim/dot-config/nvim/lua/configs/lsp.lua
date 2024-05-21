@@ -92,6 +92,12 @@ require('mason-lspconfig').setup({
 
 vim.lsp.inlay_hint.enable()
 
+vim.keymap.set('n', 'crn', vim.lsp.buf.rename, { desc = 'Rename symbol' })
+vim.keymap.set('n', 'crr', vim.lsp.buf.code_action, { desc = 'Show code actions' })
+vim.keymap.set('x', '<c-r><c-r>', vim.lsp.buf.code_action, { desc = 'Show code actions' })
+vim.keymap.set('x', '<c-r>r', vim.lsp.buf.code_action, { desc = 'Show code actions' })
+vim.keymap.set('i', '<c-s>', vim.lsp.buf.signature_help, { desc = 'Show signature help' })
+
 -- Workspace folders.
 vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, { desc = 'Add folder to workspace' })
 vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, { desc = 'Remove folder from workspace' })
