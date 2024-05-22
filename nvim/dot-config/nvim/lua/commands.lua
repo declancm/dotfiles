@@ -20,22 +20,26 @@ end, { desc = 'Format the current document using the attached language server cl
 
 local get_session_dir = function()
   local session_dir = vim.g.sessiondir or (vim.fn.stdpath('state') .. '/session')
-  return vim.fs.normalize(session_dir)
+  return vim.fn.fnamemodify(vim.fs.normalize(session_dir), ':p')
 end
 
 local get_session_path = function(session_dir)
   local session_name = vim.fs.normalize(vim.fn.getcwd()):gsub('/', '%%')
-  if not session_dir:match('/$') then
-    session_dir = session_dir .. '/'
-  end
-  return session_dir .. session_name
+  return vim.fs.joinpath(session_dir, session_name)
 end
 
 vim.api.nvim_create_user_command('LoadSession', function()
-  local session_path = get_session_path(get_session_dir())
-  local session = io.open('Session.vim', 'rb') or io.open(session_path, 'rb')
+  local session_path = 'Session.vim'
+  local session = io.open(session_path, 'rb')
+
+  if not session then
+    session_path = get_session_path(get_session_dir())
+    session = io.open(session_path, 'rb')
+  end
+
   if session then
     vim.cmd(session:read('*all'))
+    vim.v.this_session = vim.fn.fnamemodify(session_path, ':p')
   end
 end, { desc = 'Load the session for the current working directory.' })
 

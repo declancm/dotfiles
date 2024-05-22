@@ -28,8 +28,14 @@ vim.api.nvim_create_autocmd('VimEnter', {
   nested = true
 })
 
--- Automatically save sessions on exit.
-vim.api.nvim_create_autocmd('VimLeavePre', { callback = function() vim.cmd.SaveSession() end })
+-- Automatically save sessions on exit if a session was loaded.
+vim.api.nvim_create_autocmd('VimLeavePre', {
+  callback = function()
+    if vim.v.this_session ~= '' then
+      vim.cmd.SaveSession()
+    end
+  end
+})
 
 -- Change the C comment format.
 vim.api.nvim_create_autocmd('FileType',
