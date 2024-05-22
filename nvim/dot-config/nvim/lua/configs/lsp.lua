@@ -90,8 +90,6 @@ require('mason-lspconfig').setup({
 
 -- LSP:
 
-vim.lsp.inlay_hint.enable()
-
 vim.keymap.set('n', 'crn', vim.lsp.buf.rename, { desc = 'Rename symbol' })
 vim.keymap.set('n', 'crr', vim.lsp.buf.code_action, { desc = 'Show code actions' })
 vim.keymap.set('x', '<c-r><c-r>', vim.lsp.buf.code_action, { desc = 'Show code actions' })
