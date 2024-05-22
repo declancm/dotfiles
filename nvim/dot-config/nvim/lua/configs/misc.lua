@@ -32,4 +32,4 @@ require('which-key').setup()
 
 require('maximize').setup()
 
-vim.keymap.set('n', '<leader>z', require('maximize').toggle, { desc = 'Toggle maximizing the current buffer' })
+vim.keymap.set('n', '<leader>z', require('maximize').toggle, { desc = 'Toggle maximizing the current window' })
