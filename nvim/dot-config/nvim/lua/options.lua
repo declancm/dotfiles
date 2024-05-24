@@ -12,7 +12,6 @@ vim.opt.scrolloff = 8
 vim.opt.backspace:append('nostop')
 vim.opt.updatetime = 1000
 vim.opt.timeoutlen = 300
-vim.opt.mouse = ''
 vim.opt.spell = true
 vim.opt.spelllang = 'en_us'
 vim.opt.modeline = false
