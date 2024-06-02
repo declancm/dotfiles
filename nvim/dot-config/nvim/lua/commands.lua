@@ -71,3 +71,15 @@ vim.api.nvim_create_user_command('SaveSession', function()
     os.remove('Session.vim')
   end
 end, { desc = 'Save the session for the current working directory.' })
+
+-- MISC:
+
+-- Set tab width.
+vim.api.nvim_create_user_command('SetTabWidth', function(args)
+  local tab_width = tonumber(args.fargs[1])
+  if tab_width then
+    vim.bo.tabstop = tab_width
+    vim.bo.softtabstop = tab_width
+    vim.bo.shiftwidth = tab_width
+  end
+end, { nargs = 1, desc = 'Set the tab width for the current buffer.' })
