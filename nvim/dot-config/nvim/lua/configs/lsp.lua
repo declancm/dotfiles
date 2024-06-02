@@ -80,10 +80,12 @@ require('mason-lspconfig').setup({
   ensure_installed = {
     'clangd',
     'cmake',
+    'html',
     'jsonls',
     'lua_ls',
     'marksman',
-    'pyright'
+    'pyright',
+    'tsserver',
   },
   handlers = handlers
 })
