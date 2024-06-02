@@ -23,6 +23,7 @@ vim.opt.sessionoptions:remove('blank')
 vim.opt.pumheight = 8
 vim.opt.showmode = false
 vim.opt.ruler = false
+vim.opt.clipboard:append('unnamedplus')
 
 -- VARIABLES:
 
