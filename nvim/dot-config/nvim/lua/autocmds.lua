@@ -18,20 +18,22 @@ vim.api.nvim_create_autocmd('CmdlineLeave', {
   end
 })
 
--- Automatically load sessions when a file isn't specified.
+-- Automatically load and save sessions when a file isn't specified.
+local save_on_exit = false
+
 vim.api.nvim_create_autocmd('VimEnter', {
   callback = function()
     if vim.fn.eval('@%') == '' then
       vim.cmd.LoadSession()
+      save_on_exit = true
     end
   end,
   nested = true
 })
 
--- Automatically save sessions on exit if a session was loaded.
 vim.api.nvim_create_autocmd('VimLeavePre', {
   callback = function()
-    if vim.v.this_session ~= '' then
+    if vim.v.this_session ~= '' or save_on_exit then
       vim.cmd.SaveSession()
     end
   end
