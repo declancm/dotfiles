@@ -24,26 +24,11 @@ require('lazy').setup({
     dependencies = { 'williamboman/mason.nvim' }
   },
 
-  -- COMPLETION:
-
-  {
-    'hrsh7th/nvim-cmp',
-    dependencies = {
-      'neovim/nvim-lspconfig',
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-buffer',
-      'hrsh7th/cmp-path',
-      'hrsh7th/cmp-cmdline',
-      'L3MON4D3/LuaSnip',
-      'saadparwaiz1/cmp_luasnip'
-    }
-  },
-
   -- TELESCOPE:
 
   {
     'nvim-telescope/telescope.nvim',
-    branch = '0.1.x',
+    -- branch = '0.1.x', -- Latest release doesn't have the <c-r><c-w> mapping yet.
     dependencies = {
       'nvim-lua/plenary.nvim',
       {

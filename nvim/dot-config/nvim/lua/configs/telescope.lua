@@ -19,7 +19,7 @@ vim.keymap.set('n', '<leader>fq', builtin.quickfix, { desc = 'List quickfix list
 vim.keymap.set('n', '<leader>fl', builtin.loclist, { desc = 'List location list items' })
 
 vim.keymap.set('n', 'gd', builtin.lsp_definitions, { desc = 'Goto the definition of cword' })
-vim.keymap.set('n', 'gr', builtin.lsp_references, { desc = 'List LSP references for cword' })
+vim.keymap.set('n', 'grr', builtin.lsp_references, { desc = 'List LSP references for cword' })
 vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = 'List LSP diagnostics' })
 
 -- TELESCOPE-UNDO:
