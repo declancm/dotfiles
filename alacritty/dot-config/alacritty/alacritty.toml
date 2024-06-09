@@ -17,3 +17,6 @@ hide_when_typing = true
 bindings = [
 { key = "Back", mods = "Control", chars = "\u0017" }
 ]
+
+[window]
+startup_mode = "Maximized"
