@@ -44,8 +44,6 @@ require('mason-lspconfig').setup({
 
 -- LSP:
 
-vim.keymap.set('i', '<c-space>', vim.lsp.completion.trigger, { desc = 'Trigger completion' })
-
 -- Neovim v0.11 builtin keymaps.
 vim.keymap.set('n', 'grn', vim.lsp.buf.rename, { desc = 'Rename symbol' })
 vim.keymap.set({ 'n', 'x' }, 'gra', vim.lsp.buf.code_action, { desc = 'Show code actions' })

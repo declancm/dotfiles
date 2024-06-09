@@ -25,3 +25,7 @@ vim.keymap.set('n', '<c-l>', '<cmd>nohlsearch<cr><c-l>', { desc = 'Clear highlig
 
 -- Fix the & command.
 vim.keymap.set({ 'n', 'x' }, '&', '<cmd>&&<cr>', { desc = 'Repeat the last substitute' })
+
+-- Completion.
+vim.keymap.set('i', '<c-space>', '<c-x><c-o>', { desc = 'Trigger omni completion' })
+
