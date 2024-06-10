@@ -54,11 +54,7 @@ conform.setup({
 })
 
 vim.api.nvim_create_user_command('FormatDocument', function()
-  if #conform.list_formatters() >= 1 then
-    conform.format()
-  else
-    vim.lsp.buf.format({ async = true })
-  end
+  conform.format({ lsp_fallback = true })
 end, { desc = 'Format the current document.' })
 
 -- LSP:
