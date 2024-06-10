@@ -64,13 +64,6 @@ vim.keymap.set('n', 'grn', vim.lsp.buf.rename, { desc = 'Rename symbol' })
 vim.keymap.set({ 'n', 'x' }, 'gra', vim.lsp.buf.code_action, { desc = 'Show code actions' })
 vim.keymap.set('i', '<c-s>', vim.lsp.buf.signature_help, { desc = 'Show signature help' })
 
--- Workspace folders.
-vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, { desc = 'Add folder to workspace' })
-vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, { desc = 'Remove folder from workspace' })
-vim.keymap.set('n', '<leader>wl', function()
-  print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-end, { desc = 'List workspace folders' })
-
 -- Customize the diagnostic UI.
 vim.diagnostic.config({
   signs = false,
