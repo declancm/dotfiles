@@ -1,7 +1,7 @@
 -- OIL:
 
 require('oil').setup({
-  view_options = { show_hidden = true }
+  view_options = { show_hidden = true },
 })
 
 vim.keymap.set('n', '-', '<cmd>Oil<cr>', { desc = "Open file's parent directory" })
@@ -11,7 +11,7 @@ vim.keymap.set('n', '-', '<cmd>Oil<cr>', { desc = "Open file's parent directory"
 local printf = require('printf')
 
 printf.setup({
-  print_func = { variable = '__PRETTY_FUNCTION__' }
+  print_func = { variable = '__PRETTY_FUNCTION__' },
 })
 
 vim.api.nvim_create_autocmd('FileType', {
@@ -21,7 +21,7 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.keymap.set('n', '<leader>dl', printf.print_line, { desc = 'Debug print line number', buffer = true })
     vim.keymap.set('n', '<leader>df', printf.print_func, { desc = 'Debug print function name', buffer = true })
     vim.keymap.set('n', '<leader>dc', printf.clean, { desc = 'Debug print cleanup', buffer = true })
-  end
+  end,
 })
 
 -- WHICH-KEY:

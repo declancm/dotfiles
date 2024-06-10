@@ -20,8 +20,8 @@ local handlers = {
       settings = {
         Lua = {
           runtime = { version = 'LuaJIT' },
-          diagnostics = { globals = { 'vim' } }
-        }
+          diagnostics = { globals = { 'vim' } },
+        },
       },
     })
   end,
@@ -39,8 +39,27 @@ require('mason-lspconfig').setup({
     'pyright',
     'tsserver',
   },
-  handlers = handlers
+  handlers = handlers,
 })
+
+-- FORMAT:
+
+local conform = require('conform')
+
+conform.setup({
+  formatters_by_ft = {
+    lua = { 'stylua' },
+    python = { 'black' },
+  },
+})
+
+vim.api.nvim_create_user_command('FormatDocument', function()
+  if #conform.list_formatters() >= 1 then
+    conform.format()
+  else
+    vim.lsp.buf.format({ async = true })
+  end
+end, { desc = 'Format the current document.' })
 
 -- LSP:
 
@@ -57,7 +76,7 @@ vim.keymap.set('n', '<leader>wl', function()
 end, { desc = 'List workspace folders' })
 
 -- Customize the diagnostic UI.
-vim.diagnostic.config {
+vim.diagnostic.config({
   signs = false,
-  virtual_text = { prefix = '•' }
-}
+  virtual_text = { prefix = '•' },
+})

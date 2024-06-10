@@ -7,8 +7,9 @@ telescope.setup()
 telescope.load_extension('fzf')
 
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Search for files' })
-vim.keymap.set('n', '<leader>fh', function() builtin.find_files({ hidden = true }) end,
-  { desc = 'Search for hidden files' })
+vim.keymap.set('n', '<leader>fh', function()
+  builtin.find_files({ hidden = true })
+end, { desc = 'Search for hidden files' })
 vim.keymap.set('n', '<leader>fs', builtin.live_grep, { desc = 'Search for string' })
 
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'List open buffers' })

@@ -21,8 +21,9 @@ require('lazy').setup({
   'neovim/nvim-lspconfig',
   {
     'williamboman/mason-lspconfig.nvim',
-    dependencies = { 'williamboman/mason.nvim' }
+    dependencies = { 'williamboman/mason.nvim' },
   },
+  'stevearc/conform.nvim',
 
   -- TELESCOPE:
 
@@ -33,9 +34,9 @@ require('lazy').setup({
       'nvim-lua/plenary.nvim',
       {
         'nvim-telescope/telescope-fzf-native.nvim',
-        build = 'make'
+        build = 'make',
       },
-      'debugloop/telescope-undo.nvim'
+      'debugloop/telescope-undo.nvim',
     },
   },
 
@@ -43,7 +44,7 @@ require('lazy').setup({
 
   {
     'nvim-treesitter/nvim-treesitter',
-    build = ':TSUpdate'
+    build = ':TSUpdate',
   },
 
   -- VISUALS:
@@ -51,15 +52,15 @@ require('lazy').setup({
   {
     'catppuccin/nvim',
     name = 'catppuccin',
-    priority = 1000
+    priority = 1000,
   },
   {
     'nvim-lualine/lualine.nvim',
-    dependencies = { { 'nvim-tree/nvim-web-devicons', config = true } }
+    dependencies = { { 'nvim-tree/nvim-web-devicons', config = true } },
   },
   {
     'lewis6991/gitsigns.nvim',
-    tag = 'release'
+    tag = 'release',
   },
 
   -- MISC:
@@ -71,18 +72,18 @@ require('lazy').setup({
   },
   {
     'tpope/vim-surround',
-    dependencies = { 'tpope/vim-repeat' }
+    dependencies = { 'tpope/vim-repeat' },
   },
   'tpope/vim-fugitive',
   -- 'tpope/vim-abolish',
   {
     'stevearc/oil.nvim',
-    dependencies = { { 'nvim-tree/nvim-web-devicons', config = true } }
+    dependencies = { { 'nvim-tree/nvim-web-devicons', config = true } },
   },
   'folke/which-key.nvim',
   {
     'declancm/printf.nvim',
-    dependencies = { 'nvim-treesitter/nvim-treesitter' }
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
   },
   'declancm/maximize.nvim',
 }, {
@@ -91,7 +92,7 @@ require('lazy').setup({
     patterns = { 'declancm' },
     fallback = true,
   },
-  install = { missing = false }
+  install = { missing = false },
 })
 
 -- PLUGIN CONFIGS:
