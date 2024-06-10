@@ -55,7 +55,9 @@ conform.setup({
 
 vim.api.nvim_create_user_command('FormatDocument', function()
   conform.format({ lsp_fallback = true })
-end, { desc = 'Format the current document.' })
+end, { desc = 'Format the current document with LSP formatting as fallback.' })
+
+vim.keymap.set('n', '<leader>cf', '<cmd>FormatDocument<cr>', { desc = 'Format current document' })
 
 -- LSP:
 
