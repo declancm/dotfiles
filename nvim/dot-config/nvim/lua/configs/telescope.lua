@@ -22,9 +22,3 @@ vim.keymap.set('n', '<leader>fl', builtin.loclist, { desc = 'List location list 
 vim.keymap.set('n', 'gd', builtin.lsp_definitions, { desc = 'Goto the definition of cword' })
 vim.keymap.set('n', 'grr', builtin.lsp_references, { desc = 'List LSP references for cword' })
 vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = 'List LSP diagnostics' })
-
--- TELESCOPE-UNDO:
-
-telescope.load_extension('undo')
-
-vim.keymap.set('n', '<leader>fu', telescope.extensions.undo.undo, { desc = 'Search undo tree' })
