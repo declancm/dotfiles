@@ -64,11 +64,7 @@ require('lazy').setup({
 
   -- MISC:
 
-  {
-    'github/copilot.vim', -- Need to run `:Copilot setup` after installation.
-    event = 'InsertEnter',
-    cmd = 'Copilot',
-  },
+  'github/copilot.vim', -- Need to run `:Copilot setup` after installation.
   {
     'tpope/vim-surround',
     dependencies = { 'tpope/vim-repeat' },
