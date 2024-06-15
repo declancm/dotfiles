@@ -87,7 +87,6 @@ require('lazy').setup({
     patterns = { 'declancm' },
     fallback = true,
   },
-  install = { missing = false },
 })
 
 -- PLUGIN CONFIGS:

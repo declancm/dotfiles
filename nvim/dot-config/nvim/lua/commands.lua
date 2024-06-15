@@ -33,6 +33,7 @@ vim.api.nvim_create_user_command('LoadSession', function()
   end
 
   if session then
+    vim.cmd.wincmd({ 'w', count = 1 })
     vim.cmd(session:read('*all'))
     vim.v.this_session = vim.fn.fnamemodify(session_path, ':p')
   end
