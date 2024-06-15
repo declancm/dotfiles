@@ -65,6 +65,10 @@ vim.keymap.set('n', '<leader>cr', vim.lsp.buf.rename, { desc = 'Rename symbol' }
 vim.keymap.set({ 'n', 'x' }, '<leader>ca', vim.lsp.buf.code_action, { desc = 'Show code actions' })
 vim.keymap.set('i', '<c-s>', vim.lsp.buf.signature_help, { desc = 'Show signature help' })
 
+-- DIAGNOSTICS:
+
+vim.keymap.set('n', '<leader>cd', vim.diagnostic.open_float, { desc = 'Show line diagnostics' })
+
 -- Customize the diagnostic UI.
 vim.diagnostic.config({
   signs = false,
