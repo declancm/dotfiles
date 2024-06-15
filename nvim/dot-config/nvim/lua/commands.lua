@@ -2,9 +2,18 @@
 
 -- Trim trailing whitespace.
 vim.api.nvim_create_user_command('TrimTrailingWhitespace', function()
-  local curpos = vim.api.nvim_win_get_cursor(0)
-  vim.cmd([[%s/\s\+$//e]])
-  vim.api.nvim_win_set_cursor(0, curpos)
+  if not vim.bo.modifiable then
+    return
+  end
+
+  local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
+  for i, line in ipairs(lines) do
+    local trailing = line:match('^.-(%s*)$') ~= nil
+    if trailing then
+      local trimmed = line:match('^(.-)%s*$') or ''
+      vim.api.nvim_buf_set_lines(0, i - 1, i, false, { trimmed })
+    end
+  end
 end, { desc = 'Trim trailing whitespace for the current document.' })
 
 -- SESSIONS:
