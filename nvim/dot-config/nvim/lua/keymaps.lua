@@ -16,9 +16,6 @@ vim.keymap.set({'n', 'i'}, '<c-down>', '<c-w>j', { desc = 'Move down a window' }
 vim.keymap.set({'n', 'i'}, '<c-up>', '<c-w>k', { desc = 'Move up a window' })
 vim.keymap.set({'n', 'i'}, '<c-right>', '<c-w>l', { desc = 'Move right a window' })
 
--- Don't move during J.
-vim.keymap.set('n', 'J', 'm`J``', { desc = 'Join two lines' })
-
 -- Clear highlights on redraw.
 vim.keymap.set('n', '<c-l>', '<cmd>nohlsearch<cr><c-l>', { desc = 'Clear highlights and redraw' })
 
