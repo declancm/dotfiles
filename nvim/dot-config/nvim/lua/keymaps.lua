@@ -16,9 +16,6 @@ vim.keymap.set({'n', 'i'}, '<c-down>', '<cmd>wincmd j<cr>', { desc = 'Move down 
 vim.keymap.set({'n', 'i'}, '<c-up>', '<cmd>wincmd k<cr>', { desc = 'Move up a window' })
 vim.keymap.set({'n', 'i'}, '<c-right>', '<cmd>wincmd l<cr>', { desc = 'Move right a window' })
 
--- Fix the & command.
-vim.keymap.set({ 'n', 'x' }, '&', '<cmd>&&<cr>', { desc = 'Repeat the last substitute' })
-
 -- Completion.
 vim.keymap.set('i', '<c-space>', '<c-x><c-o>', { desc = 'Trigger omni completion' })
 
