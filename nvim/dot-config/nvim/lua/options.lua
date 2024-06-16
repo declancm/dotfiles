@@ -1,28 +1,28 @@
 -- OPTIONS:
 
-vim.opt.undofile = true
-vim.opt.relativenumber = true
-vim.opt.number = true
-vim.opt.signcolumn = 'yes'
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
-vim.opt.wrap = false
-vim.opt.virtualedit = 'block'
-vim.opt.scrolloff = 8
+vim.o.undofile = true
+vim.o.relativenumber = true
+vim.o.number = true
+vim.o.signcolumn = 'yes'
+vim.o.ignorecase = true
+vim.o.smartcase = true
+vim.o.wrap = false
+vim.o.virtualedit = 'block'
+vim.o.scrolloff = 8
 vim.opt.backspace:append('nostop')
-vim.opt.updatetime = 1000
-vim.opt.timeoutlen = 300
-vim.opt.spell = true
-vim.opt.spelllang = 'en_us'
-vim.opt.modeline = false
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
+vim.o.updatetime = 1000
+vim.o.timeoutlen = 300
+vim.o.spell = true
+vim.o.spelllang = 'en_us'
+vim.o.modeline = false
+vim.o.tabstop = 4
+vim.o.softtabstop = 4
+vim.o.shiftwidth = 4
+vim.o.expandtab = true
 vim.opt.sessionoptions:remove('blank')
-vim.opt.pumheight = 8
-vim.opt.showmode = false
-vim.opt.ruler = false
+vim.o.pumheight = 8
+vim.o.showmode = false
+vim.o.ruler = false
 vim.opt.clipboard:append('unnamedplus')
 vim.opt.completeopt = {
   'menu',
