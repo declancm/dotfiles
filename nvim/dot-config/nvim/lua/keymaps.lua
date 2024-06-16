@@ -6,13 +6,15 @@ end
 vim.keymap.set({ 'n', 'x' }, '<c-u>', lazyredraw('<c-u>zz'), { desc = 'Scroll window upwards' })
 vim.keymap.set({ 'n', 'x' }, '<c-d>', lazyredraw('<c-d>zz'), { desc = 'Scroll window downwards' })
 
--- Moving text.
-vim.keymap.set('x', '<c-up>', lazyredraw(":m '<-2<cr>gv=gv"), { desc = 'Move selection up' })
-vim.keymap.set('x', '<c-down>', lazyredraw(":m '>+1<cr>gv=gv"), { desc = 'Move selection down' })
-vim.keymap.set('i', '<c-up>', lazyredraw('<cmd>m .-2<cr><c-o>=='), { desc = 'Move current line up' })
-vim.keymap.set('i', '<c-down>', lazyredraw('<cmd>m .+1<cr><c-o>=='), { desc = 'Move current line down' })
-vim.keymap.set('n', '<c-up>', lazyredraw('<cmd>m .-2<cr>=='), { desc = 'Move current line up' })
-vim.keymap.set('n', '<c-down>', lazyredraw('<cmd>m .+1<cr>=='), { desc = 'Move current line down' })
+-- Navigating windows.
+vim.keymap.set({'n', 'i'}, '<c-h>', '<c-w>h', { desc = 'Move left a window' })
+vim.keymap.set({'n', 'i'}, '<c-j>', '<c-w>j', { desc = 'Move down a window' })
+vim.keymap.set({'n', 'i'}, '<c-k>', '<c-w>k', { desc = 'Move up a window' })
+vim.keymap.set({'n', 'i'}, '<c-l>', '<c-w>l', { desc = 'Move right a window' })
+vim.keymap.set({'n', 'i'}, '<c-left>', '<c-w>h', { desc = 'Move left a window' })
+vim.keymap.set({'n', 'i'}, '<c-down>', '<c-w>j', { desc = 'Move down a window' })
+vim.keymap.set({'n', 'i'}, '<c-up>', '<c-w>k', { desc = 'Move up a window' })
+vim.keymap.set({'n', 'i'}, '<c-right>', '<c-w>l', { desc = 'Move right a window' })
 
 -- Improve the <home> key.
 vim.keymap.set({ '', 'i' }, '<home>', '<cmd>normal! ^ze<cr>', { desc = 'Better home key' })
