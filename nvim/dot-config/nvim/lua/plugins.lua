@@ -65,6 +65,7 @@ require('lazy').setup({
   -- MISC:
 
   'github/copilot.vim', -- Need to run `:Copilot setup` after installation.
+  'akinsho/toggleterm.nvim',
   {
     'tpope/vim-surround',
     dependencies = { 'tpope/vim-repeat' },

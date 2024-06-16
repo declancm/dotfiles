@@ -1,3 +1,9 @@
+-- TOGGLETERM:
+
+require('toggleterm').setup({
+  open_mapping = [[<c-\>]],
+})
+
 -- OIL:
 
 require('oil').setup({
