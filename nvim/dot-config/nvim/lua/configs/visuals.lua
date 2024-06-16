@@ -1,7 +1,3 @@
--- TOKYONIGHT:
-
-vim.cmd('colorscheme catppuccin')
-
 -- LUALINE:
 
 require('lualine').setup({
