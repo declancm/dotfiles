@@ -4,6 +4,18 @@ require('toggleterm').setup({
   open_mapping = [[<c-\>]],
 })
 
+local Terminal = require('toggleterm.terminal').Terminal
+local lazygit = Terminal:new({
+  cmd = 'lazygit',
+  dir = 'git_dir',
+  direction = 'float',
+  hidden = true,
+})
+
+vim.keymap.set({ 'n', 't' }, '<c-g>', function()
+  lazygit:toggle()
+end, { desc = 'Toggle Lazygit' })
+
 -- OIL:
 
 require('oil').setup({
