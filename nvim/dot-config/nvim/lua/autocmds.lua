@@ -50,3 +50,16 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.bo.commentstring = '// %s'
   end,
 })
+
+-- Disable search highlighting.
+vim.api.nvim_create_autocmd('CmdlineEnter', {
+  callback = function()
+    vim.o.hlsearch = true
+    vim.cmd.redraw()
+  end,
+})
+vim.api.nvim_create_autocmd('InsertEnter', {
+  callback = function()
+    vim.o.hlsearch = false
+  end,
+})
