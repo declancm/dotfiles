@@ -7,14 +7,14 @@ vim.keymap.set({ 'n', 'x' }, '<c-u>', lazyredraw('<c-u>zz'), { desc = 'Scroll wi
 vim.keymap.set({ 'n', 'x' }, '<c-d>', lazyredraw('<c-d>zz'), { desc = 'Scroll window downwards' })
 
 -- Navigating windows.
-vim.keymap.set({'n', 'i'}, '<c-h>', '<c-w>h', { desc = 'Move left a window' })
-vim.keymap.set({'n', 'i'}, '<c-j>', '<c-w>j', { desc = 'Move down a window' })
-vim.keymap.set({'n', 'i'}, '<c-k>', '<c-w>k', { desc = 'Move up a window' })
-vim.keymap.set({'n', 'i'}, '<c-l>', '<c-w>l', { desc = 'Move right a window' })
-vim.keymap.set({'n', 'i'}, '<c-left>', '<c-w>h', { desc = 'Move left a window' })
-vim.keymap.set({'n', 'i'}, '<c-down>', '<c-w>j', { desc = 'Move down a window' })
-vim.keymap.set({'n', 'i'}, '<c-up>', '<c-w>k', { desc = 'Move up a window' })
-vim.keymap.set({'n', 'i'}, '<c-right>', '<c-w>l', { desc = 'Move right a window' })
+vim.keymap.set({'n', 'i'}, '<c-h>', '<cmd>wincmd h<cr>', { desc = 'Move left a window' })
+vim.keymap.set({'n', 'i'}, '<c-j>', '<cmd>wincmd j<cr>', { desc = 'Move down a window' })
+vim.keymap.set({'n', 'i'}, '<c-k>', '<cmd>wincmd k<cr>', { desc = 'Move up a window' })
+vim.keymap.set({'n', 'i'}, '<c-l>', '<cmd>wincmd l<cr>', { desc = 'Move right a window' })
+vim.keymap.set({'n', 'i'}, '<c-left>', '<cmd>wincmd h<cr>', { desc = 'Move left a window' })
+vim.keymap.set({'n', 'i'}, '<c-down>', '<cmd>wincmd j<cr>', { desc = 'Move down a window' })
+vim.keymap.set({'n', 'i'}, '<c-up>', '<cmd>wincmd k<cr>', { desc = 'Move up a window' })
+vim.keymap.set({'n', 'i'}, '<c-right>', '<cmd>wincmd l<cr>', { desc = 'Move right a window' })
 
 -- Fix the & command.
 vim.keymap.set({ 'n', 'x' }, '&', '<cmd>&&<cr>', { desc = 'Repeat the last substitute' })
