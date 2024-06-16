@@ -20,7 +20,7 @@ require('lualine').setup({
       },
     },
   },
-  extensions = { 'fugitive', 'quickfix', 'oil' },
+  extensions = { 'quickfix', 'oil' },
 })
 
 -- GITSIGNS:
