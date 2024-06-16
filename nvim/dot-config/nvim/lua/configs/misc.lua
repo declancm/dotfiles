@@ -1,7 +1,9 @@
 -- TOGGLETERM:
 
 require('toggleterm').setup({
+  direction = 'float',
   open_mapping = [[<c-\>]],
+  start_in_insert = true,
 })
 
 local Terminal = require('toggleterm.terminal').Terminal
