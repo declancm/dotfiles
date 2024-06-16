@@ -20,7 +20,13 @@ require('lualine').setup({
       },
     },
   },
-  extensions = { 'quickfix', 'oil' },
+  extensions = {
+    'lazy',
+    'mason',
+    'oil',
+    'quickfix',
+    'toggleterm',
+  },
 })
 
 -- GITSIGNS:
