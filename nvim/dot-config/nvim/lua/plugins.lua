@@ -70,8 +70,6 @@ require('lazy').setup({
   'github/copilot.vim', -- Need to run `:Copilot setup` after installation.
   'akinsho/toggleterm.nvim',
   'kylechui/nvim-surround',
-  'tpope/vim-fugitive',
-  -- 'tpope/vim-abolish',
   {
     'stevearc/oil.nvim',
     dependencies = { { 'nvim-tree/nvim-web-devicons', config = true } },
