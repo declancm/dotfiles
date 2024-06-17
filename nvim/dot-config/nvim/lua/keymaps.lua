@@ -35,16 +35,20 @@ map('t', '<esc><esc>', '<c-\\><c-n>', { desc = 'Enter normal mode' })
 map('n', '<leader>q', '<cmd>wa<bar>qa<cr>', { desc = 'Save all windows and quit' })
 
 -- Line movement.
-map('v', '<', lz('<gv'), { desc = 'Shift lines left' })
-map('v', '>', lz('>gv'), { desc = 'Shift lines right' })
+map('x', '<', lz('<gv'), { desc = 'Shift lines left' })
+map('x', '>', lz('>gv'), { desc = 'Shift lines right' })
 map('n', { '<a-j>', '<a-down>' }, lz('<cmd>m .+1<cr>=='), { desc = 'Move line down' })
 map('n', { '<a-k>', '<a-up>' }, lz('<cmd>m .-2<cr>=='), { desc = 'Move line up' })
 map('i', { '<a-j>', '<a-down>' }, lz('<esc><cmd>m .+1<cr>==gi'), { desc = 'Move line down' })
 map('i', { '<a-k>', '<a-up>' }, lz('<esc><cmd>m .-2<cr>==gi'), { desc = 'Move line up' })
-map('v', { '<a-j>', '<a-down>' }, lz(":m '>+1<cr>gv=gv"), { desc = 'Move line down' })
-map('v', { '<a-k>', '<a-up>' }, lz(":m '<-2<cr>gv=gv"), { desc = 'Move line up' })
+map('x', { '<a-j>', '<a-down>' }, lz(":m '>+1<cr>gv=gv"), { desc = 'Move line down' })
+map('x', { '<a-k>', '<a-up>' }, lz(":m '<-2<cr>gv=gv"), { desc = 'Move line up' })
 
 -- Add undo break-points.
 map('i', ',', ',<c-g>u')
 map('i', '.', '.<c-g>u')
 map('i', ';', ';<c-g>u')
+
+-- Better j and k.
+map({ 'n', 'x' }, { 'j', '<down>' }, "v:count ? \"m'\" . v:count . 'j' : 'gj'", { desc = 'Move down', expr = true })
+map({ 'n', 'x' }, { 'k', '<up>' }, "v:count ? \"m'\" . v:count . 'k' : 'gk'", { desc = 'Move up', expr = true })
