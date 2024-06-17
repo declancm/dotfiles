@@ -1,4 +1,4 @@
-local lazyredraw = function(command)
+local lz = function(command)
   return '<cmd>set lz<cr>' .. command .. '<cmd>set nolz<cr>'
 end
 
@@ -13,8 +13,8 @@ local map = function(mode, lhs, rhs, opts)
 end
 
 -- Scrolling.
-map({ 'n', 'x' }, '<c-u>', lazyredraw('<c-u>zz'), { desc = 'Scroll window upwards' })
-map({ 'n', 'x' }, '<c-d>', lazyredraw('<c-d>zz'), { desc = 'Scroll window downwards' })
+map({ 'n', 'x' }, '<c-u>', lz('<c-u>zz'), { desc = 'Scroll window upwards' })
+map({ 'n', 'x' }, '<c-d>', lz('<c-d>zz'), { desc = 'Scroll window downwards' })
 
 -- Navigating windows.
 map({ 'n', 'i' }, { '<c-h>', '<c-left>' }, '<cmd>wincmd h<cr>', { desc = 'Move left a window' })
@@ -35,14 +35,14 @@ map('t', '<esc><esc>', '<c-\\><c-n>', { desc = 'Enter normal mode' })
 map('n', '<leader>q', '<cmd>wa<bar>qa<cr>', { desc = 'Save all windows and quit' })
 
 -- Line movement.
-map('v', '<', lazyredraw('<gv'), { desc = 'Shift lines left' })
-map('v', '>', lazyredraw('>gv'), { desc = 'Shift lines right' })
-map('n', { '<a-j>', '<a-down>' }, lazyredraw('<cmd>m .+1<cr>=='), { desc = 'Move line down' })
-map('n', { '<a-k>', '<a-up>' }, lazyredraw('<cmd>m .-2<cr>=='), { desc = 'Move line up' })
-map('i', { '<a-j>', '<a-down>' }, lazyredraw('<esc><cmd>m .+1<cr>==gi'), { desc = 'Move line down' })
-map('i', { '<a-k>', '<a-up>' }, lazyredraw('<esc><cmd>m .-2<cr>==gi'), { desc = 'Move line up' })
-map('v', { '<a-j>', '<a-down>' }, lazyredraw(":m '>+1<cr>gv=gv"), { desc = 'Move line down' })
-map('v', { '<a-k>', '<a-up>' }, lazyredraw(":m '<-2<cr>gv=gv"), { desc = 'Move line up' })
+map('v', '<', lz('<gv'), { desc = 'Shift lines left' })
+map('v', '>', lz('>gv'), { desc = 'Shift lines right' })
+map('n', { '<a-j>', '<a-down>' }, lz('<cmd>m .+1<cr>=='), { desc = 'Move line down' })
+map('n', { '<a-k>', '<a-up>' }, lz('<cmd>m .-2<cr>=='), { desc = 'Move line up' })
+map('i', { '<a-j>', '<a-down>' }, lz('<esc><cmd>m .+1<cr>==gi'), { desc = 'Move line down' })
+map('i', { '<a-k>', '<a-up>' }, lz('<esc><cmd>m .-2<cr>==gi'), { desc = 'Move line up' })
+map('v', { '<a-j>', '<a-down>' }, lz(":m '>+1<cr>gv=gv"), { desc = 'Move line down' })
+map('v', { '<a-k>', '<a-up>' }, lz(":m '<-2<cr>gv=gv"), { desc = 'Move line up' })
 
 -- Add undo break-points.
 map('i', ',', ',<c-g>u')
