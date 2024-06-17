@@ -43,3 +43,8 @@ vim.keymap.set('i', '<a-down>', lazyredraw('<esc><cmd>m .+1<cr>==gi'), { desc = 
 vim.keymap.set('i', '<a-up>', lazyredraw('<esc><cmd>m .-2<cr>==gi'), { desc = 'Move line up' })
 vim.keymap.set('v', '<a-down>', lazyredraw(":m '>+1<cr>gv=gv"), { desc = 'Move line down' })
 vim.keymap.set('v', '<a-up>', lazyredraw(":m '<-2<cr>gv=gv"), { desc = 'Move line up' })
+
+-- Add undo break-points.
+vim.keymap.set('i', ',', ',<c-g>u')
+vim.keymap.set('i', '.', '.<c-g>u')
+vim.keymap.set('i', ';', ';<c-g>u')
