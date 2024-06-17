@@ -50,5 +50,5 @@ map('i', '.', '.<c-g>u')
 map('i', ';', ';<c-g>u')
 
 -- Better j and k.
-map({ 'n', 'x' }, { 'j', '<down>' }, "v:count ? \"m'\" . v:count . 'j' : 'gj'", { desc = 'Move down', expr = true })
-map({ 'n', 'x' }, { 'k', '<up>' }, "v:count ? \"m'\" . v:count . 'k' : 'gk'", { desc = 'Move up', expr = true })
+map({ 'n', 'x' }, { 'j', '<down>' }, [[v:count ? "m'" . v:count . 'j' : 'gj']], { expr = true, desc = 'Move down' })
+map({ 'n', 'x' }, { 'k', '<up>' }, [[v:count ? "m'" . v:count . 'k' : 'gk']], { expr = true, desc = 'Move up' })
