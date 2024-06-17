@@ -67,7 +67,7 @@ vim.keymap.set('i', '<c-s>', vim.lsp.buf.signature_help, { desc = 'Show signatur
 
 -- DIAGNOSTICS:
 
-vim.keymap.set('n', '<leader>cd', vim.diagnostic.open_float, { desc = 'Show line diagnostics' })
+vim.keymap.set('n', '<leader>dl', vim.diagnostic.open_float, { desc = 'Show line diagnostics' })
 
 -- Customize the diagnostic UI.
 vim.diagnostic.config({
