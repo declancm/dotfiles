@@ -17,10 +17,10 @@ map({ 'n', 'x' }, '<c-u>', lz('<c-u>zz'), { desc = 'Scroll window upwards' })
 map({ 'n', 'x' }, '<c-d>', lz('<c-d>zz'), { desc = 'Scroll window downwards' })
 
 -- Navigating windows.
-map({ 'n', 'i' }, { '<c-h>', '<c-left>' }, '<cmd>wincmd h<cr>', { desc = 'Move left a window' })
-map({ 'n', 'i' }, { '<c-j>', '<c-down>' }, '<cmd>wincmd j<cr>', { desc = 'Move down a window' })
-map({ 'n', 'i' }, { '<c-k>', '<c-up>' }, '<cmd>wincmd k<cr>', { desc = 'Move up a window' })
-map({ 'n', 'i' }, { '<c-l>', '<c-right>' }, '<cmd>wincmd l<cr>', { desc = 'Move right a window' })
+map({ 'n', 'i', 't' }, { '<c-h>', '<c-left>' }, '<cmd>wincmd h<cr>', { desc = 'Move left a window' })
+map({ 'n', 'i', 't' }, { '<c-j>', '<c-down>' }, '<cmd>wincmd j<cr>', { desc = 'Move down a window' })
+map({ 'n', 'i', 't' }, { '<c-k>', '<c-up>' }, '<cmd>wincmd k<cr>', { desc = 'Move up a window' })
+map({ 'n', 'i', 't' }, { '<c-l>', '<c-right>' }, '<cmd>wincmd l<cr>', { desc = 'Move right a window' })
 
 -- Completion.
 map('i', '<c-space>', '<c-x><c-o>', { desc = 'Trigger omni completion' })
