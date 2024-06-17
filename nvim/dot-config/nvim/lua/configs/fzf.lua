@@ -1,6 +1,22 @@
 --FZF:
 
-local fzf = require("fzf-lua")
+local fzf = require('fzf-lua')
+local actions = require('fzf-lua.actions')
+
+fzf.setup({
+  files = {
+    actions = {
+      ['ctrl-g'] = false, -- Default toggle_ignore mapping.
+      ['alt-i'] = { actions.toggle_ignore },
+    },
+  },
+  grep = {
+    actions = {
+      ['ctrl-g'] = false, -- Default toggle_ignore mapping.
+      ['alt-i'] = { actions.toggle_ignore },
+    },
+  },
+})
 
 vim.keymap.set('n', '<leader>ff', fzf.files, { desc = 'Search for files' })
 vim.keymap.set('n', '<leader>fs', fzf.live_grep, { desc = 'Search for string' })
