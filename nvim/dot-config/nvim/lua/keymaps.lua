@@ -27,3 +27,7 @@ vim.keymap.set('t', '<esc><esc>', '<c-\\><c-n>', { desc = 'Enter normal mode' })
 
 -- Quitting Neovim.
 vim.keymap.set('n', '<leader>q', '<cmd>wa | qa<cr>', { desc = 'Save all windows and quit' })
+
+-- Line movement.
+vim.keymap.set('v', '<', lazyredraw('<gv'), { desc = 'Shift lines left' })
+vim.keymap.set('v', '>', lazyredraw('>gv'), { desc = 'Shift lines right' })
