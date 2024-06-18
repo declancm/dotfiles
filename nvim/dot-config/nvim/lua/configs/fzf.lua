@@ -33,3 +33,11 @@ vim.keymap.set('n', 'gr', fzf.lsp_references, { desc = 'List LSP references for 
 
 vim.keymap.set('n', '<leader>dd', fzf.diagnostics_document, { desc = 'List document diagnostics' })
 vim.keymap.set('n', '<leader>dw', fzf.diagnostics_workspace, { desc = 'List workspace diagnostics' })
+
+-- Add paste from register support to fzf.
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'fzf',
+  callback = function()
+    vim.keymap.set('t', '<c-r>', [['<c-\><c-n>"'.nr2char(getchar()).'pi']], { expr = true, buffer = true })
+  end,
+})
