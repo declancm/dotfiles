@@ -71,7 +71,7 @@ require('lazy').setup({
 
   -- MISC:
 
-  'github/copilot.vim', -- Need to run `:Copilot setup` after installation.
+  -- 'github/copilot.vim', -- Need to run `:Copilot setup` after installation.
   'akinsho/toggleterm.nvim',
   'kylechui/nvim-surround',
   {
