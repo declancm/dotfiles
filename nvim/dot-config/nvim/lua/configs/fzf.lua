@@ -30,6 +30,8 @@ vim.keymap.set('n', '<leader>fl', fzf.loclist, { desc = 'List location list item
 
 vim.keymap.set('n', 'gd', fzf.lsp_definitions, { desc = 'Goto the definition of cword' })
 vim.keymap.set('n', 'gr', fzf.lsp_references, { desc = 'List LSP references for cword' })
+vim.keymap.set('n', '<leader>fd', fzf.lsp_document_symbols, { desc = 'List document symbols' })
+vim.keymap.set('n', '<leader>fw', fzf.lsp_workspace_symbols, { desc = 'List workspace symbols' })
 
 vim.keymap.set('n', '<leader>dd', fzf.diagnostics_document, { desc = 'List document diagnostics' })
 vim.keymap.set('n', '<leader>dw', fzf.diagnostics_workspace, { desc = 'List workspace diagnostics' })

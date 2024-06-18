@@ -21,6 +21,8 @@ vim.keymap.set('n', '<leader>fl', builtin.loclist, { desc = 'List location list 
 
 vim.keymap.set('n', 'gd', builtin.lsp_definitions, { desc = 'Goto the definition of cword' })
 vim.keymap.set('n', 'gr', builtin.lsp_references, { desc = 'List LSP references for cword' })
+vim.keymap.set('n', '<leader>fd', builtin.lsp_document_symbols, { desc = 'List document symbols' })
+vim.keymap.set('n', '<leader>fw', builtin.lsp_workspace_symbols, { desc = 'List workspace symbols' })
 
 vim.keymap.set('n', '<leader>dd', function()
   builtin.diagnostics({ bufnr = 0 })
