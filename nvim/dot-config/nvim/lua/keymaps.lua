@@ -32,7 +32,7 @@ map('n', '<leader>ct', '<cmd>TrimTrailingWhitespace<cr>', { desc = 'Trim trailin
 map('t', '<esc><esc>', '<c-\\><c-n>', { desc = 'Enter normal mode' })
 
 -- Quitting Neovim.
-map('n', '<leader>q', '<cmd>wa<bar>qa<cr>', { desc = 'Save all windows and quit' })
+map('n', '<leader>q', '<cmd>confirm qall<cr>', { desc = 'Quit Neovim' })
 
 -- Line movement.
 map('x', '<', lz('<gv'), { desc = 'Shift lines left' })
