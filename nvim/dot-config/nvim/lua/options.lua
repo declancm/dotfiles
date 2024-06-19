@@ -21,6 +21,8 @@ vim.o.shiftwidth = 4
 vim.o.expandtab = true
 vim.opt.sessionoptions:remove('blank')
 vim.o.pumheight = 8
+vim.o.splitbelow = true
+vim.o.splitright = true
 vim.o.showmode = false
 vim.o.ruler = false
 vim.opt.clipboard:append('unnamedplus')
