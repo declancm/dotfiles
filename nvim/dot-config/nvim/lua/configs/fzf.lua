@@ -4,6 +4,17 @@ local fzf = require('fzf-lua')
 local actions = require('fzf-lua.actions')
 
 fzf.setup({
+  keymap = {
+    builtin = {
+      ['<c-f>'] = 'preview-page-down',
+      ['<c-b>'] = 'preview-page-up',
+    },
+    fzf = {
+      ['ctrl-a'] = 'select-all',
+      ['ctrl-u'] = 'half-page-up',
+      ['ctrl-d'] = 'half-page-down',
+    },
+  },
   files = {
     actions = {
       ['ctrl-g'] = false, -- Default toggle_ignore mapping.
