@@ -61,6 +61,7 @@ vim.keymap.set('n', '<leader>cf', '<cmd>FormatDocument<cr>', { desc = 'Format cu
 
 -- LSP:
 
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition' })
 vim.keymap.set('n', '<leader>cr', vim.lsp.buf.rename, { desc = 'Rename symbol' })
 vim.keymap.set({ 'n', 'x' }, '<leader>ca', vim.lsp.buf.code_action, { desc = 'Show code actions' })
 vim.keymap.set('i', '<c-s>', vim.lsp.buf.signature_help, { desc = 'Show signature help' })

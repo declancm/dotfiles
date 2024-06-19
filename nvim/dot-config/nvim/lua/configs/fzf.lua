@@ -28,8 +28,7 @@ vim.keymap.set('n', '<leader>f/', fzf.search_history, { desc = 'List search hist
 vim.keymap.set('n', '<leader>fq', fzf.quickfix, { desc = 'List quickfix list items' })
 vim.keymap.set('n', '<leader>fl', fzf.loclist, { desc = 'List location list items' })
 
-vim.keymap.set('n', 'gd', fzf.lsp_definitions, { desc = 'Goto the definition of cword' })
-vim.keymap.set('n', 'gr', fzf.lsp_references, { desc = 'List LSP references for cword' })
+vim.keymap.set('n', 'gr', fzf.lsp_references, { desc = 'Find references' })
 vim.keymap.set('n', '<leader>fd', fzf.lsp_document_symbols, { desc = 'List document symbols' })
 vim.keymap.set('n', '<leader>fw', fzf.lsp_workspace_symbols, { desc = 'List workspace symbols' })
 
