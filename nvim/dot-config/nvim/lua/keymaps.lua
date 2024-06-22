@@ -27,6 +27,12 @@ map('i', '<c-space>', '<c-x><c-o>', { desc = 'Trigger omni completion' })
 map('i', '<tab>', "pumvisible() ? '<c-e><tab>' : '<tab>'", { expr = true })
 map('i', '<cr>', "pumvisible() ? '<c-e><cr>' : '<cr>'", { expr = true })
 
+-- Command-line.
+map('c', '<c-a>', '<home>', { desc = 'GNU Readline CTRL-A' })
+
+-- Registers.
+map('n', 'x', '"_x')
+
 -- File processing.
 map('n', '<leader>ct', '<cmd>TrimTrailingWhitespace<cr>', { desc = 'Trim trailing whitespace' })
 
