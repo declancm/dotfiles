@@ -24,6 +24,8 @@ map({ 'n', 'i', 't' }, { '<c-l>', '<c-right>' }, '<cmd>wincmd l<cr>', { desc = '
 
 -- Completion.
 map('i', '<c-space>', '<c-x><c-o>', { desc = 'Trigger omni completion' })
+map('i', '<tab>', "pumvisible() ? '<c-e><tab>' : '<tab>'", { expr = true })
+map('i', '<cr>', "pumvisible() ? '<c-e><cr>' : '<cr>'", { expr = true })
 
 -- File processing.
 map('n', '<leader>ct', '<cmd>TrimTrailingWhitespace<cr>', { desc = 'Trim trailing whitespace' })
