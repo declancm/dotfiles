@@ -13,13 +13,13 @@ fzf.setup({
   files = {
     actions = {
       ['ctrl-g'] = false, -- Default toggle_ignore mapping.
-      ['alt-i'] = { actions.toggle_ignore },
+      ['alt-g'] = { actions.toggle_ignore },
     },
   },
   grep = {
     actions = {
       ['ctrl-g'] = false, -- Default toggle_ignore mapping.
-      ['alt-i'] = { actions.toggle_ignore },
+      ['alt-g'] = { actions.toggle_ignore },
     },
   },
 })
