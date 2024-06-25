@@ -5,7 +5,7 @@ local lspconfig = require('lspconfig')
 local on_attach = function(client, bufnr)
   if client.server_capabilities.completionProvider then
     vim.lsp.completion.enable(true, client.id, bufnr, {
-      autotrigger = true,
+      -- autotrigger = true,
     })
   end
 end
