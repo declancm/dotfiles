@@ -27,20 +27,8 @@ map('i', '<c-space>', '<c-x><c-o>', { desc = 'Trigger omni completion' })
 map('i', '<tab>', "pumvisible() ? '<c-e><tab>' : '<tab>'", { expr = true })
 map('i', '<cr>', "pumvisible() ? '<c-e><cr>' : '<cr>'", { expr = true })
 
--- Command-line.
-map('c', '<c-a>', '<home>', { desc = 'GNU Readline CTRL-A' })
-
--- Registers.
-map('n', 'x', '"_x')
-
 -- File processing.
 map('n', '<leader>ct', '<cmd>TrimTrailingWhitespace<cr>', { desc = 'Trim trailing whitespace' })
-
--- Terminal.
-map('t', '<esc><esc>', '<c-\\><c-n>', { desc = 'Enter normal mode' })
-
--- Quitting Neovim.
-map('n', '<leader>q', '<cmd>confirm qall<cr>', { desc = 'Quit Neovim' })
 
 -- Line movement.
 map('x', '<', lz('<gv'), { desc = 'Shift lines left' })
@@ -60,3 +48,10 @@ map('i', ';', ';<c-g>u')
 -- Better j and k.
 map({ 'n', 'x' }, { 'j', '<down>' }, [[v:count ? "m'" . v:count . 'j' : 'gj']], { expr = true, desc = 'Move down' })
 map({ 'n', 'x' }, { 'k', '<up>' }, [[v:count ? "m'" . v:count . 'k' : 'gk']], { expr = true, desc = 'Move up' })
+
+-- Miscellaneous.
+map('n', 'x', '"_x', { desc = 'Delete char without yank' })
+map('n', '<esc>', '<cmd>nohls<cr><esc>', { desc = 'Clear search highlights' })
+map('t', '<esc><esc>', '<c-\\><c-n>', { desc = 'Enter normal mode' })
+map('n', '<leader>q', '<cmd>confirm qall<cr>', { desc = 'Quit Neovim' })
+map('c', '<c-a>', '<home>', { desc = 'GNU Readline CTRL-A' })

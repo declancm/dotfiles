@@ -51,15 +51,10 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
 })
 
--- Disable search highlighting.
+-- Enable search highlighting in the command-line.
 vim.api.nvim_create_autocmd('CmdlineEnter', {
   callback = function()
     vim.o.hlsearch = true
     vim.cmd.redraw()
-  end,
-})
-vim.api.nvim_create_autocmd('InsertEnter', {
-  callback = function()
-    vim.o.hlsearch = false
   end,
 })
