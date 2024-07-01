@@ -79,6 +79,7 @@ require('lazy').setup({
     dependencies = { { 'nvim-tree/nvim-web-devicons', config = true } },
   },
   'folke/which-key.nvim',
+  'folke/flash.nvim',
   {
     'declancm/printf.nvim',
     dependencies = { 'nvim-treesitter/nvim-treesitter' },

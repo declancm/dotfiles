@@ -48,6 +48,19 @@ vim.api.nvim_create_autocmd('FileType', {
 
 require('which-key').setup()
 
+-- FLASH:
+
+require('flash').setup({
+  modes = { char = { enabled = false } },
+})
+
+vim.keymap.set({ 'n', 'x', 'o' }, 's', function()
+  require('flash').jump()
+end, { desc = 'Flash' })
+vim.keymap.set('c', '<c-s>', function()
+  require('flash').toggle()
+end, { desc = 'Toggle Flash Search' })
+
 -- MAXIMIZE:
 
 require('maximize').setup()
