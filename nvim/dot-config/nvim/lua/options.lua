@@ -13,7 +13,6 @@ vim.o.updatetime = 1000
 vim.o.timeoutlen = 300
 vim.o.spell = true
 vim.o.spelllang = 'en_us'
-vim.o.modeline = false
 vim.o.tabstop = 4
 vim.o.softtabstop = 4
 vim.o.shiftwidth = 4
