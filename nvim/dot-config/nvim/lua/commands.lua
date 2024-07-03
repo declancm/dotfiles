@@ -75,6 +75,7 @@ vim.api.nvim_create_user_command('SaveSession', function()
   if outfile:write(infile:read('*all')) then
     os.remove('Session.vim')
   end
+  vim.v.this_session = vim.fn.fnamemodify(get_session_path(session_dir), ':p')
 end, { desc = 'Save the session for the current working directory.' })
 
 -- MISC:
