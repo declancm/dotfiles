@@ -67,6 +67,27 @@ require('maximize').setup()
 
 vim.keymap.set('n', '<leader>z', require('maximize').toggle, { desc = 'Toggle maximizing the current window' })
 
+-- CINNAMON:
+
+local cinnamon = require('cinnamon')
+
+cinnamon.setup({
+  options = { mode = 'window' },
+})
+
+vim.keymap.set('n', 'n', function()
+  cinnamon.scroll('n')
+end)
+vim.keymap.set('n', 'N', function()
+  cinnamon.scroll('N')
+end)
+vim.keymap.set('n', '<c-o>', function()
+  cinnamon.scroll('<c-o>')
+end)
+vim.keymap.set('n', '<c-i>', function()
+  cinnamon.scroll('<c-s-i>')
+end)
+
 -- SURROUND:
 
 require('nvim-surround').setup()

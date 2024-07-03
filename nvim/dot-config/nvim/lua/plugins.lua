@@ -85,6 +85,7 @@ require('lazy').setup({
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
   },
   'declancm/maximize.nvim',
+  'declancm/cinnamon.nvim',
 }, {
   dev = {
     path = '~/plugins',
