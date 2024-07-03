@@ -44,6 +44,7 @@ vim.api.nvim_create_user_command('LoadSession', function()
     vim.cmd.wincmd({ 'w', count = 1 })
     vim.cmd(session:read('*all'))
     vim.v.this_session = vim.fn.fnamemodify(session_path, ':p')
+    vim.notify('Session loaded: ' .. vim.v.this_session)
   end
 end, { desc = 'Load the session for the current working directory.' })
 
@@ -62,6 +63,7 @@ vim.api.nvim_create_user_command('SaveSession', function()
     os.remove('Session.vim')
   end
   vim.v.this_session = vim.fn.fnamemodify(get_session_path(session_dir), ':p')
+  vim.notify('Session saved: ' .. vim.v.this_session)
 end, { desc = 'Save the session for the current working directory.' })
 
 -- MISC:
