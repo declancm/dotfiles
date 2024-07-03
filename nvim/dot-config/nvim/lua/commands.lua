@@ -20,7 +20,6 @@ end, { desc = 'Trim trailing whitespace for the current document.' })
 
 -- Store sessions like undo files.
 -- g:sessiondir - The directory where the sessions will be stored.
--- g:persistoptions - A list of options to persist between sessions.
 
 local get_session_dir = function()
   local session_dir = vim.g.sessiondir or (vim.fn.stdpath('state') .. '/session')
@@ -55,19 +54,6 @@ vim.api.nvim_create_user_command('SaveSession', function()
     vim.fn.mkdir(session_dir, 'p')
   end
   vim.cmd('mksession!')
-
-  -- Append options.
-  local session = assert(io.open('Session.vim', 'ab'))
-  for _, option in ipairs(vim.g.persistoptions or {}) do
-    local value = vim.o[option]
-    if type(value) == 'string' then
-      value = string.format('%q', value)
-    else
-      value = tostring(value)
-    end
-    session:write('lua vim.o.' .. option .. ' = ' .. value .. '\n')
-  end
-  session:close()
 
   -- Move to the sessions directory.
   local infile = assert(io.open('Session.vim', 'rb'))

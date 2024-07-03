@@ -34,11 +34,3 @@ vim.opt.completeopt = {
 -- VARIABLES:
 
 vim.g.mapleader = ' '
-vim.g.persistoptions = {
-  'makeprg',
-  'errorformat',
-  'tabstop',
-  'softtabstop',
-  'shiftwidth',
-  'expandtab',
-}
