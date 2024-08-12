@@ -24,6 +24,7 @@ require('lazy').setup({
     dependencies = { 'williamboman/mason.nvim' },
   },
   'stevearc/conform.nvim',
+  'p00f/clangd_extensions.nvim',
 
   -- TELESCOPE:
 
