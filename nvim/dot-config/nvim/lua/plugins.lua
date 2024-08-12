@@ -70,10 +70,7 @@ require('lazy').setup({
   },
   'folke/which-key.nvim',
   'folke/flash.nvim',
-  {
-    'declancm/printf.nvim',
-    dependencies = { 'nvim-treesitter/nvim-treesitter' },
-  },
+  'declancm/printf.nvim',
   'declancm/maximize.nvim',
   'declancm/cinnamon.nvim',
 }, {
