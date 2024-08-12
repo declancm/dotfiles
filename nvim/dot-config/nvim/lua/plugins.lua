@@ -66,7 +66,7 @@ require('lazy').setup({
   'kylechui/nvim-surround',
   {
     'stevearc/oil.nvim',
-    dependencies = { { 'nvim-tree/nvim-web-devicons', config = true } },
+    dependencies = { 'echasnovski/mini.icons' },
   },
   'folke/which-key.nvim',
   'folke/flash.nvim',
