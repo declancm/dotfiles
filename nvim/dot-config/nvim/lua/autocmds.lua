@@ -31,14 +31,6 @@ vim.api.nvim_create_autocmd('VimLeavePre', {
   end,
 })
 
--- Change the C comment format.
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'c', 'cpp' },
-  callback = function()
-    vim.bo.commentstring = '// %s'
-  end,
-})
-
 -- Enable search highlighting in the command-line.
 vim.api.nvim_create_autocmd('CmdlineEnter', {
   callback = function()
