@@ -27,17 +27,6 @@ require('lazy').setup({
 
   -- TELESCOPE:
 
-  -- {
-  --   'nvim-telescope/telescope.nvim',
-  --   -- branch = '0.1.x', -- Latest release doesn't have the <c-r><c-w> mapping yet.
-  --   dependencies = {
-  --     'nvim-lua/plenary.nvim',
-  --     {
-  --       'nvim-telescope/telescope-fzf-native.nvim',
-  --       build = 'make',
-  --     },
-  --   },
-  -- },
   {
     'ibhagwan/fzf-lua',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
