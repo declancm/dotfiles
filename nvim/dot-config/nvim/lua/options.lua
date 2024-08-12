@@ -34,3 +34,4 @@ vim.opt.completeopt = {
 -- VARIABLES:
 
 vim.g.mapleader = ' '
+vim.g.compiler_gcc_ignore_unmatched_lines = true
