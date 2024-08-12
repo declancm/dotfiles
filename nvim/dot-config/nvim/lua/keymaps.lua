@@ -38,9 +38,7 @@ map('x', { '<a-j>', '<a-down>' }, lz(":m '>+1<cr>gv=gv"), { desc = 'Move line do
 map('x', { '<a-k>', '<a-up>' }, lz(":m '<-2<cr>gv=gv"), { desc = 'Move line up' })
 
 -- Add undo break-points.
-map('i', ',', ',<c-g>u')
-map('i', '.', '.<c-g>u')
-map('i', ';', ';<c-g>u')
+map('i', '<cr>', '<c-g>u<cr>')
 
 -- Better j and k.
 map({ 'n', 'x' }, { 'j', '<down>' }, [[v:count ? "m'" . v:count . 'j' : 'gj']], { expr = true, desc = 'Move down' })
