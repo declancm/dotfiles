@@ -53,6 +53,7 @@ map('n', '<leader>sl', '<cmd>LoadSession<cr>', { desc = 'Load session' })
 
 -- Miscellaneous.
 map('n', 'x', '"_x', { desc = 'Delete char without yank' })
+map('n', 'Y', 'yg_', { desc = 'Yank to end of line' })
 map('n', '<esc>', '<cmd>nohls<cr><esc>', { desc = 'Clear search highlights' })
 map('t', '<esc><esc>', '<c-\\><c-n>', { desc = 'Enter normal mode' })
 map('n', '<leader>q', '<cmd>confirm qall<cr>', { desc = 'Quit Neovim' })
