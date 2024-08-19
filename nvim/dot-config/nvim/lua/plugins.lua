@@ -30,7 +30,7 @@ require('lazy').setup({
 
   {
     'ibhagwan/fzf-lua',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    dependencies = { 'echasnovski/mini.icons' },
   },
 
   -- TREESITTER:
@@ -38,6 +38,7 @@ require('lazy').setup({
   {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
+    dependencies = { 'nvim-treesitter/nvim-treesitter-textobjects' },
   },
 
   -- VISUALS:
