@@ -37,7 +37,7 @@ require('mason-lspconfig').setup({
     'lua_ls',
     'marksman',
     'pyright',
-    'tsserver',
+    'ts_ls',
   },
   handlers = handlers,
 })
