@@ -6,11 +6,15 @@ vim.opt.number = true -- line numbers
 vim.opt.undofile = true -- persistent undo
 
 vim.pack.add({
+  { src = 'https://github.com/catppuccin/nvim', name = 'catppuccin' }, -- theme
   'https://github.com/ibhagwan/fzf-lua', -- search
   -- TODO: plugin has been archived so replace once upstreamed
   'https://github.com/nvim-treesitter/nvim-treesitter', -- tree-sitter
   'https://github.com/tpope/vim-sleuth', -- smart indents
 })
+
+-- select theme
+vim.cmd.colorscheme('catppuccin-nvim')
 
 -- setup search like vscode / obsidian
 require('fzf-lua').setup({})
