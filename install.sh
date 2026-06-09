@@ -1,3 +1,3 @@
 #!/bin/bash
 
-~/gnu/bin/stow --dotfiles --adopt nvim/
+stow --dotfiles --adopt nvim/
