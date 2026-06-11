@@ -2,8 +2,8 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-vim.opt.number = true -- line numbers
-vim.opt.undofile = true -- persistent undo
+vim.o.number = true -- line numbers
+vim.o.undofile = true -- persistent undo
 
 vim.pack.add({
   { src = 'https://github.com/catppuccin/nvim', name = 'catppuccin' }, -- theme
