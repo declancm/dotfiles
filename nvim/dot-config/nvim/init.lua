@@ -1,30 +1,37 @@
--- set leader before anything else
 vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
 
-vim.o.number = true -- line numbers
-vim.o.undofile = true -- persistent undo
+vim.o.number = true
+vim.o.relativenumber = true
+vim.o.undofile = true
 
 vim.pack.add({
-  { src = 'https://github.com/catppuccin/nvim', name = 'catppuccin' }, -- theme
-  'https://github.com/ibhagwan/fzf-lua', -- search
+  'https://github.com/junegunn/fzf', -- fzf.vim dependency
+  'https://github.com/junegunn/fzf.vim',
+  -- TODO: remove for Neovim v0.13.0+
+  'https://github.com/justinmk/vim-dirvish',
+  'https://github.com/neovim/nvim-lspconfig',
+  'https://github.com/nvim-mini/mini.nvim',
   -- TODO: plugin has been archived so replace once upstreamed
-  'https://github.com/nvim-treesitter/nvim-treesitter', -- tree-sitter
+  'https://github.com/nvim-treesitter/nvim-treesitter',
   'https://github.com/tpope/vim-sleuth', -- smart indents
 })
 
--- select theme
-vim.cmd.colorscheme('catppuccin-nvim')
+require('mini.diff').setup()
 
--- setup search like vscode / obsidian
-require('fzf-lua').setup({})
-vim.keymap.set('', '<D-p>', require('fzf-lua').files) -- find files (vscode)
-vim.keymap.set('', '<D-o>', require('fzf-lua').files) -- find files (obsidian)
-vim.keymap.set('n', '<D-F>', require('fzf-lua').live_grep) -- find string
+vim.keymap.set('', '<d-p>', '<cmd>Files<cr>')
+vim.keymap.set('', '<d-o>', '<cmd>Buffers<cr>')
+vim.keymap.set('', '<d-s-f>', '<cmd>Rg<cr>')
 
--- setup c++ syntax highlighting (run `:TSInstall cpp`)
+vim.api.nvim_create_autocmd('BufWritePre', {
+  callback = function() vim.lsp.buf.format() end,
+})
+
+-- requires `:TSInstall <lang>`
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'cpp' },
+  pattern = { 'bzl' --[[ starlark ]], 'cpp', 'python' },
   callback = function() vim.treesitter.start() end,
 })
 
+vim.cmd.colorscheme('retrobox')
+
+vim.lsp.enable('zls') -- zig
