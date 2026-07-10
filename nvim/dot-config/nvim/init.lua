@@ -21,7 +21,7 @@ require('mini.diff').setup()
 
 vim.keymap.set('', '<d-p>', '<cmd>Files!<cr>')
 vim.keymap.set('', '<d-o>', '<cmd>Buffers!<cr>')
-vim.keymap.set('', '<d-s-f>', '<cmd>Rg!<cr>')
+vim.keymap.set('', '<d-s-f>', '<cmd>RG!<cr>')
 
 vim.api.nvim_create_autocmd('BufWritePre', {
   callback = function() vim.lsp.buf.format() end,
