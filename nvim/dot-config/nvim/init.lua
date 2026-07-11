@@ -8,8 +8,6 @@ vim.o.swapfile = false
 vim.pack.add({
   'https://github.com/junegunn/fzf', -- fzf.vim dependency
   'https://github.com/junegunn/fzf.vim',
-  -- TODO: remove for Neovim v0.13.0+
-  'https://github.com/justinmk/vim-dirvish',
   'https://github.com/neovim/nvim-lspconfig',
   'https://github.com/nvim-mini/mini.nvim',
   -- TODO: plugin has been archived so replace once upstreamed

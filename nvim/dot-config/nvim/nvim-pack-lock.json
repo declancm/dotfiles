@@ -20,10 +20,6 @@
       "rev": "4916d6592ede8c07973490d9322f187e07dfefac",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
-    "vim-dirvish": {
-      "rev": "4cbf39ce024c57f700c4d5502cc172ea91d69360",
-      "src": "https://github.com/justinmk/vim-dirvish"
-    },
     "vim-sleuth": {
       "rev": "be69bff86754b1aa5adcbb527d7fcd1635a84080",
       "src": "https://github.com/tpope/vim-sleuth"
