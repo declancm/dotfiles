@@ -15,22 +15,35 @@ vim.pack.add({
   'https://github.com/tpope/vim-sleuth', -- smart indents
 })
 
+require('nvim-treesitter').install({
+  'c',
+  'cpp',
+  'python',
+  'starlark',
+  'zig',
+})
+
+vim.api.nvim_create_autocmd('FileType', {
+  callback = function() pcall(vim.treesitter.start) end,
+})
+
+vim.lsp.enable({
+  'zls', -- zig
+})
+
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(ev)
+    vim.api.nvim_create_autocmd('BufWritePre', {
+      buffer = ev.buf,
+      callback = function() pcall(vim.lsp.buf.format) end,
+    })
+  end,
+})
+
+vim.keymap.set('n', '<d-p>', '<cmd>Files<cr>')
+vim.keymap.set('n', '<d-o>', '<cmd>Buffers<cr>')
+vim.keymap.set('n', '<d-s-f>', '<cmd>RG<cr>')
+
 require('mini.diff').setup()
 
-vim.keymap.set('', '<d-p>', '<cmd>Files<cr>')
-vim.keymap.set('', '<d-o>', '<cmd>Buffers<cr>')
-vim.keymap.set('', '<d-s-f>', '<cmd>RG<cr>')
-
-vim.api.nvim_create_autocmd('BufWritePre', {
-  callback = function() vim.lsp.buf.format() end,
-})
-
--- requires `:TSInstall <lang>`
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'bzl' --[[ starlark ]], 'cpp', 'python' },
-  callback = function() vim.treesitter.start() end,
-})
-
 vim.cmd.colorscheme('retrobox')
-
-vim.lsp.enable('zls') -- zig
