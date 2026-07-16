@@ -15,6 +15,8 @@ vim.pack.add({
   'https://github.com/tpope/vim-sleuth', -- smart indents
 })
 
+require('mini.diff').setup()
+
 require('nvim-treesitter').install({
   'c',
   'cpp',
@@ -42,10 +44,15 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 vim.keymap.set('n', 'ZB', '<cmd>buffer # | bdelete #<cr>')
 
+vim.api.nvim_create_user_command(
+  'Zoxide',
+  "call fzf#run(fzf#wrap({ 'source': 'zoxide query -l <args>', 'sink': 'cd' }))",
+  { nargs = '*' }
+)
+
 vim.keymap.set('n', '<leader>f', '<cmd>Files<cr>')
 vim.keymap.set('n', '<leader>b', '<cmd>Buffers<cr>')
 vim.keymap.set('n', '<leader>g', '<cmd>RG<cr>')
-
-require('mini.diff').setup()
+vim.keymap.set('n', '<leader>z', '<cmd>Zoxide<cr>')
 
 vim.cmd.colorscheme('retrobox')
