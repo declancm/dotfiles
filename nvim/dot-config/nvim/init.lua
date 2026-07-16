@@ -40,10 +40,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
-vim.keymap.set('n', '<d-p>', '<cmd>Files<cr>')
-vim.keymap.set('n', '<d-o>', '<cmd>Buffers<cr>')
-vim.keymap.set('n', '<d-s-f>', '<cmd>RG<cr>')
-
 vim.keymap.set('n', '<leader>f', '<cmd>Files<cr>')
 vim.keymap.set('n', '<leader>b', '<cmd>Buffers<cr>')
 vim.keymap.set('n', '<leader>g', '<cmd>RG<cr>')
