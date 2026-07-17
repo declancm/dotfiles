@@ -47,17 +47,21 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	end,
 })
 
-vim.keymap.set("n", "ZB", "<cmd>buffer # | bdelete #<cr>")
+vim.keymap.set("n", "ZB", "<cmd>b # | bd #<cr>")
+
+vim.api.nvim_create_user_command("Paths", "call fzf#run(fzf#wrap({ 'source': 'cat ~/.paths', 'sink': 'e' }))", {})
 
 vim.api.nvim_create_user_command(
 	"Zoxide",
-	"call fzf#run(fzf#wrap({ 'source': 'zoxide query -l <args>', 'sink': 'cd' }))",
+	"call fzf#run(fzf#wrap({ 'source': 'zoxide query --list <args>', 'sink': 'e' }))",
 	{ nargs = "*" }
 )
 
-vim.keymap.set("n", "<leader>f", "<cmd>Files<cr>")
 vim.keymap.set("n", "<leader>b", "<cmd>Buffers<cr>")
+vim.keymap.set("n", "<leader>f", "<cmd>Files<cr>")
 vim.keymap.set("n", "<leader>g", "<cmd>RG<cr>")
+vim.keymap.set("n", "<leader>h", "<cmd>Helptags<cr>")
+vim.keymap.set("n", "<leader>p", "<cmd>Paths<cr>")
 vim.keymap.set("n", "<leader>z", "<cmd>Zoxide<cr>")
 
 vim.cmd.colorscheme("retrobox")
