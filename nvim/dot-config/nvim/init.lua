@@ -58,7 +58,8 @@ vim.api.nvim_create_user_command(
 )
 
 vim.keymap.set("n", "<leader>b", "<cmd>Buffers<cr>")
-vim.keymap.set("n", "<leader>f", "<cmd>Files<cr>")
+vim.keymap.set("n", "<leader>f", "<cmd>GFiles<cr>")
+vim.keymap.set("n", "<leader>F", "<cmd>Files<cr>")
 vim.keymap.set("n", "<leader>g", "<cmd>RG<cr>")
 vim.keymap.set("n", "<leader>h", "<cmd>Helptags<cr>")
 vim.keymap.set("n", "<leader>p", "<cmd>Paths<cr>")
