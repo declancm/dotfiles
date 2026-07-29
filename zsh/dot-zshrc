@@ -1,0 +1,23 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/Users/declancm/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+# Neovim recommended:
+ulimit -n 8192
+
+alias e='nvim'
+export EDITOR='nvim'
+export VISUAL='nvim'
+
+alias e='nvim $(fzf -m)'
+
+eval "$(fzf --zsh)"
+eval "$(zoxide init zsh)"

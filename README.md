@@ -15,6 +15,7 @@
   - ripgrep
   - tree-sitter-cli
 - stow (v2.4.0+)
+- zsh
 
 ## Installation
 
