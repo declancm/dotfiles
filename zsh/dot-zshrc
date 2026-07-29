@@ -17,7 +17,5 @@ alias e='nvim'
 export EDITOR='nvim'
 export VISUAL='nvim'
 
-alias e='nvim $(fzf -m)'
-
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
