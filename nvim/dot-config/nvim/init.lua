@@ -17,9 +17,6 @@ vim.pack.add({
 	"https://github.com/tpope/vim-sleuth", -- smart indents
 })
 
-require("mini.bufremove").setup()
-require("mini.diff").setup()
-
 require("nvim-treesitter").install({
 	"c",
 	"cpp",
@@ -50,7 +47,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	end,
 })
 
+require("mini.bufremove").setup()
+require("mini.diff").setup()
+
 vim.keymap.set("n", "ZB", MiniBufremove.delete)
+vim.keymap.set("n", "<leader>d", MiniDiff.toggle_overlay)
 
 vim.api.nvim_create_user_command(
 	"Zoxide",
@@ -63,6 +64,7 @@ vim.keymap.set("n", "<leader>f", "<cmd>GFiles<cr>")
 vim.keymap.set("n", "<leader>F", "<cmd>Files<cr>")
 vim.keymap.set("n", "<leader>g", "<cmd>RG<cr>")
 vim.keymap.set("n", "<leader>h", "<cmd>Helptags<cr>")
+vim.keymap.set("n", "<leader>s", "<cmd>GFiles?<cr>")
 vim.keymap.set("n", "<leader>z", "<cmd>Zoxide<cr>")
 
 vim.api.nvim_create_autocmd("VimResized", { command = "wincmd =" })
