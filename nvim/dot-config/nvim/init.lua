@@ -3,8 +3,12 @@ vim.g.mapleader = " "
 vim.o.cursorline = true
 vim.o.number = true
 vim.o.relativenumber = true
+
 vim.o.swapfile = false
 vim.o.undofile = true
+
+vim.o.ignorecase = true
+vim.o.smartcase = true
 
 vim.pack.add({
 	"https://github.com/junegunn/fzf", -- fzf.vim dependency
