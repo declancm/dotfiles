@@ -36,6 +36,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.lsp.enable({
+	"clangd", -- c, cpp
 	"stylua", -- lua
 	"zls", -- zig
 })
