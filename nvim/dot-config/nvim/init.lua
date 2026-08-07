@@ -1,5 +1,7 @@
 vim.g.mapleader = " "
 
+vim.o.clipboard = "unnamedplus"
+
 vim.o.cursorline = true
 vim.o.number = true
 vim.o.relativenumber = true

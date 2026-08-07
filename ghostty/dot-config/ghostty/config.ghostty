@@ -2,6 +2,13 @@ theme = Gruvbox Dark
 
 macos-option-as-alt = left
 
+# For coding agent TUIs
+keybind = shift+enter=text:\n
+
+# For Neovim unnamedplus clipboard
+clipboard-read = allow
+
+# Budget tmux Control Mode
 keybind = super+t=text:\x02c
 keybind = super+d=text:\x02%
 keybind = super+shift+d=text:\x02"
